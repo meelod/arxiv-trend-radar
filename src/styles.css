@@ -10,24 +10,24 @@
 
 @layer components {
   .card {
-    @apply bg-white border border-zinc-200 rounded-xl p-5 shadow-sm;
+    @apply bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 shadow-sm;
   }
   .section-label {
-    @apply block text-[11px] uppercase tracking-wider text-zinc-500 font-semibold mt-3 mb-1;
+    @apply block text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold mt-3 mb-1;
   }
   .pill {
-    @apply text-xs px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-700;
+    @apply text-xs px-2 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300;
   }
   .pill-status-new {
-    @apply text-xs px-2 py-0.5 rounded-full font-bold tracking-wider uppercase bg-blue-100 text-blue-900 ring-1 ring-blue-300;
+    @apply text-xs px-2 py-0.5 rounded-full font-bold tracking-wider uppercase bg-blue-100 dark:bg-blue-900/40 text-blue-900 dark:text-blue-200 ring-1 ring-blue-300 dark:ring-blue-700;
   }
   .pill-status-growing {
-    @apply text-xs px-2 py-0.5 rounded-full font-bold tracking-wider uppercase bg-amber-100 text-amber-900 ring-1 ring-amber-300;
+    @apply text-xs px-2 py-0.5 rounded-full font-bold tracking-wider uppercase bg-amber-100 dark:bg-amber-900/40 text-amber-900 dark:text-amber-200 ring-1 ring-amber-300 dark:ring-amber-700;
   }
   .pill-status-stable {
-    @apply text-xs px-2 py-0.5 rounded-full font-bold tracking-wider uppercase bg-zinc-100 text-zinc-700;
+    @apply text-xs px-2 py-0.5 rounded-full font-bold tracking-wider uppercase bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300;
   }
   .pill-status-shrinking {
-    @apply text-xs px-2 py-0.5 rounded-full font-bold tracking-wider uppercase bg-red-100 text-red-900;
+    @apply text-xs px-2 py-0.5 rounded-full font-bold tracking-wider uppercase bg-red-100 dark:bg-red-900/40 text-red-900 dark:text-red-200;
   }
 }

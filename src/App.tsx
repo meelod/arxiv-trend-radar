@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Daily from './pages/Daily';
 import Trends from './pages/Trends';
 import Bookmarks from './pages/Bookmarks';
+import Info from './pages/Info';
 import { Layout } from './components/Layout';
 
 export default function App() {
@@ -28,6 +29,14 @@ export default function App() {
         element={
           <Layout>
             <Bookmarks />
+          </Layout>
+        }
+      />
+      <Route
+        path="/info"
+        element={
+          <Layout>
+            <Info />
           </Layout>
         }
       />
