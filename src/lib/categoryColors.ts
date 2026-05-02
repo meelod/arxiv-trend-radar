@@ -48,6 +48,6 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 
 export function colorClassFor(code: string | undefined): string {
-  if (!code) return 'border-l-zinc-300';
-  return CATEGORY_COLORS[code] || 'border-l-zinc-300';
+  if (!code) return 'border-l-stone-300';
+  return CATEGORY_COLORS[code] || 'border-l-stone-300';
 }

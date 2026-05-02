@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="preload" as="fetch" crossorigin="anonymous" href="/data/briefings/latest.json" />
+    <link rel="prefetch" as="fetch" crossorigin="anonymous" href="/data/trends/latest.json" />
     <title>arxiv-trend-radar</title>
+    <script>
+      // Apply theme before React mounts to avoid a flash of light-mode.
+      (function () {
+        try {
+          var t = localStorage.getItem('atr-theme');
+          var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
     <meta name="description" content="Daily arXiv briefings + weekly trend & gap analysis. Surfaces research-industry mismatches and potential startup ideas from machine learning, robotics, hardware, and quant-finance papers." />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="arxiv-trend-radar" />
@@ -16,7 +28,7 @@
     <meta name="twitter:title" content="arxiv-trend-radar" />
     <meta name="twitter:description" content="Daily arXiv briefings + weekly trend & gap analysis." />
   </head>
-  <body class="bg-paper dark:bg-ink text-stone-900 dark:text-stone-100 antialiased transition-colors">
+  <body class="bg-paper dark:bg-ink text-stone-900 dark:text-stone-100 antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

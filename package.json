@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && (cp -r data dist/data 2>/dev/null || true)",
+    "build": "tsc -b && vite build && (cp -r data dist/data 2>/dev/null || true) && node -e \"const fs=require('fs'),p=require('path');for(const d of ['briefings','trends']){const dir=p.join('dist/data',d);if(!fs.existsSync(dir))continue;const f=fs.readdirSync(dir).filter(x=>x.endsWith('.json')&&x!=='latest.json').sort().reverse()[0];if(f)fs.copyFileSync(p.join(dir,f),p.join(dir,'latest.json'));}\"",
     "preview": "vite preview",
     "lint": "tsc -b --noEmit"
   },

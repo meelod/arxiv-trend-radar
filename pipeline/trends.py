@@ -36,9 +36,11 @@ from langchain_core.prompts import (
 
 try:
     from pipeline.structures import TrendsReport
+    from pipeline.citations import enrich_paper_index
 except ImportError:
     sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from pipeline.structures import TrendsReport
+    from pipeline.citations import enrich_paper_index
 
 if os.path.exists(".env"):
     dotenv.load_dotenv()
@@ -401,16 +403,81 @@ def main() -> None:
             "centroid": [round(float(x), 4) for x in centroids[c["id"]].tolist()],
         })
 
-    paper_index = {
-        pid: {
-            "title": (papers[pid].get("title") or "").strip(),
-            "authors": papers[pid].get("authors", []),
-            "abs": papers[pid].get("abs") or f"https://arxiv.org/abs/{pid}",
-            "date": papers[pid].get("_date"),
-            "categories": papers[pid].get("categories", []),
+    # Trim paper_index to keep only the metadata each paper actually needs in
+    # the UI:
+    #   - sample_paper_ids (rendered as PaperBadges) need title + abs + categories.
+    #   - all other papers (used only for sparkline date counts + top-authors
+    #     aggregation) only need date + authors.
+    # Stripping title/abs/categories from the long tail roughly halves the
+    # JSON payload at typical 90-day windows (~50K papers).
+    sample_id_set: set[str] = set()
+    for c in out_clusters:
+        sample_id_set.update(c.get("sample_paper_ids") or [])
+
+    def _entry(pid: str) -> dict:
+        p = papers[pid]
+        if pid in sample_id_set:
+            return {
+                "title": (p.get("title") or "").strip(),
+                "authors": p.get("authors", []),
+                "abs": p.get("abs") or f"https://arxiv.org/abs/{pid}",
+                "date": p.get("_date"),
+                "categories": p.get("categories", []),
+            }
+        return {
+            "authors": p.get("authors", []),
+            "date": p.get("_date"),
         }
-        for pid in aligned
-    }
+
+    paper_index = {pid: _entry(pid) for pid in aligned}
+
+    # Enrich every paper in a top cluster with citation counts. We skip papers
+    # outside the top clusters because they're not surfaced in the UI; this
+    # keeps Semantic Scholar API usage at ~one batch per cluster window.
+    cluster_member_ids: set[str] = set()
+    for c in out_clusters:
+        cluster_member_ids.update(c.get("all_paper_ids") or [])
+    citation_target = {pid: paper_index[pid] for pid in cluster_member_ids if pid in paper_index}
+    try:
+        enrich_paper_index(citation_target)
+    except Exception as e:
+        print(f"  citations: enrichment failed ({e}); continuing without", file=sys.stderr)
+
+    # For each cluster pick a "seminal" paper — most-cited member — plus
+    # citation-density stats (avg citations across the cluster). Density
+    # signals maturity: high = established field, low = nascent / fresh.
+    for c in out_clusters:
+        ids = c.get("all_paper_ids") or []
+        scored = []
+        for pid in ids:
+            meta = paper_index.get(pid) or {}
+            cc = meta.get("citation_count")
+            if cc is None:
+                continue
+            scored.append((cc, meta.get("influential_count", 0), pid))
+        if scored:
+            scored.sort(reverse=True)
+            top_cc, top_inf, top_pid = scored[0]
+            # Only mark as seminal if it actually has citations — every-paper-zero
+            # clusters (genuinely fresh research) shouldn't get a misleading badge.
+            if top_cc > 0:
+                c["seminal_paper_id"] = top_pid
+                c["seminal_citations"] = top_cc
+                c["seminal_influential"] = top_inf
+                # Make sure the seminal paper has full metadata in paper_index
+                # (it may have been a long-tail paper that we trimmed).
+                if top_pid in papers and paper_index.get(top_pid, {}).get("title") is None:
+                    p = papers[top_pid]
+                    paper_index[top_pid] = {
+                        **paper_index.get(top_pid, {}),
+                        "title": (p.get("title") or "").strip(),
+                        "abs": p.get("abs") or f"https://arxiv.org/abs/{top_pid}",
+                        "categories": p.get("categories", []),
+                    }
+            counts = [cc for cc, _, _ in scored]
+            c["citation_avg"] = round(sum(counts) / len(counts), 1)
+            c["citation_max"] = max(counts)
+            c["citation_coverage"] = round(len(scored) / max(len(ids), 1), 2)
 
     output = {
         "report_date": end_str,

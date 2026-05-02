@@ -29,9 +29,11 @@ from langchain_core.prompts import (
 # Allow running as module or as script
 try:
     from pipeline.structures import DailyBriefing
+    from pipeline.citations import enrich_paper_index
 except ImportError:
     sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from pipeline.structures import DailyBriefing
+    from pipeline.citations import enrich_paper_index
 
 if os.path.exists(".env"):
     dotenv.load_dotenv()
@@ -219,16 +221,40 @@ def main() -> None:
         print(f"LLM call failed: {e}", file=sys.stderr)
         sys.exit(1)
 
+    # Only keep papers actually referenced by the briefing in paper_index.
+    # The full corpus shipped here was inflating the JSON payload (and
+    # parse time on the client) without being rendered anywhere.
+    referenced_ids: set[str] = set()
+    for theme in briefing.themes:
+        referenced_ids.update(theme.paper_ids or [])
+    for pick in briefing.top_picks:
+        if pick.arxiv_id:
+            referenced_ids.add(pick.arxiv_id)
+    for wn in briefing.worth_noting:
+        if wn.arxiv_id:
+            referenced_ids.add(wn.arxiv_id)
+
     paper_index = {
         p["id"]: {
             "title": (p.get("title") or "").strip(),
             "authors": p.get("authors", []),
             "abs": p.get("abs") or f"https://arxiv.org/abs/{p['id']}",
             "categories": p.get("categories", []),
-            "summary": p.get("summary", ""),
+            # Note: `summary` (full abstract) is intentionally omitted — the UI
+            # never renders it, and including it ~doubles the JSON size.
         }
-        for p in papers if p.get("id")
+        for p in papers if p.get("id") and p["id"] in referenced_ids
     }
+
+    # Enrich with citation counts from Semantic Scholar. Only the ~25 papers
+    # actually referenced by the briefing — keeps API usage trivial. Most
+    # day-of papers will have 0 citations; the rare paper with a real count
+    # is usually a v2 of a previously-published paper or a late-flagged
+    # cross-list. Surfacing those is the point.
+    try:
+        enrich_paper_index(paper_index)
+    except Exception as e:
+        print(f"  citations: enrichment failed ({e}); continuing without", file=sys.stderr)
 
     out = {
         "date": date,

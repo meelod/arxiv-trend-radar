@@ -1,33 +1,33 @@
 import { Link } from 'react-router-dom';
 
 const Section = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
-  <section id={id} className="space-y-3">
-    <h2 className="text-xl font-semibold border-b border-zinc-200 dark:border-zinc-700 pb-2">{title}</h2>
-    <div className="text-zinc-700 dark:text-zinc-300 leading-relaxed space-y-3 text-[15px]">{children}</div>
+  <section id={id} className="space-y-4 scroll-mt-24">
+    <h2 className="font-serif font-semibold text-[24px] leading-tight tracking-tight border-b border-stone-200 dark:border-stone-800 pb-3 text-stone-900 dark:text-stone-50">{title}</h2>
+    <div className="text-stone-700 dark:text-stone-300 leading-[1.7] space-y-3 text-[15px]">{children}</div>
   </section>
 );
 
 const Q = ({ q, children }: { q: string; children: React.ReactNode }) => (
   <div>
-    <p className="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">{q}</p>
-    <div className="text-zinc-700 dark:text-zinc-300">{children}</div>
+    <p className="font-semibold text-stone-900 dark:text-stone-100 mb-1">{q}</p>
+    <div className="text-stone-700 dark:text-stone-300">{children}</div>
   </div>
 );
 
 export default function Info() {
   return (
-    <div className="space-y-8 max-w-3xl">
-      <div className="pb-4 border-b border-zinc-200 dark:border-zinc-700">
-        <p className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold">Info</p>
-        <h1 className="text-2xl font-semibold mt-1 text-zinc-900 dark:text-zinc-100">How this works</h1>
-        <p className="text-zinc-600 dark:text-zinc-400 mt-2">
+    <div className="space-y-10 max-w-3xl">
+      <header className="space-y-3">
+        <span className="eyebrow">Info</span>
+        <h1 className="h-display text-[40px] sm:text-[48px]">How this works</h1>
+        <p className="text-stone-600 dark:text-stone-400 mt-2 text-[15px] leading-relaxed max-w-[58ch]">
           Reference for the abbreviations, scores, and visualizations on the site.
         </p>
-      </div>
+      </header>
 
       {/* Quick nav */}
-      <nav className="card !p-4 text-sm">
-        <p className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold mb-2">Jump to</p>
+      <nav className="card text-sm">
+        <p className="eyebrow mb-3">Jump to</p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-1 gap-x-4">
           <li><a href="#daily" className="text-accent-500 hover:underline">Daily briefing</a></li>
           <li><a href="#picks" className="text-accent-500 hover:underline">Top picks ranking</a></li>
@@ -132,12 +132,12 @@ export default function Info() {
         </p>
         <table className="text-sm w-full">
           <thead>
-            <tr className="text-left border-b border-zinc-200 dark:border-zinc-700">
+            <tr className="text-left border-b border-stone-200 dark:border-stone-700">
               <th className="py-1 pr-4 font-semibold">Value</th>
               <th className="py-1 font-semibold">Meaning</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
+          <tbody className="divide-y divide-stone-100 dark:divide-stone-800">
             <tr><td className="py-1 pr-4 font-mono">×1.0</td><td className="py-1">Constant — same rate as before</td></tr>
             <tr><td className="py-1 pr-4 font-mono">×1.2-1.5</td><td className="py-1">Modestly growing (+20-50% papers/week)</td></tr>
             <tr><td className="py-1 pr-4 font-mono">×1.5-2.0</td><td className="py-1">Clearly growing (+50-100%)</td></tr>
@@ -147,7 +147,7 @@ export default function Info() {
             <tr><td className="py-1 pr-4 font-mono">×&lt;0.5</td><td className="py-1">Strong decline</td></tr>
           </tbody>
         </table>
-        <p className="text-zinc-500 dark:text-zinc-400 text-sm italic">
+        <p className="text-stone-500 dark:text-stone-400 text-sm italic">
           The status tag (NEW / GROWING / etc.) is a discrete summary of the same signal; the
           number gives the magnitude. Both are derived from the cluster's paper dates.
         </p>
@@ -214,13 +214,13 @@ export default function Info() {
         </p>
         <table className="text-sm w-full">
           <thead>
-            <tr className="text-left border-b border-zinc-200 dark:border-zinc-700">
+            <tr className="text-left border-b border-stone-200 dark:border-stone-700">
               <th className="py-1 pr-4 font-semibold">Level</th>
               <th className="py-1 pr-4 font-semibold">What the LLM means</th>
               <th className="py-1 font-semibold">Action</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
+          <tbody className="divide-y divide-stone-100 dark:divide-stone-800">
             <tr>
               <td className="py-2 pr-4 font-bold text-green-700 dark:text-green-400">HIGH</td>
               <td className="py-2 pr-4">Gap appears real, thesis not obviously executed, commercially viable</td>
@@ -238,7 +238,7 @@ export default function Info() {
             </tr>
           </tbody>
         </table>
-        <p className="text-zinc-500 dark:text-zinc-400 text-sm italic">
+        <p className="text-stone-500 dark:text-stone-400 text-sm italic">
           Caveat: the LLM has a training cutoff and can miss recently-funded startups, cite pivoted
           companies, or underrate fast-moving small ones. Even HIGH should be treated as directional
           until validated against current data. (Adding live web-search-based competitor validation

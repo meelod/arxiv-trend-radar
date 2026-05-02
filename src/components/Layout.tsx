@@ -12,22 +12,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="sticky top-0 z-20 border-b border-stone-200/70 dark:border-stone-800/70 bg-paper/80 dark:bg-ink/80 backdrop-blur-md">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="group flex items-center gap-2.5">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3">
+          <Link to="/" className="group flex items-center gap-2 shrink-0">
             <span
               aria-hidden
-              className="inline-block w-2.5 h-2.5 rounded-full bg-accent-500 group-hover:bg-accent-400 transition-colors"
+              className="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-accent-500 group-hover:bg-accent-400 transition-colors"
             />
-            <span className="font-serif text-[18px] font-semibold tracking-tight text-stone-900 dark:text-stone-50">
+            <span className="font-serif text-[16px] sm:text-[18px] font-semibold tracking-tight text-stone-900 dark:text-stone-50">
               arxiv<span className="text-accent-500">·</span>radar
             </span>
           </Link>
-          <nav className="flex items-center gap-6 text-sm">
+          <nav className="flex items-center gap-3 sm:gap-6 text-[13px] sm:text-sm">
             <NavLink to="/" end className={linkClass}>Daily</NavLink>
             <NavLink to="/trends" className={linkClass}>Trends</NavLink>
             <NavLink to="/bookmarks" className={linkClass}>Bookmarks</NavLink>
             <NavLink to="/info" className={linkClass}>Info</NavLink>
-            <span className="w-px h-4 bg-stone-300 dark:bg-stone-700" />
+            <span className="hidden sm:inline-block w-px h-4 bg-stone-300 dark:bg-stone-700" />
             <ThemeToggle />
           </nav>
         </div>

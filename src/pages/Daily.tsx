@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Briefing, listBriefings, loadBriefing } from '../lib/data';
+import { Briefing, listBriefings, loadBriefing, loadLatestBriefing } from '../lib/data';
 import { PaperBadge } from '../components/PaperBadge';
 import { StarButton } from '../components/StarButton';
 import { ReadButton } from '../components/ReadButton';
@@ -17,21 +17,38 @@ export default function Daily() {
   useStateVersion(); // re-render on bookmark/read changes
   const hideRead = getHideRead();
 
+  // Race the preloaded latest.json against the list+load path. Whichever
+  // resolves first paints the page; selecting another date later goes through
+  // loadBriefing as before.
   useEffect(() => {
+    let cancelled = false;
+    loadLatestBriefing()
+      .then((b) => {
+        if (cancelled || !b) return;
+        // Only use latest if user hasn't already picked a different date.
+        setBriefing((prev) => prev ?? b);
+      })
+      .catch(() => { /* fall through to list path */ });
+
     listBriefings()
       .then((files) => {
+        if (cancelled) return;
         setAvailable(files);
-        if (files.length > 0) setSelected(files[0]);
+        if (files.length > 0) setSelected((s) => s ?? files[0]);
       })
       .catch((e) => setError(`Could not load briefing list: ${e.message}`));
+    return () => { cancelled = true; };
   }, []);
 
   useEffect(() => {
     if (!selected) return;
+    // If we already have a briefing for the selected date (from latest.json), skip.
+    if (briefing && briefing.date === selected.replace('.json', '')) return;
     setBriefing(null);
     loadBriefing(selected)
       .then(setBriefing)
       .catch((e) => setError(`Failed to load ${selected}: ${e.message}`));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
 
   if (error) {
@@ -173,11 +190,23 @@ export default function Daily() {
                             <span className="font-mono text-[10px] text-stone-500 dark:text-stone-400 tabular-nums">{score}/10</span>
                           </div>
                         </Tooltip>
-                        <span className="font-mono text-[10px] text-stone-400 dark:text-stone-500">{pick.arxiv_id}</span>
+                        <div className="flex items-center gap-2">
+                          {typeof meta?.citation_count === 'number' && meta.citation_count > 0 && (
+                            <Tooltip text={`${meta.citation_count} citations${meta.influential_count ? ` (${meta.influential_count} influential)` : ''} per Semantic Scholar. Most arXiv papers picked up by the daily briefing are brand new and uncited; a non-zero count usually means this is a v2/v3 of an earlier paper or a late-flagged cross-list — either way, an existing-impact signal worth weighing alongside the LLM's relevance score.`}>
+                              <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-amber-100/80 dark:bg-amber-500/15 text-amber-800 dark:text-amber-300 text-[10px] font-mono tabular-nums">
+                                <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                  <path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z" />
+                                </svg>
+                                {meta.citation_count >= 1000 ? `${(meta.citation_count / 1000).toFixed(meta.citation_count >= 10000 ? 0 : 1)}k` : meta.citation_count}
+                              </span>
+                            </Tooltip>
+                          )}
+                          <span className="font-mono text-[10px] text-stone-400 dark:text-stone-500">{pick.arxiv_id}</span>
+                        </div>
                       </div>
                       <h3 className="font-serif font-semibold text-[18px] leading-[1.25] tracking-tight mb-2 text-stone-900 dark:text-stone-50 group-hover:text-accent-500">{pick.title}</h3>
                       <p className="text-stone-600 dark:text-stone-300 text-[14px] leading-[1.6]">{pick.why_it_matters}</p>
-                      {meta && (
+                      {meta?.categories && meta.categories.length > 0 && (
                         <div className="mt-3 flex flex-wrap gap-1.5">
                           {meta.categories.slice(0, 3).map((c) => (
                             <span key={c} className="pill" title={labelWithCode(c)}>{c}</span>
@@ -262,7 +291,7 @@ export default function Daily() {
                     className="flex-1 min-w-0"
                   >
                     <p className="text-[14px] text-stone-800 dark:text-stone-200 leading-snug">{wn.one_liner}</p>
-                    {meta && (
+                    {meta?.title && (
                       <p className="text-[11px] text-stone-500 dark:text-stone-400 mt-1 font-mono">
                         {wn.arxiv_id} · <span className="font-sans">{meta.title.slice(0, 80)}{meta.title.length > 80 ? '…' : ''}</span>
                       </p>

@@ -1,10 +1,16 @@
+import { lazy, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Daily from './pages/Daily';
-import Trends from './pages/Trends';
-import Bookmarks from './pages/Bookmarks';
-import Info from './pages/Info';
-import TrendCluster from './pages/TrendCluster';
 import { Layout } from './components/Layout';
+
+const Daily = lazy(() => import('./pages/Daily'));
+const Trends = lazy(() => import('./pages/Trends'));
+const Bookmarks = lazy(() => import('./pages/Bookmarks'));
+const Info = lazy(() => import('./pages/Info'));
+const TrendCluster = lazy(() => import('./pages/TrendCluster'));
+
+const Fallback = () => (
+  <div className="text-stone-500 dark:text-stone-400">Loading…</div>
+);
 
 export default function App() {
   return (
@@ -13,7 +19,9 @@ export default function App() {
         path="/"
         element={
           <Layout>
-            <Daily />
+            <Suspense fallback={<Fallback />}>
+              <Daily />
+            </Suspense>
           </Layout>
         }
       />
@@ -21,7 +29,9 @@ export default function App() {
         path="/trends"
         element={
           <Layout>
-            <Trends />
+            <Suspense fallback={<Fallback />}>
+              <Trends />
+            </Suspense>
           </Layout>
         }
       />
@@ -29,7 +39,9 @@ export default function App() {
         path="/bookmarks"
         element={
           <Layout>
-            <Bookmarks />
+            <Suspense fallback={<Fallback />}>
+              <Bookmarks />
+            </Suspense>
           </Layout>
         }
       />
@@ -37,7 +49,9 @@ export default function App() {
         path="/info"
         element={
           <Layout>
-            <Info />
+            <Suspense fallback={<Fallback />}>
+              <Info />
+            </Suspense>
           </Layout>
         }
       />
@@ -45,7 +59,9 @@ export default function App() {
         path="/trends/:date/:slug"
         element={
           <Layout>
-            <TrendCluster />
+            <Suspense fallback={<Fallback />}>
+              <TrendCluster />
+            </Suspense>
           </Layout>
         }
       />

@@ -13,7 +13,7 @@ export function ReadButton({ id, className = '' }: { id: string; className?: str
         toggleRead(id);
       }}
       className={`shrink-0 inline-flex items-center justify-center rounded-md p-1 transition-colors ${
-        read ? 'text-emerald-500 hover:text-emerald-600' : 'text-zinc-300 dark:text-zinc-700 hover:text-zinc-500 dark:text-zinc-400'
+        read ? 'text-emerald-500 hover:text-emerald-600' : 'text-stone-300 dark:text-stone-600 hover:text-stone-500 dark:hover:text-stone-400'
       } ${className}`}
       title={read ? 'Mark as unread' : 'Mark as read'}
       aria-label={read ? 'Mark as unread' : 'Mark as read'}

@@ -58,75 +58,98 @@ export function ClusterCard({
     status === 'growing' ? 'text-amber-600' :
     status === 'shrinking' ? 'text-red-500' :
     status === 'new' ? 'text-blue-600' :
-    'text-zinc-500 dark:text-zinc-400';
+    'text-stone-500 dark:text-stone-400';
 
   const slug = slugifyLabel(cluster.label);
   const permalinkPath = reportDate ? `/trends/${reportDate}/${slug}` : null;
 
+  const confidenceConf =
+    cluster.confidence === 'high'
+      ? 'bg-green-50 dark:bg-green-950/40 text-green-800 dark:text-green-300 ring-green-200/80 dark:ring-green-800/60'
+      : cluster.confidence === 'medium'
+        ? 'bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-300 ring-amber-200/80 dark:ring-amber-800/60'
+        : 'bg-red-50 dark:bg-red-950/40 text-red-800 dark:text-red-300 ring-red-200/80 dark:ring-red-800/60';
+  void confidenceClass;
+
   return (
-    <div className="card space-y-3">
-      <div className="flex items-baseline justify-between flex-wrap gap-2">
-        <h3 className="text-lg font-semibold leading-snug flex-1">
-          {showPermalink && permalinkPath ? (
-            <Link to={permalinkPath} className="hover:underline">{cluster.label}</Link>
-          ) : (
-            cluster.label
-          )}
-        </h3>
-        <div className="flex items-center gap-1.5 flex-wrap">
+    <article className="card space-y-5">
+      <header className="space-y-3">
+        <div className="flex items-start justify-between flex-wrap gap-3">
+          <h3 className="font-serif font-semibold text-[22px] leading-[1.2] tracking-tight text-stone-900 dark:text-stone-50 flex-1 min-w-[260px]">
+            {showPermalink && permalinkPath ? (
+              <Link to={permalinkPath} className="hover:text-accent-500 transition-colors">{cluster.label}</Link>
+            ) : (
+              cluster.label
+            )}
+          </h3>
           {paperDates.length > 0 && (
             <Tooltip text="Weekly paper count over the last 12 weeks. Each bar = one week. Color matches status.">
               <Sparkline paperDates={paperDates} className={sparkColor} />
             </Tooltip>
           )}
+        </div>
+
+        <div className="flex items-center gap-1.5 flex-wrap">
           <Tooltip text={STATUS_TOOLTIPS[status] || ''}>
             <span className={statusPill}>{statusText}</span>
           </Tooltip>
-          <span className="pill">{cluster.size} papers</span>
+          <span className="pill font-mono tabular-nums">{cluster.size} papers</span>
           <Tooltip text={`${cluster.growth_ratio < 0.8 ? 'Cooling' : cluster.growth_ratio > 1.2 ? 'Growing' : 'Roughly steady'}: papers/week recently is ${cluster.growth_ratio}× the prior 8-week baseline.`}>
-            <span className="pill">growth ×{cluster.growth_ratio}</span>
+            <span className="pill font-mono tabular-nums">growth ×{cluster.growth_ratio}</span>
           </Tooltip>
           {cluster.confidence && (
             <Tooltip text={CONFIDENCE_TOOLTIPS[cluster.confidence.toLowerCase()] || ''}>
-              <span className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold ${confidenceClass}`}>
+              <span className={`text-[10px] uppercase tracking-[0.14em] px-2 py-0.5 rounded-full font-semibold ring-1 ${confidenceConf}`}>
                 {cluster.confidence}
               </span>
             </Tooltip>
           )}
+          {typeof cluster.citation_avg === 'number' && cluster.citation_avg > 0 && (
+            <Tooltip text={`Avg ${cluster.citation_avg} citations across ${cluster.size} papers (max ${cluster.citation_max}). High avg = mature field, low avg = nascent / emerging research direction.`}>
+              <span className="pill font-mono tabular-nums inline-flex items-center gap-1">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z" />
+                </svg>
+                avg {cluster.citation_avg}
+              </span>
+            </Tooltip>
+          )}
         </div>
-      </div>
 
-      {cluster.matched_prev_label && cluster.matched_prev_label !== cluster.label && (
-        <p className="text-xs text-zinc-500 dark:text-zinc-400">Last week: "{cluster.matched_prev_label}"</p>
-      )}
+        {cluster.matched_prev_label && cluster.matched_prev_label !== cluster.label && (
+          <p className="text-xs text-stone-500 dark:text-stone-400">Last week: &ldquo;{cluster.matched_prev_label}&rdquo;</p>
+        )}
 
-      <p className="text-zinc-700 dark:text-zinc-300 italic text-sm">{cluster.one_line}</p>
+        <p className="font-serif italic text-[16px] leading-[1.5] text-stone-700 dark:text-stone-300 max-w-[68ch]">
+          {cluster.one_line}
+        </p>
 
-      {cluster.keywords?.length > 0 && (
-        <div className="flex flex-wrap gap-1.5">
-          {cluster.keywords.map((k) => (
-            <span key={k} className="text-[11px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-900">
-              {k}
-            </span>
-          ))}
-        </div>
-      )}
+        {cluster.keywords?.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
+            {cluster.keywords.map((k) => (
+              <span key={k} className="text-[11px] px-2 py-0.5 rounded-full bg-accent-50 dark:bg-accent-500/10 text-accent-700 dark:text-accent-300 border border-accent-100 dark:border-accent-500/20">
+                {k}
+              </span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <hr className="border-stone-200/70 dark:border-stone-800/70" />
 
       {cluster.existing_companies && cluster.existing_companies.length > 0 && (
         <div>
           <span className="section-label">Existing companies</span>
           <ul className="space-y-1.5">
             {cluster.existing_companies.map((co, i) => (
-              <li key={i} className="text-sm">
-                <span className="font-semibold text-zinc-900 dark:text-zinc-100">{co.name}</span>
+              <li key={i} className="text-[14px] leading-[1.55]">
+                <span className="font-semibold text-stone-900 dark:text-stone-100">{co.name}</span>
                 {co.stage && co.stage !== 'unknown' && (
-                  <span className="ml-2 text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 font-mono">
-                    {co.stage}
-                  </span>
+                  <span className="ml-2 pill-mono">{co.stage}</span>
                 )}
-                <span className="text-zinc-700 dark:text-zinc-300"> — {co.what_they_do}</span>
+                <span className="text-stone-700 dark:text-stone-300"> — {co.what_they_do}</span>
                 {co.why_relevant && (
-                  <span className="text-zinc-500 dark:text-zinc-400 italic"> ({co.why_relevant})</span>
+                  <span className="text-stone-500 dark:text-stone-400 italic"> ({co.why_relevant})</span>
                 )}
               </li>
             ))}
@@ -134,31 +157,67 @@ export function ClusterCard({
         </div>
       )}
 
-      <div>
-        <span className="section-label">Existing landscape</span>
-        <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.existing_landscape}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+        <div>
+          <span className="section-label">Existing landscape</span>
+          <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.65]">{cluster.existing_landscape}</p>
+        </div>
+        <div>
+          <span className="section-label">Research–industry gap</span>
+          <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.65]">{cluster.research_industry_gap}</p>
+        </div>
       </div>
 
-      <div>
-        <span className="section-label">Research–industry gap</span>
-        <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.research_industry_gap}</p>
-      </div>
-
-      <div>
+      <div className="border-l-[3px] border-accent-500 pl-4 py-1">
         <span className="section-label">Startup thesis</span>
-        <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.startup_thesis}</p>
+        <p className="font-serif text-[16px] leading-[1.55] text-stone-800 dark:text-stone-200">{cluster.startup_thesis}</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
         <div>
           <span className="section-label">Why now</span>
-          <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.why_now}</p>
+          <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.65]">{cluster.why_now}</p>
         </div>
         <div>
           <span className="section-label">Risks</span>
-          <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.risks}</p>
+          <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.65]">{cluster.risks}</p>
         </div>
       </div>
+
+      {cluster.seminal_paper_id && (() => {
+        const sid = cluster.seminal_paper_id;
+        const meta = paperIndex[sid];
+        const cites = cluster.seminal_citations ?? meta?.citation_count ?? 0;
+        const inf = cluster.seminal_influential ?? meta?.influential_count ?? 0;
+        return (
+          <div>
+            <span className="section-label">Seminal paper</span>
+            <Tooltip text={`Most-cited paper in this cluster${inf ? ` (${inf} influential citations)` : ''}. Anchor work the rest of the cluster builds on or reacts to. Citation counts via Semantic Scholar.`}>
+              <a
+                href={meta?.abs || `https://arxiv.org/abs/${sid}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group rounded-md border border-amber-200/60 dark:border-amber-500/30 bg-amber-50/60 dark:bg-amber-500/5 px-3 py-2 hover:border-amber-300 dark:hover:border-amber-500/50 hover:bg-amber-50 dark:hover:bg-amber-500/10 transition-colors"
+              >
+                <div className="flex items-start gap-2.5">
+                  <span className="inline-flex items-center gap-0.5 mt-0.5 px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-500/20 text-amber-900 dark:text-amber-200 text-[10px] font-mono tabular-nums shrink-0">
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z" />
+                    </svg>
+                    {cites >= 1000 ? `${(cites / 1000).toFixed(cites >= 10000 ? 0 : 1)}k` : cites}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-[14px] leading-snug text-stone-800 dark:text-stone-200 group-hover:text-amber-900 dark:group-hover:text-amber-200">
+                      {meta?.title || sid}
+                    </p>
+                    <p className="text-[10px] font-mono text-stone-500 dark:text-stone-400 mt-0.5">{sid}</p>
+                  </div>
+                </div>
+              </a>
+            </Tooltip>
+          </div>
+        );
+      })()}
 
       {cluster.sample_paper_ids?.length > 0 && (
         <div>
@@ -170,6 +229,6 @@ export function ClusterCard({
           </div>
         </div>
       )}
-    </div>
+    </article>
   );
 }

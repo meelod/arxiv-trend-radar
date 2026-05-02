@@ -19,12 +19,17 @@ export interface Briefing {
 }
 
 export interface PaperMeta {
-  title: string;
-  authors: string[];
-  abs: string;
-  categories: string[];
+  // title / abs / categories are present for sample papers and the daily
+  // briefing's referenced papers. The trends report's long-tail papers
+  // (used only for sparklines + author rollups) only carry date + authors.
+  title?: string;
+  abs?: string;
+  categories?: string[];
+  authors?: string[];
   summary?: string;
   date?: string;
+  citation_count?: number;
+  influential_count?: number;
 }
 
 export interface TrendsReport {
@@ -68,6 +73,12 @@ export interface TrendCluster {
   status: 'new' | 'growing' | 'stable' | 'shrinking';
   delta_pct: number | null;
   matched_prev_label: string | null;
+  seminal_paper_id?: string;
+  seminal_citations?: number;
+  seminal_influential?: number;
+  citation_avg?: number;
+  citation_max?: number;
+  citation_coverage?: number;
 }
 
 /**
@@ -100,6 +111,15 @@ async function fetchJson<T>(path: string): Promise<T> {
   return r.json();
 }
 
+// Optimistic fetch — returns the response if it 200s, null on 404.
+// Used for /data/{briefings,trends}/latest.json which may not exist yet.
+async function fetchJsonIfExists<T>(path: string): Promise<T | null> {
+  const r = await fetch(path);
+  if (r.status === 404) return null;
+  if (!r.ok) throw new Error(`${path} → ${r.status}`);
+  return r.json();
+}
+
 function parseList(txt: string): string[] {
   return txt
     .split('\n')
@@ -123,6 +143,10 @@ export async function loadBriefing(file: string): Promise<Briefing> {
   return fetchJson<Briefing>(`/data/briefings/${file}`);
 }
 
+export async function loadLatestBriefing(): Promise<Briefing | null> {
+  return fetchJsonIfExists<Briefing>('/data/briefings/latest.json');
+}
+
 export async function listTrends(): Promise<string[]> {
   try {
     return parseList(await fetchText('/data/trends/trends-list.txt'));
@@ -134,4 +158,8 @@ export async function listTrends(): Promise<string[]> {
 
 export async function loadTrends(file: string): Promise<TrendsReport> {
   return fetchJson<TrendsReport>(`/data/trends/${file}`);
+}
+
+export async function loadLatestTrends(): Promise<TrendsReport | null> {
+  return fetchJsonIfExists<TrendsReport>('/data/trends/latest.json');
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TrendsReport, listTrends, loadTrends } from '../lib/data';
+import { TrendsReport, listTrends, loadTrends, loadLatestTrends } from '../lib/data';
 import { ClusterCard } from '../components/ClusterCard';
 
 function TopAuthors({ report }: { report: TrendsReport }) {
@@ -41,14 +41,12 @@ function TopAuthors({ report }: { report: TrendsReport }) {
 
   return (
     <div className="card">
-      <h4 className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold mb-3">
-        {label}
-      </h4>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
+      <h4 className="eyebrow mb-4">{label}</h4>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-sm">
         {top.map(([name, count]) => (
-          <div key={name} className="flex items-baseline justify-between gap-2">
-            <span className="text-zinc-800 dark:text-zinc-200 truncate">{name}</span>
-            <span className="text-xs text-zinc-500 dark:text-zinc-400 font-mono shrink-0">{count}</span>
+          <div key={name} className="flex items-baseline justify-between gap-2 border-b border-dotted border-stone-200 dark:border-stone-800 pb-1">
+            <span className="text-stone-800 dark:text-stone-200 truncate">{name}</span>
+            <span className="text-xs text-stone-500 dark:text-stone-400 font-mono tabular-nums shrink-0">{count}</span>
           </div>
         ))}
       </div>
@@ -71,55 +69,59 @@ function WhatChanged({ report }: { report: TrendsReport }) {
     return null;
   }
 
+  const Block = ({
+    color, accent, title, count, children,
+  }: { color: string; accent: string; title: string; count: number; children: React.ReactNode }) => (
+    <div className="card relative">
+      <div className={`absolute top-0 left-0 right-0 h-[2px] ${color}`} />
+      <div className="flex items-baseline justify-between mb-3">
+        <h4 className={`eyebrow ${accent}`}>{title}</h4>
+        <span className="font-serif text-[20px] tabular-nums text-stone-700 dark:text-stone-300">{count}</span>
+      </div>
+      {children}
+    </div>
+  );
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-      <div className="card">
-        <h4 className="text-xs uppercase tracking-wider text-blue-700 font-semibold mb-2">
-          New ({newClusters.length})
-        </h4>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <Block color="bg-blue-500" accent="!text-blue-700 dark:!text-blue-400" title="New" count={newClusters.length}>
         {newClusters.length === 0 ? (
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">None</p>
+          <p className="text-sm text-stone-500 dark:text-stone-400">None</p>
         ) : (
-          <ul className="text-sm text-zinc-700 dark:text-zinc-300 space-y-1">
+          <ul className="text-sm text-stone-700 dark:text-stone-300 space-y-1.5">
             {newClusters.slice(0, 5).map((c) => (
-              <li key={c.cluster_id}>· {c.label}</li>
+              <li key={c.cluster_id} className="leading-snug">{c.label}</li>
             ))}
           </ul>
         )}
-      </div>
+      </Block>
 
-      <div className="card">
-        <h4 className="text-xs uppercase tracking-wider text-amber-700 font-semibold mb-2">
-          Growing ({topGrowers.length})
-        </h4>
+      <Block color="bg-amber-500" accent="!text-amber-700 dark:!text-amber-400" title="Growing" count={topGrowers.length}>
         {topGrowers.length === 0 ? (
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">None</p>
+          <p className="text-sm text-stone-500 dark:text-stone-400">None</p>
         ) : (
-          <ul className="text-sm text-zinc-700 dark:text-zinc-300 space-y-1">
+          <ul className="text-sm text-stone-700 dark:text-stone-300 space-y-1.5">
             {topGrowers.map((c) => (
-              <li key={c.cluster_id}>
-                · {c.label}{' '}
-                <span className="text-amber-700 font-mono text-xs">+{c.delta_pct}%</span>
+              <li key={c.cluster_id} className="flex items-baseline gap-2 leading-snug">
+                <span className="flex-1">{c.label}</span>
+                <span className="text-amber-700 dark:text-amber-400 font-mono text-[11px] tabular-nums shrink-0">+{c.delta_pct}%</span>
               </li>
             ))}
           </ul>
         )}
-      </div>
+      </Block>
 
-      <div className="card">
-        <h4 className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold mb-2">
-          Dropped ({dropped.length})
-        </h4>
+      <Block color="bg-stone-400" accent="" title="Dropped" count={dropped.length}>
         {dropped.length === 0 ? (
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">None</p>
+          <p className="text-sm text-stone-500 dark:text-stone-400">None</p>
         ) : (
-          <ul className="text-sm text-zinc-700 dark:text-zinc-300 space-y-1">
+          <ul className="text-sm text-stone-600 dark:text-stone-400 space-y-1.5">
             {dropped.slice(0, 5).map((d, i) => (
-              <li key={i} className="text-zinc-600 dark:text-zinc-400">· {d.label || '(unlabeled)'}</li>
+              <li key={i} className="leading-snug">{d.label || '(unlabeled)'}</li>
             ))}
           </ul>
         )}
-      </div>
+      </Block>
     </div>
   );
 }
@@ -138,20 +140,32 @@ export default function Trends() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    let cancelled = false;
+    loadLatestTrends()
+      .then((r) => {
+        if (cancelled || !r) return;
+        setReport((prev) => prev ?? r);
+      })
+      .catch(() => { /* fall through */ });
+
     listTrends()
       .then((files) => {
+        if (cancelled) return;
         setAvailable(files);
-        if (files.length > 0) setSelected(files[0]);
+        if (files.length > 0) setSelected((s) => s ?? files[0]);
       })
       .catch((e) => setError(`Could not load trend list: ${e.message}`));
+    return () => { cancelled = true; };
   }, []);
 
   useEffect(() => {
     if (!selected) return;
+    if (report && `${report.report_date}.json` === selected) return;
     setReport(null);
     loadTrends(selected)
       .then(setReport)
       .catch((e) => setError(`Failed to load ${selected}: ${e.message}`));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
 
   if (error) {
@@ -222,7 +236,12 @@ export default function Trends() {
         </div>
         <div className="space-y-4">
           {sortedClusters.map((c) => (
-            <ClusterCard key={c.cluster_id} cluster={c} paperIndex={report.paper_index} />
+            <ClusterCard
+              key={c.cluster_id}
+              cluster={c}
+              paperIndex={report.paper_index}
+              reportDate={report.report_date}
+            />
           ))}
         </div>
       </section>

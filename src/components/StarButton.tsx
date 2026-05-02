@@ -22,7 +22,7 @@ export function StarButton({
         toggleBookmark(entry);
       }}
       className={`shrink-0 inline-flex items-center justify-center rounded-md p-1 transition-colors ${
-        starred ? 'text-amber-500 hover:text-amber-600' : 'text-zinc-300 dark:text-zinc-700 hover:text-zinc-500 dark:text-zinc-400'
+        starred ? 'text-amber-500 hover:text-amber-600' : 'text-stone-300 dark:text-stone-600 hover:text-stone-500 dark:hover:text-stone-400'
       } ${className}`}
       title={starred ? 'Remove bookmark' : 'Bookmark this paper'}
       aria-label={starred ? 'Remove bookmark' : 'Bookmark this paper'}

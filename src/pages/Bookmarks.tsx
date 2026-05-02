@@ -9,9 +9,9 @@ export default function Bookmarks() {
 
   if (items.length === 0) {
     return (
-      <div className="card text-center text-zinc-500 dark:text-zinc-400 py-12">
-        <p className="font-semibold mb-1">No bookmarks yet.</p>
-        <p className="text-sm">
+      <div className="card text-center text-stone-500 dark:text-stone-400 py-16">
+        <p className="font-serif text-[20px] text-stone-700 dark:text-stone-300 mb-2">No bookmarks yet.</p>
+        <p className="text-sm max-w-md mx-auto leading-relaxed">
           Click the star on any paper to save it here. Bookmarks live in this browser only — clearing site data removes them.
         </p>
       </div>
@@ -19,39 +19,39 @@ export default function Bookmarks() {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="pb-4 border-b border-zinc-200 dark:border-zinc-700">
-        <p className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold">Bookmarks</p>
-        <h1 className="text-2xl font-semibold mt-1">
+    <div className="space-y-8">
+      <header className="space-y-3">
+        <span className="eyebrow">Bookmarks</span>
+        <h1 className="h-display text-[40px] sm:text-[48px]">
           {items.length} {items.length === 1 ? 'paper' : 'papers'} saved
         </h1>
-      </div>
+      </header>
 
-      <div className="space-y-3">
+      <div className="space-y-4">
         {items.map((b) => {
           const primary = b.categories?.[0];
           const colorCls = colorClassFor(primary);
           return (
-            <div key={b.id} className={`card border-l-4 ${colorCls}`}>
+            <div key={b.id} className={`card border-l-[3px] ${colorCls}`}>
               <div className="flex items-start gap-3">
                 <div className="flex-1 min-w-0">
                   <a
                     href={b.abs || `https://arxiv.org/abs/${b.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block hover:underline"
+                    className="block group"
                   >
-                    <h3 className="font-semibold leading-snug">{b.title}</h3>
+                    <h3 className="font-serif font-semibold text-[18px] leading-[1.25] tracking-tight text-stone-900 dark:text-stone-50 group-hover:text-accent-500 transition-colors">{b.title}</h3>
                   </a>
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1 font-mono">
+                  <p className="text-[11px] text-stone-500 dark:text-stone-400 mt-1.5 font-mono tabular-nums">
                     {b.id}
                     {b.paper_date && <span> · {b.paper_date}</span>}
                   </p>
                   {b.reason && (
-                    <p className="text-sm text-zinc-700 dark:text-zinc-300 mt-2 leading-relaxed">{b.reason}</p>
+                    <p className="text-[14px] text-stone-600 dark:text-stone-300 mt-3 leading-[1.6]">{b.reason}</p>
                   )}
                   {b.categories && b.categories.length > 0 && (
-                    <div className="mt-2 flex flex-wrap gap-1.5">
+                    <div className="mt-3 flex flex-wrap gap-1.5">
                       {b.categories.slice(0, 4).map((c) => (
                         <span key={c} className="pill" title={labelWithCode(c)}>
                           {c}
@@ -63,13 +63,13 @@ export default function Bookmarks() {
                 <button
                   type="button"
                   onClick={() => removeBookmark(b.id)}
-                  className="shrink-0 text-zinc-400 dark:text-zinc-500 hover:text-red-600 text-xs font-medium"
+                  className="shrink-0 text-stone-400 dark:text-stone-500 hover:text-accent-500 text-xs font-medium transition-colors"
                   title="Remove bookmark"
                 >
                   Remove
                 </button>
               </div>
-              <p className="text-[11px] text-zinc-400 dark:text-zinc-500 mt-3">
+              <p className="text-[10px] text-stone-400 dark:text-stone-500 mt-4 uppercase tracking-[0.14em]">
                 Saved {new Date(b.bookmarked_at).toLocaleDateString()}
               </p>
             </div>
