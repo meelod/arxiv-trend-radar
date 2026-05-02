@@ -41,10 +41,18 @@ export interface TrendsReport {
   paper_index: Record<string, PaperMeta>;
 }
 
+export interface Company {
+  name: string;
+  what_they_do: string;
+  stage: string;
+  why_relevant: string;
+}
+
 export interface TrendCluster {
   cluster_id: number;
   label: string;
   one_line: string;
+  existing_companies?: Company[];
   existing_landscape: string;
   research_industry_gap: string;
   startup_thesis: string;

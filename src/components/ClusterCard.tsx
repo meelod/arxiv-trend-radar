@@ -98,6 +98,28 @@ export function ClusterCard({
         </div>
       )}
 
+      {cluster.existing_companies && cluster.existing_companies.length > 0 && (
+        <div>
+          <span className="section-label">Existing companies</span>
+          <ul className="space-y-1.5">
+            {cluster.existing_companies.map((co, i) => (
+              <li key={i} className="text-sm">
+                <span className="font-semibold text-zinc-900 dark:text-zinc-100">{co.name}</span>
+                {co.stage && co.stage !== 'unknown' && (
+                  <span className="ml-2 text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 font-mono">
+                    {co.stage}
+                  </span>
+                )}
+                <span className="text-zinc-700 dark:text-zinc-300"> — {co.what_they_do}</span>
+                {co.why_relevant && (
+                  <span className="text-zinc-500 dark:text-zinc-400 italic"> ({co.why_relevant})</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div>
         <span className="section-label">Existing landscape</span>
         <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.existing_landscape}</p>

@@ -12,12 +12,18 @@ For each cluster you analyze, return a `ClusterAnalysis` with:
 
 1. **label** — concise, technical, no hype. Not "AI for X". Name the actual research direction.
 2. **one_line** — one sentence describing what the cluster is about.
-3. **existing_landscape** — name actual companies, products, or OSS projects. If you genuinely don't know any, say "no major dedicated products to my knowledge" — don't invent.
-4. **research_industry_gap** — be specific. Good answers point at a *capability* research has unlocked that no shipping product exposes, OR a *scale/efficiency/specialization* assumption current products violate.
-5. **startup_thesis** — concrete. Who is the buyer? What does the product do? Why is it hard to copy? Avoid "platform" and "ecosystem" — describe the first product.
-6. **why_now** — tie to the trend signal. If growth is high or status is NEW/GROWING, say so. If a specific recent result makes the thesis newly viable, name it.
-7. **risks** — be honest. If a hyperscaler will obviously do this, say so.
-8. **confidence** — high only if the gap is real, the thesis is non-obvious, AND it's commercially plausible. Most should be medium or low.
+3. **existing_companies** — a list of 3-7 actual companies/products/OSS projects working in this space. For EACH:
+   - `name` — real, named entity. NOT generic placeholders like "AI startups" or "various labs".
+   - `what_they_do` — one sentence describing their actual product or work, specific to this cluster.
+   - `stage` — Seed / Series A-F / Public / OSS / Acquired / unknown. Use "unknown" if you genuinely don't know.
+   - `why_relevant` — short phrase tying them to this cluster (which paper or capability).
+   If you genuinely cannot name 3 companies, return fewer or an empty list — DO NOT invent names. Bias toward well-known incumbents and recently-funded startups you have specific knowledge of.
+4. **existing_landscape** — 2-4 sentences synthesizing the competitive picture given the companies you listed. What do they collectively cover? Where do they overlap?
+5. **research_industry_gap** — be specific. Good answers point at a *capability* research has unlocked that NONE of the listed companies expose, OR a *scale/efficiency/specialization* assumption their products violate. Reference specific companies by name when relevant.
+6. **startup_thesis** — concrete. Who is the buyer? What does the product do? Why is it hard for the listed companies to copy? Avoid "platform" and "ecosystem" — describe the first product.
+7. **why_now** — tie to the trend signal. If growth is high or status is NEW/GROWING, say so. If a specific recent result makes the thesis newly viable, name it.
+8. **risks** — be honest. The most common risk is "[Listed Company] could add this as a feature." If true, say so explicitly.
+9. **confidence** — high ONLY if the gap is real GIVEN the listed companies, the thesis is non-obvious, AND it's commercially plausible. Most should be medium or low. The presence of strong incumbents in `existing_companies` should usually drop confidence to medium or low unless the gap is genuinely orthogonal.
 
 Then produce **overview** — 3-5 sentences summarizing what's happening across the input clusters. Explicitly call out: (a) what's genuinely new this period, (b) which directions are accelerating, (c) any dropped clusters worth noting.
 
