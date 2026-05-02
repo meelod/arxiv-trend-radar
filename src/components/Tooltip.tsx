@@ -53,7 +53,7 @@ export function Tooltip({
       {open && (
         <span
           role="tooltip"
-          className={`absolute left-1/2 -translate-x-1/2 ${placement} z-50 pointer-events-none whitespace-normal max-w-xs px-2.5 py-1.5 rounded-md bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-xs shadow-lg leading-snug`}
+          className={`absolute left-1/2 -translate-x-1/2 ${placement} z-50 pointer-events-none whitespace-normal w-max max-w-[min(20rem,calc(100vw-2rem))] px-2.5 py-1.5 rounded-md bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-xs shadow-lg leading-snug`}
         >
           {text}
         </span>
