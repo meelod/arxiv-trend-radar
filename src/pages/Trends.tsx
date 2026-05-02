@@ -1,14 +1,8 @@
 import { useEffect, useState } from 'react';
-import { TrendsReport, listTrends, loadTrends, loadLatestTrends, slugifyLabel } from '../lib/data';
+import { TrendsReport, MacroPattern, listTrends, loadTrends, loadLatestTrends, slugifyLabel } from '../lib/data';
 import { ClusterCard } from '../components/ClusterCard';
 import { Skeleton } from '../components/Skeleton';
 import { ConstellationMap } from '../components/ConstellationMap';
-
-type MacroPattern = {
-  name: string;
-  summary: string;
-  cluster_ids: number[];
-};
 
 function TopAuthors({ report }: { report: TrendsReport }) {
   // Aggregate authors across active (new + growing) clusters
@@ -201,9 +195,7 @@ export default function Trends() {
     if (sa !== sb) return sa - sb;
     return (b.score || 0) - (a.score || 0);
   });
-  // Compatibility guard: if the active TrendsReport type/schema in a given
-  // build context doesn't yet include macro_patterns, render as empty.
-  const macroPatterns = ((report as unknown as { macro_patterns?: MacroPattern[] }).macro_patterns ?? []);
+  const macroPatterns = report.macro_patterns ?? [];
 
   return (
     <div className="space-y-10">
