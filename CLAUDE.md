@@ -389,6 +389,80 @@ If you're a future Claude session, read this file first. The predecessor's sourc
 
 ---
 
+## Releases & versioning
+
+The repo uses semver tags (`v0.1.0`, `v0.2.0`, …). Pushing a tag matching `v*.*.*` triggers `.github/workflows/release.yml`, which auto-generates release notes from commits since the previous tag (filtering out `data:` / `trends:` auto-commits) and creates a GitHub Release.
+
+### How to ship a release
+
+```bash
+# Bump version (semver: MAJOR.MINOR.PATCH)
+git tag -a v0.2.0 -m "release v0.2.0"
+git push origin v0.2.0
+# Workflow runs in ~30s; release appears at github.com/meelod/arxiv-trend-radar/releases
+```
+
+### Versioning guidance
+
+| Type of change | Bump |
+|---|---|
+| New feature you'd advertise (e.g. new page, new analysis) | minor — `0.1.0` → `0.2.0` |
+| Bug fix or small tweak | patch — `0.2.0` → `0.2.1` |
+| Breaking change to data schema, API, or storage layout | major — `0.x.x` → `1.0.0` |
+| Stable, no big changes coming | `1.0.0` |
+
+Don't sweat the rules. For a personal tool, mostly minor bumps when shipping a meaningful feature batch.
+
+### Commit message convention
+
+For the auto-release notes to categorize cleanly, prefix commit subjects:
+
+| Prefix | Use for | Example |
+|---|---|---|
+| `feat:` | new features | `feat: dark mode toggle` |
+| `fix:` | bug fixes | `fix: pre-filter avoids TPM limit` |
+| `docs:` | README, CLAUDE.md, comments | `docs: simplify README` |
+| `refactor:` | code cleanup, no behavior change | `refactor: extract Sparkline component` |
+| `chore:` | tooling, deps, CI | `chore: bump vite to 5.4.10` |
+| `style:` | formatting only | `style: prettier sweep` |
+| `ci:` | workflow / CI changes | `ci: add release workflow` |
+
+Auto-commits from the daily / trends / backfill workflows use prefixes `data:` and `trends:` — these are filtered out of release notes automatically.
+
+If you forget the prefix, the commit lands in the "Other" section of release notes — still appears, just less categorized.
+
+### Recovering from a bad tag
+
+If you tag prematurely:
+
+```bash
+gh release delete v0.X.Y --yes
+git tag -d v0.X.Y
+git push origin :refs/tags/v0.X.Y
+```
+
+Then re-tag when ready.
+
+## Local development
+
+A `.env.example` lives in the repo root listing every supported env var with comments and defaults. To run pipeline scripts locally:
+
+```bash
+cp .env.example .env
+# edit .env with real values
+uv sync
+python pipeline/fetch.py --daily
+```
+
+For frontend dev:
+
+```bash
+npm install
+npm run dev      # localhost:5173
+```
+
+The frontend doesn't need any env vars — auth is off and data is fetched via same-origin `/data/...`.
+
 ## Status
 
 - [x] Architecture decided
