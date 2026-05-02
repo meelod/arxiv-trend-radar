@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TrendsReport, listTrends, loadTrends, loadLatestTrends } from '../lib/data';
+import { TrendsReport, listTrends, loadTrends, loadLatestTrends, slugifyLabel } from '../lib/data';
 import { ClusterCard } from '../components/ClusterCard';
 import { Skeleton } from '../components/Skeleton';
 import { ConstellationMap } from '../components/ConstellationMap';
@@ -229,6 +229,48 @@ export default function Trends() {
       </header>
 
       <p className="pull-quote max-w-[68ch]">{report.overview}</p>
+
+      {report.macro_patterns && report.macro_patterns.length > 0 && (
+        <section className="space-y-3">
+          <div className="flex items-baseline justify-between">
+            <h2 className="h-section">Macro patterns</h2>
+            <span className="eyebrow">cross-cluster</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {report.macro_patterns.map((mp, i) => {
+              const linkedClusters = mp.cluster_ids
+                .map((id) => report.clusters.find((c) => c.cluster_id === id))
+                .filter((c): c is NonNullable<typeof c> => Boolean(c));
+              return (
+                <article
+                  key={i}
+                  className="card border-l-[3px] border-accent-500 bg-accent-50/30 dark:bg-accent-500/5"
+                >
+                  <h3 className="font-serif font-semibold text-[18px] leading-tight tracking-tight text-stone-900 dark:text-stone-50 mb-2">
+                    {mp.name}
+                  </h3>
+                  <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.6] mb-3">
+                    {mp.summary}
+                  </p>
+                  {linkedClusters.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5">
+                      {linkedClusters.map((c) => (
+                        <a
+                          key={c.cluster_id}
+                          href={`#cluster-${slugifyLabel(c.label)}`}
+                          className="text-[11px] px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 border border-stone-200/70 dark:border-stone-700/70 transition-colors"
+                        >
+                          {c.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       <WhatChanged report={report} />
 
