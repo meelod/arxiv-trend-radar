@@ -58,6 +58,101 @@ def parse_args() -> argparse.Namespace:
     return p.parse_args()
 
 
+def _normalize_title(t: str) -> str:
+    """Lowercase + collapse whitespace + drop trailing punctuation. Fuzzy-match key."""
+    return re.sub(r"\s+", " ", (t or "").strip().lower()).rstrip(".,:;")
+
+
+def _find_real_paper(arxiv_id: str, claimed_title: str, by_id: dict, by_norm_title: dict):
+    """Return the real input paper for an LLM-emitted (id, title) pair, or None.
+
+    Logic:
+      1) If id is in input AND its real title roughly matches the claimed title → keep.
+      2) If id is in input but title diverges → trust the title (LLMs hallucinate
+         IDs more often than titles), fuzzy-match against input titles.
+      3) If id is NOT in input → fuzzy-match by title.
+    Returns None if no high-confidence match exists.
+    """
+    from difflib import get_close_matches
+
+    norm_claimed = _normalize_title(claimed_title)
+    p = by_id.get(arxiv_id)
+    if p is not None:
+        norm_real = _normalize_title(p.get("title") or "")
+        # Accept if first 50 chars of normalized titles match — handles minor
+        # LLM rephrasing of the title while still catching real mismatches.
+        if not norm_claimed or norm_real[:50] == norm_claimed[:50]:
+            return p
+
+    # Either id missing, or id present but title mismatch — fall back to title fuzzy-match.
+    if not norm_claimed:
+        return None
+    matches = get_close_matches(norm_claimed, list(by_norm_title.keys()), n=1, cutoff=0.85)
+    if matches:
+        return by_norm_title[matches[0]]
+    return None
+
+
+def validate_briefing_ids(briefing, source_papers) -> None:
+    """Mutate briefing in place to repair any hallucinated/transposed arxiv_ids.
+
+    - top_picks / worth_noting: validate each (id, title); patch id from title
+      if needed; drop entry if no high-confidence match.
+    - themes.paper_ids: drop any id not present in the input set (themes don't
+      carry titles, so we can't recover them).
+    """
+    by_id = {p["id"]: p for p in source_papers if p.get("id")}
+    by_norm_title = {
+        _normalize_title(p.get("title") or ""): p for p in source_papers if p.get("title")
+    }
+
+    fixed_picks = []
+    dropped_picks = 0
+    patched_picks = 0
+    for pick in briefing.top_picks:
+        real = _find_real_paper(pick.arxiv_id, pick.title or "", by_id, by_norm_title)
+        if real is None:
+            dropped_picks += 1
+            continue
+        if real["id"] != pick.arxiv_id:
+            patched_picks += 1
+            pick.arxiv_id = real["id"]
+        # Always trust the input paper's title as ground truth.
+        pick.title = (real.get("title") or pick.title or "").strip()
+        fixed_picks.append(pick)
+    briefing.top_picks = fixed_picks
+
+    fixed_wn = []
+    dropped_wn = 0
+    patched_wn = 0
+    for wn in briefing.worth_noting:
+        # WorthNoting has only id + one_liner — no title to fuzzy-match against.
+        # We can only validate by id presence here.
+        if wn.arxiv_id and wn.arxiv_id in by_id:
+            fixed_wn.append(wn)
+        else:
+            dropped_wn += 1
+    briefing.worth_noting = fixed_wn
+
+    dropped_theme_ids = 0
+    for theme in briefing.themes:
+        kept = []
+        for pid in theme.paper_ids or []:
+            if pid in by_id:
+                kept.append(pid)
+            else:
+                dropped_theme_ids += 1
+        theme.paper_ids = kept
+
+    if patched_picks or dropped_picks or dropped_wn or dropped_theme_ids:
+        print(
+            f"  validate: patched {patched_picks} pick ids, "
+            f"dropped {dropped_picks} picks / {dropped_wn} worth_noting / "
+            f"{dropped_theme_ids} theme ids missing from input",
+            file=sys.stderr,
+        )
+
+
 def date_from_path(path: str) -> str:
     m = re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(path))
     if not m:
@@ -220,6 +315,15 @@ def main() -> None:
     except Exception as e:
         print(f"LLM call failed: {e}", file=sys.stderr)
         sys.exit(1)
+
+    # Validate every arxiv_id the LLM emitted against the input paper set —
+    # the model occasionally hallucinates or transposes IDs in structured
+    # output (e.g. returns the right title but a slightly wrong digit, so
+    # the link points to a completely different paper). For each emitted
+    # (id, title) pair: if the id is in the input set AND its real title
+    # roughly matches, accept; otherwise fuzzy-match by title against all
+    # input papers and patch the id. Drop items we can't recover.
+    validate_briefing_ids(briefing, papers)
 
     # Only keep papers actually referenced by the briefing in paper_index.
     # The full corpus shipped here was inflating the JSON payload (and

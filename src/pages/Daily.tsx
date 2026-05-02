@@ -9,6 +9,7 @@ import { colorClassFor } from '../lib/categoryColors';
 import { getHideRead, isRead, setHideRead } from '../lib/state';
 import { useStateVersion } from '../lib/useLocalState';
 import { Skeleton } from '../components/Skeleton';
+import { AllPapers } from '../components/AllPapers';
 
 export default function Daily() {
   const [available, setAvailable] = useState<string[]>([]);
@@ -322,6 +323,9 @@ export default function Daily() {
           </ul>
         </section>
       )}
+
+      {/* All papers — raw daily feed, no LLM filtering */}
+      {briefing.date && <AllPapers date={briefing.date} />}
     </div>
   );
 }

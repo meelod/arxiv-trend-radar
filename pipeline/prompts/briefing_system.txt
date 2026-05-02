@@ -27,5 +27,10 @@ Style:
 - No emojis, no marketing words ("revolutionary", "groundbreaking").
 - Output language: {language}.
 
+CRITICAL — paper ID handling:
+- Each input paper begins with `[ID]` on its own line — the ID is everything inside the brackets, copy it VERBATIM.
+- NEVER invent, transpose digits in, or reformat an arXiv ID. If you reference a paper, the ID must come from the input set exactly.
+- If you can't recall the exact ID, omit the paper rather than guess. A wrong ID points the user to a totally different paper, which is worse than the omission.
+
 The user's INTERESTS:
 {interests}

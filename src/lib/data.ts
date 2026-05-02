@@ -171,3 +171,35 @@ export async function loadTrends(file: string): Promise<TrendsReport> {
 export async function loadLatestTrends(): Promise<TrendsReport | null> {
   return fetchJsonIfExists<TrendsReport>('/data/trends/latest.json');
 }
+
+// Raw arXiv papers as fetched by the daily pipeline — every paper for the
+// day, before any LLM filtering. Used by the Daily page's "All papers"
+// section so users can browse the full feed without LLM mediation.
+export interface RawPaper {
+  id: string;
+  title: string;
+  authors: string[];
+  summary?: string;
+  categories: string[];
+  abs?: string;
+  pdf?: string;
+  published?: string;
+  updated?: string;
+  comment?: string;
+}
+
+export async function loadRawPapers(date: string): Promise<RawPaper[]> {
+  const text = await fetchText(`/data/papers/${date}.jsonl`);
+  const out: RawPaper[] = [];
+  for (const line of text.split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+    try {
+      out.push(JSON.parse(trimmed));
+    } catch {
+      // Skip malformed lines silently; pipeline writes valid JSONL but
+      // partial-write recovery in CI can occasionally leave ragged tails.
+    }
+  }
+  return out;
+}
