@@ -33,6 +33,7 @@ export default function Info() {
           <li><a href="#picks" className="text-accent-500 hover:underline">Top picks ranking</a></li>
           <li><a href="#themes" className="text-accent-500 hover:underline">Themes vs. picks</a></li>
           <li><a href="#trends" className="text-accent-500 hover:underline">Weekly trends</a></li>
+          <li><a href="#growth" className="text-accent-500 hover:underline">Growth ratio (×N)</a></li>
           <li><a href="#status" className="text-accent-500 hover:underline">NEW / GROWING / STABLE / SHRINKING</a></li>
           <li><a href="#sparkline" className="text-accent-500 hover:underline">Cluster sparklines</a></li>
           <li><a href="#colors" className="text-accent-500 hover:underline">Category color stripes</a></li>
@@ -122,6 +123,36 @@ export default function Info() {
         </p>
       </Section>
 
+      <Section id="growth" title="Growth ratio (the &lsquo;growth ×N&rsquo; pill)">
+        <p>
+          A simple ratio: <b>papers per week recently vs. papers per week earlier in the window</b>.
+          Computed as <code>(papers in last 4 weeks + 1) / ((papers in prior 8 weeks) / 2 + 1)</code>.
+          The <code>/2</code> normalizes for the different window lengths; the <code>+1</code>s
+          prevent divide-by-zero on small clusters.
+        </p>
+        <table className="text-sm w-full">
+          <thead>
+            <tr className="text-left border-b border-zinc-200 dark:border-zinc-700">
+              <th className="py-1 pr-4 font-semibold">Value</th>
+              <th className="py-1 font-semibold">Meaning</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
+            <tr><td className="py-1 pr-4 font-mono">×1.0</td><td className="py-1">Constant — same rate as before</td></tr>
+            <tr><td className="py-1 pr-4 font-mono">×1.2-1.5</td><td className="py-1">Modestly growing (+20-50% papers/week)</td></tr>
+            <tr><td className="py-1 pr-4 font-mono">×1.5-2.0</td><td className="py-1">Clearly growing (+50-100%)</td></tr>
+            <tr><td className="py-1 pr-4 font-mono">×2.0-3.0</td><td className="py-1">Hot — paper rate has doubled or more</td></tr>
+            <tr><td className="py-1 pr-4 font-mono">×3.0+</td><td className="py-1">Explosive, or genuinely new cluster</td></tr>
+            <tr><td className="py-1 pr-4 font-mono">×0.5-0.8</td><td className="py-1">Cooling (-20-50%)</td></tr>
+            <tr><td className="py-1 pr-4 font-mono">×&lt;0.5</td><td className="py-1">Strong decline</td></tr>
+          </tbody>
+        </table>
+        <p className="text-zinc-500 dark:text-zinc-400 text-sm italic">
+          The status tag (NEW / GROWING / etc.) is a discrete summary of the same signal; the
+          number gives the magnitude. Both are derived from the cluster's paper dates.
+        </p>
+      </Section>
+
       <Section id="status" title="Status tags: NEW / GROWING / STABLE / SHRINKING">
         <p>
           When this week's report is generated, each cluster's centroid is compared against last week's
@@ -175,18 +206,43 @@ export default function Info() {
 
       <Section id="confidence" title="Confidence tag (LOW / MEDIUM / HIGH)">
         <p>
-          Each cluster's gap analysis includes a confidence tag from the LLM. This isn't the model's
-          confidence in the existence of the cluster — it's the model's self-rating of the gap analysis:
-          how likely is the proposed gap real, the thesis non-obvious, and commercially plausible?
+          Each cluster's gap analysis ends with a confidence tag from the LLM. This is the model's{' '}
+          <b>self-assessment of the gap analysis</b> — not its certainty that the cluster exists, and
+          not its conviction about the research. The prompt explicitly instructs:{' '}
+          <em>"HIGH only if the gap is real, the thesis is non-obvious, AND it&apos;s commercially plausible.
+          Most should be medium or low."</em>
         </p>
-        <ul className="list-disc pl-5 space-y-1">
-          <li><b>HIGH</b> — gap is concrete, thesis isn't already obviously being executed.</li>
-          <li><b>MEDIUM</b> — plausible but uncertain.</li>
-          <li><b>LOW</b> — the model isn't sure the gap is real or thinks it might already be served. Most clusters end up here, which is honest.</li>
-        </ul>
+        <table className="text-sm w-full">
+          <thead>
+            <tr className="text-left border-b border-zinc-200 dark:border-zinc-700">
+              <th className="py-1 pr-4 font-semibold">Level</th>
+              <th className="py-1 pr-4 font-semibold">What the LLM means</th>
+              <th className="py-1 font-semibold">Action</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
+            <tr>
+              <td className="py-2 pr-4 font-bold text-green-700 dark:text-green-400">HIGH</td>
+              <td className="py-2 pr-4">Gap appears real, thesis not obviously executed, commercially viable</td>
+              <td className="py-2">Investigate seriously, validate against current data</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-4 font-bold text-amber-700 dark:text-amber-400">MEDIUM</td>
+              <td className="py-2 pr-4">Plausible but uncertain — could be real, could be served already</td>
+              <td className="py-2">Most clusters land here. Skim, judge yourself.</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-4 font-bold text-red-700 dark:text-red-400">LOW</td>
+              <td className="py-2 pr-4">Gap may not be real, or already served, or thesis feels weak</td>
+              <td className="py-2">Skip the deep dive on this one</td>
+            </tr>
+          </tbody>
+        </table>
         <p className="text-zinc-500 dark:text-zinc-400 text-sm italic">
-          The LLM's training cutoff means it can miss recently-funded startups — confidence is best read
-          as "directional" and validated separately.
+          Caveat: the LLM has a training cutoff and can miss recently-funded startups, cite pivoted
+          companies, or underrate fast-moving small ones. Even HIGH should be treated as directional
+          until validated against current data. (Adding live web-search-based competitor validation
+          is on the roadmap.)
         </p>
       </Section>
 
