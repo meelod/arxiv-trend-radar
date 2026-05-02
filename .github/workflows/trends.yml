@@ -1,0 +1,71 @@
+name: trends
+
+on:
+  schedule:
+    - cron: "0 14 * * 0"
+  workflow_dispatch:
+    inputs:
+      report_date:
+        description: "Report date YYYY-MM-DD (leave empty for today)"
+        required: false
+        default: ""
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv sync
+
+      - name: Generate trends report
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          RAW_OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          MODEL_NAME: ${{ vars.MODEL_NAME }}
+          TRENDS_MODEL_NAME: ${{ vars.TRENDS_MODEL_NAME }}
+          LANGUAGE: ${{ vars.LANGUAGE }}
+          REPORT_DATE_INPUT: ${{ github.event.inputs.report_date }}
+        run: |
+          source .venv/bin/activate
+          if [ -n "$RAW_OPENAI_BASE_URL" ]; then
+            export OPENAI_BASE_URL="$RAW_OPENAI_BASE_URL"
+          else
+            unset OPENAI_BASE_URL
+          fi
+          if [ -n "$REPORT_DATE_INPUT" ] && echo "$REPORT_DATE_INPUT" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'; then
+            python pipeline/trends.py --report-date "$REPORT_DATE_INPUT"
+          else
+            python pipeline/trends.py
+          fi
+
+      - name: Commit and push
+        env:
+          GIT_EMAIL: ${{ vars.EMAIL }}
+          GIT_NAME: ${{ vars.NAME }}
+        run: |
+          git config user.email "$GIT_EMAIL"
+          git config user.name "$GIT_NAME"
+          git add data/trends/
+          if git diff --staged --quiet; then
+            echo "no changes"
+          else
+            git commit -m "trends: $(date -u +%F)"
+            for i in 1 2 3; do
+              if git push origin main; then break; fi
+              git pull origin main --rebase --autostash || true
+              if [ $i -eq 3 ]; then exit 1; fi
+            done
+          fi

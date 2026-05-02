@@ -1,0 +1,96 @@
+name: daily
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Compute date (yesterday UTC)
+        id: dates
+        run: echo "yesterday=$(date -u -d 'yesterday' +%F)" >> $GITHUB_OUTPUT
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv sync
+
+      - name: Fetch papers
+        env:
+          CATEGORIES: ${{ vars.CATEGORIES }}
+        run: |
+          source .venv/bin/activate
+          python pipeline/fetch.py --daily
+
+      - name: Embed papers
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          RAW_OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          YESTERDAY: ${{ steps.dates.outputs.yesterday }}
+        run: |
+          source .venv/bin/activate
+          if [ -n "$RAW_OPENAI_BASE_URL" ]; then
+            export OPENAI_BASE_URL="$RAW_OPENAI_BASE_URL"
+          else
+            unset OPENAI_BASE_URL
+          fi
+          F="data/papers/${YESTERDAY}.jsonl"
+          if [ -f "$F" ]; then python pipeline/embed.py --data "$F"; else echo "no papers file"; fi
+
+      - name: Generate daily briefing
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          RAW_OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          MODEL_NAME: ${{ vars.MODEL_NAME }}
+          LANGUAGE: ${{ vars.LANGUAGE }}
+          INTERESTS: ${{ vars.INTERESTS }}
+          YESTERDAY: ${{ steps.dates.outputs.yesterday }}
+        run: |
+          source .venv/bin/activate
+          if [ -n "$RAW_OPENAI_BASE_URL" ]; then
+            export OPENAI_BASE_URL="$RAW_OPENAI_BASE_URL"
+          else
+            unset OPENAI_BASE_URL
+          fi
+          F="data/papers/${YESTERDAY}.jsonl"
+          if [ -f "$F" ]; then python pipeline/daily_brief.py --data "$F"; else echo "no papers file"; fi
+
+      - name: Prune old embeddings (>120 days)
+        run: |
+          if [ -d data/embeddings ]; then
+            find data/embeddings -name "*.jsonl" -mtime +120 -delete 2>/dev/null || true
+          fi
+
+      - name: Commit and push
+        env:
+          GIT_EMAIL: ${{ vars.EMAIL }}
+          GIT_NAME: ${{ vars.NAME }}
+          DAY: ${{ steps.dates.outputs.yesterday }}
+        run: |
+          git config user.email "$GIT_EMAIL"
+          git config user.name "$GIT_NAME"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "no changes"
+          else
+            git commit -m "data: daily $DAY"
+            for i in 1 2 3; do
+              if git push origin main; then break; fi
+              git pull origin main --rebase --autostash || true
+              if [ $i -eq 3 ]; then exit 1; fi
+            done
+          fi
