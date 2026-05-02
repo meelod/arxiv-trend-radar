@@ -1,0 +1,109 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: github.repository_owner == 'meelod'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build release notes
+        id: notes
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          PREV_TAG=$(git tag --sort=-creatordate | grep -v "^${TAG}$" | head -n 1 || true)
+          if [ -z "$PREV_TAG" ]; then
+            RANGE_DESC="(initial release)"
+            COMMITS=$(git log "$TAG" --pretty=format:"%s|||%h|||%an" --no-merges)
+          else
+            RANGE_DESC="${PREV_TAG} -> ${TAG}"
+            COMMITS=$(git log "$PREV_TAG..$TAG" --pretty=format:"%s|||%h|||%an" --no-merges)
+          fi
+
+          features=""
+          fixes=""
+          docs=""
+          chores=""
+          other=""
+
+          while IFS= read -r line; do
+            [ -z "$line" ] && continue
+            subject="${line%%|||*}"
+            rest="${line#*|||}"
+            sha="${rest%%|||*}"
+
+            case "$subject" in
+              "data: daily "*|"trends: "*|"backfill"*|"data:"*|"trends:"*) continue ;;
+            esac
+
+            case "$subject" in
+              feat:*|feat\(*) features="${features}- ${subject#feat: } (\`${sha}\`)\n" ;;
+              fix:*|fix\(*) fixes="${fixes}- ${subject#fix: } (\`${sha}\`)\n" ;;
+              docs:*|docs\(*) docs="${docs}- ${subject#docs: } (\`${sha}\`)\n" ;;
+              chore:*|chore\(*|build:*|ci:*|refactor:*|style:*|test:*) chores="${chores}- ${subject} (\`${sha}\`)\n" ;;
+              *) other="${other}- ${subject} (\`${sha}\`)\n" ;;
+            esac
+          done <<< "$COMMITS"
+
+          {
+            echo "## ${TAG}"
+            echo ""
+            echo "Changes since ${RANGE_DESC}."
+            echo ""
+            if [ -n "$features" ]; then
+              echo "### Features"
+              echo ""
+              printf "${features}"
+              echo ""
+            fi
+            if [ -n "$fixes" ]; then
+              echo "### Fixes"
+              echo ""
+              printf "${fixes}"
+              echo ""
+            fi
+            if [ -n "$docs" ]; then
+              echo "### Docs"
+              echo ""
+              printf "${docs}"
+              echo ""
+            fi
+            if [ -n "$chores" ]; then
+              echo "### Chores"
+              echo ""
+              printf "${chores}"
+              echo ""
+            fi
+            if [ -n "$other" ]; then
+              echo "### Other"
+              echo ""
+              printf "${other}"
+              echo ""
+            fi
+            echo "---"
+            echo ""
+            echo "Live: https://arxiv-trend-radar.vercel.app"
+          } > release_notes.md
+
+          cat release_notes.md
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" \
+            --repo "${{ github.repository }}" \
+            --title "$TAG" \
+            --notes-file release_notes.md
