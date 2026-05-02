@@ -1,8 +1,6 @@
-import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { endSession, isAuthEnabled } from '../lib/auth';
+import { Link, NavLink } from 'react-router-dom';
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const navigate = useNavigate();
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-zinc-200 bg-white">
@@ -28,17 +26,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
             >
               Trends
             </NavLink>
-            {isAuthEnabled() && (
-              <button
-                onClick={() => {
-                  endSession();
-                  navigate('/login');
-                }}
-                className="text-zinc-500 hover:text-zinc-900 text-sm"
-              >
-                Logout
-              </button>
-            )}
           </nav>
         </div>
       </header>

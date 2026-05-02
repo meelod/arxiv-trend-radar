@@ -68,7 +68,7 @@ The Etched analogy is the design north star: research consolidating on transform
 | Storage | JSONL files in `data/` on main branch | Vercel serves them as static assets. SQLite would need sql.js (~1MB browser bundle) for query support — premature. JSONL is grep-able, diff-able, easy. |
 | Frontend | Vite + React 18 + TypeScript + Tailwind + React Router | Vite for clean static build (no Next.js SSR gymnastics on a private repo). TypeScript for safety. Tailwind for fast iteration. React Router for /login → / → /trends. |
 | Hosting | Vercel (free hobby tier) | Best React DX, free for private repos, auto-deploys on push, preview deploys per PR. Cloudflare Pages is the alternative if Vercel ever stops working for us. |
-| Auth | Client-side SHA-256 hash check, hash injected at Vercel build time from `ACCESS_PASSWORD` GitHub secret | Same threat model as before — obfuscation, not real security. For sensitive content, would migrate to NextAuth or Cloudflare Access. |
+| Auth | **None** — site is publicly accessible | The data is derived from public arXiv abstracts. The only mildly private piece is the user's `INTERESTS` configuration. We deemed this not sensitive enough to justify the false security of a client-side hash gate (which doesn't protect data files anyway). If real privacy is ever needed, the right path is Cloudflare Access (free, real server-side gate) in front of Vercel — not client-side obfuscation. |
 
 ---
 
@@ -231,7 +231,6 @@ Note: `data/` is committed (Vercel needs to serve it). The pipeline workflows co
 | Name | Value | Required? |
 |---|---|---|
 | `OPENAI_API_KEY` | `sk-...` | Yes |
-| `ACCESS_PASSWORD` | Your chosen password (long random string recommended) | Yes — site is unprotected without it |
 | `OPENAI_BASE_URL` | Custom endpoint | Only if not using OpenAI directly |
 
 ### GitHub Variables (Settings → Secrets and variables → Actions → Variables)
@@ -261,9 +260,7 @@ The daily-brief prompt instructs the LLM to use these to rank `top_picks` and pe
 
 ### Vercel environment
 
-Connect Vercel to the private GitHub repo. Set:
-- `VITE_PASSWORD_HASH` — auto-derived in `deploy.yml` from `ACCESS_PASSWORD` secret (SHA-256), or set manually in Vercel dashboard
-- That's it. Build command: `npm run build`. Output dir: `dist/`.
+Connect Vercel to the private GitHub repo. **No env vars required.** Build command: `npm run build`. Output dir: `dist/`.
 
 ---
 
@@ -342,7 +339,7 @@ These are notes from working with the user on the predecessor project. They like
 
 ## Known limitations
 
-1. **No real auth.** SHA-256 hash sits in the JS bundle. With a long random password it's fine for "keep Google out and casual visitors out." For anything sensitive, migrate to Cloudflare Access (free email-based gate) or NextAuth.
+1. **No auth — site is publicly accessible to anyone with the URL.** Acceptable because the content is derived from public arXiv data and the only marginally private piece is the user's stated interests. Add `Disallow: /` in `public/robots.txt` (already done) to keep search engines out. If real privacy is needed later, put Cloudflare Access (free Zero Trust tier) in front of Vercel — that's a real server-side gate that protects both UI and data files.
 2. **Single-user.** No multi-tenant patterns. Adding even a second user with different `INTERESTS` would require restructuring data flow and probably moving to per-user database.
 3. **No PDF deep-dive yet.** Phase 2 feature: clicking a paper in the trends report should be able to fetch and summarize the PDF. Currently shows abstract only.
 4. **No mobile-first design.** Tailwind responsive defaults will work but UX hasn't been tuned for phone. Daily briefing reads OK on mobile; trends report has wide cluster cards that wrap awkwardly.
