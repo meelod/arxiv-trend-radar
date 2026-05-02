@@ -44,3 +44,7 @@ CLAUDE.md
 
 # Claude Code internal
 .claude/
+
+# Local assistant/runtime files
+AGENTS.md
+uv.lock
