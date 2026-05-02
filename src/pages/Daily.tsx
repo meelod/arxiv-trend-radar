@@ -9,6 +9,7 @@ import { colorClassFor } from '../lib/categoryColors';
 import { getHideRead, isRead, setHideRead } from '../lib/state';
 import { useStateVersion } from '../lib/useLocalState';
 import { Skeleton } from '../components/Skeleton';
+import { Masthead } from '../components/Masthead';
 
 export default function Daily() {
   const [available, setAvailable] = useState<string[]>([]);
@@ -85,8 +86,21 @@ export default function Daily() {
     return { uniqueCategories: cats.size, crossListed };
   })();
 
+  // Show the masthead only when viewing the latest issue. Browsing an older
+  // briefing should still feel like a "current edition" of that day, so we
+  // intentionally still show it — but with the right issue number for that
+  // historical date.
+  const issueNumber = (() => {
+    if (!selected) return available.length || 1;
+    const idx = available.indexOf(selected);
+    if (idx < 0) return available.length || 1;
+    return available.length - idx; // oldest = 1, latest = N
+  })();
+
   return (
     <div className="space-y-10">
+      <Masthead date={briefing.date} issueNumber={issueNumber} />
+
       {/* Header */}
       <header className="space-y-5">
         <div className="flex items-center justify-between flex-wrap gap-3">

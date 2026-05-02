@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { TrendsReport, listTrends, loadTrends, loadLatestTrends } from '../lib/data';
 import { ClusterCard } from '../components/ClusterCard';
 import { Skeleton } from '../components/Skeleton';
+import { ConstellationMap } from '../components/ConstellationMap';
 
 function TopAuthors({ report }: { report: TrendsReport }) {
   // Aggregate authors across active (new + growing) clusters
@@ -230,6 +231,8 @@ export default function Trends() {
       <p className="pull-quote max-w-[68ch]">{report.overview}</p>
 
       <WhatChanged report={report} />
+
+      <ConstellationMap clusters={sortedClusters} />
 
       <TopAuthors report={report} />
 

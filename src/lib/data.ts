@@ -73,6 +73,7 @@ export interface TrendCluster {
   status: 'new' | 'growing' | 'stable' | 'shrinking';
   delta_pct: number | null;
   matched_prev_label: string | null;
+  centroid?: number[];
   seminal_paper_id?: string;
   seminal_citations?: number;
   seminal_influential?: number;

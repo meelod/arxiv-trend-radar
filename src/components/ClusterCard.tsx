@@ -72,7 +72,7 @@ export function ClusterCard({
   void confidenceClass;
 
   return (
-    <article className="card space-y-5">
+    <article id={`cluster-${slug}`} className="card space-y-5 scroll-mt-24">
       <header className="space-y-3">
         <div className="flex items-start justify-between flex-wrap gap-3">
           <h3 className="font-serif font-semibold text-[22px] leading-[1.2] tracking-tight text-stone-900 dark:text-stone-50 flex-1 min-w-[260px]">
