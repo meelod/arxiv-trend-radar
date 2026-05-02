@@ -1,4 +1,5 @@
-import { TrendCluster, PaperMeta } from '../lib/data';
+import { Link } from 'react-router-dom';
+import { TrendCluster, PaperMeta, slugifyLabel } from '../lib/data';
 import { PaperBadge } from './PaperBadge';
 import { Sparkline } from './Sparkline';
 import { Tooltip } from './Tooltip';
@@ -26,9 +27,13 @@ const STATUS_PILL_CLASS: Record<string, string> = {
 export function ClusterCard({
   cluster,
   paperIndex,
+  reportDate,
+  showPermalink = true,
 }: {
   cluster: TrendCluster;
   paperIndex: Record<string, PaperMeta>;
+  reportDate?: string;
+  showPermalink?: boolean;
 }) {
   const status = cluster.status || 'new';
   const statusPill = STATUS_PILL_CLASS[status] || 'pill';
@@ -55,10 +60,19 @@ export function ClusterCard({
     status === 'new' ? 'text-blue-600' :
     'text-zinc-500 dark:text-zinc-400';
 
+  const slug = slugifyLabel(cluster.label);
+  const permalinkPath = reportDate ? `/trends/${reportDate}/${slug}` : null;
+
   return (
     <div className="card space-y-3">
       <div className="flex items-baseline justify-between flex-wrap gap-2">
-        <h3 className="text-lg font-semibold leading-snug flex-1">{cluster.label}</h3>
+        <h3 className="text-lg font-semibold leading-snug flex-1">
+          {showPermalink && permalinkPath ? (
+            <Link to={permalinkPath} className="hover:underline">{cluster.label}</Link>
+          ) : (
+            cluster.label
+          )}
+        </h3>
         <div className="flex items-center gap-1.5 flex-wrap">
           {paperDates.length > 0 && (
             <Tooltip text="Weekly paper count over the last 12 weeks. Each bar = one week. Color matches status.">

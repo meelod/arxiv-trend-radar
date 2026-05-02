@@ -3,6 +3,7 @@ import Daily from './pages/Daily';
 import Trends from './pages/Trends';
 import Bookmarks from './pages/Bookmarks';
 import Info from './pages/Info';
+import TrendCluster from './pages/TrendCluster';
 import { Layout } from './components/Layout';
 
 export default function App() {
@@ -37,6 +38,14 @@ export default function App() {
         element={
           <Layout>
             <Info />
+          </Layout>
+        }
+      />
+      <Route
+        path="/trends/:date/:slug"
+        element={
+          <Layout>
+            <TrendCluster />
           </Layout>
         }
       />

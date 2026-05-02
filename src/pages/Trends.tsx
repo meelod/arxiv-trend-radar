@@ -160,14 +160,14 @@ export default function Trends() {
 
   if (available.length === 0) {
     return (
-      <div className="card text-center text-zinc-500 dark:text-zinc-400 py-12">
+      <div className="card text-center text-stone-500 dark:text-stone-400 py-12">
         No trend reports yet. The first one will appear after the weekly workflow runs.
       </div>
     );
   }
 
   if (!report) {
-    return <div className="text-zinc-500 dark:text-zinc-400">Loading…</div>;
+    return <div className="text-stone-500 dark:text-stone-400">Loading…</div>;
   }
 
   const sortedClusters = [...report.clusters].sort((a, b) => {
@@ -178,17 +178,15 @@ export default function Trends() {
   });
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-baseline justify-between flex-wrap gap-3 pb-4 border-b border-zinc-200 dark:border-zinc-700">
-        <div>
-          <p className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold">Weekly Trends &amp; Gaps</p>
-          <h1 className="text-2xl font-semibold mt-1">{report.report_date}</h1>
-        </div>
-        <div className="flex items-center gap-3 text-sm">
+    <div className="space-y-10">
+      <header className="space-y-5">
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <span className="eyebrow">Weekly Trends &amp; Gaps</span>
           <select
             value={selected ?? ''}
             onChange={(e) => setSelected(e.target.value)}
-            className="px-3 py-1.5 border border-zinc-300 dark:border-zinc-600 rounded-lg bg-white dark:bg-zinc-900 text-sm"
+            className="select-clean"
+            aria-label="Select report date"
           >
             {available.map((f) => (
               <option key={f} value={f}>
@@ -196,39 +194,49 @@ export default function Trends() {
               </option>
             ))}
           </select>
-          <span className="text-zinc-500 dark:text-zinc-400">{report.paper_count} papers · {report.window_days}d</span>
+        </div>
+        <h1 className="h-display text-[40px] sm:text-[52px]">{report.report_date}</h1>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-[12px] text-stone-500 dark:text-stone-400">
+          <span><span className="font-mono tabular-nums text-stone-700 dark:text-stone-300">{report.paper_count.toLocaleString()}</span> papers</span>
+          <span className="w-px h-3 bg-stone-300 dark:bg-stone-700" />
+          <span><span className="font-mono tabular-nums text-stone-700 dark:text-stone-300">{report.window_days}</span>-day window</span>
           {report.previous_report_date && (
-            <span className="text-zinc-500 dark:text-zinc-400">vs {report.previous_report_date}</span>
+            <>
+              <span className="w-px h-3 bg-stone-300 dark:bg-stone-700" />
+              <span>vs <span className="font-mono">{report.previous_report_date}</span></span>
+            </>
           )}
         </div>
-      </div>
+      </header>
 
-      <div className="border-l-4 border-accent-500 bg-zinc-50 dark:bg-zinc-900 p-4 rounded-r-lg">
-        <p className="text-zinc-800 dark:text-zinc-200 leading-relaxed">{report.overview}</p>
-      </div>
+      <p className="pull-quote max-w-[68ch]">{report.overview}</p>
 
-      {/* What changed this week */}
       <WhatChanged report={report} />
 
-      {/* Top authors */}
       <TopAuthors report={report} />
 
-      <div className="space-y-4">
-        {sortedClusters.map((c) => (
-          <ClusterCard key={c.cluster_id} cluster={c} paperIndex={report.paper_index} />
-        ))}
-      </div>
+      <section className="space-y-4">
+        <div className="flex items-baseline justify-between">
+          <h2 className="h-section">Clusters</h2>
+          <span className="eyebrow">{sortedClusters.length} groups</span>
+        </div>
+        <div className="space-y-4">
+          {sortedClusters.map((c) => (
+            <ClusterCard key={c.cluster_id} cluster={c} paperIndex={report.paper_index} />
+          ))}
+        </div>
+      </section>
 
       {report.dropped_clusters.length > 0 && (
-        <div className="border border-dashed border-zinc-300 dark:border-zinc-600 rounded-lg p-4 bg-zinc-50 dark:bg-zinc-900">
-          <h4 className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold mb-2">
+        <div className="border border-dashed border-stone-300 dark:border-stone-700 rounded-xl p-5 bg-stone-100/40 dark:bg-stone-900/40">
+          <h4 className="eyebrow mb-2">
             Dropped since last week ({report.dropped_clusters.length})
           </h4>
-          <ul className="text-sm text-zinc-600 dark:text-zinc-400 space-y-1">
+          <ul className="text-sm text-stone-600 dark:text-stone-400 space-y-1">
             {report.dropped_clusters.map((d, i) => (
               <li key={i}>
                 {d.label || '(unlabeled)'}
-                {d.size != null && <span className="text-zinc-400 dark:text-zinc-500"> — was {d.size} papers</span>}
+                {d.size != null && <span className="text-stone-400 dark:text-stone-500"> — was {d.size} papers</span>}
               </li>
             ))}
           </ul>

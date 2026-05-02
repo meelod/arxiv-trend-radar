@@ -70,6 +70,19 @@ export interface TrendCluster {
   matched_prev_label: string | null;
 }
 
+/**
+ * Slugify a cluster label for use in URLs.
+ * "MoE Inference Acceleration" -> "moe-inference-acceleration"
+ */
+export function slugifyLabel(label: string): string {
+  return (label || '')
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .slice(0, 60) || 'cluster';
+}
+
 async function fetchText(path: string): Promise<string> {
   const r = await fetch(path, { cache: 'no-store' });
   if (r.status === 404) {
