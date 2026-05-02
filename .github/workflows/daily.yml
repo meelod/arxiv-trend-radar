@@ -1,8 +1,12 @@
 name: daily
 
 on:
+  # Mon-Sat at 02:00 UTC. Skips Sunday's cron run because that's the run
+  # that would process Saturday's submissions, and arXiv has 0 submissions on
+  # Saturdays (no Saturday announcement). Saving ~5 min of Actions runtime/week
+  # and avoiding empty briefing attempts.
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 2 * * 1-6"
   workflow_dispatch:
 
 # Only one run at a time. Cancel any in-flight run if a new one is triggered.
