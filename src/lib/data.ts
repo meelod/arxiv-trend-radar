@@ -64,6 +64,11 @@ export interface TrendCluster {
 
 async function fetchText(path: string): Promise<string> {
   const r = await fetch(path, { cache: 'no-store' });
+  if (r.status === 404) {
+    const err = new Error(`${path} → 404`);
+    (err as Error & { status?: number }).status = 404;
+    throw err;
+  }
   if (!r.ok) throw new Error(`${path} → ${r.status}`);
   return r.text();
 }
@@ -74,14 +79,23 @@ async function fetchJson<T>(path: string): Promise<T> {
   return r.json();
 }
 
-export async function listBriefings(): Promise<string[]> {
-  const txt = await fetchText('/data/briefings/briefings-list.txt');
+function parseList(txt: string): string[] {
   return txt
     .split('\n')
     .map((s) => s.trim())
     .filter((s) => s.endsWith('.json'))
     .sort()
     .reverse();
+}
+
+export async function listBriefings(): Promise<string[]> {
+  try {
+    return parseList(await fetchText('/data/briefings/briefings-list.txt'));
+  } catch (e) {
+    // 404 → treat as empty state (no briefings generated yet)
+    if ((e as Error & { status?: number }).status === 404) return [];
+    throw e;
+  }
 }
 
 export async function loadBriefing(file: string): Promise<Briefing> {
@@ -89,13 +103,12 @@ export async function loadBriefing(file: string): Promise<Briefing> {
 }
 
 export async function listTrends(): Promise<string[]> {
-  const txt = await fetchText('/data/trends/trends-list.txt');
-  return txt
-    .split('\n')
-    .map((s) => s.trim())
-    .filter((s) => s.endsWith('.json'))
-    .sort()
-    .reverse();
+  try {
+    return parseList(await fetchText('/data/trends/trends-list.txt'));
+  } catch (e) {
+    if ((e as Error & { status?: number }).status === 404) return [];
+    throw e;
+  }
 }
 
 export async function loadTrends(file: string): Promise<TrendsReport> {
