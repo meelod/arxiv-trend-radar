@@ -136,6 +136,7 @@ const STATUS_ORDER: Record<string, number> = {
 
 export default function Trends() {
   const [available, setAvailable] = useState<string[]>([]);
+  const [listLoaded, setListLoaded] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [report, setReport] = useState<TrendsReport | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -153,6 +154,7 @@ export default function Trends() {
       .then((files) => {
         if (cancelled) return;
         setAvailable(files);
+        setListLoaded(true);
         if (files.length > 0) setSelected((s) => s ?? files[0]);
       })
       .catch((e) => setError(`Could not load trend list: ${e.message}`));
@@ -174,7 +176,7 @@ export default function Trends() {
     return <div className="card border-red-200 bg-red-50 text-red-800">{error}</div>;
   }
 
-  if (available.length === 0) {
+  if (listLoaded && available.length === 0) {
     return (
       <div className="card text-center text-stone-500 dark:text-stone-400 py-12">
         No trend reports yet. The first one will appear after the weekly workflow runs.
