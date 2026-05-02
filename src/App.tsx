@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Skeleton } from './components/Skeleton';
 
@@ -8,6 +8,7 @@ const Trends = lazy(() => import('./pages/Trends'));
 const Bookmarks = lazy(() => import('./pages/Bookmarks'));
 const Info = lazy(() => import('./pages/Info'));
 const TrendCluster = lazy(() => import('./pages/TrendCluster'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 export default function App() {
   return (
@@ -62,7 +63,16 @@ export default function App() {
           </Layout>
         }
       />
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route
+        path="*"
+        element={
+          <Layout>
+            <Suspense fallback={<Skeleton variant="inline" />}>
+              <NotFound />
+            </Suspense>
+          </Layout>
+        }
+      />
     </Routes>
   );
 }
