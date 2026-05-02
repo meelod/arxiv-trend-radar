@@ -17,6 +17,8 @@ from datetime import datetime, timezone
 from typing import List
 
 import dotenv
+import numpy as np
+from openai import OpenAI
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import (
     ChatPromptTemplate,
@@ -67,10 +69,95 @@ def format_paper(item: dict) -> str:
     primary = cats[0] if cats else "?"
     title = (item.get("title") or "").strip()
     abstract = (item.get("summary") or "").strip()
-    # Cap abstract at ~1200 chars to fit ~200 papers in context
-    if len(abstract) > 1200:
-        abstract = abstract[:1200].rstrip() + "..."
+    # Cap abstract at 600 chars — first sentence or two is enough signal for the
+    # synthesis. Going over this risks blowing the per-minute token budget on
+    # heavy days even after pre-filtering.
+    if len(abstract) > 600:
+        abstract = abstract[:600].rstrip() + "..."
     return f"[{pid}] [{primary}] {title}\n  {abstract}"
+
+
+def load_embeddings_for(papers_jsonl: str) -> dict:
+    """Load the sibling embeddings file produced by embed.py for the same date."""
+    emb_path = papers_jsonl.replace("/papers/", "/embeddings/")
+    if not os.path.exists(emb_path):
+        return {}
+    by_id: dict = {}
+    with open(emb_path) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            pid = rec.get("id")
+            v = rec.get("v")
+            if pid and v:
+                by_id[pid] = np.asarray(v, dtype=np.float32)
+    return by_id
+
+
+def filter_papers_by_interests(
+    papers: List[dict],
+    interests: str,
+    embeddings: dict,
+    max_papers: int,
+) -> List[dict]:
+    """Pre-filter papers to the top-N most relevant to the user's INTERESTS.
+
+    Uses cosine similarity between each paper's embedding (already computed by
+    embed.py earlier in the workflow) and an embedding of the INTERESTS string.
+
+    Falls back to first-N if embeddings unavailable. Adds 20 random "wildcard"
+    picks at the bottom to preserve serendipity beyond the personalized signal.
+    """
+    if len(papers) <= max_papers:
+        return papers
+
+    if not embeddings or not interests.strip():
+        # No embeddings or no interests: just truncate
+        print(f"  filter: no embeddings or interests; taking first {max_papers}", file=sys.stderr)
+        return papers[:max_papers]
+
+    # Embed the interests string (one cheap call)
+    try:
+        client = OpenAI()
+        resp = client.embeddings.create(model="text-embedding-3-small", input=interests)
+        interests_vec = np.asarray(resp.data[0].embedding, dtype=np.float32)
+        interests_norm = interests_vec / (np.linalg.norm(interests_vec) + 1e-9)
+    except Exception as e:
+        print(f"  filter: failed to embed interests ({e}); taking first {max_papers}", file=sys.stderr)
+        return papers[:max_papers]
+
+    scored = []
+    unscored = []
+    for p in papers:
+        v = embeddings.get(p.get("id"))
+        if v is None:
+            unscored.append(p)
+            continue
+        v_norm = v / (np.linalg.norm(v) + 1e-9)
+        sim = float(np.dot(v_norm, interests_norm))
+        scored.append((sim, p))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+
+    # Take top (max_papers - 20) by relevance, plus 20 random wildcards from the rest
+    keep_top = max(1, max_papers - 20)
+    top = [p for _, p in scored[:keep_top]]
+
+    # Wildcards: random sample from the unselected papers (preserves serendipity)
+    rest = [p for _, p in scored[keep_top:]] + unscored
+    if rest:
+        import random
+        random.seed(42)
+        wildcards = random.sample(rest, min(20, len(rest)))
+        top.extend(wildcards)
+
+    print(f"  filter: kept {len(top)} of {len(papers)} papers ({keep_top} by relevance + {len(top) - keep_top} wildcards)", file=sys.stderr)
+    return top
 
 
 def main() -> None:
@@ -102,8 +189,14 @@ def main() -> None:
     model_name = os.environ.get("MODEL_NAME", "gpt-4o")
     language = os.environ.get("LANGUAGE", "English")
     interests = os.environ.get("INTERESTS", "").strip() or "(no specific interests configured; rank top picks by general technical importance)"
+    max_papers = int(os.environ.get("BRIEFING_MAX_PAPERS", "400"))
 
-    print(f"Briefing {date}: {len(papers)} papers, model={model_name}", file=sys.stderr)
+    print(f"Briefing {date}: {len(papers)} papers loaded, model={model_name}", file=sys.stderr)
+
+    # Pre-filter to the top N most relevant to user interests, to stay under
+    # the OpenAI tokens-per-minute limit and to focus the LLM on signal.
+    embeddings = load_embeddings_for(args.data)
+    papers = filter_papers_by_interests(papers, interests, embeddings, max_papers)
 
     paper_blocks = "\n\n".join(format_paper(p) for p in papers)
 
