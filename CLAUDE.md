@@ -231,19 +231,21 @@ Note: `data/` is committed (Vercel needs to serve it). The pipeline workflows co
 | Name | Value | Required? |
 |---|---|---|
 | `OPENAI_API_KEY` | `sk-...` | Yes |
+| `INTERESTS` | Multi-line user interests (moved from Variables → Secrets so it's not visible on a public repo) | Yes |
 | `OPENAI_BASE_URL` | Custom endpoint | Only if not using OpenAI directly |
 
 ### GitHub Variables (Settings → Secrets and variables → Actions → Variables)
 
 | Name | Value | Notes |
 |---|---|---|
-| `MODEL_NAME` | `gpt-4o` | For daily briefing |
-| `TRENDS_MODEL_NAME` | `gpt-5.4-mini` | For weekly trends |
+| `MODEL_NAME` | `gpt-4o-mini` | For daily briefing. Mini handles 1000+ paper synthesis well; switch to `gpt-4o` if quality feels weak. |
+| `TRENDS_MODEL_NAME` | `gpt-5.4-mini` | For weekly trends gap analysis |
 | `LANGUAGE` | `English` | Output language |
 | `CATEGORIES` | `cs.LG, cs.CL, cs.CV, cs.AR, cs.DC, cs.DB, cs.RO, cs.CR, cs.SE, cs.IR, cs.NE, cs.MA, eess.SP, q-fin.TR` | 14 categories |
-| `INTERESTS` | Multi-line string of user's research interests (see default below) | Drives `top_picks` ranking |
 | `EMAIL` | git author email for workflow commits | |
 | `NAME` | git author name for workflow commits | |
+
+NOTE: `INTERESTS` was moved from Variables to Secrets when the repo went public. Variables are world-readable; Secrets are encrypted.
 
 ### Default `INTERESTS` (edit to taste)
 
@@ -337,9 +339,20 @@ These are notes from working with the user on the predecessor project. They like
 
 ---
 
+## Public repo security posture
+
+This repo is public. The defenses against external Actions abuse:
+
+- **Workflows are owner-gated.** Each workflow has `if: github.repository_owner == 'meelod'` as belt-and-suspenders.
+- **No `pull_request_target` triggers** — this is the only GitHub Actions event that would expose secrets to fork PRs. None of our workflows use it.
+- **`pull_request` from forks** would not get secrets anyway (GitHub's default behavior).
+- **`workflow_dispatch` and `schedule`** can only be triggered by repo collaborators, not external visitors.
+- **Concurrency limits** prevent runaway parallel runs.
+- **OpenAI hard spending cap** at the API-key level is the ultimate backstop.
+
 ## Known limitations
 
-1. **No auth — site is publicly accessible to anyone with the URL.** Acceptable because the content is derived from public arXiv data and the only marginally private piece is the user's stated interests. Add `Disallow: /` in `public/robots.txt` (already done) to keep search engines out. If real privacy is needed later, put Cloudflare Access (free Zero Trust tier) in front of Vercel — that's a real server-side gate that protects both UI and data files.
+1. **No auth — site is publicly accessible to anyone with the URL.** Acceptable because the content is derived from public arXiv data and the only marginally private piece (`INTERESTS`) lives in Secrets. Add `Disallow: /` in `public/robots.txt` (already done) to keep search engines out.
 2. **Single-user.** No multi-tenant patterns. Adding even a second user with different `INTERESTS` would require restructuring data flow and probably moving to per-user database.
 3. **No PDF deep-dive yet.** Phase 2 feature: clicking a paper in the trends report should be able to fetch and summarize the PDF. Currently shows abstract only.
 4. **No mobile-first design.** Tailwind responsive defaults will work but UX hasn't been tuned for phone. Daily briefing reads OK on mobile; trends report has wide cluster cards that wrap awkwardly.

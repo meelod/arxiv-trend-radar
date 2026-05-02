@@ -15,8 +15,13 @@ on:
         required: false
         default: false
 
+concurrency:
+  group: backfill
+  cancel-in-progress: false
+
 jobs:
   run:
+    if: github.repository_owner == 'meelod'
     runs-on: ubuntu-latest
     timeout-minutes: 360
     permissions:
@@ -80,7 +85,7 @@ jobs:
           RAW_OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           MODEL_NAME: ${{ vars.MODEL_NAME }}
           LANGUAGE: ${{ vars.LANGUAGE }}
-          INTERESTS: ${{ vars.INTERESTS }}
+          INTERESTS: ${{ secrets.INTERESTS }}
           FROM_DATE: ${{ github.event.inputs.from_date }}
           UNTIL_DATE: ${{ github.event.inputs.until_date }}
         run: |

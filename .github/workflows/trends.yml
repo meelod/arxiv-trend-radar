@@ -10,8 +10,13 @@ on:
         required: false
         default: ""
 
+concurrency:
+  group: trends
+  cancel-in-progress: false
+
 jobs:
   run:
+    if: github.repository_owner == 'meelod'
     runs-on: ubuntu-latest
     permissions:
       contents: write

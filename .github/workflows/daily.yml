@@ -5,8 +5,17 @@ on:
     - cron: "0 2 * * *"
   workflow_dispatch:
 
+# Only one run at a time. Cancel any in-flight run if a new one is triggered.
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
 jobs:
   run:
+    # Only the repo owner can trigger this. Belt-and-suspenders against any
+    # weird trigger source — schedule and workflow_dispatch are owner-only by
+    # default on public repos, but explicit guard is cheap.
+    if: github.repository_owner == 'meelod'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -57,7 +66,7 @@ jobs:
           RAW_OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           MODEL_NAME: ${{ vars.MODEL_NAME }}
           LANGUAGE: ${{ vars.LANGUAGE }}
-          INTERESTS: ${{ vars.INTERESTS }}
+          INTERESTS: ${{ secrets.INTERESTS }}
           YESTERDAY: ${{ steps.dates.outputs.yesterday }}
         run: |
           source .venv/bin/activate
