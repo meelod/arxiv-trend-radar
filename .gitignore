@@ -36,3 +36,6 @@ data/scratch/
 
 # Internal design doc, kept locally only
 CLAUDE.md
+
+# Claude Code internal
+.claude/
