@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[oc]
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Env / secrets — NEVER commit these
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Test outputs
+.pytest_cache/
+.coverage
+coverage/
+
+# pipeline scratch (generated files commit via workflows; local runs stay local)
+data/scratch/
