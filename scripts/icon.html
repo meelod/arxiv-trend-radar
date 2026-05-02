@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 512px; height: 512px; overflow: hidden; }
+      body {
+        background:
+          radial-gradient(circle at 30% 30%, rgba(232, 99, 76, 0.25), transparent 60%),
+          #0c0a09;
+        display: grid; place-items: center;
+        font-family: 'Source Serif 4', Georgia, serif;
+      }
+      .frame {
+        display: flex; flex-direction: column; align-items: center; gap: 28px;
+      }
+      .dot {
+        width: 96px; height: 96px; border-radius: 999px;
+        background: #e8634c;
+        box-shadow: 0 0 80px rgba(232, 99, 76, 0.7);
+      }
+      .wordmark {
+        color: #fafaf9; font-weight: 600; font-size: 92px;
+        letter-spacing: -0.04em; line-height: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <span class="dot"></span>
+      <span class="wordmark">a&middot;r</span>
+    </div>
+  </body>
+</html>
