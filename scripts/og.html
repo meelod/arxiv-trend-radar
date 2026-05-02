@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>arxiv-trend-radar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 1280px; height: 640px; overflow: hidden; }
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background:
+          radial-gradient(ellipse 70% 50% at 80% 20%, rgba(232, 99, 76, 0.15), transparent 60%),
+          radial-gradient(ellipse 60% 40% at 20% 80%, rgba(232, 99, 76, 0.08), transparent 60%),
+          #0c0a09;
+        color: #fafaf9;
+        position: relative;
+      }
+      .grid {
+        position: absolute; inset: 0;
+        background-image:
+          linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .frame { position: relative; padding: 72px 96px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+      .top { display: flex; align-items: center; gap: 14px; }
+      .dot { width: 14px; height: 14px; border-radius: 999px; background: #e8634c; box-shadow: 0 0 24px rgba(232,99,76,0.6); }
+      .wordmark { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 30px; letter-spacing: -0.01em; }
+      .wordmark .sep { color: #e8634c; margin: 0 2px; }
+      .middle { max-width: 980px; }
+      .eyebrow { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #a8a29e; margin-bottom: 22px; font-weight: 500; }
+      h1 {
+        font-family: 'Source Serif 4', Georgia, serif;
+        font-weight: 600; font-size: 78px; line-height: 1.05; letter-spacing: -0.02em;
+        max-width: 18ch;
+      }
+      .accent { color: #e8634c; }
+      .bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+      .tagline { color: #d6d3d1; font-size: 22px; line-height: 1.45; max-width: 60ch; }
+      .meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; color: #78716c; font-family: ui-monospace, 'SF Mono', monospace; font-size: 13px; }
+      .pills { display: flex; gap: 8px; margin-top: 18px; }
+      .pill {
+        padding: 6px 12px; border-radius: 999px;
+        background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+        font-size: 12px; color: #d6d3d1; font-family: ui-monospace, 'SF Mono', monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div>
+    <div class="frame">
+      <div class="top">
+        <span class="dot"></span>
+        <span class="wordmark">arxiv<span class="sep">·</span>radar</span>
+      </div>
+      <div class="middle">
+        <div class="eyebrow">Daily briefing &middot; Weekly trends &amp; gaps</div>
+        <h1>Where research is <span class="accent">consolidating</span><br/>and industry hasn't caught up.</h1>
+        <div class="pills">
+          <span class="pill">arXiv</span>
+          <span class="pill">cs.LG · cs.CL · cs.CV</span>
+          <span class="pill">90-day window</span>
+          <span class="pill">k=20 clustering</span>
+        </div>
+      </div>
+      <div class="bottom">
+        <p class="tagline">A personal research radar. arXiv ingestion, embedding, clustering, and a weekly LLM-written gap report.</p>
+        <div class="meta">
+          <span>arxiv-trend-radar</span>
+          <span>github.com/meelod</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
