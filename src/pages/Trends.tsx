@@ -25,52 +25,86 @@ function HelpIcon({ tip }: { tip: string }) {
 }
 
 function TopAuthors({ report }: { report: TrendsReport }) {
-  // Aggregate authors across active (new + growing) clusters
-  const activeClusterIds = new Set(
-    report.clusters
-      .filter((c) => c.status === 'new' || c.status === 'growing')
-      .flatMap((c) => c.all_paper_ids || [])
+  // Build a map: cluster_id -> paper_ids (active clusters only)
+  const activeClusters = report.clusters.filter(
+    (c) => c.status === 'new' || c.status === 'growing'
   );
+  // Fall back to all clusters on the first weekly report (no priors to compare).
+  const baseClusters = activeClusters.length > 0 ? activeClusters : report.clusters;
 
-  // If there are no active clusters yet (first report), aggregate across all
-  const ids =
-    activeClusterIds.size > 0
-      ? activeClusterIds
-      : new Set(report.clusters.flatMap((c) => c.all_paper_ids || []));
-
-  const authorCounts = new Map<string, number>();
-  for (const pid of ids) {
-    const meta = report.paper_index[pid];
-    if (!meta?.authors) continue;
-    for (const a of meta.authors) {
-      const name = (a || '').trim();
-      if (!name) continue;
-      authorCounts.set(name, (authorCounts.get(name) || 0) + 1);
+  // Score each first/last-author position by paper citation count (or 1 if
+  // citations missing). Drops middle-author noise — in CS, the lead-author
+  // positions carry the leadership/contribution signal that matters here.
+  // Tracks which clusters each author is active in.
+  type Stat = { score: number; clusters: Set<string> };
+  const stats = new Map<string, Stat>();
+  for (const c of baseClusters) {
+    for (const pid of c.all_paper_ids || []) {
+      const meta = report.paper_index[pid];
+      if (!meta?.authors || meta.authors.length === 0) continue;
+      // Citation count contributes weight; absent = 1 (minimum signal)
+      const weight = (meta.citation_count ?? 0) + 1;
+      const lead = [meta.authors[0]];
+      if (meta.authors.length > 1) lead.push(meta.authors[meta.authors.length - 1]);
+      for (const raw of lead) {
+        const name = (raw || '').trim();
+        if (!name) continue;
+        const s = stats.get(name) ?? { score: 0, clusters: new Set<string>() };
+        s.score += weight;
+        s.clusters.add(c.label);
+        stats.set(name, s);
+      }
     }
   }
 
-  const top = Array.from(authorCounts.entries())
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 10)
-    .filter(([, n]) => n >= 2);
+  // Require at least 2 first/last-author appearances (≥2 score after the +1
+  // baseline) to filter homonym/single-paper noise.
+  const top = Array.from(stats.entries())
+    .filter(([, s]) => s.score >= 3) // ≥2 papers (since each contributes ≥1)
+    .sort((a, b) => b[1].score - a[1].score)
+    .slice(0, 10);
 
   if (top.length === 0) return null;
 
   const label =
-    activeClusterIds.size > 0
-      ? 'Top authors in active clusters'
-      : 'Top authors across all clusters';
+    activeClusters.length > 0
+      ? 'Active researchers'
+      : 'Most active researchers (all clusters)';
+  const tip =
+    'First or last author on cited papers in NEW/GROWING clusters this period. ' +
+    'Score is sum of citation counts (+1 per paper as floor). Middle authors are ' +
+    'excluded — in CS, first author = lead student, last author = PI/group lead. ' +
+    'Names not yet disambiguated by affiliation, so common names may pile up multiple researchers.';
 
   return (
     <div className="card">
-      <h4 className="eyebrow mb-4">{label}</h4>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-sm">
-        {top.map(([name, count]) => (
-          <div key={name} className="flex items-baseline justify-between gap-2 border-b border-dotted border-stone-200 dark:border-stone-800 pb-1">
-            <span className="text-stone-800 dark:text-stone-200 truncate">{name}</span>
-            <span className="text-xs text-stone-500 dark:text-stone-400 font-mono tabular-nums shrink-0">{count}</span>
-          </div>
-        ))}
+      <h4 className="eyebrow mb-4 flex items-center">
+        <span>{label}</span>
+        <HelpIcon tip={tip} />
+      </h4>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
+        {top.map(([name, s]) => {
+          const clusterLabels = Array.from(s.clusters);
+          const shown = clusterLabels.slice(0, 2);
+          const extra = clusterLabels.length - shown.length;
+          return (
+            <div
+              key={name}
+              className="flex items-baseline justify-between gap-3 border-b border-dotted border-stone-200 dark:border-stone-800 pb-1.5"
+            >
+              <div className="min-w-0 flex-1">
+                <span className="text-stone-800 dark:text-stone-200 truncate block">{name}</span>
+                <span className="text-[11px] text-stone-500 dark:text-stone-400 truncate block">
+                  {shown.join(' · ')}
+                  {extra > 0 && ` · +${extra} more`}
+                </span>
+              </div>
+              <span className="text-xs text-stone-500 dark:text-stone-400 font-mono tabular-nums shrink-0">
+                {s.score}
+              </span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
