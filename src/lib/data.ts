@@ -32,6 +32,12 @@ export interface PaperMeta {
   influential_count?: number;
 }
 
+export interface MacroPattern {
+  name: string;
+  summary: string;
+  cluster_ids: number[];
+}
+
 export interface TrendsReport {
   report_date: string;
   previous_report_date: string | null;
@@ -41,6 +47,7 @@ export interface TrendsReport {
   language: string;
   model: string;
   overview: string;
+  macro_patterns?: MacroPattern[];
   clusters: TrendCluster[];
   dropped_clusters: { label: string; size: number; one_line?: string }[];
   paper_index: Record<string, PaperMeta>;

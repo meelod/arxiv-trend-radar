@@ -17,6 +17,35 @@ A GitHub Actions cron job pulls new papers from arXiv each morning across machin
 
 Python in GitHub Actions, OpenAI (embeddings + summaries), scikit-learn (clustering), React + TypeScript + Vite + Tailwind on Vercel.
 
+## PWA (Install + Offline)
+
+This app is installable and works offline for pages/data you already opened.
+
+- `public/manifest.webmanifest` defines install metadata and icons.
+- `public/sw.js` handles caching:
+  - app shell: network-first with cache fallback
+  - `/data/*`: stale-while-revalidate
+  - icons/images: cache-first
+- service worker registration is in [`src/main.tsx`](./src/main.tsx) and only runs in production builds.
+
+### Install
+
+- iOS Safari: Share -> Add to Home Screen
+- Android Chrome: browser menu -> Install app / Add to Home screen
+- Desktop Chrome/Edge: Install icon in address bar
+
+### Local verification
+
+```bash
+npm install
+npm run build
+npm run preview
+```
+
+Open the preview URL, load Daily/Trends once, then go offline in DevTools and refresh. The app shell and previously viewed data should still render.
+
+If you change service-worker behavior, bump `VERSION` in [`public/sw.js`](./public/sw.js) to force a new cache namespace.
+
 ## License
 
 All rights reserved. See [LICENSE](./LICENSE).

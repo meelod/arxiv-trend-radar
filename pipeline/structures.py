@@ -59,6 +59,16 @@ class ClusterAnalysis(BaseModel):
     confidence: str = Field(description="one of: high, medium, low — how confident the gap is real and the thesis is non-obvious given the companies above")
 
 
+class MacroPattern(BaseModel):
+    name: str = Field(description="2-6 word name for the pattern")
+    summary: str = Field(description="2-4 sentences naming the convergence across clusters, the non-research constraint it presses against (energy, latency, memory bandwidth, capital, regulation) if any, and a platform-shift framing if applicable ('X used to require Y; if this holds, X becomes Z'). Only assert a constraint or shift when genuinely supported — otherwise just describe the convergence.")
+    cluster_ids: List[int] = Field(description="cluster_ids embodying this pattern; >=2. If only one cluster fits, it's not a macro pattern.")
+
+
 class TrendsReport(BaseModel):
+    macro_patterns: List[MacroPattern] = Field(
+        default_factory=list,
+        description="0-3 cross-cluster patterns visible across the input clusters this period. Return an empty list if no genuine cross-cluster pattern exists — DO NOT invent one. A pattern requires >=2 clusters embodying it AND a non-trivial connection (shared substrate, complementary capability, or competing approach to the same problem). Examples of strong patterns: 'multiple inference clusters all hitting memory-bandwidth ceilings', 'agent and retrieval clusters converging on the same trust/grounding problem'. Examples of weak patterns to skip: 'several clusters use LLMs', 'all clusters involve neural networks'.",
+    )
     overview: str = Field(description="3-5 sentence summary of what's happening across the corpus this period: convergence, surprises, where research is consolidating, what's accelerating, what dropped")
     top_clusters: List[ClusterAnalysis] = Field(description="ranked list of clusters with full gap analysis, best opportunity first; OK to return fewer than the input count if some clusters lack genuine opportunity")

@@ -32,12 +32,13 @@ const STATUS_STROKE: Record<string, string> = {
   shrinking: 'stroke-red-700 dark:stroke-red-300',
 };
 
-const W = 880;
-const H = 420;
-const PAD = 60;
+const W = 800;
+const H = 600;
+const PAD = 64;
 
 export function ConstellationMap({ clusters }: Props) {
   const [hovered, setHovered] = useState<number | null>(null);
+  const [active, setActive] = useState<number | null>(null);
 
   const { points, hasCentroids } = useMemo(() => {
     const withCentroids = clusters.filter((c) => Array.isArray(c.centroid) && c.centroid.length > 0);
@@ -84,20 +85,26 @@ export function ConstellationMap({ clusters }: Props) {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const hoveredPoint = hovered != null ? points.find((p) => p.cluster.cluster_id === hovered) : null;
+  const highlightedId = hovered ?? active;
+  const highlightedPoint = highlightedId != null
+    ? points.find((p) => p.cluster.cluster_id === highlightedId)
+    : null;
 
   return (
-    <section className="card !p-0 overflow-hidden">
-      <div className="px-5 pt-5 pb-3 flex items-baseline justify-between gap-3 flex-wrap">
+    <section className="card !p-0 overflow-hidden border-accent-200/70 dark:border-accent-700/50">
+      <div className="px-5 pt-5 pb-3 flex items-baseline justify-between gap-3 flex-wrap bg-accent-50/40 dark:bg-accent-900/10 border-b border-accent-100/80 dark:border-accent-800/60">
         <h3 className="h-section">Cluster constellation</h3>
         <p className="text-[11px] text-stone-500 dark:text-stone-400 max-w-[42ch] text-right">
-          PC₁ × PC₂ projection of cluster centroids · size = paper count · color = status
+          PC₁ × PC₂ projection · size = papers · color = trend status
         </p>
+      </div>
+      <div className="px-5 py-2.5 text-[12px] text-stone-600 dark:text-stone-300 border-b border-stone-200/70 dark:border-stone-800/70">
+        Tap a dot to jump to that cluster card.
       </div>
       <div className="relative">
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          className="w-full h-auto block bg-stone-50/40 dark:bg-stone-950/40"
+          className="w-full aspect-[4/3] sm:aspect-[16/9] max-h-[560px] h-auto block bg-stone-50/40 dark:bg-stone-950/40"
           role="img"
           aria-label="2D map of clusters"
         >
@@ -123,14 +130,24 @@ export function ConstellationMap({ clusters }: Props) {
                 className="cursor-pointer"
                 onMouseEnter={() => setHovered(cluster.cluster_id)}
                 onMouseLeave={() => setHovered(null)}
-                onClick={() => handleClusterClick(cluster.label)}
+                onClick={() => {
+                  setActive(cluster.cluster_id);
+                  handleClusterClick(cluster.label);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setActive(cluster.cluster_id);
+                    handleClusterClick(cluster.label);
+                  }
+                }}
                 onFocus={() => setHovered(cluster.cluster_id)}
                 onBlur={() => setHovered(null)}
                 tabIndex={0}
                 role="button"
                 aria-label={`${cluster.label}, ${cluster.size} papers, ${status}`}
               >
-                {isHover && (
+                {(isHover || active === cluster.cluster_id) && (
                   <circle cx={x} cy={y} r={r * 2.2} className={STATUS_FILL[status] || STATUS_FILL.stable} opacity={0.18} />
                 )}
                 <circle
@@ -160,20 +177,20 @@ export function ConstellationMap({ clusters }: Props) {
         </svg>
 
         {/* Hover detail card overlaid in the corner */}
-        {hoveredPoint && (
+        {highlightedPoint && (
           <div className="absolute top-3 left-3 max-w-[60%] sm:max-w-[40%] pointer-events-none">
             <div className="card !p-3 shadow-lg backdrop-blur-md">
               <p className="font-serif font-semibold text-[15px] leading-tight tracking-tight text-stone-900 dark:text-stone-50">
-                {hoveredPoint.cluster.label}
+                {highlightedPoint.cluster.label}
               </p>
               <p className="mt-1 text-[11px] text-stone-500 dark:text-stone-400 flex items-center gap-2">
-                <span className="font-mono tabular-nums">{hoveredPoint.cluster.size} papers</span>
+                <span className="font-mono tabular-nums">{highlightedPoint.cluster.size} papers</span>
                 <span aria-hidden>·</span>
-                <span className="uppercase tracking-[0.14em]">{hoveredPoint.cluster.status}</span>
-                {typeof hoveredPoint.cluster.delta_pct === 'number' && (
+                <span className="uppercase tracking-[0.14em]">{highlightedPoint.cluster.status}</span>
+                {typeof highlightedPoint.cluster.delta_pct === 'number' && (
                   <>
                     <span aria-hidden>·</span>
-                    <span className="font-mono tabular-nums">{hoveredPoint.cluster.delta_pct >= 0 ? '+' : ''}{hoveredPoint.cluster.delta_pct}%</span>
+                    <span className="font-mono tabular-nums">{highlightedPoint.cluster.delta_pct >= 0 ? '+' : ''}{highlightedPoint.cluster.delta_pct}%</span>
                   </>
                 )}
               </p>
@@ -188,7 +205,7 @@ export function ConstellationMap({ clusters }: Props) {
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full bg-amber-500" />growing</span>
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full bg-stone-400 dark:bg-stone-500" />stable</span>
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full bg-red-500" />shrinking</span>
-        <span className="hidden sm:inline ml-auto">click a dot to jump to its cluster</span>
+        <span className="ml-auto">tap or click to jump</span>
       </div>
     </section>
   );

@@ -24,7 +24,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               arxiv<span className="text-accent-500">·</span>radar
             </span>
           </Link>
-          <nav className="flex items-center gap-3 sm:gap-6 text-[13px] sm:text-sm">
+          <nav className="flex items-center gap-2.5 sm:gap-6 text-[12px] sm:text-sm">
             <NavLink to="/" end className={linkClass}>Daily</NavLink>
             <NavLink to="/trends" className={linkClass}>Trends</NavLink>
             <NavLink to="/bookmarks" className={linkClass}>Bookmarks</NavLink>
@@ -34,7 +34,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
       </header>
-      <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-10">{children}</main>
+      <main className="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-10">{children}</main>
       <Footer />
     </div>
   );
@@ -78,4 +78,3 @@ function Footer() {
     </footer>
   );
 }
-

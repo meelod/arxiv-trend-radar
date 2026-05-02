@@ -305,7 +305,11 @@ def main() -> None:
         os.environ.pop("OPENAI_BASE_URL", None)
 
     args = parse_args()
-    model_name = os.environ.get("TRENDS_MODEL_NAME") or os.environ.get("MODEL_NAME", "gpt-5.4-mini")
+    # Default to the full gpt-5.4 (not mini) for the weekly trends call —
+    # cross-cluster + economics + physics reasoning is at the edge of what
+    # mini-class models can sustain. The TRENDS_MODEL_NAME env/Variable
+    # overrides this if set.
+    model_name = os.environ.get("TRENDS_MODEL_NAME") or os.environ.get("MODEL_NAME", "gpt-5.4")
     language = os.environ.get("LANGUAGE", "English")
 
     end = (
@@ -488,6 +492,7 @@ def main() -> None:
         "language": language,
         "model": model_name,
         "overview": report.overview,
+        "macro_patterns": [mp.model_dump() for mp in (report.macro_patterns or [])],
         "clusters": out_clusters,
         "dropped_clusters": [{"label": d.get("label"), "size": d.get("size"), "one_line": d.get("one_line")} for d in dropped],
         "paper_index": paper_index,

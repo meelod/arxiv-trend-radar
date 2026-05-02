@@ -4,6 +4,12 @@ import { ClusterCard } from '../components/ClusterCard';
 import { Skeleton } from '../components/Skeleton';
 import { ConstellationMap } from '../components/ConstellationMap';
 
+type MacroPattern = {
+  name: string;
+  summary: string;
+  cluster_ids: number[];
+};
+
 function TopAuthors({ report }: { report: TrendsReport }) {
   // Aggregate authors across active (new + growing) clusters
   const activeClusterIds = new Set(
@@ -195,6 +201,9 @@ export default function Trends() {
     if (sa !== sb) return sa - sb;
     return (b.score || 0) - (a.score || 0);
   });
+  // Compatibility guard: if the active TrendsReport type/schema in a given
+  // build context doesn't yet include macro_patterns, render as empty.
+  const macroPatterns = ((report as unknown as { macro_patterns?: MacroPattern[] }).macro_patterns ?? []);
 
   return (
     <div className="space-y-10">
@@ -230,16 +239,16 @@ export default function Trends() {
 
       <p className="pull-quote max-w-[68ch]">{report.overview}</p>
 
-      {report.macro_patterns && report.macro_patterns.length > 0 && (
+      {macroPatterns.length > 0 && (
         <section className="space-y-3">
           <div className="flex items-baseline justify-between">
             <h2 className="h-section">Macro patterns</h2>
             <span className="eyebrow">cross-cluster</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {report.macro_patterns.map((mp, i) => {
+            {macroPatterns.map((mp: MacroPattern, i: number) => {
               const linkedClusters = mp.cluster_ids
-                .map((id) => report.clusters.find((c) => c.cluster_id === id))
+                .map((id: number) => report.clusters.find((c) => c.cluster_id === id))
                 .filter((c): c is NonNullable<typeof c> => Boolean(c));
               return (
                 <article
