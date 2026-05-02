@@ -45,7 +45,8 @@ export default function Daily() {
     if (!selected) return;
     // If we already have a briefing for the selected date (from latest.json), skip.
     if (briefing && briefing.date === selected.replace('.json', '')) return;
-    setBriefing(null);
+    // Keep the old briefing visible while loading the new one — avoids a
+    // skeleton flash on top of already-rendered content.
     loadBriefing(selected)
       .then(setBriefing)
       .catch((e) => setError(`Failed to load ${selected}: ${e.message}`));

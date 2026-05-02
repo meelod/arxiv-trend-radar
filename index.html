@@ -9,6 +9,17 @@
     <link rel="preload" as="fetch" crossorigin="anonymous" href="/data/briefings/latest.json" />
     <link rel="prefetch" as="fetch" crossorigin="anonymous" href="/data/trends/latest.json" />
     <title>arxiv-trend-radar</title>
+    <style>
+      /* Critical CSS — applies before Tailwind loads to prevent a flash of
+         unstyled content (white background, system-font text, invisible
+         skeleton blocks). */
+      :root { color-scheme: light; background: #fafaf9; }
+      :root.dark { color-scheme: dark; background: #0c0a09; }
+      html, body { margin: 0; padding: 0; }
+      body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+      @keyframes _pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+      .animate-pulse { animation: _pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    </style>
     <script>
       // Apply theme before React mounts to avoid a flash of light-mode.
       (function () {

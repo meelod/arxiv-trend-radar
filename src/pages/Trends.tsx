@@ -162,7 +162,8 @@ export default function Trends() {
   useEffect(() => {
     if (!selected) return;
     if (report && `${report.report_date}.json` === selected) return;
-    setReport(null);
+    // Keep the old report visible while loading the new one — avoids a
+    // skeleton flash on top of already-rendered content.
     loadTrends(selected)
       .then(setReport)
       .catch((e) => setError(`Failed to load ${selected}: ${e.message}`));
