@@ -3,6 +3,26 @@ import { TrendsReport, MacroPattern, listTrends, loadTrends, loadLatestTrends, s
 import { ClusterCard } from '../components/ClusterCard';
 import { Skeleton } from '../components/Skeleton';
 import { ConstellationMap } from '../components/ConstellationMap';
+import { Tooltip } from '../components/Tooltip';
+
+const MACRO_TIP =
+  "Cross-cluster convergences identified by the LLM in a separate reasoning pass before per-cluster analysis. A pattern requires ≥2 clusters connected by a shared substrate, complementary capability, or competing approach to the same problem. Empty when no genuine cross-cluster pattern exists this period — the LLM is instructed not to invent one.";
+
+const CLUSTERS_TIP =
+  "Clusters are computed locally — no LLM. Each paper's title+abstract is embedded with text-embedding-3-small (1536 dims), KMeans groups the last 90 days of papers into 20 clusters, and the top 10 by score (size × growth ratio) are surfaced. Sorted here by status (NEW → GROWING → STABLE → SHRINKING) then by score.";
+
+function HelpIcon({ tip }: { tip: string }) {
+  return (
+    <Tooltip text={tip}>
+      <span
+        className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-stone-300 dark:border-stone-600 text-[9px] font-semibold text-stone-500 dark:text-stone-400 hover:border-stone-500 hover:text-stone-700 dark:hover:border-stone-400 dark:hover:text-stone-200 cursor-help leading-none ml-2 translate-y-[-2px]"
+        aria-label="How this section is generated"
+      >
+        ?
+      </span>
+    </Tooltip>
+  );
+}
 
 function TopAuthors({ report }: { report: TrendsReport }) {
   // Aggregate authors across active (new + growing) clusters
@@ -234,7 +254,7 @@ export default function Trends() {
       {macroPatterns.length > 0 && (
         <section className="space-y-3">
           <div className="flex items-baseline justify-between">
-            <h2 className="h-section">Macro patterns</h2>
+            <h2 className="h-section">Macro patterns<HelpIcon tip={MACRO_TIP} /></h2>
             <span className="eyebrow">cross-cluster</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -281,7 +301,7 @@ export default function Trends() {
 
       <section className="space-y-4">
         <div className="flex items-baseline justify-between">
-          <h2 className="h-section">Clusters</h2>
+          <h2 className="h-section">Clusters<HelpIcon tip={CLUSTERS_TIP} /></h2>
           <span className="eyebrow">{sortedClusters.length} groups</span>
         </div>
         <div className="space-y-4">

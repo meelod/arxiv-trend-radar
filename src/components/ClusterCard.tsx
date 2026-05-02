@@ -4,6 +4,32 @@ import { PaperBadge } from './PaperBadge';
 import { Sparkline } from './Sparkline';
 import { Tooltip } from './Tooltip';
 
+// Tooltip text explaining how each section is generated. Goal is to make
+// the methodology visible without leaving the page — readers can see whether
+// a given field came from a deterministic algorithm (clustering, growth
+// ratio) vs. LLM synthesis (landscape, gap, thesis) vs. world-knowledge
+// retrieval (named companies).
+const SECTION_TIPS = {
+  landscape:
+    "LLM synthesis of the competitive picture given the named companies above. Built from the LLM's training-data knowledge, not a live web search. Treat as a starting point, not authoritative.",
+  gap:
+    "LLM identifies a capability the cluster's papers unlock that no named company exposes, OR a scale/efficiency assumption their products violate. The prompt forces specifics — references named companies and concrete capabilities, not 'AI for X' generics.",
+  thesis:
+    "LLM proposes a concrete first product: who the buyer is, what it does, why incumbents would have a hard time copying. The prompt bans 'platform' and 'ecosystem' language and forces a specific first-product description.",
+  why_now:
+    "LLM ties the thesis to the cluster's quantitative signals — paper-count growth ratio (recent vs. baseline) and week-over-week status (NEW/GROWING/STABLE/SHRINKING). When the LLM cites a specific paper finding, it's drawn from the representative papers fed into the prompt.",
+  risks:
+    "LLM's honest read of what could kill the thesis. Most common failure mode: a named incumbent ships the missing capability as a feature. The prompt instructs the model to state this explicitly when it applies.",
+  companies:
+    "LLM-generated from training-data world knowledge — not retrieved from any database or live search. The prompt instructs it to name 3-7 actual companies (with stage + one-liner) and to return an empty list rather than invent names. Recent stealth startups may be missed; verify the list yourself.",
+  seminal:
+    "Most-cited paper in this cluster per Semantic Scholar. Anchor work the rest of the cluster builds on or reacts to. Picked deterministically by max citation count — not LLM-selected.",
+  representative:
+    "Papers closest to the cluster's centroid (cosine similarity in embedding space). These are the papers fed to the LLM as context for the per-cluster analysis above.",
+  cluster_header:
+    "Clusters are computed locally — no LLM. Each paper's title+abstract is embedded with text-embedding-3-small (1536 dims), KMeans groups the last 90 days of papers into 20 clusters, and the top 10 by score (size × growth ratio) are surfaced. The label and analysis come from the LLM, but the grouping itself is deterministic from the embeddings.",
+};
+
 const STATUS_TOOLTIPS: Record<string, string> = {
   new: 'NEW: this cluster has no clear analogue in last week\'s report',
   growing: 'GROWING: paper count up >20% vs. last week',
@@ -23,6 +49,25 @@ const STATUS_PILL_CLASS: Record<string, string> = {
   stable: 'pill-status-stable',
   shrinking: 'pill-status-shrinking',
 };
+
+// Section-label with an inline info icon. Hover the icon to see how this
+// section was generated (deterministic algorithm vs. LLM synthesis vs.
+// world-knowledge retrieval).
+function SectionLabel({ children, tip }: { children: React.ReactNode; tip: string }) {
+  return (
+    <div className="flex items-center gap-1.5 mb-1">
+      <span className="section-label !mb-0">{children}</span>
+      <Tooltip text={tip}>
+        <span
+          className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-stone-300 dark:border-stone-600 text-[9px] font-semibold text-stone-500 dark:text-stone-400 hover:border-stone-500 hover:text-stone-700 dark:hover:border-stone-400 dark:hover:text-stone-200 cursor-help leading-none"
+          aria-label="How this section is generated"
+        >
+          ?
+        </span>
+      </Tooltip>
+    </div>
+  );
+}
 
 export function ClusterCard({
   cluster,
@@ -75,12 +120,22 @@ export function ClusterCard({
     <article id={`cluster-${slug}`} className="card space-y-5 scroll-mt-24">
       <header className="space-y-3">
         <div className="flex items-start justify-between flex-wrap gap-3">
-          <h3 className="font-serif font-semibold text-[22px] leading-[1.2] tracking-tight text-stone-900 dark:text-stone-50 flex-1 min-w-[260px]">
-            {showPermalink && permalinkPath ? (
-              <Link to={permalinkPath} className="hover:text-accent-500 transition-colors">{cluster.label}</Link>
-            ) : (
-              cluster.label
-            )}
+          <h3 className="font-serif font-semibold text-[22px] leading-[1.2] tracking-tight text-stone-900 dark:text-stone-50 flex-1 min-w-[260px] flex items-baseline gap-2 flex-wrap">
+            <span>
+              {showPermalink && permalinkPath ? (
+                <Link to={permalinkPath} className="hover:text-accent-500 transition-colors">{cluster.label}</Link>
+              ) : (
+                cluster.label
+              )}
+            </span>
+            <Tooltip text={SECTION_TIPS.cluster_header}>
+              <span
+                className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-stone-300 dark:border-stone-600 text-[9px] font-semibold text-stone-500 dark:text-stone-400 hover:border-stone-500 hover:text-stone-700 dark:hover:border-stone-400 dark:hover:text-stone-200 cursor-help leading-none translate-y-[-1px]"
+                aria-label="How this cluster was determined"
+              >
+                ?
+              </span>
+            </Tooltip>
           </h3>
           {paperDates.length > 0 && (
             <Tooltip text="Weekly paper count over the last 12 weeks. Each bar = one week. Color matches status.">
@@ -139,7 +194,7 @@ export function ClusterCard({
 
       {cluster.existing_companies && cluster.existing_companies.length > 0 && (
         <div>
-          <span className="section-label">Existing companies</span>
+          <SectionLabel tip={SECTION_TIPS.companies}>Existing companies</SectionLabel>
           <ul className="space-y-1.5">
             {cluster.existing_companies.map((co, i) => (
               <li key={i} className="text-[14px] leading-[1.55]">
@@ -159,27 +214,27 @@ export function ClusterCard({
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
         <div>
-          <span className="section-label">Existing landscape</span>
+          <SectionLabel tip={SECTION_TIPS.landscape}>Existing landscape</SectionLabel>
           <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.65]">{cluster.existing_landscape}</p>
         </div>
         <div>
-          <span className="section-label">Research–industry gap</span>
+          <SectionLabel tip={SECTION_TIPS.gap}>Research–industry gap</SectionLabel>
           <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.65]">{cluster.research_industry_gap}</p>
         </div>
       </div>
 
       <div className="border-l-[3px] border-accent-500 pl-4 py-1">
-        <span className="section-label">Startup thesis</span>
+        <SectionLabel tip={SECTION_TIPS.thesis}>Startup thesis</SectionLabel>
         <p className="font-serif text-[16px] leading-[1.55] text-stone-800 dark:text-stone-200">{cluster.startup_thesis}</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
         <div>
-          <span className="section-label">Why now</span>
+          <SectionLabel tip={SECTION_TIPS.why_now}>Why now</SectionLabel>
           <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.65]">{cluster.why_now}</p>
         </div>
         <div>
-          <span className="section-label">Risks</span>
+          <SectionLabel tip={SECTION_TIPS.risks}>Risks</SectionLabel>
           <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.65]">{cluster.risks}</p>
         </div>
       </div>
@@ -191,7 +246,7 @@ export function ClusterCard({
         const inf = cluster.seminal_influential ?? meta?.influential_count ?? 0;
         return (
           <div>
-            <span className="section-label">Seminal paper</span>
+            <SectionLabel tip={SECTION_TIPS.seminal}>Seminal paper</SectionLabel>
             <Tooltip text={`Most-cited paper in this cluster${inf ? ` (${inf} influential citations)` : ''}. Anchor work the rest of the cluster builds on or reacts to. Citation counts via Semantic Scholar.`}>
               <a
                 href={meta?.abs || `https://arxiv.org/abs/${sid}`}
@@ -221,7 +276,7 @@ export function ClusterCard({
 
       {cluster.sample_paper_ids?.length > 0 && (
         <div>
-          <span className="section-label">Representative papers</span>
+          <SectionLabel tip={SECTION_TIPS.representative}>Representative papers</SectionLabel>
           <div className="flex flex-wrap gap-1.5">
             {cluster.sample_paper_ids.map((id) => (
               <PaperBadge key={id} id={id} meta={paperIndex[id]} />
