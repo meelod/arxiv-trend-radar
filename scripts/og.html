@@ -15,8 +15,8 @@
       body {
         font-family: 'Inter', system-ui, sans-serif;
         background:
-          radial-gradient(ellipse 70% 50% at 80% 20%, rgba(232, 99, 76, 0.15), transparent 60%),
-          radial-gradient(ellipse 60% 40% at 20% 80%, rgba(232, 99, 76, 0.08), transparent 60%),
+          radial-gradient(ellipse 70% 50% at 80% 20%, rgba(232, 99, 76, 0.18), transparent 60%),
+          radial-gradient(ellipse 60% 40% at 15% 85%, rgba(232, 99, 76, 0.10), transparent 60%),
           #0c0a09;
         color: #fafaf9;
         position: relative;
@@ -28,27 +28,39 @@
           linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
         background-size: 80px 80px;
       }
-      .frame { position: relative; padding: 72px 96px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
-      .top { display: flex; align-items: center; gap: 14px; }
+      .frame {
+        position: relative; height: 640px; width: 1280px;
+        padding: 64px 88px;
+        display: grid; grid-template-rows: auto 1fr; row-gap: 0;
+      }
+      .top { display: flex; align-items: center; justify-content: space-between; }
+      .brand { display: flex; align-items: center; gap: 12px; }
+      .meta { color: #78716c; font-family: ui-monospace, 'SF Mono', monospace; font-size: 13px; }
       .dot { width: 14px; height: 14px; border-radius: 999px; background: #e8634c; box-shadow: 0 0 24px rgba(232,99,76,0.6); }
-      .wordmark { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 30px; letter-spacing: -0.01em; }
+      .wordmark { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 28px; letter-spacing: -0.01em; }
       .wordmark .sep { color: #e8634c; margin: 0 2px; }
-      .middle { max-width: 980px; }
-      .eyebrow { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #a8a29e; margin-bottom: 22px; font-weight: 500; }
+      .middle { align-self: center; }
+      .tagline { color: #d6d3d1; font-size: 18px; line-height: 1.5; max-width: 720px; margin-top: 24px; }
+      .eyebrow { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #a8a29e; margin-bottom: 24px; font-weight: 500; }
       h1 {
         font-family: 'Source Serif 4', Georgia, serif;
-        font-weight: 600; font-size: 78px; line-height: 1.05; letter-spacing: -0.02em;
-        max-width: 18ch;
+        font-weight: 600; font-size: 64px; line-height: 1.08; letter-spacing: -0.02em;
+        max-width: 22ch;
       }
       .accent { color: #e8634c; }
-      .bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
-      .tagline { color: #d6d3d1; font-size: 22px; line-height: 1.45; max-width: 60ch; }
-      .meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; color: #78716c; font-family: ui-monospace, 'SF Mono', monospace; font-size: 13px; }
-      .pills { display: flex; gap: 8px; margin-top: 18px; }
+      .pills { display: flex; gap: 8px; margin-top: 28px; flex-wrap: wrap; }
       .pill {
-        padding: 6px 12px; border-radius: 999px;
-        background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+        padding: 5px 12px; border-radius: 999px;
+        background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
         font-size: 12px; color: #d6d3d1; font-family: ui-monospace, 'SF Mono', monospace;
+      }
+      .bottom {
+        display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;
+      }
+      .tagline { color: #d6d3d1; font-size: 18px; line-height: 1.4; max-width: 700px; }
+      .meta {
+        display: flex; flex-direction: column; align-items: flex-end; gap: 4px;
+        color: #78716c; font-family: ui-monospace, 'SF Mono', monospace; font-size: 12px; white-space: nowrap;
       }
     </style>
   </head>
@@ -56,24 +68,21 @@
     <div class="grid"></div>
     <div class="frame">
       <div class="top">
-        <span class="dot"></span>
-        <span class="wordmark">arxiv<span class="sep">·</span>radar</span>
+        <div class="brand">
+          <span class="dot"></span>
+          <span class="wordmark">arxiv<span class="sep">·</span>radar</span>
+        </div>
+        <span class="meta">github.com/meelod</span>
       </div>
       <div class="middle">
         <div class="eyebrow">Daily briefing &middot; Weekly trends &amp; gaps</div>
-        <h1>Where research is <span class="accent">consolidating</span><br/>and industry hasn't caught up.</h1>
+        <h1>Where research is <span class="accent">consolidating</span> &mdash; and industry hasn&rsquo;t caught up.</h1>
+        <p class="tagline">A personal research radar. Daily LLM briefing, weekly gap report from arXiv.</p>
         <div class="pills">
           <span class="pill">arXiv</span>
-          <span class="pill">cs.LG · cs.CL · cs.CV</span>
+          <span class="pill">cs.LG &middot; cs.CL &middot; cs.CV</span>
           <span class="pill">90-day window</span>
           <span class="pill">k=20 clustering</span>
-        </div>
-      </div>
-      <div class="bottom">
-        <p class="tagline">A personal research radar. arXiv ingestion, embedding, clustering, and a weekly LLM-written gap report.</p>
-        <div class="meta">
-          <span>arxiv-trend-radar</span>
-          <span>github.com/meelod</span>
         </div>
       </div>
     </div>
