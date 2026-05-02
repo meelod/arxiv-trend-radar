@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Briefing, listBriefings, loadBriefing } from '../lib/data';
 import { PaperBadge } from '../components/PaperBadge';
 import { labelWithCode } from '../lib/categories';
+import { colorClassFor } from '../lib/categoryColors';
 
 export default function Daily() {
   const [available, setAvailable] = useState<string[]>([]);
@@ -44,6 +45,18 @@ export default function Daily() {
     return <div className="text-zinc-500">Loading…</div>;
   }
 
+  // Stats: how many unique categories represented and how many papers cross-list >=2 categories
+  const stats = (() => {
+    const papers = Object.values(briefing.paper_index);
+    const cats = new Set<string>();
+    let crossListed = 0;
+    for (const p of papers) {
+      (p.categories || []).forEach((c) => cats.add(c));
+      if ((p.categories || []).length >= 2) crossListed += 1;
+    }
+    return { uniqueCategories: cats.size, crossListed };
+  })();
+
   return (
     <div className="space-y-8">
       {/* Header with date selector */}
@@ -68,6 +81,23 @@ export default function Daily() {
         </div>
       </div>
 
+      {/* Stats strip */}
+      <div className="flex items-center gap-x-6 gap-y-1 flex-wrap text-sm text-zinc-600 -mt-2">
+        <span>
+          <span className="font-semibold text-zinc-900">{briefing.paper_count}</span> papers
+        </span>
+        <span>
+          <span className="font-semibold text-zinc-900">{stats.uniqueCategories}</span> categories
+        </span>
+        <span>
+          <span className="font-semibold text-zinc-900">{stats.crossListed}</span> cross-listed
+        </span>
+        <span>
+          <span className="font-semibold text-zinc-900">{briefing.themes.length}</span> themes ·{' '}
+          <span className="font-semibold text-zinc-900">{briefing.top_picks.length}</span> picks
+        </span>
+      </div>
+
       {/* Executive overview */}
       <p className="text-zinc-700 leading-relaxed text-[15px]">
         {briefing.executive_overview}
@@ -77,23 +107,34 @@ export default function Daily() {
       {briefing.top_picks.length > 0 && (
         <section>
           <h2 className="text-lg font-semibold mb-3">Top picks for you</h2>
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {briefing.top_picks.map((pick) => {
               const meta = briefing.paper_index[pick.arxiv_id];
+              const primary = meta?.categories?.[0];
+              const colorCls = colorClassFor(primary);
+              const score = Math.max(0, Math.min(10, pick.relevance_score || 0));
               return (
                 <a
                   key={pick.arxiv_id}
                   href={meta?.abs || `https://arxiv.org/abs/${pick.arxiv_id}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card block hover:border-accent-500 transition-colors"
+                  className={`card block border-l-4 ${colorCls} hover:shadow-md transition-shadow`}
                 >
-                  <div className="flex items-baseline gap-3 flex-wrap mb-1.5">
-                    <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent-50 text-accent-500 font-bold">
-                      {pick.relevance_score}/10
-                    </span>
-                    <h3 className="font-semibold flex-1 leading-snug">{pick.title}</h3>
+                  <div className="flex items-baseline gap-3 mb-1.5">
+                    <div className="flex items-center gap-1" title={`Relevance ${score}/10`}>
+                      {Array.from({ length: 10 }).map((_, i) => (
+                        <span
+                          key={i}
+                          className={`block w-1 h-2.5 rounded-sm ${
+                            i < score ? 'bg-accent-500' : 'bg-zinc-200'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-[10px] text-zinc-500 font-mono">{pick.arxiv_id}</span>
                   </div>
+                  <h3 className="font-semibold leading-snug mb-1.5">{pick.title}</h3>
                   <p className="text-zinc-700 text-sm leading-relaxed">{pick.why_it_matters}</p>
                   {meta && (
                     <div className="mt-2 flex flex-wrap gap-1.5">

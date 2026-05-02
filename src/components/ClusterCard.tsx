@@ -1,5 +1,6 @@
 import { TrendCluster, PaperMeta } from '../lib/data';
 import { PaperBadge } from './PaperBadge';
+import { Sparkline } from './Sparkline';
 
 const STATUS_PILL_CLASS: Record<string, string> = {
   new: 'pill-status-new',
@@ -28,11 +29,26 @@ export function ClusterCard({
         ? 'bg-amber-100 text-amber-900'
         : 'bg-red-100 text-red-900';
 
+  // Pull paper submission dates for the sparkline
+  const paperDates = (cluster.all_paper_ids || [])
+    .map((id) => paperIndex[id]?.date)
+    .filter((d): d is string => Boolean(d));
+
+  // Determine sparkline color by status
+  const sparkColor =
+    status === 'growing' ? 'text-amber-600' :
+    status === 'shrinking' ? 'text-red-500' :
+    status === 'new' ? 'text-blue-600' :
+    'text-zinc-500';
+
   return (
     <div className="card space-y-3">
       <div className="flex items-baseline justify-between flex-wrap gap-2">
         <h3 className="text-lg font-semibold leading-snug flex-1">{cluster.label}</h3>
         <div className="flex items-center gap-1.5 flex-wrap">
+          {paperDates.length > 0 && (
+            <Sparkline paperDates={paperDates} className={sparkColor} />
+          )}
           <span className={statusPill}>{statusText}</span>
           <span className="pill">{cluster.size} papers</span>
           <span className="pill">growth ×{cluster.growth_ratio}</span>
