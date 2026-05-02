@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { TrendsReport, TrendCluster as TrendClusterType, loadTrends, slugifyLabel } from '../lib/data';
 import { ClusterCard } from '../components/ClusterCard';
+import { Skeleton } from '../components/Skeleton';
 
 export default function TrendCluster() {
   const { date, slug } = useParams<{ date: string; slug: string }>();
@@ -38,7 +39,7 @@ export default function TrendCluster() {
     return <div className="card border-red-200 bg-red-50 text-red-800">{error}</div>;
   }
   if (!report) {
-    return <div className="text-stone-500 dark:text-stone-400">Loading…</div>;
+    return <Skeleton variant="cluster" />;
   }
 
   const cluster = slug ? findCluster(report, slug) : null;

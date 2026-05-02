@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { TrendsReport, listTrends, loadTrends, loadLatestTrends } from '../lib/data';
 import { ClusterCard } from '../components/ClusterCard';
+import { Skeleton } from '../components/Skeleton';
 
 function TopAuthors({ report }: { report: TrendsReport }) {
   // Aggregate authors across active (new + growing) clusters
@@ -181,7 +182,7 @@ export default function Trends() {
   }
 
   if (!report) {
-    return <div className="text-stone-500 dark:text-stone-400">Loading…</div>;
+    return <Skeleton variant="trends" />;
   }
 
   const sortedClusters = [...report.clusters].sort((a, b) => {

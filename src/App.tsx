@@ -1,16 +1,13 @@
 import { lazy, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import { Skeleton } from './components/Skeleton';
 
 const Daily = lazy(() => import('./pages/Daily'));
 const Trends = lazy(() => import('./pages/Trends'));
 const Bookmarks = lazy(() => import('./pages/Bookmarks'));
 const Info = lazy(() => import('./pages/Info'));
 const TrendCluster = lazy(() => import('./pages/TrendCluster'));
-
-const Fallback = () => (
-  <div className="text-stone-500 dark:text-stone-400">Loading…</div>
-);
 
 export default function App() {
   return (
@@ -19,7 +16,7 @@ export default function App() {
         path="/"
         element={
           <Layout>
-            <Suspense fallback={<Fallback />}>
+            <Suspense fallback={<Skeleton variant="daily" />}>
               <Daily />
             </Suspense>
           </Layout>
@@ -29,7 +26,7 @@ export default function App() {
         path="/trends"
         element={
           <Layout>
-            <Suspense fallback={<Fallback />}>
+            <Suspense fallback={<Skeleton variant="trends" />}>
               <Trends />
             </Suspense>
           </Layout>
@@ -39,7 +36,7 @@ export default function App() {
         path="/bookmarks"
         element={
           <Layout>
-            <Suspense fallback={<Fallback />}>
+            <Suspense fallback={<Skeleton variant="inline" />}>
               <Bookmarks />
             </Suspense>
           </Layout>
@@ -49,7 +46,7 @@ export default function App() {
         path="/info"
         element={
           <Layout>
-            <Suspense fallback={<Fallback />}>
+            <Suspense fallback={<Skeleton variant="inline" />}>
               <Info />
             </Suspense>
           </Layout>
@@ -59,7 +56,7 @@ export default function App() {
         path="/trends/:date/:slug"
         element={
           <Layout>
-            <Suspense fallback={<Fallback />}>
+            <Suspense fallback={<Skeleton variant="cluster" />}>
               <TrendCluster />
             </Suspense>
           </Layout>

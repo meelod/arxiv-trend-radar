@@ -8,6 +8,7 @@ import { labelWithCode } from '../lib/categories';
 import { colorClassFor } from '../lib/categoryColors';
 import { getHideRead, isRead, setHideRead } from '../lib/state';
 import { useStateVersion } from '../lib/useLocalState';
+import { Skeleton } from '../components/Skeleton';
 
 export default function Daily() {
   const [available, setAvailable] = useState<string[]>([]);
@@ -66,7 +67,7 @@ export default function Daily() {
   }
 
   if (!briefing) {
-    return <div className="text-stone-500 dark:text-stone-400">Loading…</div>;
+    return <Skeleton variant="daily" />;
   }
 
   // Stats: how many unique categories represented and how many papers cross-list >=2 categories
