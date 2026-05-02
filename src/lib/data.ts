@@ -11,6 +11,7 @@ export interface Briefing {
   top_picks: {
     arxiv_id: string;
     title: string;
+    plain_english?: string;
     why_it_matters: string;
     relevance_score: number;
   }[];
@@ -30,6 +31,8 @@ export interface PaperMeta {
   date?: string;
   citation_count?: number;
   influential_count?: number;
+  primary_affiliation?: string;
+  s2_authors?: { id: string | null; name: string; aff: string | null }[];
 }
 
 export interface MacroPattern {

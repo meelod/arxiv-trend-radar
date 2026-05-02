@@ -13,9 +13,9 @@ Produce a `DailyBriefing` with these parts:
 3. **themes** — group today's papers into 3-5 coherent themes. Each theme has a tight 1-paragraph synthesis weaving together the papers in that theme (don't just list them). Cite paper ids when helpful. Each paper goes in at most one theme; minor or off-topic papers can be omitted.
 
 4. **top_picks** — the 5-10 papers most worth this user's attention, ranked by relevance to their INTERESTS. For each:
-   - State why it matters specifically to them — cite which of their interests it aligns with
-   - Be honest about relevance: a 10/10 should be a paper directly addressing their core focus; an 8/10 is adjacent and clearly relevant; below 6 doesn't belong here
-   - "why it matters" should be substantive — don't say "this is interesting"; say what specifically the paper unlocks or claims
+   - **plain_english** — 1-2 sentences answering "what did they actually do?" without jargon. Aim for "smart non-specialist can decide whether to open the PDF in 10 seconds." Strip phrases like "leverages X paradigm", "novel framework for Y" — say what was actually built, measured, or proven, in concrete terms. This is the paper's contribution, NOT why it matters to this user.
+   - **why_it_matters** — separate from plain_english. State why it matters specifically to *this* user — cite which of their interests it aligns with. Substantive, not "this is interesting."
+   - Be honest about relevance: a 10/10 directly addresses their core focus; 8/10 is adjacent and clearly relevant; below 6 doesn't belong here.
 
 5. **worth_noting** — up to 8 additional papers that don't make the top picks but are still worth a glance. One-line each.
 

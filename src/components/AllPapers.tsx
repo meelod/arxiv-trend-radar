@@ -1,6 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { RawPaper, loadRawPapers } from '../lib/data';
 import { labelWithCode } from '../lib/categories';
+import { Tooltip } from './Tooltip';
+
+const ALL_PAPERS_TIP =
+  "The full arXiv feed for this date — every paper fetched before any LLM filtering. Lazy-loaded on expand from data/papers/{date}.jsonl. Useful for spotting something the briefing missed, scanning the long tail, or browsing by primary arXiv category. No LLM mediation, no ranking.";
 
 /**
  * Lazy-loads the raw `data/papers/{date}.jsonl` for the selected briefing
@@ -65,7 +69,17 @@ export function AllPapers({ date }: { date: string }) {
   return (
     <section>
       <div className="flex items-baseline justify-between mb-3">
-        <h2 className="h-section">All papers</h2>
+        <h2 className="h-section flex items-baseline">
+          <span>All papers</span>
+          <Tooltip text={ALL_PAPERS_TIP}>
+            <span
+              className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-stone-300 dark:border-stone-600 text-[9px] font-semibold text-stone-500 dark:text-stone-400 hover:border-stone-500 hover:text-stone-700 dark:hover:border-stone-400 dark:hover:text-stone-200 cursor-help leading-none ml-2 translate-y-[-2px]"
+              aria-label="How this section is generated"
+            >
+              ?
+            </span>
+          </Tooltip>
+        </h2>
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}

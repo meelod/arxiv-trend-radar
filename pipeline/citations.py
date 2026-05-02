@@ -75,7 +75,12 @@ def _fetch_batch(arxiv_ids: List[str], api_key: Optional[str]) -> List[Optional[
     if api_key:
         headers["x-api-key"] = api_key
     body = {"ids": [f"ARXIV:{pid}" for pid in arxiv_ids]}
-    params = {"fields": "citationCount,influentialCitationCount"}
+    # `authors.authorId` is the canonical disambiguator for homonyms (multiple
+    # researchers sharing a name); `authors.affiliations` gives an institution
+    # tag per-paper. Both are best-effort — S2 coverage is partial.
+    params = {
+        "fields": "citationCount,influentialCitationCount,authors.authorId,authors.name,authors.affiliations"
+    }
 
     for attempt in range(1, MAX_RETRIES + 1):
         try:
@@ -124,7 +129,22 @@ def fetch_citations(
     cache = load_cache(cache_path)
     today = _today()
 
-    to_fetch = [pid for pid in ids if _is_stale(cache.get(pid, {}).get("fetched"))]
+    # Re-fetch when stale by date OR when the cache entry predates the
+    # author/affiliation schema (no `authors` key).
+    def _needs_fetch(pid: str) -> bool:
+        rec = cache.get(pid)
+        if rec is None:
+            return True
+        if _is_stale(rec.get("fetched")):
+            return True
+        # Schema upgrade: pre-affiliation entries lack `authors`. Force refetch
+        # for `found: true` rows so we pick up author data; leave `found: false`
+        # rows alone — those papers aren't in S2 and a re-fetch won't help.
+        if rec.get("found") and "authors" not in rec:
+            return True
+        return False
+
+    to_fetch = [pid for pid in ids if _needs_fetch(pid)]
     if not to_fetch:
         return {pid: cache[pid] for pid in ids if pid in cache}
 
@@ -144,14 +164,39 @@ def fetch_citations(
             if rec is None:
                 # Paper not indexed by Semantic Scholar — record a 0 with today's date
                 # so we don't re-hammer the API for it every run.
-                cache[pid] = {"citation_count": 0, "influential_count": 0, "fetched": today, "found": False}
+                cache[pid] = {
+                    "citation_count": 0,
+                    "influential_count": 0,
+                    "fetched": today,
+                    "found": False,
+                    "authors": [],
+                }
                 null_count += 1
             else:
+                # Compact author records: keep id + name + first non-empty affiliation
+                # only. Some entries have many fragmentary affiliations; one is enough
+                # for the UI tag and saves cache space.
+                authors_raw = rec.get("authors") or []
+                authors_compact = []
+                for a in authors_raw:
+                    if not isinstance(a, dict):
+                        continue
+                    name = (a.get("name") or "").strip()
+                    if not name:
+                        continue
+                    affs = a.get("affiliations") or []
+                    aff = next((x.strip() for x in affs if isinstance(x, str) and x.strip()), "")
+                    authors_compact.append({
+                        "id": a.get("authorId"),
+                        "name": name,
+                        "aff": aff or None,
+                    })
                 cache[pid] = {
                     "citation_count": int(rec.get("citationCount") or 0),
                     "influential_count": int(rec.get("influentialCitationCount") or 0),
                     "fetched": today,
                     "found": True,
+                    "authors": authors_compact,
                 }
                 fetched_count += 1
         time.sleep(SLEEP_BETWEEN)
@@ -162,13 +207,50 @@ def fetch_citations(
     return {pid: cache[pid] for pid in ids if pid in cache}
 
 
+def _normalize_affiliation(s: str) -> str:
+    """Trim corporate/university suffixes so 'Stanford University' and
+    'Stanford' fold together for the per-paper primary tag.
+    """
+    s = (s or "").strip()
+    # Strip everything after the first comma (handles 'Stanford, CA')
+    if "," in s:
+        s = s.split(",")[0].strip()
+    return s
+
+
+def _pick_primary_affiliation(authors: list) -> Optional[str]:
+    """Return the most-common affiliation among the paper's authors, or None.
+
+    S2 affiliation data is patchy. We bias toward whichever institution shows
+    up most in the author list — that's usually 'where this paper was done'.
+    Ties go to the first author's affiliation (typically the lead student).
+    """
+    if not authors:
+        return None
+    counts: Dict[str, int] = {}
+    first_aff = None
+    for a in authors:
+        aff = _normalize_affiliation(a.get("aff") or "")
+        if not aff:
+            continue
+        if first_aff is None:
+            first_aff = aff
+        counts[aff] = counts.get(aff, 0) + 1
+    if not counts:
+        return None
+    # Sort by count desc, then by first-author preference
+    best = max(counts.items(), key=lambda kv: (kv[1], 1 if kv[0] == first_aff else 0))
+    return best[0]
+
+
 def enrich_paper_index(
     paper_index: Dict[str, dict],
     cache_path: str = CACHE_PATH_DEFAULT,
 ) -> None:
-    """Mutate paper_index in place: add citation_count and influential_count
-    to every entry that has a Semantic Scholar match. Missing/failed entries
-    are left untouched (UI treats absence as 'unknown')."""
+    """Mutate paper_index in place: add citation_count, influential_count,
+    primary_affiliation, and an authors list (with affiliations + S2 ids)
+    to every entry that has a Semantic Scholar match. Missing/failed
+    entries are left untouched (UI treats absence as 'unknown')."""
     citations = fetch_citations(paper_index.keys(), cache_path=cache_path)
     for pid, rec in citations.items():
         meta = paper_index.get(pid)
@@ -178,6 +260,14 @@ def enrich_paper_index(
             continue
         meta["citation_count"] = rec["citation_count"]
         meta["influential_count"] = rec["influential_count"]
+        authors = rec.get("authors") or []
+        if authors:
+            primary = _pick_primary_affiliation(authors)
+            if primary:
+                meta["primary_affiliation"] = primary
+            # Keep the per-paper authors list (id + name + aff) for downstream
+            # disambiguation (Active Researchers grouped by S2 authorId).
+            meta["s2_authors"] = authors
 
 
 if __name__ == "__main__":

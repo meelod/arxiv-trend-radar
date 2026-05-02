@@ -11,6 +11,30 @@ import { useStateVersion } from '../lib/useLocalState';
 import { Skeleton } from '../components/Skeleton';
 import { AllPapers } from '../components/AllPapers';
 
+const SECTION_TIPS = {
+  top_picks:
+    "5-10 papers ranked highest by an LLM (gpt-4o-mini) reading the day's papers against your INTERESTS. Two-stage: an embedding pre-filter trims ~1500 daily papers down to 400 most-similar to your interests + 20 random wildcards, then the LLM re-ranks and writes a 'why for you' explanation per pick.",
+  themes:
+    "3-5 thematic groupings the LLM identifies in today's papers. Each theme weaves several papers into a 1-paragraph synthesis. Themes describe the day at a topic level — different from top picks, which are personalized for you.",
+  worth_noting:
+    "Up to 8 additional papers the LLM thinks are worth a glance but didn't make the personalized top picks. One sentence each. Filtered for noise — fewer is fine when the day is quiet.",
+  all_papers:
+    "The full arXiv feed for the date — every paper fetched before any LLM filtering. Use to spot something the briefing missed, scan the long tail, or browse by category. No LLM mediation.",
+};
+
+function HelpIcon({ tip }: { tip: string }) {
+  return (
+    <Tooltip text={tip}>
+      <span
+        className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-stone-300 dark:border-stone-600 text-[9px] font-semibold text-stone-500 dark:text-stone-400 hover:border-stone-500 hover:text-stone-700 dark:hover:border-stone-400 dark:hover:text-stone-200 cursor-help leading-none ml-2 translate-y-[-2px]"
+        aria-label="How this section is generated"
+      >
+        ?
+      </span>
+    </Tooltip>
+  );
+}
+
 export default function Daily() {
   const [available, setAvailable] = useState<string[]>([]);
   const [listLoaded, setListLoaded] = useState(false);
@@ -154,7 +178,7 @@ export default function Daily() {
       {briefing.top_picks.length > 0 && (
         <section>
           <div className="flex items-baseline justify-between mb-5">
-            <h2 className="h-section">Top picks for you</h2>
+            <h2 className="h-section">Top picks for you<HelpIcon tip={SECTION_TIPS.top_picks} /></h2>
             <span className="eyebrow">{briefing.top_picks.length} selected</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -210,14 +234,30 @@ export default function Daily() {
                         </div>
                       </div>
                       <h3 className="font-serif font-semibold text-[18px] leading-[1.25] tracking-tight mb-2 text-stone-900 dark:text-stone-50 group-hover:text-accent-500">{pick.title}</h3>
-                      <p className="text-stone-600 dark:text-stone-300 text-[14px] leading-[1.6]">{pick.why_it_matters}</p>
-                      {meta?.categories && meta.categories.length > 0 && (
-                        <div className="mt-3 flex flex-wrap gap-1.5">
-                          {meta.categories.slice(0, 3).map((c) => (
-                            <span key={c} className="pill" title={labelWithCode(c)}>{c}</span>
-                          ))}
-                        </div>
+                      {pick.plain_english && (
+                        <p className="text-stone-700 dark:text-stone-200 text-[14px] leading-[1.55] mb-2">
+                          {pick.plain_english}
+                        </p>
                       )}
+                      <p className="text-stone-600 dark:text-stone-400 text-[13px] leading-[1.55] italic">
+                        <span className="not-italic font-semibold text-stone-500 dark:text-stone-400 text-[10px] uppercase tracking-[0.12em] mr-1.5">Why for you</span>
+                        {pick.why_it_matters}
+                      </p>
+                      <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                        {meta?.primary_affiliation && (
+                          <Tooltip text={`Primary affiliation per Semantic Scholar — most-common institution among the paper's authors. Coverage is partial; many papers don't have affiliation data in S2.`}>
+                            <span className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200/70 dark:border-stone-700/70">
+                              <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2L2 7v2h20V7L12 2zM4 11v8h2v-8H4zm14 0v8h2v-8h-2zm-4 0v8h2v-8h-2zm-6 0v8h2v-8H8zM2 21v2h20v-2H2z" />
+                              </svg>
+                              {meta.primary_affiliation}
+                            </span>
+                          </Tooltip>
+                        )}
+                        {meta?.categories?.slice(0, 3).map((c) => (
+                          <span key={c} className="pill" title={labelWithCode(c)}>{c}</span>
+                        ))}
+                      </div>
                     </a>
                     <div className="flex flex-col gap-1 shrink-0">
                       <StarButton
@@ -245,7 +285,7 @@ export default function Daily() {
       {briefing.themes.length > 0 && (
         <section>
           <div className="flex items-baseline justify-between mb-5">
-            <h2 className="h-section">Today's themes</h2>
+            <h2 className="h-section">Today's themes<HelpIcon tip={SECTION_TIPS.themes} /></h2>
             <span className="eyebrow">{briefing.themes.length} groupings</span>
           </div>
           <div className="space-y-4">
@@ -275,7 +315,7 @@ export default function Daily() {
       {briefing.worth_noting.length > 0 && (
         <section>
           <div className="flex items-baseline justify-between mb-5">
-            <h2 className="h-section">Worth noting</h2>
+            <h2 className="h-section">Worth noting<HelpIcon tip={SECTION_TIPS.worth_noting} /></h2>
             <span className="eyebrow">{briefing.worth_noting.length} items</span>
           </div>
           <ul className="card divide-y divide-stone-200/60 dark:divide-stone-800/60 p-0 overflow-hidden">

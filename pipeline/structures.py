@@ -14,9 +14,12 @@ class Theme(BaseModel):
 
 
 class TopPick(BaseModel):
-    arxiv_id: str = Field(description="arXiv id of the paper")
+    arxiv_id: str = Field(description="arXiv id of the paper — copy verbatim from input, never invent or transpose")
     title: str = Field(description="paper title")
-    why_it_matters: str = Field(description="2-3 sentences explaining specifically why this paper is relevant to the user's stated interests; cite the interest if helpful")
+    plain_english: str = Field(
+        description="1-2 sentences describing what the paper actually does in plain English, no jargon. Answer 'what did they build/measure/prove?' as if to a smart non-specialist. This is NOT why it matters to the user — it's the paper's actual contribution. Examples: 'Trains a small LLM by distilling from a frontier model and gets 90% of the bigger model's performance at 1/10 the size' — NOT 'leverages knowledge distillation paradigms for efficient model compression'."
+    )
+    why_it_matters: str = Field(description="2-3 sentences explaining specifically why this paper is relevant to the user's stated interests; cite the interest if helpful. This is DIFFERENT from plain_english — it's about the user's lens, not the paper's contribution.")
     relevance_score: int = Field(description="1-10, how strongly this paper aligns with the user's stated interests")
 
 
