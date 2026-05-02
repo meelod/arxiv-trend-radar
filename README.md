@@ -1,6 +1,6 @@
 # arxiv-trend-radar
 
-🔗 **Live site:** [arxiv-trend-radar-git-main-meelod-waheeds-projects.vercel.app](https://arxiv-trend-radar-git-main-meelod-waheeds-projects.vercel.app)
+🔗 **Live site:** [arxiv-trend-radar.vercel.app](https://arxiv-trend-radar.vercel.app)
 
 > ⚠️ **Personal portfolio project — not maintained as a template.** This repo is public so the architecture and design decisions can serve as a reference. It is **not under an open-source license** (see [LICENSE](./LICENSE)). If you want to build similar tooling, please write your own.
 
