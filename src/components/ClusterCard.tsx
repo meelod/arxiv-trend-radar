@@ -1,6 +1,20 @@
 import { TrendCluster, PaperMeta } from '../lib/data';
 import { PaperBadge } from './PaperBadge';
 import { Sparkline } from './Sparkline';
+import { Tooltip } from './Tooltip';
+
+const STATUS_TOOLTIPS: Record<string, string> = {
+  new: 'NEW: this cluster has no clear analogue in last week\'s report',
+  growing: 'GROWING: paper count up >20% vs. last week',
+  stable: 'STABLE: paper count within ±20% of last week',
+  shrinking: 'SHRINKING: paper count down >20% vs. last week',
+};
+
+const CONFIDENCE_TOOLTIPS: Record<string, string> = {
+  high: 'HIGH confidence: gap appears real, thesis non-obvious, commercially plausible. Investigate seriously.',
+  medium: 'MEDIUM confidence: plausible but uncertain. Skim and judge yourself.',
+  low: 'LOW confidence: gap may not be real or already served. Skip the deep dive.',
+};
 
 const STATUS_PILL_CLASS: Record<string, string> = {
   new: 'pill-status-new',
@@ -39,7 +53,7 @@ export function ClusterCard({
     status === 'growing' ? 'text-amber-600' :
     status === 'shrinking' ? 'text-red-500' :
     status === 'new' ? 'text-blue-600' :
-    'text-zinc-500';
+    'text-zinc-500 dark:text-zinc-400';
 
   return (
     <div className="card space-y-3">
@@ -47,24 +61,32 @@ export function ClusterCard({
         <h3 className="text-lg font-semibold leading-snug flex-1">{cluster.label}</h3>
         <div className="flex items-center gap-1.5 flex-wrap">
           {paperDates.length > 0 && (
-            <Sparkline paperDates={paperDates} className={sparkColor} />
+            <Tooltip text="Weekly paper count over the last 12 weeks. Each bar = one week. Color matches status.">
+              <Sparkline paperDates={paperDates} className={sparkColor} />
+            </Tooltip>
           )}
-          <span className={statusPill}>{statusText}</span>
+          <Tooltip text={STATUS_TOOLTIPS[status] || ''}>
+            <span className={statusPill}>{statusText}</span>
+          </Tooltip>
           <span className="pill">{cluster.size} papers</span>
-          <span className="pill">growth ×{cluster.growth_ratio}</span>
+          <Tooltip text={`${cluster.growth_ratio < 0.8 ? 'Cooling' : cluster.growth_ratio > 1.2 ? 'Growing' : 'Roughly steady'}: papers/week recently is ${cluster.growth_ratio}× the prior 8-week baseline.`}>
+            <span className="pill">growth ×{cluster.growth_ratio}</span>
+          </Tooltip>
           {cluster.confidence && (
-            <span className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold ${confidenceClass}`}>
-              {cluster.confidence}
-            </span>
+            <Tooltip text={CONFIDENCE_TOOLTIPS[cluster.confidence.toLowerCase()] || ''}>
+              <span className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold ${confidenceClass}`}>
+                {cluster.confidence}
+              </span>
+            </Tooltip>
           )}
         </div>
       </div>
 
       {cluster.matched_prev_label && cluster.matched_prev_label !== cluster.label && (
-        <p className="text-xs text-zinc-500">Last week: "{cluster.matched_prev_label}"</p>
+        <p className="text-xs text-zinc-500 dark:text-zinc-400">Last week: "{cluster.matched_prev_label}"</p>
       )}
 
-      <p className="text-zinc-700 italic text-sm">{cluster.one_line}</p>
+      <p className="text-zinc-700 dark:text-zinc-300 italic text-sm">{cluster.one_line}</p>
 
       {cluster.keywords?.length > 0 && (
         <div className="flex flex-wrap gap-1.5">
@@ -78,27 +100,27 @@ export function ClusterCard({
 
       <div>
         <span className="section-label">Existing landscape</span>
-        <p className="text-sm text-zinc-700 leading-relaxed">{cluster.existing_landscape}</p>
+        <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.existing_landscape}</p>
       </div>
 
       <div>
         <span className="section-label">Research–industry gap</span>
-        <p className="text-sm text-zinc-700 leading-relaxed">{cluster.research_industry_gap}</p>
+        <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.research_industry_gap}</p>
       </div>
 
       <div>
         <span className="section-label">Startup thesis</span>
-        <p className="text-sm text-zinc-700 leading-relaxed">{cluster.startup_thesis}</p>
+        <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.startup_thesis}</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
           <span className="section-label">Why now</span>
-          <p className="text-sm text-zinc-700 leading-relaxed">{cluster.why_now}</p>
+          <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.why_now}</p>
         </div>
         <div>
           <span className="section-label">Risks</span>
-          <p className="text-sm text-zinc-700 leading-relaxed">{cluster.risks}</p>
+          <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{cluster.risks}</p>
         </div>
       </div>
 

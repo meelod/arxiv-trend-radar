@@ -10,7 +10,7 @@ export function PaperBadge({ id, meta }: { id: string; meta?: PaperMeta }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-xs px-2.5 py-1 bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 rounded-full text-zinc-700 hover:text-zinc-900 transition-colors"
+      className="text-xs px-2.5 py-1 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-700 rounded-full text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:text-zinc-100 transition-colors"
       title={title}
     >
       {label}

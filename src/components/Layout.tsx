@@ -14,7 +14,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               to="/"
               end
               className={({ isActive }) =>
-                `transition-colors ${isActive ? 'text-accent-500 font-medium' : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'}`
+                `transition-colors ${isActive ? 'text-accent-500 font-medium' : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'}`
               }
             >
               Daily
@@ -22,7 +22,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <NavLink
               to="/trends"
               className={({ isActive }) =>
-                `transition-colors ${isActive ? 'text-accent-500 font-medium' : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'}`
+                `transition-colors ${isActive ? 'text-accent-500 font-medium' : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'}`
               }
             >
               Trends
@@ -30,7 +30,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <NavLink
               to="/bookmarks"
               className={({ isActive }) =>
-                `transition-colors ${isActive ? 'text-accent-500 font-medium' : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'}`
+                `transition-colors ${isActive ? 'text-accent-500 font-medium' : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'}`
               }
             >
               Bookmarks
@@ -38,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <NavLink
               to="/info"
               className={({ isActive }) =>
-                `transition-colors ${isActive ? 'text-accent-500 font-medium' : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'}`
+                `transition-colors ${isActive ? 'text-accent-500 font-medium' : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'}`
               }
             >
               Info

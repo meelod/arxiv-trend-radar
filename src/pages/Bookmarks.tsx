@@ -9,7 +9,7 @@ export default function Bookmarks() {
 
   if (items.length === 0) {
     return (
-      <div className="card text-center text-zinc-500 py-12">
+      <div className="card text-center text-zinc-500 dark:text-zinc-400 py-12">
         <p className="font-semibold mb-1">No bookmarks yet.</p>
         <p className="text-sm">
           Click the star on any paper to save it here. Bookmarks live in this browser only — clearing site data removes them.
@@ -20,8 +20,8 @@ export default function Bookmarks() {
 
   return (
     <div className="space-y-4">
-      <div className="pb-4 border-b border-zinc-200">
-        <p className="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Bookmarks</p>
+      <div className="pb-4 border-b border-zinc-200 dark:border-zinc-700">
+        <p className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold">Bookmarks</p>
         <h1 className="text-2xl font-semibold mt-1">
           {items.length} {items.length === 1 ? 'paper' : 'papers'} saved
         </h1>
@@ -43,12 +43,12 @@ export default function Bookmarks() {
                   >
                     <h3 className="font-semibold leading-snug">{b.title}</h3>
                   </a>
-                  <p className="text-xs text-zinc-500 mt-1 font-mono">
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1 font-mono">
                     {b.id}
                     {b.paper_date && <span> · {b.paper_date}</span>}
                   </p>
                   {b.reason && (
-                    <p className="text-sm text-zinc-700 mt-2 leading-relaxed">{b.reason}</p>
+                    <p className="text-sm text-zinc-700 dark:text-zinc-300 mt-2 leading-relaxed">{b.reason}</p>
                   )}
                   {b.categories && b.categories.length > 0 && (
                     <div className="mt-2 flex flex-wrap gap-1.5">
@@ -63,13 +63,13 @@ export default function Bookmarks() {
                 <button
                   type="button"
                   onClick={() => removeBookmark(b.id)}
-                  className="shrink-0 text-zinc-400 hover:text-red-600 text-xs font-medium"
+                  className="shrink-0 text-zinc-400 dark:text-zinc-500 hover:text-red-600 text-xs font-medium"
                   title="Remove bookmark"
                 >
                   Remove
                 </button>
               </div>
-              <p className="text-[11px] text-zinc-400 mt-3">
+              <p className="text-[11px] text-zinc-400 dark:text-zinc-500 mt-3">
                 Saved {new Date(b.bookmarked_at).toLocaleDateString()}
               </p>
             </div>

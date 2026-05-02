@@ -41,14 +41,14 @@ function TopAuthors({ report }: { report: TrendsReport }) {
 
   return (
     <div className="card">
-      <h4 className="text-xs uppercase tracking-wider text-zinc-500 font-semibold mb-3">
+      <h4 className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold mb-3">
         {label}
       </h4>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
         {top.map(([name, count]) => (
           <div key={name} className="flex items-baseline justify-between gap-2">
-            <span className="text-zinc-800 truncate">{name}</span>
-            <span className="text-xs text-zinc-500 font-mono shrink-0">{count}</span>
+            <span className="text-zinc-800 dark:text-zinc-200 truncate">{name}</span>
+            <span className="text-xs text-zinc-500 dark:text-zinc-400 font-mono shrink-0">{count}</span>
           </div>
         ))}
       </div>
@@ -78,9 +78,9 @@ function WhatChanged({ report }: { report: TrendsReport }) {
           New ({newClusters.length})
         </h4>
         {newClusters.length === 0 ? (
-          <p className="text-sm text-zinc-500">None</p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">None</p>
         ) : (
-          <ul className="text-sm text-zinc-700 space-y-1">
+          <ul className="text-sm text-zinc-700 dark:text-zinc-300 space-y-1">
             {newClusters.slice(0, 5).map((c) => (
               <li key={c.cluster_id}>· {c.label}</li>
             ))}
@@ -93,9 +93,9 @@ function WhatChanged({ report }: { report: TrendsReport }) {
           Growing ({topGrowers.length})
         </h4>
         {topGrowers.length === 0 ? (
-          <p className="text-sm text-zinc-500">None</p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">None</p>
         ) : (
-          <ul className="text-sm text-zinc-700 space-y-1">
+          <ul className="text-sm text-zinc-700 dark:text-zinc-300 space-y-1">
             {topGrowers.map((c) => (
               <li key={c.cluster_id}>
                 · {c.label}{' '}
@@ -107,15 +107,15 @@ function WhatChanged({ report }: { report: TrendsReport }) {
       </div>
 
       <div className="card">
-        <h4 className="text-xs uppercase tracking-wider text-zinc-500 font-semibold mb-2">
+        <h4 className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold mb-2">
           Dropped ({dropped.length})
         </h4>
         {dropped.length === 0 ? (
-          <p className="text-sm text-zinc-500">None</p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">None</p>
         ) : (
-          <ul className="text-sm text-zinc-700 space-y-1">
+          <ul className="text-sm text-zinc-700 dark:text-zinc-300 space-y-1">
             {dropped.slice(0, 5).map((d, i) => (
-              <li key={i} className="text-zinc-600">· {d.label || '(unlabeled)'}</li>
+              <li key={i} className="text-zinc-600 dark:text-zinc-400">· {d.label || '(unlabeled)'}</li>
             ))}
           </ul>
         )}
@@ -160,14 +160,14 @@ export default function Trends() {
 
   if (available.length === 0) {
     return (
-      <div className="card text-center text-zinc-500 py-12">
+      <div className="card text-center text-zinc-500 dark:text-zinc-400 py-12">
         No trend reports yet. The first one will appear after the weekly workflow runs.
       </div>
     );
   }
 
   if (!report) {
-    return <div className="text-zinc-500">Loading…</div>;
+    return <div className="text-zinc-500 dark:text-zinc-400">Loading…</div>;
   }
 
   const sortedClusters = [...report.clusters].sort((a, b) => {
@@ -179,16 +179,16 @@ export default function Trends() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-baseline justify-between flex-wrap gap-3 pb-4 border-b border-zinc-200">
+      <div className="flex items-baseline justify-between flex-wrap gap-3 pb-4 border-b border-zinc-200 dark:border-zinc-700">
         <div>
-          <p className="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Weekly Trends &amp; Gaps</p>
+          <p className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold">Weekly Trends &amp; Gaps</p>
           <h1 className="text-2xl font-semibold mt-1">{report.report_date}</h1>
         </div>
         <div className="flex items-center gap-3 text-sm">
           <select
             value={selected ?? ''}
             onChange={(e) => setSelected(e.target.value)}
-            className="px-3 py-1.5 border border-zinc-300 rounded-lg bg-white text-sm"
+            className="px-3 py-1.5 border border-zinc-300 dark:border-zinc-600 rounded-lg bg-white dark:bg-zinc-900 text-sm"
           >
             {available.map((f) => (
               <option key={f} value={f}>
@@ -196,15 +196,15 @@ export default function Trends() {
               </option>
             ))}
           </select>
-          <span className="text-zinc-500">{report.paper_count} papers · {report.window_days}d</span>
+          <span className="text-zinc-500 dark:text-zinc-400">{report.paper_count} papers · {report.window_days}d</span>
           {report.previous_report_date && (
-            <span className="text-zinc-500">vs {report.previous_report_date}</span>
+            <span className="text-zinc-500 dark:text-zinc-400">vs {report.previous_report_date}</span>
           )}
         </div>
       </div>
 
-      <div className="border-l-4 border-accent-500 bg-zinc-50 p-4 rounded-r-lg">
-        <p className="text-zinc-800 leading-relaxed">{report.overview}</p>
+      <div className="border-l-4 border-accent-500 bg-zinc-50 dark:bg-zinc-900 p-4 rounded-r-lg">
+        <p className="text-zinc-800 dark:text-zinc-200 leading-relaxed">{report.overview}</p>
       </div>
 
       {/* What changed this week */}
@@ -220,15 +220,15 @@ export default function Trends() {
       </div>
 
       {report.dropped_clusters.length > 0 && (
-        <div className="border border-dashed border-zinc-300 rounded-lg p-4 bg-zinc-50">
-          <h4 className="text-xs uppercase tracking-wider text-zinc-500 font-semibold mb-2">
+        <div className="border border-dashed border-zinc-300 dark:border-zinc-600 rounded-lg p-4 bg-zinc-50 dark:bg-zinc-900">
+          <h4 className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold mb-2">
             Dropped since last week ({report.dropped_clusters.length})
           </h4>
-          <ul className="text-sm text-zinc-600 space-y-1">
+          <ul className="text-sm text-zinc-600 dark:text-zinc-400 space-y-1">
             {report.dropped_clusters.map((d, i) => (
               <li key={i}>
                 {d.label || '(unlabeled)'}
-                {d.size != null && <span className="text-zinc-400"> — was {d.size} papers</span>}
+                {d.size != null && <span className="text-zinc-400 dark:text-zinc-500"> — was {d.size} papers</span>}
               </li>
             ))}
           </ul>

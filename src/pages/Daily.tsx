@@ -41,14 +41,14 @@ export default function Daily() {
 
   if (available.length === 0) {
     return (
-      <div className="card text-center text-zinc-500 py-12">
+      <div className="card text-center text-zinc-500 dark:text-zinc-400 py-12">
         No briefings yet. The first one will appear after the daily workflow runs.
       </div>
     );
   }
 
   if (!briefing) {
-    return <div className="text-zinc-500">Loading…</div>;
+    return <div className="text-zinc-500 dark:text-zinc-400">Loading…</div>;
   }
 
   // Stats: how many unique categories represented and how many papers cross-list >=2 categories
@@ -66,16 +66,16 @@ export default function Daily() {
   return (
     <div className="space-y-8">
       {/* Header with date selector */}
-      <div className="flex items-baseline justify-between flex-wrap gap-3 pb-4 border-b border-zinc-200">
+      <div className="flex items-baseline justify-between flex-wrap gap-3 pb-4 border-b border-zinc-200 dark:border-zinc-700">
         <div>
-          <p className="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Daily Briefing</p>
+          <p className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold">Daily Briefing</p>
           <h1 className="text-2xl font-semibold mt-1">{briefing.headline}</h1>
         </div>
         <div className="flex items-center gap-3 text-sm">
           <select
             value={selected ?? ''}
             onChange={(e) => setSelected(e.target.value)}
-            className="px-3 py-1.5 border border-zinc-300 rounded-lg bg-white text-sm"
+            className="px-3 py-1.5 border border-zinc-300 dark:border-zinc-600 rounded-lg bg-white dark:bg-zinc-900 text-sm"
           >
             {available.map((f) => (
               <option key={f} value={f}>
@@ -83,26 +83,26 @@ export default function Daily() {
               </option>
             ))}
           </select>
-          <span className="text-zinc-500">{briefing.paper_count} papers</span>
+          <span className="text-zinc-500 dark:text-zinc-400">{briefing.paper_count} papers</span>
         </div>
       </div>
 
       {/* Stats strip */}
-      <div className="flex items-center gap-x-6 gap-y-1 flex-wrap text-sm text-zinc-600 -mt-2">
+      <div className="flex items-center gap-x-6 gap-y-1 flex-wrap text-sm text-zinc-600 dark:text-zinc-400 -mt-2">
         <span>
-          <span className="font-semibold text-zinc-900">{briefing.paper_count}</span> papers
+          <span className="font-semibold text-zinc-900 dark:text-zinc-100">{briefing.paper_count}</span> papers
         </span>
         <span>
-          <span className="font-semibold text-zinc-900">{stats.uniqueCategories}</span> categories
+          <span className="font-semibold text-zinc-900 dark:text-zinc-100">{stats.uniqueCategories}</span> categories
         </span>
         <span>
-          <span className="font-semibold text-zinc-900">{stats.crossListed}</span> cross-listed
+          <span className="font-semibold text-zinc-900 dark:text-zinc-100">{stats.crossListed}</span> cross-listed
         </span>
         <span>
-          <span className="font-semibold text-zinc-900">{briefing.themes.length}</span> themes ·{' '}
-          <span className="font-semibold text-zinc-900">{briefing.top_picks.length}</span> picks
+          <span className="font-semibold text-zinc-900 dark:text-zinc-100">{briefing.themes.length}</span> themes ·{' '}
+          <span className="font-semibold text-zinc-900 dark:text-zinc-100">{briefing.top_picks.length}</span> picks
         </span>
-        <label className="flex items-center gap-1.5 text-xs text-zinc-500 ml-auto cursor-pointer select-none">
+        <label className="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400 ml-auto cursor-pointer select-none">
           <input
             type="checkbox"
             checked={hideRead}
@@ -114,7 +114,7 @@ export default function Daily() {
       </div>
 
       {/* Executive overview */}
-      <p className="text-zinc-700 leading-relaxed text-[15px]">
+      <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-[15px]">
         {briefing.executive_overview}
       </p>
 
@@ -149,15 +149,15 @@ export default function Daily() {
                             <span
                               key={i}
                               className={`block w-1 h-2.5 rounded-sm ${
-                                i < score ? 'bg-accent-500' : 'bg-zinc-200'
+                                i < score ? 'bg-accent-500' : 'bg-zinc-200 dark:bg-zinc-700'
                               }`}
                             />
                           ))}
                         </div>
-                        <span className="text-[10px] text-zinc-500 font-mono">{pick.arxiv_id}</span>
+                        <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-mono">{pick.arxiv_id}</span>
                       </div>
                       <h3 className="font-semibold leading-snug mb-1.5">{pick.title}</h3>
-                      <p className="text-zinc-700 text-sm leading-relaxed">{pick.why_it_matters}</p>
+                      <p className="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">{pick.why_it_matters}</p>
                       {meta && (
                         <div className="mt-2 flex flex-wrap gap-1.5">
                           {meta.categories.slice(0, 3).map((c) => (
@@ -196,7 +196,7 @@ export default function Daily() {
             {briefing.themes.map((theme, i) => (
               <div key={i} className="card">
                 <h3 className="font-semibold mb-1.5">{theme.name}</h3>
-                <p className="text-zinc-700 text-sm leading-relaxed mb-3">{theme.summary}</p>
+                <p className="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed mb-3">{theme.summary}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {theme.paper_ids.map((id) => (
                     <PaperBadge key={id} id={id} meta={briefing.paper_index[id]} />
@@ -212,7 +212,7 @@ export default function Daily() {
       {briefing.worth_noting.length > 0 && (
         <section>
           <h2 className="text-lg font-semibold mb-3">Worth noting</h2>
-          <ul className="card divide-y divide-zinc-100 -mt-1 -mx-1 p-1">
+          <ul className="card divide-y divide-zinc-100 dark:divide-zinc-800 -mt-1 -mx-1 p-1">
             {briefing.worth_noting
               .filter((wn) => !(hideRead && isRead(wn.arxiv_id)))
               .map((wn) => {
@@ -227,11 +227,11 @@ export default function Daily() {
                     href={meta?.abs || `https://arxiv.org/abs/${wn.arxiv_id}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 min-w-0 hover:bg-zinc-50 -mx-2 px-2 py-1 rounded transition-colors"
+                    className="flex-1 min-w-0 hover:bg-zinc-50 dark:bg-zinc-900 -mx-2 px-2 py-1 rounded transition-colors"
                   >
-                    <p className="text-sm text-zinc-800 leading-snug">{wn.one_liner}</p>
+                    <p className="text-sm text-zinc-800 dark:text-zinc-200 leading-snug">{wn.one_liner}</p>
                     {meta && (
-                      <p className="text-xs text-zinc-500 mt-0.5">
+                      <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
                         {wn.arxiv_id} · {meta.title.slice(0, 80)}
                         {meta.title.length > 80 ? '…' : ''}
                       </p>
