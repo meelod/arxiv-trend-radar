@@ -2,6 +2,60 @@ import { useEffect, useState } from 'react';
 import { TrendsReport, listTrends, loadTrends } from '../lib/data';
 import { ClusterCard } from '../components/ClusterCard';
 
+function TopAuthors({ report }: { report: TrendsReport }) {
+  // Aggregate authors across active (new + growing) clusters
+  const activeClusterIds = new Set(
+    report.clusters
+      .filter((c) => c.status === 'new' || c.status === 'growing')
+      .flatMap((c) => c.all_paper_ids || [])
+  );
+
+  // If there are no active clusters yet (first report), aggregate across all
+  const ids =
+    activeClusterIds.size > 0
+      ? activeClusterIds
+      : new Set(report.clusters.flatMap((c) => c.all_paper_ids || []));
+
+  const authorCounts = new Map<string, number>();
+  for (const pid of ids) {
+    const meta = report.paper_index[pid];
+    if (!meta?.authors) continue;
+    for (const a of meta.authors) {
+      const name = (a || '').trim();
+      if (!name) continue;
+      authorCounts.set(name, (authorCounts.get(name) || 0) + 1);
+    }
+  }
+
+  const top = Array.from(authorCounts.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .filter(([, n]) => n >= 2);
+
+  if (top.length === 0) return null;
+
+  const label =
+    activeClusterIds.size > 0
+      ? 'Top authors in active clusters'
+      : 'Top authors across all clusters';
+
+  return (
+    <div className="card">
+      <h4 className="text-xs uppercase tracking-wider text-zinc-500 font-semibold mb-3">
+        {label}
+      </h4>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
+        {top.map(([name, count]) => (
+          <div key={name} className="flex items-baseline justify-between gap-2">
+            <span className="text-zinc-800 truncate">{name}</span>
+            <span className="text-xs text-zinc-500 font-mono shrink-0">{count}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function WhatChanged({ report }: { report: TrendsReport }) {
   const newClusters = report.clusters.filter((c) => c.status === 'new');
   const topGrowers = report.clusters
@@ -155,6 +209,9 @@ export default function Trends() {
 
       {/* What changed this week */}
       <WhatChanged report={report} />
+
+      {/* Top authors */}
+      <TopAuthors report={report} />
 
       <div className="space-y-4">
         {sortedClusters.map((c) => (

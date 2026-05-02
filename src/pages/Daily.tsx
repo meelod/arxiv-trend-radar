@@ -1,14 +1,20 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Briefing, listBriefings, loadBriefing } from '../lib/data';
 import { PaperBadge } from '../components/PaperBadge';
+import { StarButton } from '../components/StarButton';
+import { ReadButton } from '../components/ReadButton';
 import { labelWithCode } from '../lib/categories';
 import { colorClassFor } from '../lib/categoryColors';
+import { getHideRead, isRead, setHideRead } from '../lib/state';
+import { useStateVersion } from '../lib/useLocalState';
 
 export default function Daily() {
   const [available, setAvailable] = useState<string[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
   const [briefing, setBriefing] = useState<Briefing | null>(null);
   const [error, setError] = useState<string | null>(null);
+  useStateVersion(); // re-render on bookmark/read changes
+  const hideRead = getHideRead();
 
   useEffect(() => {
     listBriefings()
@@ -96,6 +102,15 @@ export default function Daily() {
           <span className="font-semibold text-zinc-900">{briefing.themes.length}</span> themes ·{' '}
           <span className="font-semibold text-zinc-900">{briefing.top_picks.length}</span> picks
         </span>
+        <label className="flex items-center gap-1.5 text-xs text-zinc-500 ml-auto cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={hideRead}
+            onChange={(e) => setHideRead(e.target.checked)}
+            className="accent-accent-500"
+          />
+          Hide read
+        </label>
       </div>
 
       {/* Executive overview */}
@@ -108,42 +123,65 @@ export default function Daily() {
         <section>
           <h2 className="text-lg font-semibold mb-3">Top picks for you</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {briefing.top_picks.map((pick) => {
+            {briefing.top_picks
+              .filter((pick) => !(hideRead && isRead(pick.arxiv_id)))
+              .map((pick) => {
               const meta = briefing.paper_index[pick.arxiv_id];
               const primary = meta?.categories?.[0];
               const colorCls = colorClassFor(primary);
               const score = Math.max(0, Math.min(10, pick.relevance_score || 0));
+              const read = isRead(pick.arxiv_id);
               return (
-                <a
+                <div
                   key={pick.arxiv_id}
-                  href={meta?.abs || `https://arxiv.org/abs/${pick.arxiv_id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`card block border-l-4 ${colorCls} hover:shadow-md transition-shadow`}
+                  className={`card border-l-4 ${colorCls} ${read ? 'opacity-60' : ''} transition-opacity`}
                 >
-                  <div className="flex items-baseline gap-3 mb-1.5">
-                    <div className="flex items-center gap-1" title={`Relevance ${score}/10`}>
-                      {Array.from({ length: 10 }).map((_, i) => (
-                        <span
-                          key={i}
-                          className={`block w-1 h-2.5 rounded-sm ${
-                            i < score ? 'bg-accent-500' : 'bg-zinc-200'
-                          }`}
-                        />
-                      ))}
+                  <div className="flex items-start gap-2">
+                    <a
+                      href={meta?.abs || `https://arxiv.org/abs/${pick.arxiv_id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-0 hover:opacity-90"
+                    >
+                      <div className="flex items-baseline gap-3 mb-1.5">
+                        <div className="flex items-center gap-1" title={`Relevance ${score}/10`}>
+                          {Array.from({ length: 10 }).map((_, i) => (
+                            <span
+                              key={i}
+                              className={`block w-1 h-2.5 rounded-sm ${
+                                i < score ? 'bg-accent-500' : 'bg-zinc-200'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <span className="text-[10px] text-zinc-500 font-mono">{pick.arxiv_id}</span>
+                      </div>
+                      <h3 className="font-semibold leading-snug mb-1.5">{pick.title}</h3>
+                      <p className="text-zinc-700 text-sm leading-relaxed">{pick.why_it_matters}</p>
+                      {meta && (
+                        <div className="mt-2 flex flex-wrap gap-1.5">
+                          {meta.categories.slice(0, 3).map((c) => (
+                            <span key={c} className="pill" title={labelWithCode(c)}>{c}</span>
+                          ))}
+                        </div>
+                      )}
+                    </a>
+                    <div className="flex flex-col gap-1">
+                      <StarButton
+                        entry={{
+                          id: pick.arxiv_id,
+                          title: pick.title,
+                          authors: meta?.authors,
+                          abs: meta?.abs,
+                          categories: meta?.categories,
+                          paper_date: meta?.date,
+                          reason: pick.why_it_matters,
+                        }}
+                      />
+                      <ReadButton id={pick.arxiv_id} />
                     </div>
-                    <span className="text-[10px] text-zinc-500 font-mono">{pick.arxiv_id}</span>
                   </div>
-                  <h3 className="font-semibold leading-snug mb-1.5">{pick.title}</h3>
-                  <p className="text-zinc-700 text-sm leading-relaxed">{pick.why_it_matters}</p>
-                  {meta && (
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      {meta.categories.slice(0, 3).map((c) => (
-                        <span key={c} className="pill" title={labelWithCode(c)}>{c}</span>
-                      ))}
-                    </div>
-                  )}
-                </a>
+                </div>
               );
             })}
           </div>
@@ -175,15 +213,21 @@ export default function Daily() {
         <section>
           <h2 className="text-lg font-semibold mb-3">Worth noting</h2>
           <ul className="card divide-y divide-zinc-100 -mt-1 -mx-1 p-1">
-            {briefing.worth_noting.map((wn) => {
+            {briefing.worth_noting
+              .filter((wn) => !(hideRead && isRead(wn.arxiv_id)))
+              .map((wn) => {
               const meta = briefing.paper_index[wn.arxiv_id];
+              const read = isRead(wn.arxiv_id);
               return (
-                <li key={wn.arxiv_id} className="px-4 py-3">
+                <li
+                  key={wn.arxiv_id}
+                  className={`px-4 py-3 flex items-start gap-2 ${read ? 'opacity-60' : ''}`}
+                >
                   <a
                     href={meta?.abs || `https://arxiv.org/abs/${wn.arxiv_id}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block hover:bg-zinc-50 -mx-2 px-2 py-1 rounded transition-colors"
+                    className="flex-1 min-w-0 hover:bg-zinc-50 -mx-2 px-2 py-1 rounded transition-colors"
                   >
                     <p className="text-sm text-zinc-800 leading-snug">{wn.one_liner}</p>
                     {meta && (
@@ -193,6 +237,21 @@ export default function Daily() {
                       </p>
                     )}
                   </a>
+                  <div className="flex items-center gap-0.5 shrink-0">
+                    <StarButton
+                      size={16}
+                      entry={{
+                        id: wn.arxiv_id,
+                        title: meta?.title || wn.arxiv_id,
+                        authors: meta?.authors,
+                        abs: meta?.abs,
+                        categories: meta?.categories,
+                        paper_date: meta?.date,
+                        reason: wn.one_liner,
+                      }}
+                    />
+                    <ReadButton id={wn.arxiv_id} />
+                  </div>
                 </li>
               );
             })}

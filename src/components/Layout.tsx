@@ -26,6 +26,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
             >
               Trends
             </NavLink>
+            <NavLink
+              to="/bookmarks"
+              className={({ isActive }) =>
+                `transition-colors ${isActive ? 'text-accent-500 font-medium' : 'text-zinc-600 hover:text-zinc-900'}`
+              }
+            >
+              Bookmarks
+            </NavLink>
           </nav>
         </div>
       </header>
