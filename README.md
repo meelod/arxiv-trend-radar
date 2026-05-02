@@ -1,5 +1,7 @@
 # arxiv-trend-radar
 
+![arxiv-trend-radar](docs/hero.png)
+
 Live: [arxiv-trend-radar.vercel.app](https://arxiv-trend-radar.vercel.app)
 
 Pulls research papers from arXiv every day and produces:
