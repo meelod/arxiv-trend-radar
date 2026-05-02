@@ -144,16 +144,18 @@ export default function Daily() {
                       className="flex-1 min-w-0 hover:opacity-90"
                     >
                       <div className="flex items-baseline gap-3 mb-1.5">
-                        <div className="flex items-center gap-1" title={`Relevance ${score}/10`}>
-                          {Array.from({ length: 10 }).map((_, i) => (
-                            <span
-                              key={i}
-                              className={`block w-1 h-2.5 rounded-sm ${
-                                i < score ? 'bg-accent-500' : 'bg-zinc-200 dark:bg-zinc-700'
-                              }`}
-                            />
-                          ))}
-                        </div>
+                        <Tooltip text={`Relevance ${score}/10. The LLM rated how strongly this paper aligns with your stated interests. 10 = directly addresses a core interest, 8 = adjacent and clearly relevant, 6+ = useful tangent.`}>
+                          <div className="flex items-center gap-1">
+                            {Array.from({ length: 10 }).map((_, i) => (
+                              <span
+                                key={i}
+                                className={`block w-1 h-2.5 rounded-sm ${
+                                  i < score ? 'bg-accent-500' : 'bg-zinc-200 dark:bg-zinc-700'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                        </Tooltip>
                         <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-mono">{pick.arxiv_id}</span>
                       </div>
                       <h3 className="font-semibold leading-snug mb-1.5">{pick.title}</h3>
