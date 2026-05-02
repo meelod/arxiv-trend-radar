@@ -1,0 +1,103 @@
+// All data lives at /data/ on the same origin (Vercel serves it from main).
+
+export interface Briefing {
+  date: string;
+  paper_count: number;
+  model: string;
+  language: string;
+  headline: string;
+  executive_overview: string;
+  themes: { name: string; summary: string; paper_ids: string[] }[];
+  top_picks: {
+    arxiv_id: string;
+    title: string;
+    why_it_matters: string;
+    relevance_score: number;
+  }[];
+  worth_noting: { arxiv_id: string; one_liner: string }[];
+  paper_index: Record<string, PaperMeta>;
+}
+
+export interface PaperMeta {
+  title: string;
+  authors: string[];
+  abs: string;
+  categories: string[];
+  summary?: string;
+  date?: string;
+}
+
+export interface TrendsReport {
+  report_date: string;
+  previous_report_date: string | null;
+  window_days: number;
+  paper_count: number;
+  cluster_count: number;
+  language: string;
+  model: string;
+  overview: string;
+  clusters: TrendCluster[];
+  dropped_clusters: { label: string; size: number; one_line?: string }[];
+  paper_index: Record<string, PaperMeta>;
+}
+
+export interface TrendCluster {
+  cluster_id: number;
+  label: string;
+  one_line: string;
+  existing_landscape: string;
+  research_industry_gap: string;
+  startup_thesis: string;
+  why_now: string;
+  risks: string;
+  confidence: string;
+  size: number;
+  growth_ratio: number;
+  score: number;
+  keywords: string[];
+  sample_paper_ids: string[];
+  all_paper_ids: string[];
+  status: 'new' | 'growing' | 'stable' | 'shrinking';
+  delta_pct: number | null;
+  matched_prev_label: string | null;
+}
+
+async function fetchText(path: string): Promise<string> {
+  const r = await fetch(path, { cache: 'no-store' });
+  if (!r.ok) throw new Error(`${path} → ${r.status}`);
+  return r.text();
+}
+
+async function fetchJson<T>(path: string): Promise<T> {
+  const r = await fetch(path, { cache: 'no-store' });
+  if (!r.ok) throw new Error(`${path} → ${r.status}`);
+  return r.json();
+}
+
+export async function listBriefings(): Promise<string[]> {
+  const txt = await fetchText('/data/briefings/briefings-list.txt');
+  return txt
+    .split('\n')
+    .map((s) => s.trim())
+    .filter((s) => s.endsWith('.json'))
+    .sort()
+    .reverse();
+}
+
+export async function loadBriefing(file: string): Promise<Briefing> {
+  return fetchJson<Briefing>(`/data/briefings/${file}`);
+}
+
+export async function listTrends(): Promise<string[]> {
+  const txt = await fetchText('/data/trends/trends-list.txt');
+  return txt
+    .split('\n')
+    .map((s) => s.trim())
+    .filter((s) => s.endsWith('.json'))
+    .sort()
+    .reverse();
+}
+
+export async function loadTrends(file: string): Promise<TrendsReport> {
+  return fetchJson<TrendsReport>(`/data/trends/${file}`);
+}
