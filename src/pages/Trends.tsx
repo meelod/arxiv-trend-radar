@@ -4,6 +4,7 @@ import { ClusterCard } from '../components/ClusterCard';
 import { Skeleton } from '../components/Skeleton';
 import { ConstellationMap } from '../components/ConstellationMap';
 import { Tooltip } from '../components/Tooltip';
+import { TrendsMasthead } from '../components/TrendsMasthead';
 
 const MACRO_TIP =
   "Cross-cluster convergences identified by the LLM in a separate reasoning pass before per-cluster analysis. A pattern requires ≥2 clusters connected by a shared substrate, complementary capability, or competing approach to the same problem. Empty when no genuine cross-cluster pattern exists this period — the LLM is instructed not to invent one.";
@@ -253,37 +254,12 @@ export default function Trends() {
 
   return (
     <div className="space-y-10">
-      <header className="space-y-5">
-        <div className="flex items-center justify-between flex-wrap gap-3">
-          <span className="eyebrow">Weekly Trends &amp; Gaps</span>
-          <select
-            value={selected ?? ''}
-            onChange={(e) => setSelected(e.target.value)}
-            className="select-clean"
-            aria-label="Select report date"
-          >
-            {available.map((f) => (
-              <option key={f} value={f}>
-                {f.replace('.json', '')}
-              </option>
-            ))}
-          </select>
-        </div>
-        <h1 className="h-display text-[40px] sm:text-[52px]">{report.report_date}</h1>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-[12px] text-stone-500 dark:text-stone-400">
-          <span><span className="font-mono tabular-nums text-stone-700 dark:text-stone-300">{report.paper_count.toLocaleString()}</span> papers</span>
-          <span className="w-px h-3 bg-stone-300 dark:bg-stone-700" />
-          <span><span className="font-mono tabular-nums text-stone-700 dark:text-stone-300">{report.window_days}</span>-day window</span>
-          {report.previous_report_date && (
-            <>
-              <span className="w-px h-3 bg-stone-300 dark:bg-stone-700" />
-              <span>vs <span className="font-mono">{report.previous_report_date}</span></span>
-            </>
-          )}
-        </div>
-      </header>
-
-      <p className="pull-quote max-w-[68ch]">{report.overview}</p>
+      <TrendsMasthead
+        report={report}
+        available={available}
+        selected={selected}
+        onSelect={setSelected}
+      />
 
       {macroPatterns.length > 0 && (
         <section className="space-y-3">
