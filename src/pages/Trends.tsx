@@ -7,10 +7,25 @@ import { Tooltip } from '../components/Tooltip';
 import { TrendsMasthead } from '../components/TrendsMasthead';
 
 const MACRO_TIP =
-  "Cross-cluster convergences identified by the LLM in a separate reasoning pass before per-cluster analysis. A pattern requires ≥2 clusters connected by a shared substrate, complementary capability, or competing approach to the same problem. Empty when no genuine cross-cluster pattern exists this period — the LLM is instructed not to invent one.";
+  "Cross-cluster convergences identified by the LLM in a separate reasoning pass before per-cluster analysis. A pattern requires ≥2 clusters connected by a shared substrate, complementary capability, or competing approach to the same problem. The 'so what' line names the commercial implication. Empty when no genuine cross-cluster pattern exists this period — the LLM is instructed not to invent one.";
 
 const CLUSTERS_TIP =
   "Clusters are computed locally — no LLM. Each paper's title+abstract is embedded with text-embedding-3-small (1536 dims), KMeans groups the last 90 days of papers into 20 clusters, and the top 10 by score (size × growth ratio) are surfaced. Sorted here by status (NEW → GROWING → STABLE → SHRINKING) then by score.";
+
+// The trends LLM occasionally references clusters in macro-pattern prose by raw
+// ID ("Cluster 17 and Cluster 18 both..."), but those numeric IDs aren't shown
+// anywhere on the page. Rewrite "Cluster N" to the cluster's label so the prose
+// is readable on its own.
+function humanizeClusterRefs(
+  text: string,
+  clusters: { cluster_id: number; label: string }[],
+): string {
+  const byId = new Map(clusters.map((c) => [c.cluster_id, c.label]));
+  return text.replace(/\bCluster\s+(\d+)\b/g, (match, idStr) => {
+    const label = byId.get(Number(idStr));
+    return label ? `"${label}"` : match;
+  });
+}
 
 function HelpIcon({ tip }: { tip: string }) {
   return (
@@ -264,7 +279,7 @@ export default function Trends() {
       {macroPatterns.length > 0 && (
         <section className="space-y-3">
           <div className="flex items-baseline justify-between">
-            <h2 className="h-section">Macro patterns<HelpIcon tip={MACRO_TIP} /></h2>
+            <h2 className="h-section">Cross-cluster signals<HelpIcon tip={MACRO_TIP} /></h2>
             <span className="eyebrow">cross-cluster</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -281,8 +296,14 @@ export default function Trends() {
                     {mp.name}
                   </h3>
                   <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.6] mb-3">
-                    {mp.summary}
+                    {humanizeClusterRefs(mp.summary, report.clusters)}
                   </p>
+                  {mp.so_what && (
+                    <p className="text-[13px] leading-[1.55] mb-3 pl-3 border-l-2 border-accent-400 dark:border-accent-500/70 text-stone-800 dark:text-stone-200">
+                      <span className="eyebrow mr-2 text-accent-700 dark:text-accent-400">So what</span>
+                      {humanizeClusterRefs(mp.so_what, report.clusters)}
+                    </p>
+                  )}
                   {linkedClusters.length > 0 && (
                     <div className="flex flex-wrap gap-1.5">
                       {linkedClusters.map((c) => (

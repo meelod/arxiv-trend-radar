@@ -38,6 +38,7 @@ export interface PaperMeta {
 export interface MacroPattern {
   name: string;
   summary: string;
+  so_what?: string;
   cluster_ids: number[];
 }
 
@@ -167,8 +168,19 @@ export async function listTrends(): Promise<string[]> {
   }
 }
 
+// Trend reports are immutable once produced (the file at /data/trends/{date}.json
+// never changes), so cache them in-memory to avoid re-downloading the ~20MB
+// payload when the user clicks between dates.
+const trendsCache = new Map<string, TrendsReport>();
+
 export async function loadTrends(file: string): Promise<TrendsReport> {
-  return fetchJson<TrendsReport>(`/data/trends/${file}`);
+  const cached = trendsCache.get(file);
+  if (cached) return cached;
+  const r = await fetch(`/data/trends/${file}`);
+  if (!r.ok) throw new Error(`/data/trends/${file} → ${r.status}`);
+  const report = (await r.json()) as TrendsReport;
+  trendsCache.set(file, report);
+  return report;
 }
 
 export async function loadLatestTrends(): Promise<TrendsReport | null> {

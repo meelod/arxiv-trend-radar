@@ -64,7 +64,8 @@ class ClusterAnalysis(BaseModel):
 
 class MacroPattern(BaseModel):
     name: str = Field(description="2-6 word name for the pattern")
-    summary: str = Field(description="2-4 sentences naming the convergence across clusters, the non-research constraint it presses against (energy, latency, memory bandwidth, capital, regulation) if any, and a platform-shift framing if applicable ('X used to require Y; if this holds, X becomes Z'). Only assert a constraint or shift when genuinely supported — otherwise just describe the convergence.")
+    summary: str = Field(description="2-3 sentences naming the convergence across clusters and the non-research constraint it presses against (energy, latency, memory bandwidth, capital, regulation) when one genuinely applies. IMPORTANT: refer to the contributing clusters by their concept/label inline (e.g. 'the KV-cache compression cluster', 'agent runtime evaluation'), NOT by raw ID number ('Cluster 12'). The cluster IDs are listed separately in cluster_ids and are not shown to the reader inline. FORBIDDEN: vague generalities like 'AI is evolving rapidly', 'research is consolidating across many areas', 'these clusters all use LLMs' — if you cannot name a specific shared bottleneck or substrate, do not emit the pattern.")
+    so_what: str = Field(description="One sentence on the commercial/product implication. Either a platform-shift framing ('X used to require Y; if this holds, X becomes Z') or a concrete buyer-side consequence ('serving margin shifts from raw FLOPs to memory bandwidth allocation'). Must be specific enough that a reader could decide whether to act on it. NO hedge words like 'may', 'could be interesting', 'worth watching'.")
     cluster_ids: List[int] = Field(description="cluster_ids embodying this pattern; >=2. If only one cluster fits, it's not a macro pattern.")
 
 
