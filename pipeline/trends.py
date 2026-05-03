@@ -392,7 +392,6 @@ def main() -> None:
         if not c:
             continue
         s = c.get("status_info") or {}
-        # analysis.model_dump() already includes existing_companies as a list of Company dicts
         out_clusters.append({
             **analysis.model_dump(),
             "size": c["size"],

@@ -7,19 +7,17 @@ import { Tooltip } from './Tooltip';
 // Tooltip text explaining how each section is generated. Goal is to make
 // the methodology visible without leaving the page — readers can see whether
 // a given field came from a deterministic algorithm (clustering, growth
-// ratio) vs. LLM synthesis (landscape, gap, thesis) vs. world-knowledge
+// ratio) vs. LLM synthesis (landscape, gap) vs. world-knowledge
 // retrieval (named companies).
 const SECTION_TIPS = {
   landscape:
     "LLM synthesis of the competitive picture given the named companies above. Built from the LLM's training-data knowledge, not a live web search. Treat as a starting point, not authoritative.",
   gap:
     "LLM identifies a capability the cluster's papers unlock that no named company exposes, OR a scale/efficiency assumption their products violate. The prompt forces specifics — references named companies and concrete capabilities, not 'AI for X' generics.",
-  thesis:
-    "LLM proposes a concrete first product: who the buyer is, what it does, why incumbents would have a hard time copying. The prompt bans 'platform' and 'ecosystem' language and forces a specific first-product description.",
   why_now:
-    "LLM ties the thesis to the cluster's quantitative signals — paper-count growth ratio (recent vs. baseline) and week-over-week status (NEW/GROWING/STABLE/SHRINKING). When the LLM cites a specific paper finding, it's drawn from the representative papers fed into the prompt.",
+    "LLM ties the gap to the cluster's quantitative signals — paper-count growth ratio (recent vs. baseline) and week-over-week status (NEW/GROWING/STABLE/SHRINKING). When the LLM cites a specific paper finding, it's drawn from the representative papers fed into the prompt.",
   risks:
-    "LLM's honest read of what could kill the thesis. Most common failure mode: a named incumbent ships the missing capability as a feature. The prompt instructs the model to state this explicitly when it applies.",
+    "LLM's honest read of what could close this gap. Most common failure mode: a named incumbent ships the missing capability as a feature. The prompt instructs the model to state this explicitly when it applies.",
   companies:
     "LLM-generated from training-data world knowledge — not retrieved from any database or live search. The prompt instructs it to name 3-7 actual companies (with stage + one-liner) and to return an empty list rather than invent names. Recent stealth startups may be missed; verify the list yourself.",
   seminal:
@@ -38,7 +36,7 @@ const STATUS_TOOLTIPS: Record<string, string> = {
 };
 
 const CONFIDENCE_TOOLTIPS: Record<string, string> = {
-  high: 'HIGH confidence: gap appears real, thesis non-obvious, commercially plausible. Investigate seriously.',
+  high: 'HIGH confidence: gap appears real and non-obvious given the listed companies. Worth investigating.',
   medium: 'MEDIUM confidence: plausible but uncertain. Skim and judge yourself.',
   low: 'LOW confidence: gap may not be real or already served. Skip the deep dive.',
 };
@@ -192,26 +190,6 @@ export function ClusterCard({
 
       <hr className="border-stone-200/70 dark:border-stone-800/70" />
 
-      {cluster.existing_companies && cluster.existing_companies.length > 0 && (
-        <div>
-          <SectionLabel tip={SECTION_TIPS.companies}>Existing companies</SectionLabel>
-          <ul className="space-y-1.5">
-            {cluster.existing_companies.map((co, i) => (
-              <li key={i} className="text-[14px] leading-[1.55]">
-                <span className="font-semibold text-stone-900 dark:text-stone-100">{co.name}</span>
-                {co.stage && co.stage !== 'unknown' && (
-                  <span className="ml-2 pill-mono">{co.stage}</span>
-                )}
-                <span className="text-stone-700 dark:text-stone-300"> — {co.what_they_do}</span>
-                {co.why_relevant && (
-                  <span className="text-stone-500 dark:text-stone-400 italic"> ({co.why_relevant})</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
         <div>
           <SectionLabel tip={SECTION_TIPS.landscape}>Existing landscape</SectionLabel>
@@ -221,11 +199,6 @@ export function ClusterCard({
           <SectionLabel tip={SECTION_TIPS.gap}>Research–industry gap</SectionLabel>
           <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-[1.65]">{cluster.research_industry_gap}</p>
         </div>
-      </div>
-
-      <div className="border-l-[3px] border-accent-500 pl-4 py-1">
-        <SectionLabel tip={SECTION_TIPS.thesis}>Startup thesis</SectionLabel>
-        <p className="font-serif text-[16px] leading-[1.55] text-stone-800 dark:text-stone-200">{cluster.startup_thesis}</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">

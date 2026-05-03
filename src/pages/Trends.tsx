@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TrendsReport, MacroPattern, listTrends, loadTrends, loadLatestTrends, slugifyLabel } from '../lib/data';
+import { TrendsReport, MacroPattern, listTrends, loadTrends, loadLatestTrends, slugifyLabel, humanizeClusterRefs } from '../lib/data';
 import { ClusterCard } from '../components/ClusterCard';
 import { Skeleton } from '../components/Skeleton';
 import { ConstellationMap } from '../components/ConstellationMap';
@@ -11,21 +11,6 @@ const MACRO_TIP =
 
 const CLUSTERS_TIP =
   "Clusters are computed locally — no LLM. Each paper's title+abstract is embedded with text-embedding-3-small (1536 dims), KMeans groups the last 90 days of papers into 20 clusters, and the top 10 by score (size × growth ratio) are surfaced. Sorted here by status (NEW → GROWING → STABLE → SHRINKING) then by score.";
-
-// The trends LLM occasionally references clusters in macro-pattern prose by raw
-// ID ("Cluster 17 and Cluster 18 both..."), but those numeric IDs aren't shown
-// anywhere on the page. Rewrite "Cluster N" to the cluster's label so the prose
-// is readable on its own.
-function humanizeClusterRefs(
-  text: string,
-  clusters: { cluster_id: number; label: string }[],
-): string {
-  const byId = new Map(clusters.map((c) => [c.cluster_id, c.label]));
-  return text.replace(/\bCluster\s+(\d+)\b/g, (match, idStr) => {
-    const label = byId.get(Number(idStr));
-    return label ? `"${label}"` : match;
-  });
-}
 
 function HelpIcon({ tip }: { tip: string }) {
   return (
@@ -276,6 +261,8 @@ export default function Trends() {
         onSelect={setSelected}
       />
 
+      <WhatChanged report={report} />
+
       {macroPatterns.length > 0 && (
         <section className="space-y-3">
           <div className="flex items-baseline justify-between">
@@ -323,8 +310,6 @@ export default function Trends() {
           </div>
         </section>
       )}
-
-      <WhatChanged report={report} />
 
       <ConstellationMap clusters={sortedClusters} />
 

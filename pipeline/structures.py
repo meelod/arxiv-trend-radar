@@ -40,26 +40,15 @@ class DailyBriefing(BaseModel):
 # Weekly trends and gap analysis
 # ---------------------------------------------------------------------------
 
-class Company(BaseModel):
-    name: str = Field(description="company or product name")
-    what_they_do: str = Field(description="one-sentence description of what they build, specific to this cluster's research direction")
-    stage: str = Field(description="funding stage if known (e.g. 'Seed', 'Series B', 'Public', 'OSS', 'Acquired'); use 'unknown' if uncertain")
-    why_relevant: str = Field(description="one short phrase tying them to this cluster — which capability, paper, or angle they target")
-
-
 class ClusterAnalysis(BaseModel):
     cluster_id: int
     label: str = Field(description="2-6 word label naming this research direction")
     one_line: str = Field(description="one-sentence description of what the cluster is about")
-    existing_companies: List[Company] = Field(
-        description="3-7 actual companies, products, or OSS projects working in this space. Be specific — name them. If you genuinely don't know any, return an empty list rather than inventing names. Prefer well-known incumbents and recent funded startups you have specific knowledge of.",
-    )
-    existing_landscape: str = Field(description="2-4 sentences synthesizing the competitive landscape based on the companies listed above and any others you know of")
-    research_industry_gap: str = Field(description="2-4 sentences identifying the specific mismatch between research direction and what those shipping products cover; concrete, not generic. Reference specific companies from existing_companies when relevant.")
-    startup_thesis: str = Field(description="3-5 sentences describing what a startup could build, who would pay, why it's defensible against the listed companies")
-    why_now: str = Field(description="1-2 sentences tying to growth/status signal — what makes this the right moment")
-    risks: str = Field(description="1-2 sentences on what could kill this thesis (often: a listed company adding the missing capability)")
-    confidence: str = Field(description="one of: high, medium, low — how confident the gap is real and the thesis is non-obvious given the companies above")
+    existing_landscape: str = Field(description="2-4 sentences synthesizing the competitive landscape — what real companies/products/OSS projects already cover in this space, where they overlap, what they collectively assume. Name specific entities inline (e.g. 'vLLM, TensorRT-LLM, and Fireworks all ...'); do NOT invent names. If you genuinely cannot name any, say so.")
+    research_industry_gap: str = Field(description="2-4 sentences identifying the specific mismatch between research direction and what shipping products cover. Concrete, not generic. Name specific companies from the landscape when relevant. Do NOT propose what a startup should build — name the gap, leave the synthesis to the reader.")
+    why_now: str = Field(description="1-2 sentences tying to growth/status signal — what makes this the right moment, and what specific recent paper (if any) sharpens the gap")
+    risks: str = Field(description="1-2 sentences on what could close this gap or make it less interesting (often: a named incumbent shipping the missing capability)")
+    confidence: str = Field(description="one of: high, medium, low — how confident the gap is real and non-obvious given the existing landscape")
 
 
 class MacroPattern(BaseModel):
@@ -74,5 +63,5 @@ class TrendsReport(BaseModel):
         default_factory=list,
         description="0-3 cross-cluster patterns visible across the input clusters this period. Return an empty list if no genuine cross-cluster pattern exists — DO NOT invent one. A pattern requires >=2 clusters embodying it AND a non-trivial connection (shared substrate, complementary capability, or competing approach to the same problem). Examples of strong patterns: 'multiple inference clusters all hitting memory-bandwidth ceilings', 'agent and retrieval clusters converging on the same trust/grounding problem'. Examples of weak patterns to skip: 'several clusters use LLMs', 'all clusters involve neural networks'.",
     )
-    overview: str = Field(description="3-5 sentence summary of what's happening across the corpus this period: convergence, surprises, where research is consolidating, what's accelerating, what dropped")
+    overview: str = Field(description="3-5 sentence summary of what's happening across the corpus this period: convergence, surprises, where research is consolidating, what's accelerating, what dropped. IMPORTANT: refer to clusters by their concept/label (e.g. 'the LLM-evaluation cluster', 'KV-cache and sparse adaptation'), NEVER by raw ID number ('Cluster 17'). The reader does not see cluster IDs.")
     top_clusters: List[ClusterAnalysis] = Field(description="ranked list of clusters with full gap analysis, best opportunity first; OK to return fewer than the input count if some clusters lack genuine opportunity")

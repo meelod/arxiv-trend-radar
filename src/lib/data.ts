@@ -71,7 +71,7 @@ export interface TrendCluster {
   existing_companies?: Company[];
   existing_landscape: string;
   research_industry_gap: string;
-  startup_thesis: string;
+  startup_thesis?: string;
   why_now: string;
   risks: string;
   confidence: string;
@@ -104,6 +104,32 @@ export function slugifyLabel(label: string): string {
     .trim()
     .replace(/\s+/g, '-')
     .slice(0, 60) || 'cluster';
+}
+
+// The trends LLM occasionally references clusters in prose by raw ID
+// ("Cluster 17 and Cluster 18 both..."), but those numeric IDs aren't shown
+// anywhere on the page. Rewrite "Cluster N" to the cluster's label when known.
+// When the cluster ID isn't in the active set (e.g. a shrinking cluster the
+// LLM saw in its input but didn't surface in the output), strip the
+// parenthetical "(Cluster N)" entirely — the surrounding prose already names
+// the concept, so the orphaned ID is just noise. Used by overview,
+// macro_pattern.summary, and macro_pattern.so_what — applied at render time
+// so older reports also benefit.
+export function humanizeClusterRefs(
+  text: string,
+  clusters: { cluster_id: number; label: string }[],
+): string {
+  const byId = new Map(clusters.map((c) => [c.cluster_id, c.label]));
+  return text
+    // First, strip orphan parentheticals: " (Cluster N)" where N is unknown.
+    .replace(/\s*\(Cluster\s+(\d+)\)/g, (match, idStr) => {
+      return byId.has(Number(idStr)) ? match : '';
+    })
+    // Then, swap any remaining "Cluster N" references with the label.
+    .replace(/\bCluster\s+(\d+)\b/g, (match, idStr) => {
+      const label = byId.get(Number(idStr));
+      return label ? `"${label}"` : match;
+    });
 }
 
 async function fetchText(path: string): Promise<string> {

@@ -1,4 +1,4 @@
-import { TrendsReport } from '../lib/data';
+import { TrendsReport, humanizeClusterRefs } from '../lib/data';
 
 /**
  * Magazine front-cover masthead for the Trends report.
@@ -89,7 +89,7 @@ export function TrendsMasthead({
             Overview
           </p>
           <p className="font-serif italic text-[15px] sm:text-[16px] leading-[1.6] text-stone-800 dark:text-stone-100 max-w-[60ch]">
-            {report.overview}
+            {humanizeClusterRefs(report.overview, report.clusters)}
           </p>
         </div>
 
