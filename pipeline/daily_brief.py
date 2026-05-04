@@ -379,13 +379,29 @@ def main() -> None:
         json.dump(out, f, ensure_ascii=False, indent=2)
     print(f"Wrote {out_path}", file=sys.stderr)
 
-    # Maintain a list of available briefings
+    # Maintain a list of available briefings (excluding latest.json, which is a
+    # pointer to the most recent dated file — see below).
     list_path = os.path.join(args.out_dir, "briefings-list.txt")
     import glob as _glob
-    files = sorted(os.path.basename(p) for p in _glob.glob(os.path.join(args.out_dir, "*.json")))
+    import shutil as _shutil
+    dated_files = sorted(
+        os.path.basename(p)
+        for p in _glob.glob(os.path.join(args.out_dir, "*.json"))
+        if os.path.basename(p) != "latest.json"
+    )
     with open(list_path, "w") as f:
-        for name in files:
+        for name in dated_files:
             f.write(name + "\n")
+
+    # Refresh latest.json to point at the newest dated briefing. We copy
+    # rather than symlink so the file is a real static asset Vercel can serve.
+    # In a backfill that processes older dates, this preserves the genuine
+    # latest pointer because we always pick max(dated_files).
+    if dated_files:
+        newest_path = os.path.join(args.out_dir, dated_files[-1])
+        latest_path = os.path.join(args.out_dir, "latest.json")
+        _shutil.copyfile(newest_path, latest_path)
+        print(f"latest.json -> {dated_files[-1]}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -504,10 +504,22 @@ def main() -> None:
     print(f"Wrote {out_path}", file=sys.stderr)
 
     list_path = os.path.join(args.out_dir, "trends-list.txt")
-    files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(args.out_dir, "*.json")))
+    dated_files = sorted(
+        os.path.basename(p)
+        for p in glob.glob(os.path.join(args.out_dir, "*.json"))
+        if os.path.basename(p) != "latest.json"
+    )
     with open(list_path, "w") as f:
-        for n in files:
+        for n in dated_files:
             f.write(n + "\n")
+
+    # Refresh latest.json to point at the newest dated trends report.
+    if dated_files:
+        import shutil as _shutil
+        newest_path = os.path.join(args.out_dir, dated_files[-1])
+        latest_path = os.path.join(args.out_dir, "latest.json")
+        _shutil.copyfile(newest_path, latest_path)
+        print(f"latest.json -> {dated_files[-1]}", file=sys.stderr)
 
 
 if __name__ == "__main__":

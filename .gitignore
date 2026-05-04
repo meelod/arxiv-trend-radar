@@ -35,10 +35,6 @@ coverage/
 # pipeline scratch (generated files commit via workflows; local runs stay local)
 data/scratch/
 
-# Generated copies of newest briefing/trend (rebuilt by `npm run build`)
-data/briefings/latest.json
-data/trends/latest.json
-
 # Internal design doc, kept locally only
 CLAUDE.md
 
