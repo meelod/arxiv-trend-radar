@@ -8417,6 +8417,29 @@
 "found": true,
 "influential_count": 0
 },
+"2505.11329": {
+"authors": [
+{
+"aff": null,
+"id": "2362088984",
+"name": "Raja Gond"
+},
+{
+"aff": null,
+"id": "40045853",
+"name": "Nipun Kwatra"
+},
+{
+"aff": null,
+"id": "2794488",
+"name": "R. Ramjee"
+}
+],
+"citation_count": 6,
+"fetched": "2026-05-04",
+"found": true,
+"influential_count": 0
+},
 "2505.11336": {
 "citation_count": 2,
 "fetched": "2026-05-02",
@@ -20232,8 +20255,40 @@
 "influential_count": 0
 },
 "2510.15949": {
+"authors": [
+{
+"aff": null,
+"id": "2373370340",
+"name": "Charidimos Papadakis"
+},
+{
+"aff": null,
+"id": "2280148257",
+"name": "Angeliki Dimitriou"
+},
+{
+"aff": null,
+"id": "2080432906",
+"name": "Giorgos Filandrianos"
+},
+{
+"aff": null,
+"id": "2184294391",
+"name": "Maria Lymperaiou"
+},
+{
+"aff": null,
+"id": "2105847128",
+"name": "Konstantinos Thomas"
+},
+{
+"aff": null,
+"id": "1719165",
+"name": "G. Stamou"
+}
+],
 "citation_count": 2,
-"fetched": "2026-05-02",
+"fetched": "2026-05-04",
 "found": true,
 "influential_count": 0
 },
@@ -79320,8 +79375,30 @@
 "influential_count": 0
 },
 "2603.25719": {
+"authors": [
+{
+"aff": null,
+"id": "150894502",
+"name": "Abhishek Bhandwaldar"
+},
+{
+"aff": null,
+"id": "1800032",
+"name": "M. Choudhury"
+},
+{
+"aff": null,
+"id": "2300176172",
+"name": "Ruchir Puri"
+},
+{
+"aff": null,
+"id": "2243025154",
+"name": "Akash Srivastava"
+}
+],
 "citation_count": 0,
-"fetched": "2026-05-02",
+"fetched": "2026-05-04",
 "found": true,
 "influential_count": 0
 },
@@ -112401,6 +112478,104 @@
 "citation_count": 0,
 "fetched": "2026-05-02",
 "found": true,
+"influential_count": 0
+},
+"2605.00005": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00061": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00201": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00300": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00420": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00488": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00519": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00528": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00555": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00616": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00674": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00722": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00778": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
+"influential_count": 0
+},
+"2605.00800": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-04",
+"found": false,
 "influential_count": 0
 }
 }
