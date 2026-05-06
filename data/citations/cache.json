@@ -112845,11 +112845,65 @@
 "found": false,
 "influential_count": 0
 },
+"2605.00884": {
+"authors": [
+{
+"aff": null,
+"id": "2432885434",
+"name": "Justn williams"
+},
+{
+"aff": null,
+"id": "2275628567",
+"name": "K. Gupta"
+},
+{
+"aff": null,
+"id": "2199984312",
+"name": "Roy George"
+},
+{
+"aff": null,
+"id": "2381855926",
+"name": "Mrinmoy Sarkar"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": true,
+"influential_count": 0
+},
 "2605.01111": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-05-05",
 "found": false,
+"influential_count": 0
+},
+"2605.01280": {
+"authors": [
+{
+"aff": null,
+"id": "2375865001",
+"name": "Zijie Zhou"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": true,
+"influential_count": 0
+},
+"2605.01567": {
+"authors": [
+{
+"aff": null,
+"id": "39685236",
+"name": "M. Işcan"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": true,
 "influential_count": 0
 },
 "2605.01582": {
@@ -112894,11 +112948,179 @@
 "found": false,
 "influential_count": 0
 },
+"2605.01860": {
+"authors": [
+{
+"aff": null,
+"id": "1395051671",
+"name": "Camille Phiquepal"
+},
+{
+"aff": null,
+"id": "2254261687",
+"name": "Marc Toussaint"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": true,
+"influential_count": 0
+},
 "2605.01938": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-05-05",
 "found": false,
+"influential_count": 0
+},
+"2605.02037": {
+"authors": [
+{
+"aff": null,
+"id": "2275238290",
+"name": "Zijian An"
+},
+{
+"aff": null,
+"id": "2139159283",
+"name": "Hadi Khezam"
+},
+{
+"aff": null,
+"id": "2257344991",
+"name": "Bill Cai"
+},
+{
+"aff": null,
+"id": "2380786911",
+"name": "Ran Yang"
+},
+{
+"aff": null,
+"id": "2295988909",
+"name": "Shijie Geng"
+},
+{
+"aff": null,
+"id": "2381065723",
+"name": "Yiming Feng"
+},
+{
+"aff": null,
+"id": "2149513962",
+"name": "Yu Zheng"
+},
+{
+"aff": null,
+"id": "2248357482",
+"name": "Lifeng Zhou"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": true,
+"influential_count": 0
+},
+"2605.02162": {
+"authors": [
+{
+"aff": null,
+"id": "72620200",
+"name": "A. Sarker"
+},
+{
+"aff": null,
+"id": "2202025523",
+"name": "M. Staylor"
+},
+{
+"aff": null,
+"id": "2004046160",
+"name": "Aymen Alsaadi"
+},
+{
+"aff": null,
+"id": "2261740220",
+"name": "G. V. Laszewski"
+},
+{
+"aff": null,
+"id": "1693678",
+"name": "S. Jha"
+},
+{
+"aff": null,
+"id": "2259260347",
+"name": "Geoffrey C. Fox"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": true,
+"influential_count": 0
+},
+"2605.02168": {
+"authors": [
+{
+"aff": null,
+"id": "2356519744",
+"name": "Wenyi Wu"
+},
+{
+"aff": null,
+"id": "2110018955",
+"name": "Sibo Zhu"
+},
+{
+"aff": null,
+"id": "2400501576",
+"name": "Kun Zhou"
+},
+{
+"aff": null,
+"id": "2257418918",
+"name": "Biwei Huang"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": true,
+"influential_count": 0
+},
+"2605.02489": {
+"authors": [
+{
+"aff": null,
+"id": "2323899358",
+"name": "Jinliang Xu"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": true,
+"influential_count": 0
+},
+"2605.02525": {
+"authors": [
+{
+"aff": null,
+"id": "66738606",
+"name": "B. Abaza"
+},
+{
+"aff": null,
+"id": "2428390096",
+"name": "Andrei-Alexandru Staicu"
+},
+{
+"aff": null,
+"id": "2268137451",
+"name": "C. Doicin"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": true,
 "influential_count": 0
 },
 "2605.02751": {
@@ -112919,6 +113141,27 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-05-05",
+"found": false,
+"influential_count": 0
+},
+"2605.03310": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": false,
+"influential_count": 0
+},
+"2605.03780": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-06",
+"found": false,
+"influential_count": 0
+},
+"2605.04003": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-06",
 "found": false,
 "influential_count": 0
 }
