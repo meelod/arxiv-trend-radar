@@ -113144,11 +113144,550 @@
 "found": false,
 "influential_count": 0
 },
+"2605.02888": {
+"authors": [
+{
+"aff": null,
+"id": "1491240141",
+"name": "Shikhar Shukla"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": true,
+"influential_count": 0
+},
+"2605.02983": {
+"authors": [
+{
+"aff": null,
+"id": "2238623425",
+"name": "Hassan Sartaj"
+},
+{
+"aff": null,
+"id": "7353330",
+"name": "Jalil Boudjadar"
+},
+{
+"aff": null,
+"id": "9306703",
+"name": "Mirgita Frasheri"
+},
+{
+"aff": null,
+"id": "2328462061",
+"name": "Shaukat Ali"
+},
+{
+"aff": null,
+"id": "2328436713",
+"name": "Peter Gorm Larsen"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": true,
+"influential_count": 0
+},
+"2605.03034": {
+"authors": [
+{
+"aff": null,
+"id": "2304958657",
+"name": "Kerri Prinos"
+},
+{
+"aff": null,
+"id": "2432994342",
+"name": "Lilianne Brush"
+},
+{
+"aff": null,
+"id": "2320948971",
+"name": "C. Denton"
+},
+{
+"aff": null,
+"id": "2312777997",
+"name": "Zhanqiang Wang"
+},
+{
+"aff": null,
+"id": "116932232",
+"name": "Joshua Knox"
+},
+{
+"aff": null,
+"id": "52056546",
+"name": "Snehal S. Antani"
+},
+{
+"aff": null,
+"id": "2432992826",
+"name": "Anton Foltz"
+},
+{
+"aff": null,
+"id": "2005883300",
+"name": "Amy Villasenor"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": true,
+"influential_count": 0
+},
+"2605.03269": {
+"authors": [
+{
+"aff": null,
+"id": "2305564854",
+"name": "Dongyoung Kim"
+},
+{
+"aff": null,
+"id": "2189101272",
+"name": "Huiwon Jang"
+},
+{
+"aff": null,
+"id": "2366011658",
+"name": "Myungkyu Koo"
+},
+{
+"aff": null,
+"id": "2330732162",
+"name": "Suhyeok Jang"
+},
+{
+"aff": null,
+"id": "2383259571",
+"name": "Taeyoung Kim"
+},
+{
+"aff": null,
+"id": "2344031284",
+"name": "Beomjun Kim"
+},
+{
+"aff": null,
+"id": "2331417537",
+"name": "Byung-Jun Yoon"
+},
+{
+"aff": null,
+"id": "2404754699",
+"name": "C. Jang"
+},
+{
+"aff": null,
+"id": "2261908791",
+"name": "Daewon Choi"
+},
+{
+"aff": null,
+"id": "2314339651",
+"name": "Dongsu Han"
+},
+{
+"aff": null,
+"id": "2143408794",
+"name": "Donguk Lee"
+},
+{
+"aff": null,
+"id": "2286329568",
+"name": "H. Kwon"
+},
+{
+"aff": null,
+"id": "2064752873",
+"name": "Hojin Jeon"
+},
+{
+"aff": null,
+"id": "2258679044",
+"name": "Jaehyun Kang"
+},
+{
+"aff": null,
+"id": "6519235",
+"name": "Jae-sung Bae"
+},
+{
+"aff": null,
+"id": null,
+"name": "Jihyuk Lee"
+},
+{
+"aff": null,
+"id": null,
+"name": "Jimin Lee"
+},
+{
+"aff": null,
+"id": "2367042220",
+"name": "John Won"
+},
+{
+"aff": null,
+"id": "152740892",
+"name": "Joonwoo Ahn"
+},
+{
+"aff": null,
+"id": "2303849379",
+"name": "Junhyeon Park"
+},
+{
+"aff": null,
+"id": "2344753433",
+"name": "Junyoung Sung"
+},
+{
+"aff": null,
+"id": "2273317578",
+"name": "Kyungmin Lee"
+},
+{
+"aff": null,
+"id": null,
+"name": "Minseong Han"
+},
+{
+"aff": null,
+"id": "2238774563",
+"name": "MinSung Yoon"
+},
+{
+"aff": null,
+"id": "2387023530",
+"name": "S. Joo"
+},
+{
+"aff": null,
+"id": "46235583",
+"name": "Seonil Son"
+},
+{
+"aff": null,
+"id": "2433085694",
+"name": "Seungcheol Park"
+},
+{
+"aff": null,
+"id": "2329846670",
+"name": "Seung-Mo Cho"
+},
+{
+"aff": null,
+"id": "2266717741",
+"name": "Seungjun Moon"
+},
+{
+"aff": null,
+"id": null,
+"name": "Seungku Kim"
+},
+{
+"aff": null,
+"id": "2340906589",
+"name": "Yong Dong"
+},
+{
+"aff": null,
+"id": "2133776212",
+"name": "Yongjin Cho"
+},
+{
+"aff": null,
+"id": "2392372505",
+"name": "Youngchan Kim"
+},
+{
+"aff": null,
+"id": "2116704261",
+"name": "Chang Hwan Kim"
+},
+{
+"aff": null,
+"id": "2314071676",
+"name": "Dohyeong Kim"
+},
+{
+"aff": null,
+"id": null,
+"name": "Hazel Lee"
+},
+{
+"aff": null,
+"id": "1742368876",
+"name": "Heecheol Kim"
+},
+{
+"aff": null,
+"id": "2277072113",
+"name": "H. Ahn"
+},
+{
+"aff": null,
+"id": "2218391055",
+"name": "H. Ryu"
+},
+{
+"aff": null,
+"id": null,
+"name": "Hyunsoo Choi"
+},
+{
+"aff": null,
+"id": null,
+"name": "Hyunsoo Shin"
+},
+{
+"aff": null,
+"id": null,
+"name": "Jaeheon Jung"
+},
+{
+"aff": null,
+"id": null,
+"name": "Jaewoo Kim"
+},
+{
+"aff": null,
+"id": null,
+"name": "Jinwook Kim"
+},
+{
+"aff": null,
+"id": "2380576303",
+"name": "Jo-Ping Chang"
+},
+{
+"aff": null,
+"id": null,
+"name": "Joonsoo Kim"
+},
+{
+"aff": null,
+"id": "48490305",
+"name": "J. Park"
+},
+{
+"aff": null,
+"id": "2237467135",
+"name": "Jungwoo Park"
+},
+{
+"aff": null,
+"id": "2172476103",
+"name": "J. Cho"
+},
+{
+"aff": null,
+"id": "2271776902",
+"name": "Junhyeok Park"
+},
+{
+"aff": null,
+"id": null,
+"name": "Junwon Lee"
+},
+{
+"aff": null,
+"id": null,
+"name": "Kangwook Lee"
+},
+{
+"aff": null,
+"id": "52205285",
+"name": "Kwang-Hoe Kim"
+},
+{
+"aff": null,
+"id": "2265580043",
+"name": "K. Choe"
+},
+{
+"aff": null,
+"id": "2315514611",
+"name": "Manoj Bhadu"
+},
+{
+"aff": null,
+"id": "2282470303",
+"name": "Nayoung Oh"
+},
+{
+"aff": null,
+"id": "2109630318",
+"name": "Sangjun Kim"
+},
+{
+"aff": null,
+"id": "2355121621",
+"name": "Sangwoo Kim"
+},
+{
+"aff": null,
+"id": "113798805",
+"name": "Seung-tae Shim"
+},
+{
+"aff": null,
+"id": null,
+"name": "Seunghyun Kim"
+},
+{
+"aff": null,
+"id": "2315255790",
+"name": "Seungjun Lee"
+},
+{
+"aff": null,
+"id": "2335893144",
+"name": "Seungyup Ka"
+},
+{
+"aff": null,
+"id": "2357850216",
+"name": "Sung-Po Yang"
+},
+{
+"aff": null,
+"id": "2206293553",
+"name": "W. Jung"
+},
+{
+"aff": null,
+"id": "2258550477",
+"name": "Yash Shukla"
+},
+{
+"aff": null,
+"id": "2396141887",
+"name": "Yeonjae Lee"
+},
+{
+"aff": null,
+"id": "148382577",
+"name": "Y. Bae"
+},
+{
+"aff": null,
+"id": "2367098594",
+"name": "Jinwoo Shin"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": true,
+"influential_count": 0
+},
+"2605.03288": {
+"authors": [
+{
+"aff": null,
+"id": "2307915442",
+"name": "Dezhong Tong"
+},
+{
+"aff": null,
+"id": "2260604037",
+"name": "Jiawen Wang"
+},
+{
+"aff": null,
+"id": "2277647775",
+"name": "Hengyi Zhou"
+},
+{
+"aff": null,
+"id": "2354575019",
+"name": "Yin Shen"
+},
+{
+"aff": null,
+"id": "2293551417",
+"name": "Xiaonan Huang"
+},
+{
+"aff": null,
+"id": "2310419725",
+"name": "M. Jawed"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": true,
+"influential_count": 0
+},
 "2605.03310": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-05-06",
 "found": false,
+"influential_count": 0
+},
+"2605.03312": {
+"authors": [
+{
+"aff": null,
+"id": "2365991840",
+"name": "Jiayi Chen"
+},
+{
+"aff": null,
+"id": null,
+"name": "Yingcong Li"
+},
+{
+"aff": null,
+"id": "2281787432",
+"name": "Guiling Wang"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": true,
+"influential_count": 0
+},
+"2605.03566": {
+"authors": [
+{
+"aff": null,
+"id": "2345700500",
+"name": "Nick Brown"
+},
+{
+"aff": null,
+"id": "2114529718",
+"name": "Gabriel Rodriguez-Canal"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": true,
+"influential_count": 0
+},
+"2605.03619": {
+"authors": [
+{
+"aff": null,
+"id": "2432989472",
+"name": "Gabriel Hortea"
+},
+{
+"aff": null,
+"id": "2261097939",
+"name": "Juan Tapiador"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": true,
 "influential_count": 0
 },
 "2605.03780": {
@@ -113158,10 +113697,139 @@
 "found": false,
 "influential_count": 0
 },
+"2605.03806": {
+"authors": [
+{
+"aff": null,
+"id": "2059019171",
+"name": "Sonia-Florina Horchidan"
+},
+{
+"aff": null,
+"id": "2403500307",
+"name": "Fabian Zeiher"
+},
+{
+"aff": null,
+"id": null,
+"name": "Xiangyu Shi"
+},
+{
+"aff": null,
+"id": "1993949",
+"name": "Vasiliki Kalavri"
+},
+{
+"aff": null,
+"id": "2316053374",
+"name": "Henrik Bostrom"
+},
+{
+"aff": null,
+"id": "2325733186",
+"name": "Ioannis Kontoyiannis"
+},
+{
+"aff": null,
+"id": "2379648861",
+"name": "Paris Carbone"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": true,
+"influential_count": 0
+},
 "2605.04003": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-05-06",
+"found": false,
+"influential_count": 0
+},
+"2605.04019": {
+"authors": [
+{
+"aff": null,
+"id": "115637398",
+"name": "Raja Sekhar Rao Dheekonda"
+},
+{
+"aff": null,
+"id": "1392536359",
+"name": "William W. Pearce"
+},
+{
+"aff": null,
+"id": "1799967462",
+"name": "N. Landers"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": true,
+"influential_count": 0
+},
+"2605.04076": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": false,
+"influential_count": 0
+},
+"2605.04135": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": false,
+"influential_count": 0
+},
+"2605.04215": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": false,
+"influential_count": 0
+},
+"2605.04542": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": false,
+"influential_count": 0
+},
+"2605.04565": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": false,
+"influential_count": 0
+},
+"2605.04886": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": false,
+"influential_count": 0
+},
+"2605.04902": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": false,
+"influential_count": 0
+},
+"2605.04956": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-07",
+"found": false,
+"influential_count": 0
+},
+"2605.05170": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-07",
 "found": false,
 "influential_count": 0
 }
