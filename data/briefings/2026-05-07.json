@@ -1,0 +1,834 @@
+{
+  "date": "2026-05-07",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Strong focus on advanced AI systems for efficient inference and multi-agent coordination in today's papers.",
+  "executive_overview": "Today's arXiv submissions reveal a concentrated effort in advancing AI infrastructure, specifically targeting efficient LLM inference and the integration of multi-agent systems. Several papers present innovative frameworks for architecting bespoke LLM serving and optimizing computational resources, highlighting the practical implications of low-latency and context-sensitive operations. Additionally, new methodologies for enhancing collaboration among agents indicate an evolving landscape in AI applications, especially within robotics and decision-making under uncertainty.",
+  "themes": [
+    {
+      "name": "AI Infrastructure for Efficient Inference",
+      "summary": "Multiple papers address the development of efficient inference architectures for large language models (LLMs). Notable among these is the work on 'Design Conductor 2.0', which presents a multi-agent system for autonomously constructing powerful inference accelerators, capable of significantly improved efficiency (2605.05170). Similarly, 'VibeServe' explores bespoke LLM serving systems designed through agent communication, aiming to adapt to various operational contexts (2605.06068). Efficient cache management strategies and compression methods are also examined, contributing to the shift toward more resource-aware AI systems.",
+      "paper_ids": [
+        "2605.05170",
+        "2605.06068",
+        "2505.00753",
+        "2605.06046"
+      ]
+    },
+    {
+      "name": "Multi-Agent Systems and Coordination",
+      "summary": "Research on multi-agent systems underscores the growing importance of effective collaboration among agents in complex tasks. Papers like 'MAS-Algorithm' describe the use of multi-agent frameworks for algorithmic problem solving, emphasizing structured reasoning (2605.05949). 'GRAIL' introduces a framework for improving agent discovery, aiming to enhance collaboration efficiency (2605.02489). Additionally, 'CreativeBench' evaluates agents’ abilities to employ tools creatively, deepening our understanding of agent cognition in collaborative scenarios (2605.02910).",
+      "paper_ids": [
+        "2605.05949",
+        "2605.02489",
+        "2605.02910"
+      ]
+    },
+    {
+      "name": "Robotics and AI Manipulation",
+      "summary": "The field of robotics continues to evolve with papers like 'RLDX-1', introducing a versatile robotic policy for dexterous manipulation that integrates multi-stream action strategies (2605.03269). Other contributions, such as 'SLAM' and 'NeuroClaw', focus on enhancing task execution and decision-making processes in uncertain environments, aiming to improve the robustness of robotic actions and interactions (2605.05628, 2604.24696). These advancements indicate a trend toward more adaptive and efficient robotic systems in real-world applications.",
+      "paper_ids": [
+        "2605.03269",
+        "2605.05628",
+        "2604.24696"
+      ]
+    },
+    {
+      "name": "AI Alignment and Safety",
+      "summary": "Safety in AI is increasingly vital, as indicated by the range of papers discussing the intersection of security and agency. Works like 'When Agents Handle Secrets' raise critical questions regarding the privacy risks inherent to agentic AI systems (2605.03213), while 'Vendor-Neutral, Multitenant Enterprise Retrieval' explores challenges in ensuring security in multi-tenant AI environments (2605.05287). The exploration of these themes indicates a growing recognition of the ethical implications and accountability required in the deployment of autonomous systems.",
+      "paper_ids": [
+        "2605.03213",
+        "2605.05287"
+      ]
+    },
+    {
+      "name": "AI in Financial Systems",
+      "summary": "Several papers focus on the application of AI in financial contexts, particularly in optimizing trading strategies and enhancing decision-making frameworks. 'Agentic Retrieval-Augmented Generation for Financial Document Question Answering' presents a system designed for precise analysis of financial documents, highlighting the critical role of LLMs in financial services (2605.05484). Furthermore, 'A Regulatory Governance Framework' aims to align machine learning practices in finance with compliance requirements, emphasizing the need for secure yet effective AI integration (2605.04076).",
+      "paper_ids": [
+        "2605.04076"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2605.05170",
+      "title": "Design Conductor 2.0: An agent builds a TurboQuant inference accelerator in 80 hours",
+      "plain_english": "This paper describes a new multi-agent system that autonomously designs advanced hardware for AI inference, achieving significant speed and efficiency improvements in just 80 hours.",
+      "why_it_matters": "This work speaks directly to the user's interest in AI inference infrastructure and specialized silicon, particularly in optimizing performance for large models.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2605.06068",
+      "title": "VibeServe: Can AI Agents Build Bespoke LLM Serving Systems?",
+      "plain_english": "This research introduces a system where AI agents automatically create tailored LLM serving stacks for various applications, aiming for better performance and adaptability.",
+      "why_it_matters": "This aligns with the user's focus on low-latency serving and enhancing AI infrastructure, making it particularly relevant for understanding infrastructure design.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2605.05949",
+      "title": "MAS-Algorithm: A Workflow for Solving Algorithmic Programming Problems with a Multi-Agent System",
+      "plain_english": "The paper presents an algorithmic programming workflow that utilizes multiple AI agents to systematically tackle programming challenges effectively.",
+      "why_it_matters": "This is closely related to the user's interest in multi-agent systems and highlights innovative approaches for leveraging agents in algorithmic problem solving.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2605.03269",
+      "title": "RLDX-1 Technical Report",
+      "plain_english": "This report outlines a new robotic policy framework designed for dexterous manipulation, focusing on generalizing tasks through advanced state modeling.",
+      "why_it_matters": "The focus on humanoid manipulation aligns well with the user's interest in robotics policy learning and end-to-end models.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.04076",
+      "title": "A Regulatory Governance Framework for AI-Driven Financial Fraud Detection in U.S. Banking: Integrating OCC, SR 11-7, CFPB, and FinCEN Compliance Requirements for Model Development, Validation, and Monitoring Lifecycles",
+      "plain_english": "The framework discusses how banks can align AI technologies for fraud detection with regulatory requirements to enhance safety and compliance.",
+      "why_it_matters": "Given the user's background in quant trading and algorithmic execution, this paper holds relevance for understanding compliance in AI financial applications.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2604.24696",
+      "title": "NeuroClaw Technical Report",
+      "plain_english": "This paper describes a multi-agent assistant for neuroimaging research that operates directly on raw data to enhance reproducibility and experimentation.",
+      "why_it_matters": "While tangential, it highlights AI applications in enhancing robotic capabilities within medical domains, fitting the broader interest in robotics and advanced modeling.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2605.05287",
+      "title": "Securing the Agent: Vendor-Neutral, Multitenant Enterprise Retrieval and Tool Use",
+      "plain_english": "The study discusses the challenges and solutions associated with using AI agents in enterprise settings that involve multiple tenants and complex security requirements.",
+      "why_it_matters": "This paper is relevant as it delves into the security of agentic systems, addressing potential vulnerabilities in environments that the user may encounter.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2605.06046",
+      "title": "Requests of a Feather Must Flock Together: Batch Size vs. Prefix Homogeneity in LLM Inference",
+      "plain_english": "This research analyzes how batch sizes in LLMs can be optimized to improve throughput during inference by focusing on request similarities.",
+      "why_it_matters": "It intersects with the user's focus on optimizing LLM inference systems, making it important for enhancing performance in deployment scenarios.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2605.05538",
+      "title": "AgenticRAG: Agentic Retrieval for Enterprise Knowledge Bases",
+      "plain_english": "This paper presents a framework for improving retrieval-augmented generation (RAG) in enterprise settings by using autonomous agents to better navigate and analyze data.",
+      "why_it_matters": "Its emphasis on enhancing knowledge retrieval processes is valuable for users interested in vector databases and AI optimization in enterprises.",
+      "relevance_score": 6
+    },
+    {
+      "arxiv_id": "2605.02489",
+      "title": "GRAIL: A Deep-Granularity Hybrid Resonance Framework for Real-Time Agent Discovery via SLM-Enhanced Indexing",
+      "plain_english": "The paper proposes a new framework that allows fast and precise discovery of agents for large-scale collaboration, minimizing latency in searching for agents.",
+      "why_it_matters": "This work is pertinent because it addresses real-time access and management of agent collaboration systems, echoing an interest in efficient multi-agent interactions.",
+      "relevance_score": 6
+    }
+  ],
+  "worth_noting": [
+    {
+      "arxiv_id": "2605.03213",
+      "one_liner": "Discusses security vulnerabilities in AI agent operations, highlighting potential risks to sensitive information."
+    },
+    {
+      "arxiv_id": "2605.04496",
+      "one_liner": "Explores challenges in measuring the performance of AI agents across complex datasets."
+    },
+    {
+      "arxiv_id": "2605.04215",
+      "one_liner": "Proposes a hybrid framework combining physical modeling with neural networks for environmental control systems."
+    },
+    {
+      "arxiv_id": "2605.03125",
+      "one_liner": "Studies how semantic understanding of long-context performances can drive improvements in LLM design."
+    }
+  ],
+  "paper_index": {
+    "2605.05170": {
+      "title": "Design Conductor 2.0: An agent builds a TurboQuant inference accelerator in 80 hours",
+      "authors": [
+        "The Verkor Team",
+        "Ravi Krishna",
+        "Suresh Krishna",
+        "David Chin"
+      ],
+      "abs": "https://arxiv.org/abs/2605.05170",
+      "categories": [
+        "cs.AR",
+        "cs.AI"
+      ]
+    },
+    "2605.06068": {
+      "title": "VibeServe: Can AI Agents Build Bespoke LLM Serving Systems?",
+      "authors": [
+        "Keisuke Kamahori",
+        "Shihang Li",
+        "Simon Peter",
+        "Baris Kasikci"
+      ],
+      "abs": "https://arxiv.org/abs/2605.06068",
+      "categories": [
+        "cs.AI",
+        "cs.DC"
+      ]
+    },
+    "2605.03213": {
+      "title": "When Agents Handle Secrets: A Survey of Confidential Computing for Agentic AI",
+      "authors": [
+        "Javad Forough",
+        "Marios Kogias",
+        "Hamed Haddadi"
+      ],
+      "abs": "https://arxiv.org/abs/2605.03213",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ]
+    },
+    "2605.05287": {
+      "title": "Securing the Agent: Vendor-Neutral, Multitenant Enterprise Retrieval and Tool Use",
+      "authors": [
+        "Francisco Javier Arceo",
+        "Varsha Prasad Narsing"
+      ],
+      "abs": "https://arxiv.org/abs/2605.05287",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.IR",
+        "cs.SE"
+      ]
+    },
+    "2605.02489": {
+      "title": "GRAIL: A Deep-Granularity Hybrid Resonance Framework for Real-Time Agent Discovery via SLM-Enhanced Indexing",
+      "authors": [
+        "Jinliang Xu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.02489",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "aff": null,
+          "id": "2323899358",
+          "name": "Jinliang Xu"
+        }
+      ]
+    },
+    "2605.05949": {
+      "title": "MAS-Algorithm: A Workflow for Solving Algorithmic Programming Problems with a Multi-Agent System",
+      "authors": [
+        "Yuliang Xu",
+        "Xiang Xu",
+        "Yao Wan",
+        "Hu Wei",
+        "Tong Jia"
+      ],
+      "abs": "https://arxiv.org/abs/2605.05949",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ]
+    },
+    "2605.05628": {
+      "title": "Towards Compute-Aware In-Switch Computing for LLMs Tensor-Parallelism on Multi-GPU Systems",
+      "authors": [
+        "Chen Zhang",
+        "Qijun Zhang",
+        "Zhuoshan Zhou",
+        "Yijia Diao",
+        "Haibo Wang",
+        "Zhe Zhou",
+        "Zhipeng Tu",
+        "Zhiyao Li",
+        "Guangyu Sun",
+        "Zhuoran Song",
+        "Zhigang Ji",
+        "Jingwen Leng",
+        "Minyi Guo"
+      ],
+      "abs": "https://arxiv.org/abs/2605.05628",
+      "categories": [
+        "cs.AR",
+        "cs.DC"
+      ]
+    },
+    "2604.24696": {
+      "title": "NeuroClaw Technical Report",
+      "authors": [
+        "Cheng Wang",
+        "Zhibin He",
+        "Zhihao Peng",
+        "Shengyuan Liu",
+        "Yufan Hu",
+        "Yang Carl",
+        "He Lifang",
+        "Lichao Sun",
+        "Xiang Li",
+        "Yixuan Yuan"
+      ],
+      "abs": "https://arxiv.org/abs/2604.24696",
+      "categories": [
+        "cs.CV"
+      ]
+    },
+    "2505.00753": {
+      "title": "LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey",
+      "authors": [
+        "Henry Peng Zou",
+        "Wei-Chieh Huang",
+        "Yaozu Wu",
+        "Jizhou Guo",
+        "Yankai Chen",
+        "Chunyu Miao",
+        "Hoang Nguyen",
+        "Yue Zhou",
+        "Weizhi Zhang",
+        "Liancheng Fang",
+        "Hanrong Zhang",
+        "Fangxin Wang",
+        "Pengfei Zhang",
+        "Huacan Wang",
+        "Langzhou He",
+        "Yangning Li",
+        "Dongyuan Li",
+        "Renhe Jiang",
+        "Xue Liu",
+        "Philip S. Yu"
+      ],
+      "abs": "https://arxiv.org/abs/2505.00753",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ]
+    },
+    "2605.03269": {
+      "title": "RLDX-1 Technical Report",
+      "authors": [
+        "Dongyoung Kim",
+        "Huiwon Jang",
+        "Myungkyu Koo",
+        "Suhyeok Jang",
+        "Taeyoung Kim",
+        "Beomjun Kim",
+        "Byungjun Yoon",
+        "Changsung Jang",
+        "Daewon Choi",
+        "Dongsu Han",
+        "Donguk Lee",
+        "Heeseung Kwon",
+        "Hojin Jeon",
+        "Jaehyun Kang",
+        "Jaekyoung Bae",
+        "Jihyuk Lee",
+        "Jimin Lee",
+        "John Won",
+        "Joonwoo Ahn",
+        "Junhyeong Park",
+        "Junyoung Sung",
+        "Kyungmin Lee",
+        "Minseong Han",
+        "Minsung Yoon",
+        "Sejune Joo",
+        "Seonil Son",
+        "Seungcheol Park",
+        "Seunggeun Cho",
+        "Seungjun Moon",
+        "Seungku Kim",
+        "Yonghoon Dong",
+        "Yongjin Cho",
+        "Youngchan Kim",
+        "Chang Hwan Kim",
+        "Dohyeon Kim",
+        "Heecheol Kim",
+        "Heewon Lee",
+        "Hensen Ahn",
+        "Hyungkyu Ryu",
+        "Hyunsoo Choi",
+        "Hyunsoo Shin",
+        "Jaeheon Jung",
+        "Jaewoo Kim",
+        "Jinwook Kim",
+        "Joochul Chang",
+        "Joonsoo Kim",
+        "Junghun Park",
+        "Jungwoo Park",
+        "Junho Cho",
+        "Junhyeok Park",
+        "Junwon Lee",
+        "Kangwook Lee",
+        "Kwanghoon Kim",
+        "Kyoungwhan Choe",
+        "Manoj Bhadu",
+        "Nayoung Oh",
+        "Sangjun Kim",
+        "Sangwoo Kim",
+        "Seunghoon Shim",
+        "Seunghyun Kim",
+        "Seungjun Lee",
+        "Seungyup Ka",
+        "Sungryol Yang",
+        "Wook Jung",
+        "Yashu Shukla",
+        "Yeonjae Lee",
+        "Yeonwoo Bae",
+        "Jinwoo Shin"
+      ],
+      "abs": "https://arxiv.org/abs/2605.03269",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "aff": null,
+          "id": "2305564854",
+          "name": "Dongyoung Kim"
+        },
+        {
+          "aff": null,
+          "id": "2189101272",
+          "name": "Huiwon Jang"
+        },
+        {
+          "aff": null,
+          "id": "2366011658",
+          "name": "Myungkyu Koo"
+        },
+        {
+          "aff": null,
+          "id": "2330732162",
+          "name": "Suhyeok Jang"
+        },
+        {
+          "aff": null,
+          "id": "2383259571",
+          "name": "Taeyoung Kim"
+        },
+        {
+          "aff": null,
+          "id": "2344031284",
+          "name": "Beomjun Kim"
+        },
+        {
+          "aff": null,
+          "id": "2331417537",
+          "name": "Byung-Jun Yoon"
+        },
+        {
+          "aff": null,
+          "id": "2404754699",
+          "name": "C. Jang"
+        },
+        {
+          "aff": null,
+          "id": "2261908791",
+          "name": "Daewon Choi"
+        },
+        {
+          "aff": null,
+          "id": "2314339651",
+          "name": "Dongsu Han"
+        },
+        {
+          "aff": null,
+          "id": "2143408794",
+          "name": "Donguk Lee"
+        },
+        {
+          "aff": null,
+          "id": "2286329568",
+          "name": "H. Kwon"
+        },
+        {
+          "aff": null,
+          "id": "2064752873",
+          "name": "Hojin Jeon"
+        },
+        {
+          "aff": null,
+          "id": "2258679044",
+          "name": "Jaehyun Kang"
+        },
+        {
+          "aff": null,
+          "id": "6519235",
+          "name": "Jae-sung Bae"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Jihyuk Lee"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Jimin Lee"
+        },
+        {
+          "aff": null,
+          "id": "2367042220",
+          "name": "John Won"
+        },
+        {
+          "aff": null,
+          "id": "152740892",
+          "name": "Joonwoo Ahn"
+        },
+        {
+          "aff": null,
+          "id": "2303849379",
+          "name": "Junhyeon Park"
+        },
+        {
+          "aff": null,
+          "id": "2344753433",
+          "name": "Junyoung Sung"
+        },
+        {
+          "aff": null,
+          "id": "2273317578",
+          "name": "Kyungmin Lee"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Minseong Han"
+        },
+        {
+          "aff": null,
+          "id": "2238774563",
+          "name": "MinSung Yoon"
+        },
+        {
+          "aff": null,
+          "id": "2387023530",
+          "name": "S. Joo"
+        },
+        {
+          "aff": null,
+          "id": "46235583",
+          "name": "Seonil Son"
+        },
+        {
+          "aff": null,
+          "id": "2433085694",
+          "name": "Seungcheol Park"
+        },
+        {
+          "aff": null,
+          "id": "2329846670",
+          "name": "Seung-Mo Cho"
+        },
+        {
+          "aff": null,
+          "id": "2266717741",
+          "name": "Seungjun Moon"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Seungku Kim"
+        },
+        {
+          "aff": null,
+          "id": "2340906589",
+          "name": "Yong Dong"
+        },
+        {
+          "aff": null,
+          "id": "2133776212",
+          "name": "Yongjin Cho"
+        },
+        {
+          "aff": null,
+          "id": "2392372505",
+          "name": "Youngchan Kim"
+        },
+        {
+          "aff": null,
+          "id": "2116704261",
+          "name": "Chang Hwan Kim"
+        },
+        {
+          "aff": null,
+          "id": "2314071676",
+          "name": "Dohyeong Kim"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Hazel Lee"
+        },
+        {
+          "aff": null,
+          "id": "1742368876",
+          "name": "Heecheol Kim"
+        },
+        {
+          "aff": null,
+          "id": "2277072113",
+          "name": "H. Ahn"
+        },
+        {
+          "aff": null,
+          "id": "2218391055",
+          "name": "H. Ryu"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Hyunsoo Choi"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Hyunsoo Shin"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Jaeheon Jung"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Jaewoo Kim"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Jinwook Kim"
+        },
+        {
+          "aff": null,
+          "id": "2380576303",
+          "name": "Jo-Ping Chang"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Joonsoo Kim"
+        },
+        {
+          "aff": null,
+          "id": "48490305",
+          "name": "J. Park"
+        },
+        {
+          "aff": null,
+          "id": "2237467135",
+          "name": "Jungwoo Park"
+        },
+        {
+          "aff": null,
+          "id": "2172476103",
+          "name": "J. Cho"
+        },
+        {
+          "aff": null,
+          "id": "2271776902",
+          "name": "Junhyeok Park"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Junwon Lee"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Kangwook Lee"
+        },
+        {
+          "aff": null,
+          "id": "52205285",
+          "name": "Kwang-Hoe Kim"
+        },
+        {
+          "aff": null,
+          "id": "2265580043",
+          "name": "K. Choe"
+        },
+        {
+          "aff": null,
+          "id": "2315514611",
+          "name": "Manoj Bhadu"
+        },
+        {
+          "aff": null,
+          "id": "2282470303",
+          "name": "Nayoung Oh"
+        },
+        {
+          "aff": null,
+          "id": "2109630318",
+          "name": "Sangjun Kim"
+        },
+        {
+          "aff": null,
+          "id": "2355121621",
+          "name": "Sangwoo Kim"
+        },
+        {
+          "aff": null,
+          "id": "113798805",
+          "name": "Seung-tae Shim"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Seunghyun Kim"
+        },
+        {
+          "aff": null,
+          "id": "2315255790",
+          "name": "Seungjun Lee"
+        },
+        {
+          "aff": null,
+          "id": "2335893144",
+          "name": "Seungyup Ka"
+        },
+        {
+          "aff": null,
+          "id": "2357850216",
+          "name": "Sung-Po Yang"
+        },
+        {
+          "aff": null,
+          "id": "2206293553",
+          "name": "W. Jung"
+        },
+        {
+          "aff": null,
+          "id": "2258550477",
+          "name": "Yash Shukla"
+        },
+        {
+          "aff": null,
+          "id": "2396141887",
+          "name": "Yeonjae Lee"
+        },
+        {
+          "aff": null,
+          "id": "148382577",
+          "name": "Y. Bae"
+        },
+        {
+          "aff": null,
+          "id": "2367098594",
+          "name": "Jinwoo Shin"
+        }
+      ]
+    },
+    "2605.06046": {
+      "title": "Requests of a Feather Must Flock Together: Batch Size vs. Prefix Homogeneity in LLM Inference",
+      "authors": [
+        "Saksham Rathi",
+        "Preeti",
+        "Mythili Vutukuru"
+      ],
+      "abs": "https://arxiv.org/abs/2605.06046",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.02910": {
+      "title": "CreativityBench: Evaluating Agent Creative Reasoning via Affordance-Based Tool Repurposing",
+      "authors": [
+        "Cheng Qian",
+        "Hyeonjeong Ha",
+        "Jiayu Liu",
+        "Jeonghwan Kim",
+        "Jiateng Liu",
+        "Bingxuan Li",
+        "Aditi Tiwari",
+        "Dwip Dalal",
+        "Zhenhailong Wang",
+        "Xiusi Chen",
+        "Mahdi Namazifar",
+        "Yunzhu Li",
+        "Heng Ji"
+      ],
+      "abs": "https://arxiv.org/abs/2605.02910",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ]
+    },
+    "2605.05538": {
+      "title": "AgenticRAG: Agentic Retrieval for Enterprise Knowledge Bases",
+      "authors": [
+        "Susheel Suresh",
+        "Hazel Mak",
+        "Shangpo Chou",
+        "Fred Kroon",
+        "Sahil Bhatnagar"
+      ],
+      "abs": "https://arxiv.org/abs/2605.05538",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ]
+    },
+    "2605.03125": {
+      "title": "Taming the Curses of Multiagency in Robust Markov Games with Large State Space through Linear Function Approximation",
+      "authors": [
+        "Jingchu Gai",
+        "Laixi Shi"
+      ],
+      "abs": "https://arxiv.org/abs/2605.03125",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.04076": {
+      "title": "A Regulatory Governance Framework for AI-Driven Financial Fraud Detection in U.S. Banking: Integrating OCC, SR 11-7, CFPB, and FinCEN Compliance Requirements for Model Development, Validation, and Monitoring Lifecycles",
+      "authors": [
+        "Mohammad Nasir Uddin"
+      ],
+      "abs": "https://arxiv.org/abs/2605.04076",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CY"
+      ]
+    },
+    "2605.04496": {
+      "title": "SCOUT: Active Information Foraging for Long-Text Understanding with Decoupled Epistemic States",
+      "authors": [
+        "Zhenliang Zhang",
+        "Wenqing Wang",
+        "Yong Hu",
+        "Yaming Yang",
+        "Jiaheng Gao",
+        "Chen Shen",
+        "Xiaojun Wan"
+      ],
+      "abs": "https://arxiv.org/abs/2605.04496",
+      "categories": [
+        "cs.CL"
+      ]
+    },
+    "2605.04215": {
+      "title": "Predict-then-Diffuse: Adaptive Response Length for Compute-Budgeted Inference in Diffusion LLMs",
+      "authors": [
+        "Michael Rottoli",
+        "Subhankar Roy",
+        "Stefano Paraboschi"
+      ],
+      "abs": "https://arxiv.org/abs/2605.04215",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ]
+    }
+  }
+}
