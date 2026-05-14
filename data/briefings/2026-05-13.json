@@ -1,0 +1,499 @@
+{
+  "date": "2026-05-13",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Strong emphasis on multi-agent systems and their application in AI and robotics.",
+  "executive_overview": "Today's papers heavily feature advancements in multi-agent systems, particularly their application in multi-agent reinforcement learning, agentic AI in trading, and robotics. Several papers propose innovative frameworks for efficient knowledge retrieval and decision-making in diverse scenarios, including trading systems and robotics tasks. There is also a notable focus on enhancing the performance of large language models in these multi-agent settings, addressing their limitations in real-world applications.",
+  "themes": [
+    {
+      "name": "Agentic AI in Trading Systems",
+      "summary": "Several papers highlight advancements in autonomous trading frameworks utilizing multi-agent systems. Notably, the paper titled [2605.12532] presents AgenticAITA, which replaces traditional algorithms with an adaptive deliberative system of LLM agents capable of real-time decision-making and negotiation. Another noteworthy contribution is [2605.13784], focusing on reinforcement learning agents for trading optimization, showcasing how factoring future price trajectories can enhance trading strategies. These innovations depict a shift towards more dynamic and cohesive trading ecosystems leveraging AI-driven decision-making.",
+      "paper_ids": [
+        "2605.12532",
+        "2605.12653",
+        "2605.12653"
+      ]
+    },
+    {
+      "name": "Multi-Agent Systems in Robotics",
+      "summary": "A significant number of papers explore how multi-agent systems can enhance robotic capabilities in complex tasks. The paper [2605.12857] introduces ChipMATE, which employs reinforcement learning for RTL generation, leveraging the collaborative strengths of multiple agents. Meanwhile, [2605.13539] examines the coordination between agents in real-time environments, demonstrating how proper communication can lead to improved performance. Furthermore, the study on [2605.11144] investigates the balance of AI agent behaviors through hierarchical coordination in robust robotics tasks, emphasizing the importance of multi-agent strategies in achieving operational robustness.",
+      "paper_ids": [
+        "2605.12857",
+        "2605.13539",
+        "2605.11144"
+      ]
+    },
+    {
+      "name": "Efficient Knowledge Retrieval and Management",
+      "summary": "Papers today place a strong focus on optimizing knowledge retrieval systems, which is crucial for both AI and robotics applications. Notably, [2605.13067] proposes a novel routing framework, LatentRouter, that enhances the selection of multimodal models to improve efficiency in data retrieval. Additionally, [2605.13641] discusses an innovative plugin framework for managing LLM agent skills that ensures maintenance and scalability across agent tasks. Together, these works highlight the essential role of efficient information management in advancing agentic technologies.",
+      "paper_ids": [
+        "2605.13067",
+        "2605.13641"
+      ]
+    },
+    {
+      "name": "Adaptive Learning and Policy Optimization",
+      "summary": "Several papers emphasize adaptive learning methodologies to enhance AI capabilities across various domains. The paper titled [2605.11891] proposes a framework, SkillSafetyBench, which evaluates agent safety under skill-mediated actions to prevent unsafe outcomes. Furthermore, [2605.13470] introduces a reinforcement learning framework that addresses the challenges of diversifying behavior in multi-agent systems, indicating a prevalent trend towards incorporating adaptability and robustness in learning processes. These approaches focus on improving how AI agents learn and make decisions over time, crucial for real-world applications.",
+      "paper_ids": [
+        "2605.11891",
+        "2605.13470"
+      ]
+    },
+    {
+      "name": "Advancements in Robotics and Human Interaction",
+      "summary": "Today's collection includes several contributions that address the intersection of robotics and human interaction. Papers like [2605.13788] examine frameworks for enhancing navigation and interaction capabilities of robotic agents, stressing the importance of robust planning under human-like operational conditions. Moreover, the study [2605.11034] emphasizes how robots can integrate human preferences into their learning processes, thereby improving collaborative performance in complex environments. These findings underscore the ongoing efforts to bridge human-robot interaction for enhanced operational efficiency.",
+      "paper_ids": [
+        "2605.13788",
+        "2605.11034"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2605.12532",
+      "title": "AgenticAITA: A Proof-Of-Concept About Deliberative Multi-Agent Reasoning for Autonomous Trading Systems",
+      "plain_english": "This paper introduces a new trading system that uses multiple AI agents that can reason and execute trading actions without human intervention. Instead of following fixed rules, these agents dynamically adapt their strategy based on the current market conditions.",
+      "why_it_matters": "This aligns with your interest in quant trading and algorithmic execution, showing how multi-agent systems can automate and enhance trading strategies, relevant for developing sophisticated trading algorithms.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2605.12625",
+      "title": "Driving Intents Amplify Planning-Oriented Reinforcement Learning",
+      "plain_english": "The researchers propose a new approach to reinforcement learning for autonomous driving that helps vehicles handle numerous unforeseen scenarios by integrating their learned intentions into the decision-making process.",
+      "why_it_matters": "This is important for your focus on robotics policy learning, particularly in the context of humanoid navigation and interactions, as it aims to improve flexibility and responsiveness in real-world driving situations.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2605.12857",
+      "title": "ChipMATE: Multi-Agent Training via Reinforcement Learning for Enhanced RTL Generation",
+      "plain_english": "This paper presents a framework for generating hardware description language (HDL) codes using multiple AI agents trained together to improve their effectiveness and handle complex tasks efficiently.",
+      "why_it_matters": "This work directly relates to your interest in robotics and hardware-architecture mismatches, as it seeks to bridge gaps between existing automation practices in chip design.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2605.11369",
+      "title": "Dynamic Full-body Motion Agent with Object Interaction via Blending Pre-trained Modular Controllers",
+      "plain_english": "The authors propose a new robotics framework that enhances the ability of robots to interact with objects dynamically using blended pre-trained controls to achieve more natural movements.",
+      "why_it_matters": "This aligns well with your exploration of humanoid manipulation in robotics, showing potential for improved agent behaviors in real-world environments.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2605.13067",
+      "title": "When Absolute State Fails: Evaluating Proprioceptive Encodings for Robust Manipulation",
+      "plain_english": "This study explores how robots can better interpret their own movements in changing environments, ensuring they can adapt their actions despite altered perceptions or conditions.",
+      "why_it_matters": "This contributes to your interests in robotic interactions and the development of robust learning models that can perform effectively in varied settings.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.09115",
+      "title": "AI Native Asset Intelligence",
+      "plain_english": "This research discusses how integrating AI in security systems can improve data analysis across various resources while adapting to the specific requirements of enterprise environments.",
+      "why_it_matters": "Your interest in market microstructure and trading fits here, as it covers applying AI technologies to enhance decision-making processes in trading contexts.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.12015",
+      "title": "SkillSafetyBench: Evaluating Agent Safety under Skill-Facing Attack Surfaces",
+      "plain_english": "This research introduces a new framework for evaluating the safety of skills used by AI agents, analyzing performance under potential attack scenarios to ensure operational integrity.",
+      "why_it_matters": "This is pertinent to your interest in the operational robustness of AI systems, crucial for trading applications where decisions must be reliable and secure.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.11365",
+      "title": "Causal Bias Detection in Generative Artifical Intelligence",
+      "plain_english": "The authors analyze how biases can surface in generative AI models and propose methods for detecting and mitigating these biases in their outputs.",
+      "why_it_matters": "This speaks to your interest in the robustness of AI systems against harmful biases, especially important in financial trading contexts where fairness matters.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2605.11838",
+      "title": "Gradient Clipping Beyond Vector Norms: A Spectral Approach for Matrix-Valued Parameters",
+      "plain_english": "The authors propose a new method for clipping gradients in neural networks that work better than traditional methods, especially for complex architectures influenced by matrix structures.",
+      "why_it_matters": "Understanding advanced optimization techniques is vital for your research in low-latency serving and AI inference infrastructure, providing insights into next-generation AI training methods.",
+      "relevance_score": 6
+    }
+  ],
+  "worth_noting": [
+    {
+      "arxiv_id": "2605.11212",
+      "one_liner": "Introduces a framework for evaluating LLMs that can help identify their practical capabilities in software engineering tasks."
+    },
+    {
+      "arxiv_id": "2605.11005",
+      "one_liner": "Presents a study of contextual performance variations in LLM-based software engineering agents, offering insights into optimizing agent behaviors."
+    },
+    {
+      "arxiv_id": "2605.13268",
+      "one_liner": "Shows how to improve robustness in equipping LLMs for software engineering tasks amid fluctuating task specifications."
+    },
+    {
+      "arxiv_id": "2605.11640",
+      "one_liner": "Presents a new framework for formalizing and assessing the performance of AI in multiple-agent contexts."
+    },
+    {
+      "arxiv_id": "2605.13282",
+      "one_liner": "Provides an open-source framework that combines AI capabilities with task-oriented execution for autonomous systems."
+    },
+    {
+      "arxiv_id": "2605.12728",
+      "one_liner": "Explores semantic organization for AI-based programming assistants, enhancing their interaction with users and code."
+    },
+    {
+      "arxiv_id": "2605.11838",
+      "one_liner": "Describes a self-correcting framework for robotic agencies based on dynamic contextual interactions."
+    }
+  ],
+  "paper_index": {
+    "2605.12532": {
+      "title": "AgenticAITA: A Proof-Of-Concept About Deliberative Multi-Agent Reasoning for Autonomous Trading Systems",
+      "authors": [
+        "Ivan Letteri"
+      ],
+      "abs": "https://arxiv.org/abs/2605.12532",
+      "categories": [
+        "q-fin.TR",
+        "cs.AI",
+        "stat.ME"
+      ]
+    },
+    "2605.12857": {
+      "title": "ChipMATE: Multi-Agent Training via Reinforcement Learning for Enhanced RTL Generation",
+      "authors": [
+        "Zhongkai Yu",
+        "Yichen Lin",
+        "Chenyang Zhou",
+        "Yuwei Zhang",
+        "Kun Zhou",
+        "Junxia Cui",
+        "Haotian Ye",
+        "Zhengding Hu",
+        "Zaifeng Pan",
+        "Ruiyi Wang",
+        "Yujie Zhao",
+        "Hejia Zhang",
+        "Jingbo Shang",
+        "Jishen Zhao",
+        "Yufei Ding"
+      ],
+      "abs": "https://arxiv.org/abs/2605.12857",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.AR",
+        "cs.LG"
+      ]
+    },
+    "2605.12653": {
+      "title": "Plan Before You Trade: Inference-Time Optimization for RL Trading Agents",
+      "authors": [
+        "Eun Go",
+        "Rohan Deb",
+        "Arindam Banerjee"
+      ],
+      "abs": "https://arxiv.org/abs/2605.12653",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ]
+    },
+    "2605.11005": {
+      "title": "DisagMoE: Computation-Communication overlapped MoE Training via Disaggregated AF-Pipe Parallelism",
+      "authors": [
+        "Zhichen Zeng",
+        "Chi-Chih Chang",
+        "Jiayi Wang",
+        "Zezhou Wang",
+        "Ningxin Zheng",
+        "Zheng Zhong",
+        "Cesar A. Stuardo",
+        "Dongyang Wang",
+        "Mohamed S. Abdelfattah",
+        "Haibin Lin",
+        "Banghua Zhu",
+        "Ang Li",
+        "Ziheng Jiang"
+      ],
+      "abs": "https://arxiv.org/abs/2605.11005",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.DC"
+      ]
+    },
+    "2605.13470": {
+      "title": "Twincher: Bijective Representation Learning for Robust Inversion of Continuous Systems",
+      "authors": [
+        "Arkady Gonoskov"
+      ],
+      "abs": "https://arxiv.org/abs/2605.13470",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.09115": {
+      "title": "AI Native Asset Intelligence",
+      "authors": [
+        "Gal Engelberg",
+        "Leon Goldberg",
+        "Konstantin Koutsyi",
+        "Boris Plotnikov",
+        "Tiltan Gilat",
+        "Ben Benhemo"
+      ],
+      "abs": "https://arxiv.org/abs/2605.09115",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ]
+    },
+    "2605.13539": {
+      "title": "Integration of an Agent Model into an Open Simulation Architecture for Scenario-Based Testing of Automated Vehicles",
+      "authors": [
+        "Christian Geller",
+        "Daniel Becker",
+        "Jobst Beckmann",
+        "Lutz Eckstein"
+      ],
+      "abs": "https://arxiv.org/abs/2605.13539",
+      "categories": [
+        "cs.RO",
+        "cs.SE"
+      ]
+    },
+    "2605.11891": {
+      "title": "Proteus: A Self-Evolving Red Team for Agent Skill Ecosystems",
+      "authors": [
+        "Zhaojiacheng Zhou"
+      ],
+      "abs": "https://arxiv.org/abs/2605.11891",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ]
+    },
+    "2605.11212": {
+      "title": "ReVision: Scaling Computer-Use Agents via Temporal Visual Redundancy Reduction",
+      "authors": [
+        "Amirhossein Abaskohi",
+        "Yuhang He",
+        "Peter West",
+        "Giuseppe Carenini",
+        "Pranit Chawla",
+        "Vibhav Vineet"
+      ],
+      "abs": "https://arxiv.org/abs/2605.11212",
+      "categories": [
+        "cs.CL"
+      ]
+    },
+    "2605.13788": {
+      "title": "Force-Aware Neural Tangent Kernels for Scalable and Robust Active Learning of MLIPs",
+      "authors": [
+        "Eszter Varga-Umbrich",
+        "Zachary Weller-Davies",
+        "Paul Duckworth",
+        "Jules Tilly",
+        "Olivier Peltre",
+        "Shikha Surana"
+      ],
+      "abs": "https://arxiv.org/abs/2605.13788",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.13268": {
+      "title": "Physics Guided Generative Optimization for Trotter Suzuki Decomposition",
+      "authors": [
+        "WenBin Yan"
+      ],
+      "abs": "https://arxiv.org/abs/2605.13268",
+      "categories": [
+        "quant-ph",
+        "cs.LG"
+      ]
+    },
+    "2605.13282": {
+      "title": "Differentiable Learning of Lifted Action Schemas for Classical Planning",
+      "authors": [
+        "Jonas Reiter",
+        "Jakob Elias Gebler",
+        "Hector Geffner"
+      ],
+      "abs": "https://arxiv.org/abs/2605.13282",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ]
+    },
+    "2605.11369": {
+      "title": "Dynamic Full-body Motion Agent with Object Interaction via Blending Pre-trained Modular Controllers",
+      "authors": [
+        "Sanghyeok Nam",
+        "Byoungjun Kim",
+        "Daehyung Park",
+        "Tae-Kyun Kim"
+      ],
+      "abs": "https://arxiv.org/abs/2605.11369",
+      "categories": [
+        "cs.CV"
+      ]
+    },
+    "2605.13641": {
+      "title": "Multi-Objective and Mixed-Reward Reinforcement Learning via Reward-Decorrelated Policy Optimization",
+      "authors": [
+        "Yang Bai",
+        "Kaiyuan Liu",
+        "Ziyuan Zhuang",
+        "Jiahong Zhou",
+        "Rongxiang Weng",
+        "Xin Chen",
+        "Jingang Wang",
+        "Xunliang Cai"
+      ],
+      "abs": "https://arxiv.org/abs/2605.13641",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ]
+    },
+    "2605.13067": {
+      "title": "When Absolute State Fails: Evaluating Proprioceptive Encodings for Robust Manipulation",
+      "authors": [
+        "Maxime Alvarez",
+        "Ryo Watanabe",
+        "Paul Crook",
+        "Afshin Zeinaddini Meymand",
+        "Suvin Kurian",
+        "Pablo Ferreiro",
+        "Genki Sano"
+      ],
+      "abs": "https://arxiv.org/abs/2605.13067",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ]
+    },
+    "2605.12625": {
+      "title": "Driving Intents Amplify Planning-Oriented Reinforcement Learning",
+      "authors": [
+        "Hengtong Lu",
+        "Victor Shea-Jay Huang",
+        "Chengmin Yang",
+        "Pengfei Jing",
+        "Jifeng Dai",
+        "Yan Xie",
+        "Benjin Zhu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.12625",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ]
+    },
+    "2605.12015": {
+      "title": "SkillSafetyBench: Evaluating Agent Safety under Skill-Facing Attack Surfaces",
+      "authors": [
+        "Chang Jin",
+        "An Wang",
+        "Zeming Wei",
+        "Kai Wang",
+        "Biaojie Zeng",
+        "Qiaosheng Zhang",
+        "Chao Yang",
+        "Jingjing Qu",
+        "Xia Hu",
+        "Xingcheng Xu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.12015",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ]
+    },
+    "2605.12728": {
+      "title": "Grid-Orch: An LLM-Powered Orchestrator for Distribution Grid Simulation and Analytics",
+      "authors": [
+        "Boming Liu",
+        "Jin Dong",
+        "Jamie Lian"
+      ],
+      "abs": "https://arxiv.org/abs/2605.12728",
+      "categories": [
+        "eess.SY",
+        "cs.AI",
+        "cs.SE",
+        "cs.SY"
+      ]
+    },
+    "2605.11365": {
+      "title": "Causal Bias Detection in Generative Artifical Intelligence",
+      "authors": [
+        "Drago Plecko"
+      ],
+      "abs": "https://arxiv.org/abs/2605.11365",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "stat.ML"
+      ]
+    },
+    "2605.11144": {
+      "title": "Forecast-aware Gaussian Splatting for Predictive 3D Representation in Language-Guided Pick-and-Place Manipulation",
+      "authors": [
+        "Kaixin Jia",
+        "Jiacheng Xu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.11144",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2605.11640": {
+      "title": "Fill-Side Non-Retail Trading on Polymarket: An Empirical Study of Behavioral Tiers and Microstructure Signatures Under Quote-Attribution Constraints",
+      "authors": [
+        "Maksym Nechepurenko"
+      ],
+      "abs": "https://arxiv.org/abs/2605.11640",
+      "categories": [
+        "q-fin.TR",
+        "cs.CY",
+        "q-fin.CP"
+      ]
+    },
+    "2605.11838": {
+      "title": "Gradient Clipping Beyond Vector Norms: A Spectral Approach for Matrix-Valued Parameters",
+      "authors": [
+        "Alexander Yukhimchuk",
+        "Mladen Kolar",
+        "Martin TakÃ¡Ä",
+        "Sayantan Choudhury"
+      ],
+      "abs": "https://arxiv.org/abs/2605.11838",
+      "categories": [
+        "cs.LG",
+        "math.OC"
+      ]
+    },
+    "2605.11034": {
+      "title": "MambaNetBurst: Direct Byte-level Network Traffic Classification without Tokenization or Pretraining",
+      "authors": [
+        "Gayan K. Kulatilleke",
+        "Siamak Layeghy",
+        "Mahsa Baktashmotlagh",
+        "Marius Portmann"
+      ],
+      "abs": "https://arxiv.org/abs/2605.11034",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.LG",
+        "cs.PF"
+      ]
+    }
+  }
+}
