@@ -114735,6 +114735,34 @@
 "found": true,
 "influential_count": 0
 },
+"2605.08401": {
+"authors": [
+{
+"aff": null,
+"id": null,
+"name": "Junnan Liu"
+},
+{
+"aff": null,
+"id": "2238130759",
+"name": "Linhao Luo"
+},
+{
+"aff": null,
+"id": "122699890",
+"name": "Thuy-Trang Vu"
+},
+{
+"aff": null,
+"id": "2322324014",
+"name": "Gholamreza Haffari"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-18",
+"found": true,
+"influential_count": 0
+},
 "2605.08638": {
 "authors": [],
 "citation_count": 0,
@@ -115131,6 +115159,76 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-05-15",
+"found": false,
+"influential_count": 0
+},
+"2605.15226": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-18",
+"found": false,
+"influential_count": 0
+},
+"2605.15237": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-18",
+"found": false,
+"influential_count": 0
+},
+"2605.15486": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-18",
+"found": false,
+"influential_count": 0
+},
+"2605.15510": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-18",
+"found": false,
+"influential_count": 0
+},
+"2605.15559": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-18",
+"found": false,
+"influential_count": 0
+},
+"2605.15573": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-18",
+"found": false,
+"influential_count": 0
+},
+"2605.15701": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-18",
+"found": false,
+"influential_count": 0
+},
+"2605.15706": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-18",
+"found": false,
+"influential_count": 0
+},
+"2605.15722": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-18",
+"found": false,
+"influential_count": 0
+},
+"2605.16099": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-18",
 "found": false,
 "influential_count": 0
 }
