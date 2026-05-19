@@ -9605,6 +9605,34 @@
 "found": true,
 "influential_count": 0
 },
+"2505.21535": {
+"authors": [
+{
+"aff": null,
+"id": "2365451549",
+"name": "Yuxin Ren"
+},
+{
+"aff": null,
+"id": "2372224131",
+"name": "Maxwell D Collins"
+},
+{
+"aff": null,
+"id": "143707095",
+"name": "Miao Hu"
+},
+{
+"aff": null,
+"id": "2334663584",
+"name": "Huanrui Yang"
+}
+],
+"citation_count": 0,
+"fetched": "2026-05-19",
+"found": true,
+"influential_count": 0
+},
 "2505.21569": {
 "citation_count": 0,
 "fetched": "2026-05-02",
@@ -27591,6 +27619,29 @@
 "2601.00353": {
 "citation_count": 0,
 "fetched": "2026-05-02",
+"found": true,
+"influential_count": 0
+},
+"2601.00360": {
+"authors": [
+{
+"aff": null,
+"id": "2277775403",
+"name": "J. Idowu"
+},
+{
+"aff": null,
+"id": "2237806246",
+"name": "Ahmed Almasoud"
+},
+{
+"aff": null,
+"id": "115140933",
+"name": "Ayman Alfahid"
+}
+],
+"citation_count": 2,
+"fetched": "2026-05-19",
 "found": true,
 "influential_count": 0
 },
@@ -51983,8 +52034,50 @@
 "influential_count": 0
 },
 "2602.20200": {
-"citation_count": 2,
-"fetched": "2026-05-02",
+"authors": [
+{
+"aff": null,
+"id": "2279653283",
+"name": "Zaijing Li"
+},
+{
+"aff": null,
+"id": "2367737592",
+"name": "Bin Hu"
+},
+{
+"aff": null,
+"id": "2267332946",
+"name": "Rui Shao"
+},
+{
+"aff": null,
+"id": "2267388987",
+"name": "Gongwei Chen"
+},
+{
+"aff": null,
+"id": "2279928413",
+"name": "D. Jiang"
+},
+{
+"aff": null,
+"id": "2380031706",
+"name": "Pengwei Xie"
+},
+{
+"aff": null,
+"id": "2347881563",
+"name": "Jianye Hao"
+},
+{
+"aff": null,
+"id": "2258952251",
+"name": "Liqiang Nie"
+}
+],
+"citation_count": 3,
+"fetched": "2026-05-19",
 "found": true,
 "influential_count": 0
 },
@@ -69490,8 +69583,40 @@
 "influential_count": 0
 },
 "2603.14371": {
+"authors": [
+{
+"aff": "Institue for AI Industry Research (AIR), Tsinghua University",
+"id": "2303907684",
+"name": "Xiangyu Li"
+},
+{
+"aff": null,
+"id": "2426674158",
+"name": "Huaizhi Tang"
+},
+{
+"aff": null,
+"id": "2350151012",
+"name": "Xin Ding"
+},
+{
+"aff": null,
+"id": "2235256501",
+"name": "Weijun Wang"
+},
+{
+"aff": null,
+"id": "2397379586",
+"name": "Ting Cao"
+},
+{
+"aff": null,
+"id": "2322263540",
+"name": "Yunxin Liu"
+}
+],
 "citation_count": 0,
-"fetched": "2026-05-02",
+"fetched": "2026-05-19",
 "found": true,
 "influential_count": 0
 },
@@ -115162,6 +115287,13 @@
 "found": false,
 "influential_count": 0
 },
+"2605.15217": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-19",
+"found": false,
+"influential_count": 0
+},
 "2605.15226": {
 "authors": [],
 "citation_count": 0,
@@ -115229,6 +115361,69 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-05-18",
+"found": false,
+"influential_count": 0
+},
+"2605.16867": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-19",
+"found": false,
+"influential_count": 0
+},
+"2605.17170": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-19",
+"found": false,
+"influential_count": 0
+},
+"2605.17373": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-19",
+"found": false,
+"influential_count": 0
+},
+"2605.17609": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-19",
+"found": false,
+"influential_count": 0
+},
+"2605.17698": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-19",
+"found": false,
+"influential_count": 0
+},
+"2605.17792": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-19",
+"found": false,
+"influential_count": 0
+},
+"2605.17986": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-19",
+"found": false,
+"influential_count": 0
+},
+"2605.18421": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-19",
+"found": false,
+"influential_count": 0
+},
+"2605.18722": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-19",
 "found": false,
 "influential_count": 0
 }

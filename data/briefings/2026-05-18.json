@@ -1,0 +1,498 @@
+{
+  "date": "2026-05-18",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Strong focus on agentic AI frameworks and optimization strategies across various applications.",
+  "executive_overview": "Today's papers highlight a significant emphasis on advancements in agentic AI systems, particularly in areas like reinforcement learning, multi-agent coordination, and memory management. Several studies propose innovative optimization techniques for large language model (LLM) inference, addressing key challenges in deployment efficiency and real-time responsiveness. A recurring theme is the integration of structured reasoning into various applications, from robotics to software engineering, underscoring the need for cohesive frameworks that combine learned skills with effective memory systems.",
+  "themes": [
+    {
+      "name": "Optimizing Inference for Agentic Systems",
+      "summary": "Multiple papers today tackle the challenges of optimizing inference in agentic AI systems, particularly large language models. For instance, 'OxyGen' [2603.14371] presents a unified KV cache management approach that enhances multi-task parallelism in embodied AI tasks, while 'TriAxialKV' [2605.17170] explores low-precision quantization strategies tailored for agentic inference. These developments indicate a growing recognition of the need for efficient memory management and reduced latency across AI applications.",
+      "paper_ids": [
+        "2603.14371",
+        "2605.17170"
+      ]
+    },
+    {
+      "name": "Memory Systems in Multi-Agent Environments",
+      "summary": "The necessity for effective memory systems in multi-agent frameworks emerges prominently in today's papers. 'Differentiable Mixture-of-Agents' [2605.15706] proposes a self-evolving architecture that enhances flexibility in agent cooperation, while 'EvoMemBench' [2605.18421] introduces a benchmark focused on evaluating memory mechanisms in long-term agent interactions. These works underscore the critical role of dynamic memory management in facilitating robust adaptive behaviors in complex scenarios.",
+      "paper_ids": [
+        "2605.15706",
+        "2605.18421"
+      ]
+    },
+    {
+      "name": "Frameworks for Multi-Agent Collaboration",
+      "summary": "Several papers focus on improving collaboration between autonomous agents, reflecting the trend towards leveraging collective intelligence. 'Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems' [2601.00360] develops a taxonomy to help mitigate collusion in agentic AI settings, whereas 'Agent Bazaar' [2605.17698] provides a simulation platform to examine economic alignment in multi-agent systems. Together, these contributions highlight both the potential benefits and challenges of multi-agent interactions in dynamic environments.",
+      "paper_ids": [
+        "2601.00360",
+        "2605.17698"
+      ]
+    },
+    {
+      "name": "Reinforcement Learning and Planning",
+      "summary": "A collection of papers explores how reinforcement learning (RL) can enhance planning capabilities in AI systems. 'HydroAgent' [2605.17705] investigates using LLMs for hydrologic model calibration, while 'Agentic Cost-Aware Query Planning' [2605.17986] presents a framework to optimize query execution in big data contexts. These studies reveal the increasing interest in applying RL for strategic decision-making and the complex planning required in real-world applications.",
+      "paper_ids": [
+        "2605.17986"
+      ]
+    },
+    {
+      "name": "Agentic AI in Robotics",
+      "summary": "Research continues to advance the integration of agentic capabilities within robotics, focusing on enhanced operational efficiency. 'Global Prior Meets Local Consistency' [2602.20200] proposes a dual-memory framework for efficient robotic manipulation, while 'DexHoldem' [2605.18722] introduces a benchmark for testing dexterous manipulation in dynamic environments. Such works highlight the intersection of advanced AI reasoning and practical robotics applications, emphasizing the role of learned skills and decision-making capabilities.",
+      "paper_ids": [
+        "2602.20200",
+        "2605.18722"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2605.17170",
+      "title": "TriAxialKV: Toward Extreme Low-Precision KV-Cache Quantization for Agentic Inference Tasks",
+      "plain_english": "This paper explores a new method for quantizing the key-value cache in AI systems, aiming to use less memory while maintaining performance for tasks that require processing long inputs and multiple types of data.",
+      "why_it_matters": "The focus on optimizing memory usage and performance for LLMs aligns directly with your interest in AI inference infrastructure and low-latency serving.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2605.15706",
+      "title": "Differentiable Mixture-of-Agents Incentivizes Swarm Intelligence of Large Language Models",
+      "plain_english": "This research introduces a dynamic framework where multiple AI agents can collaborate and adapt their interactions based on current task requirements, improving their overall performance.",
+      "why_it_matters": "This directly relates to your interest in multi-agent systems, particularly how they can work together efficiently and adaptively.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2605.17698",
+      "title": "Agent Bazaar: Enabling Economic Alignment in Multi-Agent Marketplaces",
+      "plain_english": "This paper develops a simulation framework that assesses how multiple AI agents interact and maintain market stability while performing tasks.",
+      "why_it_matters": "The findings could enhance your understanding of multi-agent systems in economic contexts, linking to concerns about algorithmic volatility.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.17792",
+      "title": "HydroAgent: Closing the Gap Between Frontier LLMs and Human Experts in Hydrologic Model Calibration via Simulator-Grounded RL",
+      "plain_english": "This study benchmarks several large language models for their ability to calibrate hydrologic models, comparing their performance to human experts.",
+      "why_it_matters": "Insights from this paper could inform your work on robotics policy learning and the use of AI in complex, real-world decision-making tasks.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.17373",
+      "title": "FML-bench: A Controlled Study of AI Research Agent Strategies from the Perspective of Search Dynamics",
+      "plain_english": "This paper analyzes different AI strategies for research optimization, focusing on how agent behaviors affect research outcomes in machine learning.",
+      "why_it_matters": "This aligns with your interest in the efficiency and effectiveness of AI inference infrastructure, particularly in research contexts.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2605.17609",
+      "title": "Adaptive Generate-Rank-Verify: Inference-Time Search with Costly Verification",
+      "plain_english": "The authors present a framework that optimizes how AI models select and verify their outputs during inference, aiming to balance efficiency and accuracy.",
+      "why_it_matters": "This paper relates to your focus on low-latency serving as it emphasizes efficient operations in AI systems.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2505.21535",
+      "title": "FAR: Function-preserving Attention Replacement for IMC-friendly Inference",
+      "plain_english": "This work proposes an attention mechanism designed for in-memory computing applications, helping to reduce latency in processing tasks.",
+      "why_it_matters": "As you are focused on hardware-architecture mismatches and efficient computations, this study addresses critical performance considerations in AI model deployment.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.16867",
+      "title": "GoodServe: Towards High-Goodput Serving of Agentic LLM Inferences over Heterogeneous Resources",
+      "plain_english": "This paper proposes a new system for efficiently serving AI inference requests across different hardware resources to maximize throughput.",
+      "why_it_matters": "The focus on optimizing inference serving across various hardware setups is directly relevant to your interest in AI inference infrastructure.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.15217",
+      "title": "Fair outputs, Biased Internals: Causal Potency and Asymmetry of Latent Bias in LLMs for High-Stakes Decisions",
+      "plain_english": "This research reveals that even when language models produce fair outputs, they can still harbor biases within their internal mechanisms, which may lead to flawed decision-making.",
+      "why_it_matters": "Understanding bias in AI outputs is crucial in ensuring responsible use of AI in trading and algorithmic execution contexts.",
+      "relevance_score": 8
+    }
+  ],
+  "worth_noting": [],
+  "paper_index": {
+    "2603.14371": {
+      "title": "OxyGen: Unified KV Cache Management for VLA Inference under Multi-Task Parallelism",
+      "authors": [
+        "Xiangyu Li",
+        "Huaizhi Tang",
+        "Xin Ding",
+        "Weijun Wang",
+        "Ting Cao",
+        "Yunxin Liu"
+      ],
+      "abs": "https://arxiv.org/abs/2603.14371",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "primary_affiliation": "Institue for AI Industry Research (AIR)",
+      "s2_authors": [
+        {
+          "id": "2303907684",
+          "name": "Xiangyu Li",
+          "aff": "Institue for AI Industry Research (AIR), Tsinghua University"
+        },
+        {
+          "id": "2426674158",
+          "name": "Huaizhi Tang",
+          "aff": null
+        },
+        {
+          "id": "2350151012",
+          "name": "Xin Ding",
+          "aff": null
+        },
+        {
+          "id": "2235256501",
+          "name": "Weijun Wang",
+          "aff": null
+        },
+        {
+          "id": "2397379586",
+          "name": "Ting Cao",
+          "aff": null
+        },
+        {
+          "id": "2322263540",
+          "name": "Yunxin Liu",
+          "aff": null
+        }
+      ]
+    },
+    "2605.17170": {
+      "title": "TriAxialKV: Toward Extreme Low-Precision KV-Cache Quantization for Agentic Inference Tasks",
+      "authors": [
+        "Hanzhang Shen",
+        "Haoran Wu",
+        "Yiren Zhao",
+        "Robert Mullins"
+      ],
+      "abs": "https://arxiv.org/abs/2605.17170",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.17373": {
+      "title": "FML-bench: A Controlled Study of AI Research Agent Strategies from the Perspective of Search Dynamics",
+      "authors": [
+        "Qiran Zou",
+        "Hou Hei Lam",
+        "Wenhao Zhao",
+        "Tingting Chen",
+        "Yiming Tang",
+        "Samson Yu",
+        "Yingtao Zhu",
+        "Srinivas Anumasa",
+        "Zufeng Zhang",
+        "Tianyi Zhang",
+        "Chang Liu",
+        "Zhengyao Jiang",
+        "Anirudh Goyal",
+        "Dianbo Liu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.17373",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ]
+    },
+    "2602.20200": {
+      "title": "Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation",
+      "authors": [
+        "Zaijing Li",
+        "Bing Hu",
+        "Rui Shao",
+        "Gongwei Chen",
+        "Dongmei Jiang",
+        "Pengwei Xie",
+        "Jianye Hao",
+        "Liqiang Nie"
+      ],
+      "abs": "https://arxiv.org/abs/2602.20200",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "citation_count": 3,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2279653283",
+          "name": "Zaijing Li",
+          "aff": null
+        },
+        {
+          "id": "2367737592",
+          "name": "Bin Hu",
+          "aff": null
+        },
+        {
+          "id": "2267332946",
+          "name": "Rui Shao",
+          "aff": null
+        },
+        {
+          "id": "2267388987",
+          "name": "Gongwei Chen",
+          "aff": null
+        },
+        {
+          "id": "2279928413",
+          "name": "D. Jiang",
+          "aff": null
+        },
+        {
+          "id": "2380031706",
+          "name": "Pengwei Xie",
+          "aff": null
+        },
+        {
+          "id": "2347881563",
+          "name": "Jianye Hao",
+          "aff": null
+        },
+        {
+          "id": "2258952251",
+          "name": "Liqiang Nie",
+          "aff": null
+        }
+      ]
+    },
+    "2605.15706": {
+      "title": "Differentiable Mixture-of-Agents Incentivizes Swarm Intelligence of Large Language Models",
+      "authors": [
+        "Xingjian Wu",
+        "Junkai Lu",
+        "Siyu Yan",
+        "Xiangfei Qiu",
+        "Jilin Hu",
+        "Chenjuan Guo",
+        "Bin Yang"
+      ],
+      "abs": "https://arxiv.org/abs/2605.15706",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.16867": {
+      "title": "GoodServe: Towards High-Goodput Serving of Agentic LLM Inferences over Heterogeneous Resources",
+      "authors": [
+        "Boxiao Du",
+        "Boning Huangfu",
+        "Yizhou Luo",
+        "Chen Chen",
+        "Zijun Li",
+        "Minchen Yu",
+        "Xiaoyi Fan",
+        "Minyi Guo"
+      ],
+      "abs": "https://arxiv.org/abs/2605.16867",
+      "categories": [
+        "cs.DC"
+      ]
+    },
+    "2605.17698": {
+      "title": "Agent Bazaar: Enabling Economic Alignment in Multi-Agent Marketplaces",
+      "authors": [
+        "Seth Karten",
+        "Cameron Crow",
+        "Chi Jin"
+      ],
+      "abs": "https://arxiv.org/abs/2605.17698",
+      "categories": [
+        "cs.LG",
+        "cs.MA"
+      ]
+    },
+    "2605.17792": {
+      "title": "HydroAgent: Closing the Gap Between Frontier LLMs and Human Experts in Hydrologic Model Calibration via Simulator-Grounded RL",
+      "authors": [
+        "Zhi Li",
+        "Songkun Yan",
+        "Jie Cao",
+        "Mofan Zhang",
+        "Anjiang Wei",
+        "Jinwoong Yoo",
+        "Yang Hong"
+      ],
+      "abs": "https://arxiv.org/abs/2605.17792",
+      "categories": [
+        "cs.LG",
+        "physics.geo-ph"
+      ]
+    },
+    "2601.00360": {
+      "title": "Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems",
+      "authors": [
+        "Jamiu Idowu",
+        "Ahmed Almasoud",
+        "Ayman Alfahid"
+      ],
+      "abs": "https://arxiv.org/abs/2601.00360",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "citation_count": 2,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2277775403",
+          "name": "J. Idowu",
+          "aff": null
+        },
+        {
+          "id": "2237806246",
+          "name": "Ahmed Almasoud",
+          "aff": null
+        },
+        {
+          "id": "115140933",
+          "name": "Ayman Alfahid",
+          "aff": null
+        }
+      ]
+    },
+    "2605.18421": {
+      "title": "EvoMemBench: Benchmarking Agent Memory from a Self-Evolving Perspective",
+      "authors": [
+        "Yuyao Wang",
+        "Zhongjian Zhang",
+        "Mo Chi",
+        "Kaichi Yu",
+        "Yuhan Li",
+        "Miao Peng",
+        "Bing Tong",
+        "Chen Zhang",
+        "Yan Zhou",
+        "Jia Li"
+      ],
+      "abs": "https://arxiv.org/abs/2605.18421",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ]
+    },
+    "2605.18722": {
+      "title": "Dexora: Open-source VLA for High-DoF Bimanual Dexterity",
+      "authors": [
+        "Zongzheng Zhang",
+        "Jingrui Pang",
+        "Zhuo Yang",
+        "Kun Li",
+        "Minwen Liao",
+        "Saining Zhang",
+        "Guoxuan Chi",
+        "Jinbang Guo",
+        "Huan-ang Gao",
+        "Modi Shi",
+        "Dongyun Ge",
+        "Yao Mu",
+        "Jiayuan Gu",
+        "Rui Chen",
+        "Hao Dong",
+        "Huazhe Xu",
+        "Li Yi",
+        "Yixin Zhu",
+        "Hang Zhao",
+        "Pengwei Wang",
+        "Shanghang Zhang",
+        "Guocai Yao",
+        "Jianyu Chen",
+        "Hongyang Li",
+        "Hao Zhao"
+      ],
+      "abs": "https://arxiv.org/abs/2605.18722",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2605.17609": {
+      "title": "Adaptive Generate-Rank-Verify: Inference-Time Search with Costly Verification",
+      "authors": [
+        "Shaddin Dughmi",
+        "Mahdi Haghifam",
+        "Yusuf Hakan Kalayci"
+      ],
+      "abs": "https://arxiv.org/abs/2605.17609",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.15217": {
+      "title": "Fair outputs, Biased Internals: Causal Potency and Asymmetry of Latent Bias in LLMs for High-Stakes Decisions",
+      "authors": [
+        "Jagdish Tripathy",
+        "Marcus Buckmann"
+      ],
+      "abs": "https://arxiv.org/abs/2605.15217",
+      "categories": [
+        "cs.AI",
+        "cs.CY",
+        "cs.LG",
+        "econ.GN",
+        "q-fin.EC"
+      ]
+    },
+    "2505.21535": {
+      "title": "FAR: Function-preserving Attention Replacement for IMC-friendly Inference",
+      "authors": [
+        "Yuxin Ren",
+        "Maxwell D Collins",
+        "Miao Hu",
+        "Huanrui Yang"
+      ],
+      "abs": "https://arxiv.org/abs/2505.21535",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2365451549",
+          "name": "Yuxin Ren",
+          "aff": null
+        },
+        {
+          "id": "2372224131",
+          "name": "Maxwell D Collins",
+          "aff": null
+        },
+        {
+          "id": "143707095",
+          "name": "Miao Hu",
+          "aff": null
+        },
+        {
+          "id": "2334663584",
+          "name": "Huanrui Yang",
+          "aff": null
+        }
+      ]
+    },
+    "2605.17986": {
+      "title": "LivePI: More Realistic Benchmarking of Agents Against Indirect Prompt Injectio",
+      "authors": [
+        "Lei Zhao",
+        "Abhay Bhaskar",
+        "Edgar Dobriban"
+      ],
+      "abs": "https://arxiv.org/abs/2605.17986",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ]
+    }
+  }
+}
