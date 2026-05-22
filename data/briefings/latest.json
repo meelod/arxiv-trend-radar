@@ -1,221 +1,135 @@
 {
-  "date": "2026-05-19",
+  "date": "2026-05-21",
   "paper_count": 400,
   "model": "gpt-4o-mini",
   "language": "English",
-  "headline": "Strong focus on optimizing AI inference efficiency and agentic systems today.",
-  "executive_overview": "Today's papers highlight ongoing innovations in AI inference, particularly for large language models (LLMs) and multi-agent architectures. A notable volume focuses on optimizing key-value (KV) cache management for LLM inference and multi-agent systems, underscoring the importance of efficient resource allocation in deployment. Additionally, several studies explore the scalability and robustness of AI-driven systems in various applications, including robotics, finance, and autonomous vehicle operation. The integration of reinforcement learning with agentic systems also features prominently in today’s submissions.",
+  "headline": "Today's papers highlight significant advancements in AI inference infrastructure and multi-agent systems, particularly in robotics and agentic frameworks.",
+  "executive_overview": "A strong concentration of research today focuses on optimizing AI inference for large language models (LLMs) and introducing frameworks for collaborative multi-agent systems. Papers explore low-latency improvement in AI serving, with several presenting new architectures to enhance efficiency and scalability. Additionally, there are promising developments in frameworks for safe autonomous operations in robotics, emphasizing the integration of generative AI in dynamic environments. Overall, today's publications reflect the shift towards efficient, adaptive systems in AI.",
   "themes": [
     {
-      "name": "AI Inference Optimization",
-      "summary": "Many papers addressed optimizations in inference systems for large language models and other AI architectures. Key approaches include managing key-value caches, as seen in papers like [2605.19775], [2605.17036], and [2605.17346], which propose various strategies for optimizing cache performance by learning from input characteristics and providing scalable solutions for high throughput. Other works, such as [2605.18067] and [2605.19782], focus on efficient scheduling and resource allocation to meet service-level objectives without sacrificing model performance during inference. Papers like [2605.18535] show advances in ensuring high goodput and latency management in heterogeneous GPU environments, contributing to a comprehensive approach to AI inference efficiency.",
+      "name": "AI Inference and Optimization",
+      "summary": "Several papers tackle the challenges of inference efficiency and optimization for large language models, crucial for practical deployment. For instance, papers like [2605.21312] introduce frameworks like Frontie that simulate comprehensive LLM inference, while [2605.16299] discusses improvements in KV caching to support long-context tasks. Innovations such as [2605.17036] propose new architectures like Power-Aware LLM Serving, focusing on fine-tuning computational power. These advancements aim to reduce latency and enhance overall performance in practical applications.  Key papers include [2605.22001], [2605.20946], and [2605.20284].",
       "paper_ids": [
-        "2605.19775",
+        "2605.21312",
         "2605.17036",
-        "2605.18067",
-        "2605.19782",
-        "2605.18535"
+        "2605.22001",
+        "2605.20946",
+        "2605.20284"
       ]
     },
     {
-      "name": "Multi-Agent Systems",
-      "summary": "Several papers delve into the capabilities and evaluation of multi-agent architectures. For instance, [2605.19743] presents a framework for engineering tasks with LLM-driven agents and outlines a benchmark suite for their evaluation. Another notable contribution, [2605.17661], discusses enhanced coordination strategies for agents across different tasks, emphasizing the importance of communication and structural learning in complex environments. Additionally, [2605.17648] introduces innovative techniques for ensuring agents can collaborate effectively, while [2605.17823] raises essential questions about the implications of agent behavior in social contexts, including potential collusion.",
+      "name": "Multi-Agent Systems and Collaboration",
+      "summary": "A significant number of papers focus on the evolution and effectiveness of multi-agent systems, emphasizing their application in dynamic environments. The work presented in papers like [2605.22361], which discusses goal-oriented communication in multi-agent systems, and [2605.22721] on decentralized memory for self-evolving systems demonstrates interesting approaches to enhance coordination and adaptability. Additionally, solutions like [2605.22007] introduce mechanisms for improved task allocation across heterogeneous agents, highlighting the collaborative potential of advanced AI systems. Key papers include [2605.22305], [2605.22361], and [2605.21092].",
       "paper_ids": [
-        "2605.19743",
-        "2605.17661"
+        "2605.22305",
+        "2605.22721"
       ]
     },
     {
-      "name": "Robotics and Practical Applications",
-      "summary": "Today's robotics-focused submissions notably include advancements in policy learning for humanoid manipulation and end-to-end systems. Papers like [2605.17850] explore real-time communication and action success in multi-robot situations, highlighting the necessity of efficient learning protocols in robotics. Others, such as [2605.19512] and [2605.18100], present new frameworks for robot policy optimization and continuous adaptation, showing practical implementations in domestic or companion robotics. These contributions underline the ongoing demand for robots to operate autonomously in complex settings.",
-      "paper_ids": []
-    },
-    {
-      "name": "Financial AI and Quantitative Approaches",
-      "summary": "Several papers focus on the intersection of AI and finance, particularly in optimizing quantitative trading and strategy backtesting. Papers like [2503.19950] and [2605.17937] discuss creating benchmarks for LLM agents in financial contexts, emphasizing the need for realistic, operationalizable metrics that foster better model evaluations. Other submissions tackle the integration of machine learning in financial scenarios while maintaining interpretability and robustness, reflecting growing interest in the effective application of AI in quantitative trading.",
+      "name": "Robotics and Humanoid Systems",
+      "summary": "Today's research includes promising developments in robotics, especially in humanoid systems and their interaction capabilities. Papers such as [2605.22092] discuss gesture-aware navigation for robots, demonstrating significant strides in enabling robots to effectively understand and implement language commands in real-world scenarios. Others, like [2605.21125], focus on enhancing autonomous driving models with innovative reasoning capabilities. This collective research underscores the growing maturity of humanoid robotics and their ability to function autonomously in complex environments. Noteworthy papers include [2605.21125], [2605.22511], and [2605.22054].",
       "paper_ids": [
-        "2503.19950",
-        "2605.17937"
+        "2605.22092",
+        "2605.21125",
+        "2605.22511",
+        "2605.22054"
       ]
     },
     {
-      "name": "Efficient Use of Resources and Scalability",
-      "summary": "Resource efficiency and scalability are dominant themes in many of today's papers, with submissions like [2605.17881] and [2605.17659] exploring memory management and optimization techniques in long-context LLMs. These contributions underscore the urgency of optimizing AI systems to reduce operational costs while maintaining performance. Additionally, [2605.18107] proposes methods to improve computational efficiency under constraints, addressing hardware architecture mismatches. These findings are essential for ensuring the long-term sustainability of advanced AI technologies.",
-      "paper_ids": []
+      "name": "Agentic Frameworks and Self-Evolution",
+      "summary": "A number of papers present novel frameworks for agentic systems emphasizing self-evolving capabilities that improve performance over time. Research such as [2605.22082] addresses the balance between autonomous reasoning and user interaction, showcasing advancements that enhance the adaptability of agents within new contexts. Others, like [2605.21322], dive into modular agent configurations for improved task performance, which could redefine how we understand agent capabilities in interactive environments. Key contributions in this category include [2605.21847], [2605.20272], and [2605.22504].",
+      "paper_ids": [
+        "2605.22082",
+        "2605.21322",
+        "2605.21847",
+        "2605.20272",
+        "2605.22504"
+      ]
+    },
+    {
+      "name": "Exploitations and Security",
+      "summary": "With increasing concerns about the security of AI agents, papers addressing the vulnerabilities of multi-agent systems are particularly timely. Works like [2605.22089] investigate covert channels in AI communication, emphasizing the need for enhanced security measures in AI tool use and interaction. The examination of potential exploitations, such as backdoor attacks in [2605.20651], outlines the critical need for developing robust defense mechanisms against such threats. Relevant papers include [2605.22089] and [2605.20651].",
+      "paper_ids": [
+        "2605.22089",
+        "2605.20651"
+      ]
     }
   ],
   "top_picks": [
     {
-      "arxiv_id": "2605.19775",
-      "title": "Understanding Inference Scaling for LLMs: Bottlenecks, Trade-offs, and Performance Principles",
-      "plain_english": "Explores how inference quality and capacity for large language models change based on size and data handling, highlighting key bottlenecks and trade-offs.",
-      "why_it_matters": "Directly addresses the user's interest in AI inference infrastructure and the implications of specialized silicon on performance in LLMs, particularly relevant for optimizing inference systems.",
+      "arxiv_id": "2605.21312",
+      "title": "Frontier: Towards Comprehensive and Accurate LLM Inference Simulation",
+      "plain_english": "Introduces a new simulation tool for large language model (LLM) inference that accounts for complex execution environments and optimizes performance predictions.",
+      "why_it_matters": "Aligns with the user's interest in AI inference infrastructure and architectural advancements, particularly for LLMs and low-latency serving.",
       "relevance_score": 10
     },
     {
-      "arxiv_id": "2605.19743",
-      "title": "EngiAI: A Multi-Agent Framework and Benchmark Suite for LLM-Driven Engineering Design",
-      "plain_english": "Introduces a new framework for collaborative engineering design that utilizes multiple large language models (LLMs), providing a structured method for evaluation.",
-      "why_it_matters": "Aligns with the user's focus on multi-agent systems and the practical application of LLMs in engineering tasks, emphasizing how collaboration enhances design workflows.",
-      "relevance_score": 9
+      "arxiv_id": "2605.17036",
+      "title": "Reliability and Effectiveness of Autonomous AI Agents in Supply Chain Management",
+      "plain_english": "Studies how autonomous AI agents perform in supply chain tasks, revealing both strong efficiencies and hidden reliability risks during decision-making.",
+      "why_it_matters": "Relevant to robotics policy learning, offering insights into effective agent deployment in operational settings.",
+      "relevance_score": 10
     },
     {
-      "arxiv_id": "2601.05569",
-      "title": "Self-Evolving Distributed Memory Architecture for Scalable AI Systems",
-      "plain_english": "Presents a new architecture designed to improve memory management in AI systems, enabling better scalability across distributed environments.",
-      "why_it_matters": "Relevant to the user's interests in hardware architecture optimization and addressing mismatches in industry tools for AI deployment.",
-      "relevance_score": 9
+      "arxiv_id": "2605.21427",
+      "title": "PALS: Power-Aware LLM Serving for Mixture-of-Experts Models",
+      "plain_english": "Presents a system that optimizes power management during LLM inference, allowing more efficient resource usage and faster response times.",
+      "why_it_matters": "Directly addresses the user's focus on hardware-architecture mismatches in AI serving capabilities and enhancements in efficiency.",
+      "relevance_score": 10
     },
     {
-      "arxiv_id": "2605.19813",
-      "title": "General Lower Bounds for Differentially Private Federated Learning with Arbitrary Public-Transcript Interactions",
-      "plain_english": "Develops a framework to evaluate the efficiency of federated learning protocols while ensuring privacy across various interactions, adding critical insights into model implementation.",
-      "why_it_matters": "Sheds light on privacy in multi-agent systems and AI inference, which is increasingly relevant as these systems evolve and require secure, efficient algorithms.",
+      "arxiv_id": "2605.22721",
+      "title": "Self-Evolving Multi-Agent Systems via Decentralized Memory",
+      "plain_english": "Introduces a decentralized memory framework for multi-agent systems, allowing agents to learn and adapt independently.",
+      "why_it_matters": "Significant for the user's research on scalable, independent decision-making in multi-agent environments.",
       "relevance_score": 8
     },
     {
-      "arxiv_id": "2605.19782",
-      "title": "Prior Knowledge or Search? A Study of LLM Agents in Hardware-Aware Code Optimization",
-      "plain_english": "Investigates how LLM agents can optimize code by determining when to rely on prior knowledge versus searching for solutions, broadening the understanding of agent capabilities.",
-      "why_it_matters": "Addresses the user's interest in tool-using LLM agents while delving into how computation and hardware constraints influence optimization strategies.",
-      "relevance_score": 8
-    },
-    {
-      "arxiv_id": "2605.19031",
-      "title": "KAN-MLP-Mixer: A comprehensive investigation of the usage of Kolmogorov-Arnold Networks (KANs) for improving IMU-based Human Activity Recognition",
-      "plain_english": "Explores how KANs can enhance the performance of human activity recognition systems based on inertial sensor data, aiming for better real-time processing.",
-      "why_it_matters": "Relates to the integration of advanced architectures and optimization techniques pertinent to robotics applications in dynamic environments.",
+      "arxiv_id": "2605.21969",
+      "title": "LLM Retrieval for Stable and Predictable Ad Recommendations",
+      "plain_english": "Investigates how LLMs can be adapted for more stable and reliable ad recommendation systems, addressing fluctuations in recommendation quality.",
+      "why_it_matters": "Sheds light on algorithmic execution systems, relevant to quantitative trading and market analysis applications.",
       "relevance_score": 7
     },
     {
-      "arxiv_id": "2605.18729",
-      "title": "Robo-Cortex: A Self-Evolving Embodied Agent via Dual-Grain Cognitive Memory and Autonomous Knowledge Induction",
-      "plain_english": "Describes a framework for robots that allows them to learn and adapt from experiences continually, improving their capabilities in navigating complex environments.",
-      "why_it_matters": "Critically ties to the user's interest in robotics policy learning and humanoid manipulation, showing practical applications for self-learning agents.",
-      "relevance_score": 9
-    },
-    {
-      "arxiv_id": "2605.17543",
-      "title": "HL-OutPaint: Coarse-to-Fine Video Outpainting for High-Resolution Long-Range Videos",
-      "plain_english": "Presents a video generation framework designed to produce high-quality extended sequences, addressing long-range generation challenges in videos.",
-      "why_it_matters": "Reflects user interest in efficient computational methods and optimizations applicable in graphics and visual robotics contexts.",
-      "relevance_score": 6
-    },
-    {
-      "arxiv_id": "2605.17144",
-      "title": "Contrastive Conceptor Activation Steering (COAST): Unlocking Vision-Language-Action Models through Hidden States",
-      "plain_english": "Introduces a method to improve the performance of vision-language-action models by identifying and emphasizing success-critical components of tasks.",
-      "why_it_matters": "Relevant for improving efficiency in robotics tasks involving multimodal data, aligning with optimization interests in robotics policy learning.",
+      "arxiv_id": "2605.22321",
+      "title": "Benchmarking Autonomous Agents against Temporal, Spatial, and Semantic Evasions",
+      "plain_english": "Presents a new security framework for evaluating the robustness of autonomous agents, addressing vulnerabilities in multi-turn interactions.",
+      "why_it_matters": "Focuses on the security aspects of agents, relevant to developing trustworthy AI systems.",
       "relevance_score": 7
     },
     {
-      "arxiv_id": "2605.19091",
-      "title": "Chessformer: A Unified Architecture for Chess Modeling",
-      "plain_english": "Proposes a comprehensive architecture that effectively unifies models for playing chess at multiple levels and enhances interpretability and play strength.",
-      "why_it_matters": "Highlights advances that could inspire similar frameworks in quantitative trading, blending AI with strategic decision-making under uncertainty.",
+      "arxiv_id": "2605.22566",
+      "title": "GraphFlow: A Graph-Based Workflow Management for Efficient LLM-Agent Serving",
+      "plain_english": "Introduces a new workflow management paradigm for efficiently serving LLM-based agents using graph structures.",
+      "why_it_matters": "Directly applicable to the user's interest in AI serving architecture enhancements.",
       "relevance_score": 6
-    }
-  ],
-  "worth_noting": [
-    {
-      "arxiv_id": "2605.18067",
-      "one_liner": "Explores efficient AI-supported querying in big data systems, showing novel approaches for diverse execution paths."
     },
     {
-      "arxiv_id": "2502.13957",
-      "one_liner": "Outlines a framework for adaptive feedback mechanisms in AI-driven software development environments."
+      "arxiv_id": "2605.22794",
+      "title": "MOSS: Self-Evolution through Source-Level Rewriting in Autonomous Agent Systems",
+      "plain_english": "Discusses a new framework for enabling autonomous agents to adapt and learn from their operational experiences effectively.",
+      "why_it_matters": "Sheds light on self-evolving systems, relevant to the user's interest in agent-based learning behaviors.",
+      "relevance_score": 5
     }
   ],
+  "worth_noting": [],
   "paper_index": {
-    "2605.19775": {
-      "title": "Understanding Inference Scaling for LLMs: Bottlenecks, Trade-offs, and Performance Principles",
+    "2605.21312": {
+      "title": "Frontier: Towards Comprehensive and Accurate LLM Inference Simulation",
       "authors": [
-        "Moiz Arif",
-        "Avinash Maurya",
-        "Sudharshan Vazhkudai",
-        "Bogdan Nicolae"
+        "Yicheng Feng",
+        "Xin Tan",
+        "Yangtao Deng",
+        "Yimin Jiang",
+        "Yibo Zhu",
+        "Hong Xu"
       ],
-      "abs": "https://arxiv.org/abs/2605.19775",
+      "abs": "https://arxiv.org/abs/2605.21312",
       "categories": [
         "cs.DC",
-        "cs.PF"
-      ]
-    },
-    "2605.19743": {
-      "title": "EngiAI: A Multi-Agent Framework and Benchmark Suite for LLM-Driven Engineering Design",
-      "authors": [
-        "Gioele Molinari",
-        "Florian Felten",
-        "Soheyl Massoudi",
-        "Mark Fuge"
-      ],
-      "abs": "https://arxiv.org/abs/2605.19743",
-      "categories": [
         "cs.AI",
-        "cs.LG",
-        "cs.MA"
-      ]
-    },
-    "2601.05569": {
-      "title": "Self-Evolving Distributed Memory Architecture for Scalable AI Systems",
-      "authors": [
-        "Zixuan Li",
-        "Chuanzhen Wang",
-        "Haotian Sun"
-      ],
-      "abs": "https://arxiv.org/abs/2601.05569",
-      "categories": [
-        "cs.DC"
-      ],
-      "citation_count": 0,
-      "influential_count": 0,
-      "s2_authors": [
-        {
-          "id": "2383331365",
-          "name": "Zixuan Li",
-          "aff": null
-        },
-        {
-          "id": "2321663608",
-          "name": "Chuanzhen Wang",
-          "aff": null
-        },
-        {
-          "id": "2357483855",
-          "name": "Haotian Sun",
-          "aff": null
-        }
-      ]
-    },
-    "2605.18535": {
-      "title": "Beyond Scaling: Agents Are Heading to the Edge",
-      "authors": [
-        "Chunlin Tian",
-        "Dongqi Cai",
-        "Wanru Zhao",
-        "Nicholas D. Lane"
-      ],
-      "abs": "https://arxiv.org/abs/2605.18535",
-      "categories": [
-        "cs.LG",
-        "cs.MA"
-      ]
-    },
-    "2605.19782": {
-      "title": "Prior Knowledge or Search? A Study of LLM Agents in Hardware-Aware Code Optimization",
-      "authors": [
-        "Dmitry Redko",
-        "Albert Fazlyev",
-        "Konstantin Sozykin",
-        "Maria Ivanova",
-        "Evgeny Burnaev",
-        "Egor Shvetsov"
-      ],
-      "abs": "https://arxiv.org/abs/2605.19782",
-      "categories": [
-        "cs.AI",
-        "cs.LG",
-        "cs.SE"
+        "cs.LG"
       ]
     },
     "2605.17036": {
@@ -237,290 +151,335 @@
         "eess.SY"
       ]
     },
-    "2605.18067": {
-      "title": "PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence",
+    "2605.22721": {
+      "title": "Self-Evolving Multi-Agent Systems via Decentralized Memory",
       "authors": [
-        "Zile Wang",
-        "Qianli Liu",
-        "Kaibin Guo",
-        "Haodong Wang",
-        "Jian Lin",
-        "Zicong Hong",
-        "Song Guo"
+        "Guangya Hao",
+        "Yunbo Long",
+        "Zhuokai Zhao"
       ],
-      "abs": "https://arxiv.org/abs/2605.18067",
+      "abs": "https://arxiv.org/abs/2605.22721",
       "categories": [
-        "cs.CL"
+        "cs.MA"
       ]
     },
-    "2605.18729": {
-      "title": "Robo-Cortex: A Self-Evolving Embodied Agent via Dual-Grain Cognitive Memory and Autonomous Knowledge Induction",
+    "2605.22321": {
+      "title": "Benchmarking Autonomous Agents against Temporal, Spatial, and Semantic Evasions",
       "authors": [
-        "Nga Teng Chan",
-        "Yi Zhang",
-        "Yechi Liu",
-        "Renwen Cui",
-        "Fanhu Zeng",
-        "Zeyuan Ding",
-        "Xiancong Ren",
-        "Zhang Zhang",
-        "Qifeng Chen",
-        "Jian Liu",
-        "Yong Dai",
-        "Xiaozhu Ju"
+        "Jianan Ma",
+        "Xiaohu Du",
+        "Ruixiao Lin",
+        "Yaoxiang Bian",
+        "Jialuo Chen",
+        "Jingyi Wang",
+        "Xiaofang Yang",
+        "Shiwen Cui",
+        "Changhua Meng",
+        "Xinhao Deng",
+        "Zhen Wang"
       ],
-      "abs": "https://arxiv.org/abs/2605.18729",
+      "abs": "https://arxiv.org/abs/2605.22321",
       "categories": [
-        "cs.RO",
-        "cs.CV"
+        "cs.CR",
+        "cs.AI",
+        "cs.SE"
       ]
     },
-    "2605.17144": {
-      "title": "Contrastive Conceptor Activation Steering (COAST): Unlocking Vision-Language-Action Models through Hidden States",
+    "2605.21427": {
+      "title": "PALS: Power-Aware LLM Serving for Mixture-of-Experts Models",
       "authors": [
-        "Miranda Muqing Miao",
-        "Subin Kim",
-        "Brandon Yang",
-        "Lyle Ungar"
+        "Can Hankendi",
+        "Rana Shahout",
+        "Minlan Yu",
+        "Ayse K. Coskun"
       ],
-      "abs": "https://arxiv.org/abs/2605.17144",
+      "abs": "https://arxiv.org/abs/2605.21427",
       "categories": [
-        "cs.RO",
+        "cs.AI",
+        "cs.DC"
+      ]
+    },
+    "2605.22794": {
+      "title": "MOSS: Self-Evolution through Source-Level Rewriting in Autonomous Agent Systems",
+      "authors": [
+        "Qianshu Cai",
+        "Yonggang Zhang",
+        "Xianzhang Jia",
+        "Wei Xue",
+        "Jun Song",
+        "Xinmei Tian",
+        "Yike Guo"
+      ],
+      "abs": "https://arxiv.org/abs/2605.22794",
+      "categories": [
         "cs.AI",
         "cs.LG"
       ]
     },
-    "2605.19091": {
-      "title": "Chessformer: A Unified Architecture for Chess Modeling",
+    "2605.22511": {
+      "title": "Search-E1: Self-Distillation Drives Self-Evolution in Search-Augmented Reasoning",
       "authors": [
-        "Daniel Monroe",
-        "George Eilender",
-        "Philip Chalmers",
-        "Zhenwei Tang",
-        "Ashton Anderson"
+        "Zihan Liang",
+        "Yufei Ma",
+        "Ben Chen",
+        "Zhipeng Qian",
+        "Xuxin Zhang",
+        "Huangyu Dai",
+        "Lingtao Mao"
       ],
-      "abs": "https://arxiv.org/abs/2605.19091",
+      "abs": "https://arxiv.org/abs/2605.22511",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.IR"
+      ]
+    },
+    "2605.22566": {
+      "title": "GraphFlow: A Graph-Based Workflow Management for Efficient LLM-Agent Serving",
+      "authors": [
+        "Ao Li",
+        "Shangpeng Yang",
+        "Fahao Chen",
+        "Tianheng Xu",
+        "Peng Li",
+        "Zhou Su"
+      ],
+      "abs": "https://arxiv.org/abs/2605.22566",
       "categories": [
         "cs.LG"
       ]
     },
-    "2503.19950": {
-      "title": "LogQuant: Log-Distributed 2-Bit Quantization of KV Cache with Superior Accuracy Preservation",
+    "2605.21969": {
+      "title": "LLM Retrieval for Stable and Predictable Ad Recommendations",
       "authors": [
-        "Han Chen",
-        "Zicong Jiang",
-        "Zining Zhang",
-        "Bingsheng He",
-        "Pingyi Luo",
-        "Mian Lu",
-        "Yuqiang Chen"
+        "Vinodh Kumar Sunkara",
+        "Satheeshkumar Karuppusamy",
+        "Hangjun Xu",
+        "Sai Deepika Regani",
+        "Kshitij Gupta",
+        "Gaby Nahum",
+        "Sneha Iyer",
+        "Jean-Baptiste Fiot",
+        "Yinglong Guo",
+        "Xiaowen Guo",
+        "Atul Jangra",
+        "Yucheng Liu",
+        "Jinghao Yan",
+        "Vijay Pappu",
+        "Benjamin Schulte",
+        "Deepak Chandra"
       ],
-      "abs": "https://arxiv.org/abs/2503.19950",
+      "abs": "https://arxiv.org/abs/2605.21969",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ]
+    },
+    "2605.20272": {
+      "title": "Smaller Abstract State Spaces Enable Cross-Scale Generalization in Reinforcement Learning",
+      "authors": [
+        "Nasehatul Mustakim",
+        "Lucas Lehnert"
+      ],
+      "abs": "https://arxiv.org/abs/2605.20272",
       "categories": [
         "cs.LG",
+        "cs.AI"
+      ]
+    },
+    "2605.22001": {
+      "title": "Blind Spots in the Guard: How Domain-Camouflaged Injection Attacks Evade Detection in Multi-Agent LLM Systems",
+      "authors": [
+        "Aaditya Pai"
+      ],
+      "abs": "https://arxiv.org/abs/2605.22001",
+      "categories": [
+        "cs.CR",
         "cs.AI",
         "cs.CL"
-      ],
-      "citation_count": 0,
-      "influential_count": 0,
-      "s2_authors": [
-        {
-          "id": "2351776903",
-          "name": "Han Chen",
-          "aff": null
-        },
-        {
-          "id": "2365163820",
-          "name": "Zicong Jiang",
-          "aff": null
-        },
-        {
-          "id": "47294781",
-          "name": "Zining Zhang",
-          "aff": null
-        },
-        {
-          "id": "2308983271",
-          "name": "Bingsheng He",
-          "aff": null
-        },
-        {
-          "id": "2351814388",
-          "name": "Pingyi Luo",
-          "aff": null
-        },
-        {
-          "id": "2329905592",
-          "name": "Mian Lu",
-          "aff": null
-        },
-        {
-          "id": "2219968792",
-          "name": "Yuqiang Chen",
-          "aff": null
-        }
       ]
     },
-    "2605.17937": {
-      "title": "BacktestBench: Benchmarking Large Language Models for Automated Quantitative Strategy Backtesting",
+    "2605.22054": {
+      "title": "LABO: LLM-Accelerated Bayesian Optimization through Broad Exploration and Selective Experimentation",
       "authors": [
-        "Zhensheng Wang",
-        "Wenmian Yang",
-        "Qingtai Wu",
-        "Lequan Ma",
-        "Yiquan Zhang",
-        "Weijia Jia"
+        "Zhuo Chen",
+        "Xinzhe Yuan",
+        "Jianshu Zhang",
+        "Jinzong Dong",
+        "Ruichen Zhou",
+        "Yingchun Niu",
+        "Tianhang Zhou",
+        "Yu Yang Fredrik Liu",
+        "Yuqiang Li",
+        "Nanyang Ye",
+        "Qinying Gu"
       ],
-      "abs": "https://arxiv.org/abs/2605.17937",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ]
-    },
-    "2605.17661": {
-      "title": "Mono-Hydra++: Real-Time Monocular Scene Graph Construction with Multi-Task Learning for 3D Indoor Mapping",
-      "authors": [
-        "U. V. B. L. Udugama",
-        "George Vosselman",
-        "Francesco Nex"
-      ],
-      "abs": "https://arxiv.org/abs/2605.17661",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ]
-    },
-    "2502.13957": {
-      "title": "Supervising the search process produces reliable and generalizable information-seeking agents",
-      "authors": [
-        "Guangzhi Xiong",
-        "Qiao Jin",
-        "Xiao Wang",
-        "Yin Fang",
-        "Haolin Liu",
-        "Yifan Yang",
-        "Fangyuan Chen",
-        "Zhixing Song",
-        "Dengyu Wang",
-        "Minjia Zhang",
-        "Zhiyong Lu",
-        "Aidong Zhang"
-      ],
-      "abs": "https://arxiv.org/abs/2502.13957",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "citation_count": 11,
-      "influential_count": 3,
-      "s2_authors": [
-        {
-          "id": "2048053804",
-          "name": "Guangzhi Xiong",
-          "aff": null
-        },
-        {
-          "id": "2261406713",
-          "name": "Qiao Jin",
-          "aff": null
-        },
-        {
-          "id": "2314146159",
-          "name": "Xiao Wang",
-          "aff": null
-        },
-        {
-          "id": "2360958827",
-          "name": "Yin Fang",
-          "aff": null
-        },
-        {
-          "id": "2346163354",
-          "name": "Haolin Liu",
-          "aff": null
-        },
-        {
-          "id": "2256126616",
-          "name": "Yifan Yang",
-          "aff": null
-        },
-        {
-          "id": "2267868974",
-          "name": "Fangyuan Chen",
-          "aff": null
-        },
-        {
-          "id": "2348068426",
-          "name": "Zhixing Song",
-          "aff": null
-        },
-        {
-          "id": "2346665824",
-          "name": "Dengyu Wang",
-          "aff": null
-        },
-        {
-          "id": "2314147661",
-          "name": "Minjia Zhang",
-          "aff": null
-        },
-        {
-          "id": "2237094367",
-          "name": "Zhiyong Lu",
-          "aff": null
-        },
-        {
-          "id": "2302504818",
-          "name": "Aidong Zhang",
-          "aff": null
-        }
-      ]
-    },
-    "2605.19813": {
-      "title": "General Lower Bounds for Differentially Private Federated Learning with Arbitrary Public-Transcript Interactions",
-      "authors": [
-        "Yicheng Li"
-      ],
-      "abs": "https://arxiv.org/abs/2605.19813",
+      "abs": "https://arxiv.org/abs/2605.22054",
       "categories": [
         "cs.LG",
-        "math.ST",
-        "stat.TH"
+        "cs.AI"
       ]
     },
-    "2605.19031": {
-      "title": "KAN-MLP-Mixer: A comprehensive investigation of the usage of Kolmogorov-Arnold Networks (KANs) for improving IMU-based Human Activity Recognition",
+    "2605.22089": {
+      "title": "LVDrive: Latent Visual Representation Enhanced Vision-Language-Action Autonomous Driving Model",
       "authors": [
-        "Mengxi Liu",
-        "Sizhen Bian",
-        "Vitor Fortes",
-        "Francisco Calatrava Nicolas",
-        "Daniel GeiÃler",
-        "Maximilian Kiefer-Emmanouilidis",
-        "Bo Zhou",
-        "Paul Lukowicz"
+        "Xiaodong Mei",
+        "Diankun Zhang",
+        "Hongwei Xie",
+        "Guang Chen",
+        "Hangjun Ye",
+        "Dan Xu"
       ],
-      "abs": "https://arxiv.org/abs/2605.19031",
-      "categories": [
-        "cs.AI",
-        "eess.SP"
-      ]
-    },
-    "2605.17543": {
-      "title": "HL-OutPaint: Coarse-to-Fine Video Outpainting for High-Resolution Long-Range Videos",
-      "authors": [
-        "Jeongeun Park",
-        "Janghyeok Han",
-        "Geonung Kim",
-        "Hyun-Seung Lee",
-        "Kyuha Choi",
-        "Youngseok Han",
-        "Sunghyun Cho"
-      ],
-      "abs": "https://arxiv.org/abs/2605.17543",
+      "abs": "https://arxiv.org/abs/2605.22089",
       "categories": [
         "cs.CV",
-        "cs.GR"
+        "cs.AI"
+      ]
+    },
+    "2605.22504": {
+      "title": "LACO: Adaptive Latent Communication for Collaborative Driving",
+      "authors": [
+        "Tianhao Chen",
+        "Yuheng Wu",
+        "Dongman Lee"
+      ],
+      "abs": "https://arxiv.org/abs/2605.22504",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ]
+    },
+    "2605.21125": {
+      "title": "Advantage Collapse in Group Relative Policy Optimization: Diagnosis and Mitigation",
+      "authors": [
+        "Xixiang He",
+        "Qiyao Sun",
+        "Ao Cheng",
+        "Xingming Li",
+        "Xuanyu Ji",
+        "Hailun Lu",
+        "Runke Huang",
+        "Qingyong Hu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.21125",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.22082": {
+      "title": "CoRMA: Contrastive RMA for Contact-Rich Meta-Adaptation",
+      "authors": [
+        "Wentian Wang",
+        "Chutong Wen",
+        "Hongxu Ma",
+        "Wuhao Wang",
+        "Zhexiong Xue",
+        "Abdul Haseeb Nizamani",
+        "Dandi Zhou",
+        "Xinhai Sun",
+        "Jianqiao Zhu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.22082",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ]
+    },
+    "2605.21847": {
+      "title": "CompPow: A Case for Component-level GPU Power Management",
+      "authors": [
+        "Shaizeen Aga",
+        "Mohamed Assem Ibrahim"
+      ],
+      "abs": "https://arxiv.org/abs/2605.21847",
+      "categories": [
+        "cs.AR",
+        "cs.DC"
+      ]
+    },
+    "2605.21322": {
+      "title": "Optimized Federated Knowledge Distillation with Distributed Neural Architecture Search",
+      "authors": [
+        "Chaimaa Medjadji",
+        "Sylvain Kubler",
+        "Yves Le Traon",
+        "Guilain Leduc",
+        "Sadi Alawadi",
+        "Feras M. Awaysheh"
+      ],
+      "abs": "https://arxiv.org/abs/2605.21322",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.22305": {
+      "title": "Chebyshev Policies and the Mountain Car Problem: Reinforcement Learning for Low-Dimensional Control Tasks",
+      "authors": [
+        "Stefan Huber",
+        "Hannes Unger",
+        "Georg SchÃ¤fer",
+        "Jakob Rehrl"
+      ],
+      "abs": "https://arxiv.org/abs/2605.22305",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.20946": {
+      "title": "Thinking-while-speaking: A Controlled, Interleaved Reasoning Method for Real-Time Speech Generation",
+      "authors": [
+        "Xuan Du",
+        "Qiangyu Yan",
+        "Wenshuo Li",
+        "Borui Jiang",
+        "Changming Xiao",
+        "Han Shu",
+        "Xinghao Chen"
+      ],
+      "abs": "https://arxiv.org/abs/2605.20946",
+      "categories": [
+        "cs.CL"
+      ]
+    },
+    "2605.22092": {
+      "title": "Astragalus: Automatic Configuration Repair for Production Networks",
+      "authors": [
+        "Zhenrong Gu",
+        "Peng Zhang",
+        "Xing Feng",
+        "Xu Liu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.22092",
+      "categories": [
+        "cs.NI",
+        "cs.SE"
+      ]
+    },
+    "2605.20284": {
+      "title": "JUDO: A Juxtaposed Domain-Oriented Multimodal Reasoner for Industrial Anomaly QA",
+      "authors": [
+        "Hyunju Kang",
+        "Woohyun Lee",
+        "Jaewon Kim",
+        "Hogun Park"
+      ],
+      "abs": "https://arxiv.org/abs/2605.20284",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ]
+    },
+    "2605.20651": {
+      "title": "Gaze into the Details: Locality-Sensitive Enhancement for OCTA Retinal Vessel Segmentation",
+      "authors": [
+        "Tuopusen Huang",
+        "Ding Ma",
+        "Xiangqian Wu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.20651",
+      "categories": [
+        "cs.CV"
       ]
     }
   }
