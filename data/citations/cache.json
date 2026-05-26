@@ -36759,9 +36759,10 @@
 "influential_count": 0
 },
 "2602.03695": {
+"authors": [],
 "citation_count": 0,
-"fetched": "2026-05-02",
-"found": true,
+"fetched": "2026-05-26",
+"found": false,
 "influential_count": 0
 },
 "2602.03696": {
@@ -60964,6 +60965,13 @@
 "citation_count": 0,
 "fetched": "2026-05-02",
 "found": true,
+"influential_count": 0
+},
+"2603.05143": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
 "influential_count": 0
 },
 "2603.05147": {
@@ -113610,51 +113618,10 @@
 "influential_count": 0
 },
 "2605.02037": {
-"authors": [
-{
-"aff": null,
-"id": "2275238290",
-"name": "Zijian An"
-},
-{
-"aff": null,
-"id": "2139159283",
-"name": "Hadi Khezam"
-},
-{
-"aff": null,
-"id": "2257344991",
-"name": "Bill Cai"
-},
-{
-"aff": null,
-"id": "2380786911",
-"name": "Ran Yang"
-},
-{
-"aff": null,
-"id": "2295988909",
-"name": "Shijie Geng"
-},
-{
-"aff": null,
-"id": "2381065723",
-"name": "Yiming Feng"
-},
-{
-"aff": null,
-"id": "2149513962",
-"name": "Yu Zheng"
-},
-{
-"aff": null,
-"id": "2248357482",
-"name": "Lifeng Zhou"
-}
-],
+"authors": [],
 "citation_count": 0,
-"fetched": "2026-05-06",
-"found": true,
+"fetched": "2026-05-26",
+"found": false,
 "influential_count": 0
 },
 "2605.02162": {
@@ -116128,6 +116095,13 @@
 "found": false,
 "influential_count": 0
 },
+"2605.20023": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
 "2605.20272": {
 "authors": [],
 "citation_count": 0,
@@ -116363,6 +116337,132 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-05-22",
+"found": false,
+"influential_count": 0
+},
+"2605.22826": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.22896": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.23007": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.23389": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.23926": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.23950": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.24016": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.24490": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.24597": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.24890": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.24985": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.25381": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.25480": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.25510": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.25655": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.25682": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.25746": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
+"found": false,
+"influential_count": 0
+},
+"2605.25832": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-05-26",
 "found": false,
 "influential_count": 0
 }
