@@ -1,137 +1,183 @@
 {
-  "date": "2026-05-25",
+  "date": "2026-05-26",
   "paper_count": 400,
   "model": "gpt-4o-mini",
   "language": "English",
-  "headline": "Strong focus on AI inference and multi-agent frameworks in today's papers.",
-  "executive_overview": "Today's papers reveal an extensive exploration of AI inference mechanisms, particularly in the context of large language models (LLMs) and multi-agent systems. Many studies emphasize optimizing inference performance through adaptive caching and novel hardware architecture, while others delve into frameworks for enhancing collaboration among autonomous agents. Notably, several works focus on the intersection of AI and real-world applications, including robotics, financial trading, and medical diagnostics.",
+  "headline": "Strong focus on multi-agent systems and LLM optimization in today's papers.",
+  "executive_overview": "Today's submissions reveal a robust exploration of multi-agent systems and advancements in large language model (LLM) optimization techniques. Key themes emerge around stateful inference architectures, memory management in LLMs, and applications in robotics and finance. Several papers introduce novel methods for efficient LLM serving, indicating a shift towards resource-aware AI deployments. The intersection of these advancements points to ongoing efforts to improve the efficacy and reliability of AI systems across various domains.",
   "themes": [
     {
-      "name": "AI Inference Efficiency",
-      "summary": "Papers today prominently address the optimization of AI inference, especially concerning large language models (LLMs). For instance, the development of the `Bandwidth-Aware LLM Inference on Heterogeneous Many-Core Supercomputers` [2605.25655] addresses memory bandwidth limitations crucial for deploying LLMs. Similarly, `Profiling-Driven Adaptive Distributed Transformer Inference on Embedded Edge Deployment` [2605.25682] illustrates a method for efficient transformer model deployment across edge devices. Other noteworthy contributions include `AlignedServe` [2605.23389], which proposes a high-throughput and compute-efficient LLM serving system that minimizes request bottlenecks, and `ObjectCache` [2605.22826], which introduces an innovative approach for managing KV cache memory more effectively during inference.",
-      "paper_ids": [
-        "2605.25655",
-        "2605.25682",
-        "2605.23389",
-        "2605.22826"
-      ]
-    },
-    {
-      "name": "Multi-Agent Systems",
-      "summary": "Several papers explore innovative frameworks for enhancing multi-agent systems (MAS). The paper titled `Agent Primitives: Reusable Latent Building Blocks for Multi-Agent Systems` [2602.03695] proposes a set of reusable components that could facilitate the efficient design of agent interactions. This builds on themes in `EvoSci: A Bio-Inspired Multi-Agent Framework for the Evolution of Scientific Discovery` [2605.24890], which uses agent collaboration to produce innovative research outputs dynamically. Another significant contribution is `How to Steer Your Multi-Agent System: Human-LLM Collaborative Planning` [2605.23020], which examines collaborative planning mechanisms between human operators and agents, enhancing operational decision-making.",
+      "name": "Multi-Agent Systems Focus",
+      "summary": "A notable number of papers delve into the intricacies of multi-agent systems (MAS), exploring their ability to collaborate effectively in complex scenarios. For instance, the papers on Agent Primitives [2602.03695] and Agentic AI Workload Characteristics [2605.26297] emphasize the need for reusable building blocks and robust workload management in agent systems. These insights are pivotal as they address the common challenges of task specificity and error accumulation in agent interactions. Additionally, frameworks such as PRIMA [2605.24775] propose operational patterns to enhance resilience in multi-agent workflows, showcasing the growing sophistication in managing multi-agent interactions.",
       "paper_ids": [
         "2602.03695",
-        "2605.24890"
+        "2605.26297",
+        "2605.24775"
       ]
     },
     {
-      "name": "Robotic Manipulation",
-      "summary": "Today's papers also advance the field of robotic manipulation through novel architectures and frameworks. `VILAS: A VLA-Integrated Low-cost Architecture with Soft Grasping for Robotic Manipulation` [2605.02037] presents a new low-cost manipulation platform that supports vision-language-action policy learning effectively. Further, `When Search Becomes Memory: Turning Robot Design Trials into Transferable Skills` [2605.25832] discusses enhancing robot design using LLMs as skill repositories, while `Learning, locomotion, and navigation of soft synthetic snakes in three-dimensional, heterogeneous environments` [2605.24016] showcases R&D on robot behavior in dynamic settings, highlighting the practical implementation of learning strategies in real-world robotic applications.",
+      "name": "LLM Optimization Techniques",
+      "summary": "A strong focus on optimizing large language models is evident, particularly regarding inference efficiency and memory management. Papers discussing Adaptive KV Cache Reuse [2605.24018] and Bandwidth-Aware LLM Inference [2605.25655] propose innovative solutions to reduce latency and improve performance under resource constraints. Furthermore, insights from papers on structured retrieval management [2605.26380] and context decoder improvements [2605.24096] suggest that memory efficiency and adaptive learning mechanisms are critical for real-world applications of LLMs.",
       "paper_ids": [
-        "2605.02037",
-        "2605.25832",
-        "2605.24016"
+        "2605.24018",
+        "2605.25655",
+        "2605.26380",
+        "2605.24096"
       ]
     },
     {
-      "name": "Market Dynamics and Quant Trading",
-      "summary": "A dedicated stream of research today investigates algorithmic trading and market dynamics. The papers `MadEvolve: Evolutionary Optimization of Trading Systems with Large Language Models` [2605.23007] explores LLM-driven optimization for trading strategies, and `DeepSeekMath Meets Order Book: Group-Aware Policy Optimization for High-Frequency Directional Trading` [2605.24597] sheds light on policy optimization techniques in trading environments. These contributions highlight the integration of machine learning based approaches into financial strategy development, directly addressing the user's interests in quant trading and market microstructure.",
+      "name": "Robotic Applications and Learning",
+      "summary": "Several studies focus on the application of LLM advancements in robotics, highlighting the role of interactive and autonomous agents in complex environments. The paper on RoboMME [2603.04639] introduces a benchmarking framework for evaluating memory in robotic policies, while work on VILAS [2605.02037] discusses enhancing robotic manipulation capabilities through end-to-end vision-language-action learning. These contributions emphasize the necessity for improved reasoning and adaptability in physical robotics applications, signaling a potential paradigm shift in how robots are trained and evaluated.",
       "paper_ids": [
-        "2605.23007",
-        "2605.24597"
+        "2603.04639",
+        "2605.02037"
       ]
     },
     {
-      "name": "Hardware and Software Alignment Issues",
-      "summary": "Several papers today address concerns related to hardware architectures and their mismatch with contemporary software needs. The paper `ZIP-MoE: Efficient On-Device MoE Serving via Lossless Compression and Cache-Affinity Scheduling` [2601.18848] investigates the impact of hardware constraints on MoE architectures. Similarly, the work `From Accuracy to Auditability: A Survey of Determinism in Financial AI Systems` [2605.23950] highlights challenges in ensuring reliable and compliant AI systems within existing architectures, emphasizing the architectural evolution required to meet modern demands.",
+      "name": "Financial AI and Market Applications",
+      "summary": "Emerging papers explore the intersection of AI, specifically LLMs, with financial applications, focusing on algorithmic trading and decision-making systems. The work on BacktestBench [2605.17986] proposes a framework for automating quantitative strategy backtesting, while studies on Dynamic Credit Assignment [2605.23926] enhance decision systems by utilizing Shapley values for agent collaboration. These contributions are crucial as they reveal the potential for LLMs to offer robust solutions for high-frequency trading and portfolio management.",
       "paper_ids": [
-        "2605.23950"
+        "2605.17986",
+        "2605.23926"
+      ]
+    },
+    {
+      "name": "Safety and Security in AI Systems",
+      "summary": "Research continues to address the safety and reliability aspects of AI systems, particularly in multi-agent environments. Papers like the one on MemFail [2605.26667] introduce frameworks for diagnosing memory system failures in LLMs, while others explore safety auditing mechanisms for LLM integration in cybersecurity [2605.24018]. These investigations into the structural weaknesses of AI agents underscore the critical need for robust safety protocols and continuous oversight as AI systems become more autonomous and integrated into sensitive applications.",
+      "paper_ids": [
+        "2605.26667",
+        "2605.24018"
       ]
     }
   ],
   "top_picks": [
     {
-      "arxiv_id": "2605.25655",
-      "title": "Bandwidth-Aware LLM Inference on Heterogeneous Many-Core Supercomputers",
-      "plain_english": "This paper develops a new framework for optimizing the inference of large language models on diverse processor types, addressing challenges like memory bandwidth that limit performance.",
-      "why_it_matters": "Highly relevant to your interest in AI inference infrastructure and specialized silicon, this work directly tackles efficiency in model deployment across complex hardware setups.",
+      "arxiv_id": "2605.26289",
+      "title": "Stateful Inference for Low-Latency Multi-Agent Tool Calling",
+      "plain_english": "This paper presents an architecture that enhances multi-agent systems, allowing them to remember the context of previous interactions to improve efficiency during sequential tasks. This significantly reduces the processing time needed for repeated tool calls.",
+      "why_it_matters": "This work directly aligns with your interest in AI inference infrastructure, particularly in how stateful architectures can reduce latency and optimize multi-agent interactions.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2605.25092",
+      "title": "AgentIR: A Workload-Adaptive Cascade Retrieval Substrate for Long-Term Conversational Memory",
+      "plain_english": "AgentIR introduces a new retrieval framework that adjusts based on the evolving demands of conversational memory tasks, allowing for faster and more efficient information retrieval.",
+      "why_it_matters": "This research pertains closely to your focus on retrieval at scale and improving interactions in AI-based systems, especially in long-term memory applications.",
       "relevance_score": 9
     },
     {
-      "arxiv_id": "2602.03695",
-      "title": "Agent Primitives: Reusable Latent Building Blocks for Multi-Agent Systems",
-      "plain_english": "The authors propose a set of reusable components, called Agent Primitives, designed to simplify the construction and interaction of agents in multi-agent systems.",
-      "why_it_matters": "This aligns with your focus on multi-agent systems and tool-using agent architectures, providing a framework for improved agent interaction.",
-      "relevance_score": 8
+      "arxiv_id": "2605.17937",
+      "title": "BacktestBench: Benchmarking Large Language Models for Automated Quantitative Strategy Backtesting",
+      "plain_english": "This paper presents a benchmarking tool designed to evaluate AI-driven quantitative trading strategies over longer periods using a diverse set of financial data.",
+      "why_it_matters": "This is directly relevant to your interest in quant trading and algorithmic execution, providing an essential framework for assessing LLM capabilities in financial contexts.",
+      "relevance_score": 9
     },
     {
-      "arxiv_id": "2605.24985",
-      "title": "Learning, locomotion, and navigation of soft synthetic snakes in three-dimensional, heterogeneous environments",
-      "plain_english": "Presents reinforcement learning strategies tailored for controlling soft robots in complex 3D environments, simulating how they navigate and learn from their surroundings.",
-      "why_it_matters": "Key to your interest in robotics and manipulation, particularly in how learning and adaptation occur in flexible, real-world tasks.",
+      "arxiv_id": "2605.25655",
+      "title": "Bandwidth-Aware LLM Inference on Heterogeneous Many-Core Supercomputers",
+      "plain_english": "The study introduces a new framework for improving large language model inference on supercomputers by optimizing data flow to maximize memory bandwidth usage.",
+      "why_it_matters": "This paper connects with your interests in AI inference infrastructure, indicating advancements in effectively managing hardware resources for LLM deployment.",
       "relevance_score": 8
     },
     {
       "arxiv_id": "2605.24490",
       "title": "Market Regime Council for Dynamic Credit Assignment in Multi-Agent LLM Decision Systems",
-      "plain_english": "This research proposes a system that calculates fair credit distribution among multiple specialized agents in a trading environment based on coalition cooperation.",
-      "why_it_matters": "Directly relates to your interests in quant trading and market dynamics, providing a novel approach to optimizing agent performance in financial contexts.",
+      "plain_english": "This research proposes a multi-agent decision-making system that recalibrates how credit is assigned among agents based on cooperative outputs, enhancing collaborative strategy effectiveness.",
+      "why_it_matters": "This relates to your interests in multi-agent systems and quant trading by improving decision systems' adaptability to changing market conditions.",
       "relevance_score": 8
     },
     {
-      "arxiv_id": "2605.22896",
-      "title": "Agentic-VLA: Efficient Online Adaptation for Vision-Language-Action Models",
-      "plain_english": "This paper introduces a framework that allows vision-language-action systems to adapt efficiently online, improving their ability to handle various environments by synthesizing reward functions on-the-fly.",
-      "why_it_matters": "Addresses your interest in robotics policy learning while enhancing the adaptability of agents in real-world scenarios.",
+      "arxiv_id": "2605.25030",
+      "title": "MimirRAG: A Multi-Agent RAG Framework for Financial Data Retrieval with Metadata Integration",
+      "plain_english": "MimirRAG introduces a sophisticated retrieval-augmented generation system tailored for financial data, enhancing how agents can pull knowledge from complex documents efficiently.",
+      "why_it_matters": "It offers tools that could improve your work on retrieval at scale within financial applications, reflecting an innovative integration of LLMs in real-time data analysis.",
       "relevance_score": 8
     },
     {
-      "arxiv_id": "2605.23926",
-      "title": "How Much Thinking is Enough? Quantifying and Understanding Redundancy in LLM Reasoning",
-      "plain_english": "Analyzes the efficiency of reasoning in large language models and how much deliberation is necessary for effective responses without wasting resources.",
-      "why_it_matters": "Related to your interests in low-latency serving and efficient AI inference, this study could inform future system designs to improve agent responsiveness.",
+      "arxiv_id": "2605.26114",
+      "title": "MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research",
+      "plain_english": "MobileGym is a new simulation platform that allows extensive testing and evaluation of mobile agents in various user interface environments, enabling practical agent development.",
+      "why_it_matters": "This contributes to your interest in multi-agent systems and tool-using LLM agents by providing a testing ground for their deployment in real-world applications.",
       "relevance_score": 7
     },
     {
-      "arxiv_id": "2605.25510",
-      "title": "The Age of Curiosity Meets the Age of AI: Benchmarking Child Safety in Large Language Models",
-      "plain_english": "Introduces KIDBench, a benchmark designed to assess the safety of AI interactions for children, focusing on user queries to evaluate performance and safety protocols.",
-      "why_it_matters": "While not directly aligned with your primary interests, the implication of behavior assessment in LLMs can offer insights into agent design and operations, especially regarding safety.",
+      "arxiv_id": "2605.23904",
+      "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+      "plain_english": "SkillOpt creates a method for AI agents to autonomously improve their skills based on feedback, enhancing adaptability and performance over time.",
+      "why_it_matters": "This adds significant value to your interest in how AI can evolve and adapt through continuous interaction and learning, particularly in multi-agent systems.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2605.24636",
+      "title": "GlobalDentBench: A Multinational Benchmark for Evaluating LLM Clinical Reasoning in Dentistry with Expert Calibration",
+      "plain_english": "This paper introduces a detailed evaluation framework to test the clinical reasoning abilities of LLMs in dentistry using a comprehensive dataset with expert validation.",
+      "why_it_matters": "While it pertains to a specific field, the methodologies could inform your explorations in AI applications across sectors, including your interests in robust reasoning in constrained environments.",
       "relevance_score": 6
-    },
-    {
-      "arxiv_id": "2605.25480",
-      "title": "Retrieval as Reasoning: Self-Evolving Agent-Native Retrieval via LLM-Wiki",
-      "plain_english": "This paper presents an agent-driven retrieval system that treats knowledge as a composable structure, optimizing how agents retrieve and utilize external information based on reasoning.",
-      "why_it_matters": "Relevant to your interest in multi-agent systems, it showcases an approach to enhance how agents leverage external knowledge in real-time.",
-      "relevance_score": 7
-    },
-    {
-      "arxiv_id": "2605.25746",
-      "title": "Multi-Agent Coordination Adaptation via Structure-Guided Orchestration",
-      "plain_english": "This paper discusses a probabilistic approach to improve the coordination of multiple agents, allowing for better adaptability while maintaining structural stability.",
-      "why_it_matters": "Addresses your research focus on multi-agent systems by exploring stability in complex interactions among autonomous agents.",
-      "relevance_score": 7
     },
     {
       "arxiv_id": "2605.20023",
       "title": "When Skills Don't Help: A Negative Result on Procedural Knowledge for Tool-Grounded Agents in Offensive Cybersecurity",
-      "plain_english": "This research finds that adding procedural knowledge to tool-using agents in cybersecurity can lead to worse outcomes, highlighting critical areas of failure in their design.",
-      "why_it_matters": "Explores the limitations of agentic systems, providing insights that could inform future designs for robust multi-agent interactions in your domain of expertise.",
+      "plain_english": "This research analyzes the effects of using predefined skills in LLMs for cybersecurity tasks, revealing unexpected inefficiencies and limitations in their effectiveness.",
+      "why_it_matters": "It provides insights into the limitations of AI tools, reflecting your interest in understanding hardware-architecture mismatches and exploring failures in presumed effective systems.",
       "relevance_score": 6
     }
   ],
   "worth_noting": [
     {
-      "arxiv_id": "2603.05143",
-      "one_liner": "Investigates frameworks for learning from complex reinforcement learning environments in robotics."
+      "arxiv_id": "2605.25479",
+      "one_liner": "Explores the challenges of using multi-agent systems in the context of soft robotic swarms."
     },
     {
-      "arxiv_id": "2605.25381",
-      "one_liner": "Proposes a novel framework for optimizing training data for autonomous robotic systems."
+      "arxiv_id": "2605.23939",
+      "one_liner": "Analyzes the dynamics of LLM agents as they adapt and evolve in complex environments."
+    },
+    {
+      "arxiv_id": "2605.26340",
+      "one_liner": "Presents a mechanism for reward allocation in multi-agent systems based on Shapley values."
+    },
+    {
+      "arxiv_id": "2601.07737",
+      "one_liner": "Discusses the implications of task planning in long-horizon agentic AI frameworks."
     }
   ],
   "paper_index": {
+    "2605.26289": {
+      "title": "Stateful Inference for Low-Latency Multi-Agent Tool Calling",
+      "authors": [
+        "Victor Norgren"
+      ],
+      "abs": "https://arxiv.org/abs/2605.26289",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.25092": {
+      "title": "AgentIR: A Workload-Adaptive Cascade Retrieval Substrate for Long-Term Conversational Memory",
+      "authors": [
+        "Aojie Yuan",
+        "Haiyue Zhang",
+        "Shahin Nazarian"
+      ],
+      "abs": "https://arxiv.org/abs/2605.25092",
+      "categories": [
+        "cs.IR",
+        "cs.CL",
+        "cs.DB"
+      ]
+    },
+    "2605.26297": {
+      "title": "Agentic AI Workload Characteristics",
+      "authors": [
+        "Yichao Yuan",
+        "Ankita Nayak",
+        "Souvik Kundu",
+        "Nishil Talati"
+      ],
+      "abs": "https://arxiv.org/abs/2605.26297",
+      "categories": [
+        "cs.DC"
+      ]
+    },
     "2602.03695": {
       "title": "Agent Primitives: Reusable Latent Building Blocks for Multi-Agent Systems",
       "authors": [
@@ -166,48 +212,15 @@
         "cs.DC"
       ]
     },
-    "2605.25682": {
-      "title": "Profiling-Driven Adaptive Distributed Transformer Inference on Embedded Edge Deployment",
+    "2605.24775": {
+      "title": "PRIMA: Operational Patterns for Resilient Multi-Agent Research with Verifiable Identity and Convergent Feedback",
       "authors": [
-        "Muhammad Azlan Qazi",
-        "Alexandros Iosifidis",
-        "Qi Zhang"
+        "Sasank Annapureddy"
       ],
-      "abs": "https://arxiv.org/abs/2605.25682",
+      "abs": "https://arxiv.org/abs/2605.24775",
       "categories": [
-        "cs.DC",
-        "cs.AI"
-      ]
-    },
-    "2605.25832": {
-      "title": "When Search Becomes Memory: Turning Robot Design Trials into Transferable Skills",
-      "authors": [
-        "Yunfei Wang",
-        "Xiaohao Xu",
-        "Yang Li",
-        "Xiaonan Huang"
-      ],
-      "abs": "https://arxiv.org/abs/2605.25832",
-      "categories": [
-        "cs.RO",
         "cs.AI",
-        "cs.CL",
-        "cs.CV"
-      ]
-    },
-    "2605.23389": {
-      "title": "AlignedServe: Orchestrating Prefix-aware Batching to Build a High-throughput and Computing-efficient LLM Serving System",
-      "authors": [
-        "Fengyao Bai",
-        "Hongbin Zhang",
-        "Zhitao Chen",
-        "Jiangsu Du",
-        "Zhiguang Chen",
-        "Yutong Lu"
-      ],
-      "abs": "https://arxiv.org/abs/2605.23389",
-      "categories": [
-        "cs.DC"
+        "cs.MA"
       ]
     },
     "2605.02037": {
@@ -228,77 +241,122 @@
         "cs.AI"
       ]
     },
-    "2605.22896": {
-      "title": "Agentic-VLA: Efficient Online Adaptation for Vision-Language-Action Models",
+    "2603.04639": {
+      "title": "RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies",
       "authors": [
-        "Ruofan Jin",
-        "Zaixi Zhang"
+        "Yinpei Dai",
+        "Hongze Fu",
+        "Jayjun Lee",
+        "Yuejiang Liu",
+        "Haoran Zhang",
+        "Jianing Yang",
+        "Chelsea Finn",
+        "Nima Fazeli",
+        "Joyce Chai"
       ],
-      "abs": "https://arxiv.org/abs/2605.22896",
+      "abs": "https://arxiv.org/abs/2603.04639",
       "categories": [
         "cs.RO",
-        "cs.AI",
-        "cs.LG"
-      ]
-    },
-    "2605.23007": {
-      "title": "MadEvolve: Evolutionary Optimization of Trading Systems with Large Language Models",
-      "authors": [
-        "Yurii Kvasiuk",
-        "Tianyi Li",
-        "Owen Colegrove",
-        "Moritz MÃ¼nchmeyer"
-      ],
-      "abs": "https://arxiv.org/abs/2605.23007",
-      "categories": [
-        "q-fin.TR",
-        "cs.AI",
-        "cs.LG",
-        "q-fin.PM"
-      ]
-    },
-    "2605.25480": {
-      "title": "Retrieval as Reasoning: Self-Evolving Agent-Native Retrieval via LLM-Wiki",
-      "authors": [
-        "Haoliang Ming",
-        "Feifei Li",
-        "Xiaoqing Wu",
-        "Wenhui Que"
-      ],
-      "abs": "https://arxiv.org/abs/2605.25480",
-      "categories": [
-        "cs.CL"
-      ]
-    },
-    "2605.24597": {
-      "title": "Learning to Reason Efficiently with A* Post-Training",
-      "authors": [
-        "Andreas Opedal",
-        "Francesco Ignazio Re",
-        "Abulhair Saparov",
-        "Mrinmaya Sachan",
-        "Bernhard SchÃ¶lkopf",
-        "Ryan Cotterell"
-      ],
-      "abs": "https://arxiv.org/abs/2605.24597",
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.LG"
-      ]
-    },
-    "2605.25746": {
-      "title": "Multi-Agent Coordination Adaptation via Structure-Guided Orchestration",
-      "authors": [
-        "Haoran Li",
-        "Shulun Chen",
-        "Shaoyuan Sun",
-        "Hanchen Wang"
-      ],
-      "abs": "https://arxiv.org/abs/2605.25746",
-      "categories": [
-        "cs.MA",
         "cs.AI"
+      ]
+    },
+    "2605.23939": {
+      "title": "DRIVE: Modeling Skills at the Reasoning and Interaction Levels for Web Agents under Continual Learning",
+      "authors": [
+        "Xirui Liu",
+        "Sihang Zhou",
+        "Yanning Hou",
+        "Rong Zhou",
+        "Haoyuan Chen",
+        "Maolin He",
+        "Siwei Wang",
+        "Hao Chen",
+        "Jian Huang"
+      ],
+      "abs": "https://arxiv.org/abs/2605.23939",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ]
+    },
+    "2605.24096": {
+      "title": "The Time is Here for Just-in-Time Systems: Challenges and Opportunities",
+      "authors": [
+        "Shu Liu",
+        "Alexander Krentsel",
+        "Shubham Agarwal",
+        "Mert Cemri",
+        "Ziming Mao",
+        "Soujanya Ponnapalli",
+        "Alexandros G. Dimakis",
+        "Sylvia Ratnasamy",
+        "Matei Zaharia",
+        "Aditya Parameswaran",
+        "Ion Stoica"
+      ],
+      "abs": "https://arxiv.org/abs/2605.24096",
+      "categories": [
+        "cs.DB",
+        "cs.AI",
+        "cs.DC",
+        "cs.SE"
+      ]
+    },
+    "2601.07737": {
+      "title": "Seeing vs. Believing: Evaluating the Language Bias of Open-Source MLLMs in Counter-Intuitive Scenes",
+      "authors": [
+        "Chen Ling",
+        "Tongwei Zhang",
+        "Hanqian Li",
+        "Nai Ding"
+      ],
+      "abs": "https://arxiv.org/abs/2601.07737",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ]
+    },
+    "2605.24018": {
+      "title": "EvoSci: A Bio-Inspired Multi-Agent Framework for the Evolution of Scientific Discovery",
+      "authors": [
+        "Xiaoyu Xiong",
+        "Yuqi Ren",
+        "Deyi Xiong"
+      ],
+      "abs": "https://arxiv.org/abs/2605.24018",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ]
+    },
+    "2605.17937": {
+      "title": "BacktestBench: Benchmarking Large Language Models for Automated Quantitative Strategy Backtesting",
+      "authors": [
+        "Zhensheng Wang",
+        "Wenmian Yang",
+        "Qingtai Wu",
+        "Lequan Ma",
+        "Yiquan Zhang",
+        "Weijia Jia"
+      ],
+      "abs": "https://arxiv.org/abs/2605.17937",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ]
+    },
+    "2605.25030": {
+      "title": "MimirRAG: A Multi-Agent RAG Framework for Financial Data Retrieval with Metadata Integration",
+      "authors": [
+        "Magnus Samuelsen",
+        "Wilmer NystrÃ¶m",
+        "Somnath Mazumdar",
+        "Mansoor Hussain",
+        "Mikkel Strange"
+      ],
+      "abs": "https://arxiv.org/abs/2605.25030",
+      "categories": [
+        "cs.LG"
       ]
     },
     "2605.20023": {
@@ -315,76 +373,113 @@
         "cs.MA"
       ]
     },
-    "2605.23950": {
-      "title": "Stop Comparing LLM Agents Without Disclosing the Harness",
+    "2605.26114": {
+      "title": "MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research",
       "authors": [
-        "Yunbei Zhang",
-        "Janet Wang",
-        "Yingqiang Ge",
-        "Weijie Xu",
-        "Jihun Hamm",
-        "Chandan K. Reddy"
+        "Dingbang Wu",
+        "Rui Hao",
+        "Haiyang Wang",
+        "Shuzhe Wu",
+        "Han Xiao",
+        "Zhenghong Li",
+        "Bojiang Zhou",
+        "Zheng Ju",
+        "Zichen Liu",
+        "Lue Fan",
+        "Zhaoxiang Zhang"
       ],
-      "abs": "https://arxiv.org/abs/2605.23950",
+      "abs": "https://arxiv.org/abs/2605.26114",
       "categories": [
         "cs.AI",
-        "cs.SE"
+        "cs.CL"
       ]
     },
-    "2605.24890": {
-      "title": "QuoVLA: Quotient Space for Vision-Language-Action Models",
+    "2605.26340": {
+      "title": "ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence",
       "authors": [
-        "Xuan Wang",
-        "Yinan Wu",
-        "Haoran Duan",
-        "Jungong Han"
+        "Rui Meng",
+        "Bhavana Dalvi Mishra",
+        "Jiefeng Chen",
+        "Chun-Liang Li",
+        "Palash Goyal",
+        "Mihir Parmar",
+        "Yiwen Song",
+        "Yale Song",
+        "Rajarishi Sinha",
+        "Parthasarathy Ranganathan",
+        "Burak Gokturk",
+        "Jinsung Yoon",
+        "Tomas Pfister"
       ],
-      "abs": "https://arxiv.org/abs/2605.24890",
+      "abs": "https://arxiv.org/abs/2605.26340",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ]
+    },
+    "2605.23904": {
+      "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+      "authors": [
+        "Yifan Yang",
+        "Ziyang Gong",
+        "Weiquan Huang",
+        "Qihao Yang",
+        "Ziwei Zhou",
+        "Zisu Huang",
+        "Yan Li",
+        "Xuemei Gao",
+        "Qi Dai",
+        "Bei Liu",
+        "Kai Qiu",
+        "Yuqing Yang",
+        "Dongdong Chen",
+        "Xue Yang",
+        "Chong Luo"
+      ],
+      "abs": "https://arxiv.org/abs/2605.23904",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ]
+    },
+    "2605.25479": {
+      "title": "MAIL++: Multi-Modal Bi-directional Agent Layer for Vision-Language Models",
+      "authors": [
+        "Kaixiang Chen",
+        "Pengfei Fang",
+        "Hui Xue"
+      ],
+      "abs": "https://arxiv.org/abs/2605.25479",
       "categories": [
         "cs.CV"
       ]
     },
-    "2603.05143": {
-      "title": "Feature Resemblance: Towards a Theoretical Understanding of Analogical Reasoning in Transformers",
+    "2605.17986": {
+      "title": "LivePI: More Realistic Benchmarking of Agents Against Indirect Prompt Injection",
       "authors": [
-        "Ruichen Xu",
-        "Wenjing Yan",
-        "Ying-Jun Angela Zhang"
+        "Lei Zhao",
+        "Abhay Bhaskar",
+        "Edgar Dobriban"
       ],
-      "abs": "https://arxiv.org/abs/2603.05143",
+      "abs": "https://arxiv.org/abs/2605.17986",
       "categories": [
-        "cs.CL",
-        "cs.LG"
+        "cs.CR",
+        "cs.AI"
       ]
     },
-    "2605.22826": {
-      "title": "Evaluating Large Language Models in a Complex Hidden Role Game",
+    "2605.26667": {
+      "title": "MemFail: Stress-Testing Failure Modes of LLM Memory Systems",
       "authors": [
-        "Niklas Bauer"
+        "Ishir Garg",
+        "Neel Kolhe",
+        "Dawn Song",
+        "Xuandong Zhao"
       ],
-      "abs": "https://arxiv.org/abs/2605.22826",
+      "abs": "https://arxiv.org/abs/2605.26667",
       "categories": [
-        "cs.CL",
         "cs.AI",
-        "cs.GT",
-        "cs.MA"
-      ]
-    },
-    "2605.24985": {
-      "title": "Learning, locomotion, and navigation of soft synthetic snakes in three-dimensional, heterogeneous environments",
-      "authors": [
-        "Xiaotian Zhang",
-        "Ali Albazroun",
-        "Tixian Wang",
-        "Songyuan Cui",
-        "Prashant G. Mehta",
-        "Mattia Gazzola"
-      ],
-      "abs": "https://arxiv.org/abs/2605.24985",
-      "categories": [
-        "cs.RO",
-        "cs.LG",
-        "physics.comp-ph"
+        "cs.LG"
       ]
     },
     "2605.24490": {
@@ -416,43 +511,56 @@
         "cs.LG"
       ]
     },
-    "2605.24016": {
-      "title": "SA-Kura: An Energy-Efficient Systolic Array Accelerator for Locally-Coupled Kuramoto Drift in Diffusion Sampling",
+    "2605.26380": {
+      "title": "VisualNeedle: Benchmarking Active Visual Search in Information-Dense Scenes",
       "authors": [
-        "Jeongmin Jin",
-        "Kyeongwon Lee",
-        "Mundo Jeong",
-        "Jongin Choi",
-        "Woojoo Lee"
+        "Jingru Chen",
+        "Yiming Liu",
+        "Mingtao Chen",
+        "Sijie Chen",
+        "Richeng Xuan",
+        "Liang Yang",
+        "Zhichao Hu",
+        "Fanyang Lu"
       ],
-      "abs": "https://arxiv.org/abs/2605.24016",
+      "abs": "https://arxiv.org/abs/2605.26380",
       "categories": [
-        "cs.AR",
+        "cs.CV",
         "cs.AI"
       ]
     },
-    "2605.25381": {
-      "title": "Not only where, But when: Temporal Scheduling for RLVR",
+    "2605.24636": {
+      "title": "GlobalDentBench: A Multinational Benchmark for Evaluating LLM Clinical Reasoning in Dentistry with Expert Calibration",
       "authors": [
-        "Jinghao Zhang",
-        "Ruilin Li",
-        "Feng Zhao",
-        "Jiaqi Wang"
+        "Junjie Zhao",
+        "Jingyi Liang",
+        "Zhenyang Cai",
+        "Jiaming Zhang",
+        "Zhenwei Wen",
+        "Shuzhi Deng",
+        "Wenjing Yi",
+        "Chunfeng Luo",
+        "Hexian Zhang",
+        "Junying Chen",
+        "Tianrui Liu",
+        "Zhuhui Bai",
+        "Zixu Zhang",
+        "Pradeep Singh",
+        "Xiang Liu",
+        "Jianquan Li",
+        "Nhan L Tran",
+        "Falk Schwendicke",
+        "Zuolin Jin",
+        "Lijian Jin",
+        "Liangyi Chen",
+        "Wei-fa Yang",
+        "Benyou Wang",
+        "Junwen Wang",
+        "Shan Jiang"
       ],
-      "abs": "https://arxiv.org/abs/2605.25381",
+      "abs": "https://arxiv.org/abs/2605.24636",
       "categories": [
-        "cs.LG"
-      ]
-    },
-    "2605.25510": {
-      "title": "The Age of Curiosity Meets the Age of AI: Benchmarking Child Safety in Large Language Models",
-      "authors": [
-        "Samee Arif",
-        "Angana Borah",
-        "Rada Mihalcea"
-      ],
-      "abs": "https://arxiv.org/abs/2605.25510",
-      "categories": [
+        "cs.AI",
         "cs.CL"
       ]
     }
