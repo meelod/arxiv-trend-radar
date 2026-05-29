@@ -1,0 +1,807 @@
+{
+  "date": "2026-05-28",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "A significant focus on multi-agent systems and AI-driven infrastructure optimizations marks today's papers.",
+  "executive_overview": "Today's papers showcase a strong emphasis on enhancing multi-agent systems, particularly in the context of AI and robotics. Many papers explore the interplay between model efficiency and resource management, reflecting a trend toward optimizing large-scale AI deployments. The integration of AI within critical domains, such as finance and robotics, also emerges as a key theme, indicating a shift towards practical applications of advanced models.",
+  "themes": [
+    {
+      "name": "Multi-Agent Systems and Coordination",
+      "summary": "A cluster of papers emphasizes the evolution and optimization of multi-agent systems (MAS). For instance, works like [2605.30102] and [2605.29744] delve into hybrid architectures that integrate both cloud and on-device agents, signaling a shift towards more efficient deployments. Additionally, frameworks such as [2605.28634] and [2605.27685] address coordination aspects essential for ensuring seamless interactions and feedback loops among agents, ultimately aiming to enhance task performance among diverse setups.",
+      "paper_ids": [
+        "2605.30102",
+        "2605.27685",
+        "2605.29744",
+        "2605.28634"
+      ]
+    },
+    {
+      "name": "Infrastructure and Efficiency in AI",
+      "summary": "Multiple papers focus on optimizing AI infrastructures for both performance and cost efficiency. Works such as [2605.28302] and [2605.30036] highlight advancements in handling attention mechanisms and KV cache management, respectively, that directly impact the latency and resource requirements of large language model (LLM) deployments. These insights are crucial as the industry gears toward deploying powerful AI systems under real-world constraints.",
+      "paper_ids": [
+        "2605.28302",
+        "2605.30036"
+      ]
+    },
+    {
+      "name": "Financial Applications of AI",
+      "summary": "A set of papers tackle the increasingly intricate role of AI in finance, revealing both its potential and pitfalls. [2605.28424] introduces an LLM-driven trading agent benchmark while [2605.29135] explores the limitations of LLMs in volatile market environments, highlighting the need for robust methodologies to harness AI's capabilities in capital markets. The analyses underscore concerns about model reliability and investment reasoning in unpredictable contexts.",
+      "paper_ids": [
+        "2605.28424",
+        "2605.29135"
+      ]
+    },
+    {
+      "name": "Robotics and Human Factors",
+      "summary": "Several papers address the integration of AI with robotics, particularly in enhancing system adaptability and robustness. Works like [2605.29074] and [2605.27699] focus on developing frameworks for effective human-robot collaboration, emphasizing the importance of real-time interaction and adaptability in complex tasks. These advancements not only improve task performance but also address ethical considerations in AI deployment across sensitive domains like healthcare.",
+      "paper_ids": [
+        "2605.29074"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2605.30102",
+      "title": "When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems",
+      "plain_english": "This paper discusses how combining cloud-based large language models with smaller, on-device models can create effective multi-agent systems, balancing performance and cost.",
+      "why_it_matters": "It connects to your interest in multi-agent systems and AI inference infrastructure, showing practical applications and performance optimization in agent design.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2605.28302",
+      "title": "How Far Can Disaggregation Go? A Design-Space Exploration of Attention-FFN Disaggregation for Efficient MoE LLM Serving",
+      "plain_english": "This paper explores techniques to split up large language model components to reduce the memory and compute overhead required during inference.",
+      "why_it_matters": "It directly addresses your interest in AI inference infrastructure, particularly focusing on the efficiency of large models under resource constraints.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2602.18481",
+      "title": "AlphaForgeBench: Benchmarking End-to-End Trading Strategy Design with Large Language Models",
+      "plain_english": "The authors introduce a testing framework to evaluate whether LLMs can effectively design trading strategies, highlighting the models' performance under market uncertainty.",
+      "why_it_matters": "This aligns with your quantitative trading interest, providing insights on integrating AI models into trading infrastructures and performance assessments.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.28850",
+      "title": "Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents",
+      "plain_english": "This study finds that LLM trading agents exhibit observable behavior patterns under market stress and analyzes how these representation dynamics relate to investment risks.",
+      "why_it_matters": "It speaks to your focus on quant trading and market microstructure by investigating how LLMs can align with financial decision-making under uncertainty.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.30282",
+      "title": "Gaze2Act: Gaze-Conditioned Vision-Language-Action Policies for Interactive Robot Manipulation",
+      "plain_english": "The paper presents a framework where robots use human gaze as a guide for performing complex actions, enhancing interaction during manipulation tasks.",
+      "why_it_matters": "This involves robotics policy learning, aligning with your interest in humanoid manipulation and adaptive systems.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.30190",
+      "title": "Mean-Field Diffuser: Scaling Offline MARL to Thousands of Agents",
+      "plain_english": "This work proposes a new method for planning in multi-agent systems, increasing efficiency in simulating complex AI interactions.",
+      "why_it_matters": "It relates to optimizing multi-agent systems, a key area of interest for your research in AI infrastructure and operational efficiency.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.29307",
+      "title": "GrepSeek: Training Search Agents for Direct Corpus Interaction",
+      "plain_english": "This paper explores a new search efficiency model for LLMs, enabling agents to directly interact with a dataset to gather information.",
+      "why_it_matters": "It connects with vector databases and efficient retrieval methods, which are vital for scaling AI model functionality.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2605.08678",
+      "title": "MLS-Bench: A Holistic and Rigorous Assessment of AI Systems on Building Better AI",
+      "plain_english": "The authors introduce a benchmarking framework to evaluate AI systems on their ability to invent scalable ML methods.",
+      "why_it_matters": "It can inform your understanding of AI systems' practical efficiency, relevant to your interest in hardware and architecture mismatches.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2605.27934",
+      "title": "GeneralThinker: Domain-General Reasoning through Likelihood-Guided Answer-Conditioned Optimization",
+      "plain_english": "This work presents a new framework for optimizing reasoning in language models, enhancing how they generate answers based on provided information.",
+      "why_it_matters": "This can inform your AI inference infrastructure development, showing the implications for reasoning and optimization in LLMs.",
+      "relevance_score": 7
+    }
+  ],
+  "worth_noting": [
+    {
+      "arxiv_id": "2605.29562",
+      "one_liner": "Explores the vulnerabilities of large language models in cybersecurity tasks."
+    },
+    {
+      "arxiv_id": "2605.28008",
+      "one_liner": "Discusses a method for improving human-robot interaction processes."
+    },
+    {
+      "arxiv_id": "2605.27934",
+      "one_liner": "Transforms how agents deal with unexpected errors during autonomous operations."
+    },
+    {
+      "arxiv_id": "2605.27593",
+      "one_liner": "Examines the relationship between tokenization practices and LLM efficiency."
+    },
+    {
+      "arxiv_id": "2605.30036",
+      "one_liner": "New framework for understanding LLM behavior through contextual factors."
+    }
+  ],
+  "paper_index": {
+    "2605.30102": {
+      "title": "When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems",
+      "authors": [
+        "Corrado Rainone",
+        "Davide Belli",
+        "Bence Major",
+        "Arash Behboodi"
+      ],
+      "abs": "https://arxiv.org/abs/2605.30102",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ]
+    },
+    "2605.08678": {
+      "title": "MLS-Bench: A Holistic and Rigorous Assessment of AI Systems on Building Better AI",
+      "authors": [
+        "Bohan Lyu",
+        "Yucheng Yang",
+        "Siqiao Huang",
+        "Jiaru Zhang",
+        "Qixin Xu",
+        "Xinghan Li",
+        "Xinyang Han",
+        "Yicheng Zhang",
+        "Huaqing Zhang",
+        "Runhan Huang",
+        "Kaicheng Yang",
+        "Zitao Chen",
+        "Wentao Guo",
+        "Junlin Yang",
+        "Xinyue Ai",
+        "Wenhao Chai",
+        "Yadi Cao",
+        "Ziran Yang",
+        "Kun Wang",
+        "Dapeng Jiang",
+        "Huan-ang Gao",
+        "Shange Tang",
+        "Chengshuai Shi",
+        "Simon S. Du",
+        "Max Simchowitz",
+        "Jiantao Jiao",
+        "Dawn Song",
+        "Chi Jin"
+      ],
+      "abs": "https://arxiv.org/abs/2605.08678",
+      "categories": [
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "primary_affiliation": "University of Southern California",
+      "s2_authors": [
+        {
+          "id": "2277218971",
+          "name": "Bohan Lyu",
+          "aff": null
+        },
+        {
+          "id": "2299753761",
+          "name": "Yucheng Yang",
+          "aff": null
+        },
+        {
+          "id": "2343778101",
+          "name": "Siqiao Huang",
+          "aff": null
+        },
+        {
+          "id": "2334909065",
+          "name": "Jiarui Zhang",
+          "aff": null
+        },
+        {
+          "id": "2379172525",
+          "name": "Qixin Xu",
+          "aff": null
+        },
+        {
+          "id": "2155447887",
+          "name": "Xinghang Li",
+          "aff": null
+        },
+        {
+          "id": "2375085167",
+          "name": "Xin Han",
+          "aff": null
+        },
+        {
+          "id": "2333249784",
+          "name": "Yicheng Zhang",
+          "aff": null
+        },
+        {
+          "id": "2320716631",
+          "name": "Huaqing Zhang",
+          "aff": null
+        },
+        {
+          "id": "2292074265",
+          "name": "Run Huang",
+          "aff": "University of Southern California"
+        },
+        {
+          "id": "2281293653",
+          "name": "Kaichen Yang",
+          "aff": null
+        },
+        {
+          "id": "2264539447",
+          "name": "Zitao Chen",
+          "aff": null
+        },
+        {
+          "id": "2304937496",
+          "name": "Wentao Guo",
+          "aff": null
+        },
+        {
+          "id": "2362512516",
+          "name": "Junlin Yang",
+          "aff": null
+        },
+        {
+          "id": "2326296135",
+          "name": "Xinyue Ai",
+          "aff": null
+        },
+        {
+          "id": "2384768941",
+          "name": "Wenhao Chai",
+          "aff": null
+        },
+        {
+          "id": "2359725151",
+          "name": "Yadi Cao",
+          "aff": null
+        },
+        {
+          "id": "2375095582",
+          "name": "Ziran Yang",
+          "aff": null
+        },
+        {
+          "id": "2363281493",
+          "name": "Kun Wang",
+          "aff": null
+        },
+        {
+          "id": "2300926225",
+          "name": "Dapeng Jiang",
+          "aff": null
+        },
+        {
+          "id": "2371219369",
+          "name": "Huan-ang Gao",
+          "aff": null
+        },
+        {
+          "id": "1469317468",
+          "name": "Shange Tang",
+          "aff": null
+        },
+        {
+          "id": "1382573171",
+          "name": "Chengshuai Shi",
+          "aff": null
+        },
+        {
+          "id": "2263705965",
+          "name": "Simon S. Du",
+          "aff": null
+        },
+        {
+          "id": "2395769774",
+          "name": "Max Simchowitz",
+          "aff": null
+        },
+        {
+          "id": "2143968416",
+          "name": "Jian Jiao",
+          "aff": null
+        },
+        {
+          "id": "2374189943",
+          "name": "D. Song",
+          "aff": null
+        },
+        {
+          "id": "2344036400",
+          "name": "Chi Jin",
+          "aff": null
+        }
+      ]
+    },
+    "2605.28302": {
+      "title": "How Far Can Disaggregation Go? A Design-Space Exploration of Attention-FFN Disaggregation for Efficient MoE LLM Serving",
+      "authors": [
+        "Hanjiang Wu",
+        "Abhimanyu Rajeshkumar Bambhaniya",
+        "Sarbartha Banerjee",
+        "Tuhin Khare",
+        "Sudarshan Srinivasan",
+        "Suvinay Subramanian",
+        "Souvik Kundu",
+        "Madhu Kumar",
+        "Midhilesh Elavazhagan",
+        "William Won",
+        "Amir Yazdanbakhsh",
+        "Tushar Krishna"
+      ],
+      "abs": "https://arxiv.org/abs/2605.28302",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.DC"
+      ]
+    },
+    "2602.18481": {
+      "title": "AlphaForgeBench: Benchmarking End-to-End Trading Strategy Design with Large Language Models",
+      "authors": [
+        "Wentao Zhang",
+        "Mingxuan Zhao",
+        "Jincheng Gao",
+        "Jieshun You",
+        "Huaiyu Jia",
+        "Yilei Zhao",
+        "Bo An",
+        "Shuo Sun"
+      ],
+      "abs": "https://arxiv.org/abs/2602.18481",
+      "categories": [
+        "q-fin.TR",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2372959123",
+          "name": "Wentao Zhang",
+          "aff": null
+        },
+        {
+          "id": "2390271556",
+          "name": "Mingxuan Zhao",
+          "aff": null
+        },
+        {
+          "id": "2300120746",
+          "name": "Jincheng Gao",
+          "aff": null
+        },
+        {
+          "id": "2213869199",
+          "name": "Jieshun You",
+          "aff": null
+        },
+        {
+          "id": "2321683841",
+          "name": "H. Jia",
+          "aff": null
+        },
+        {
+          "id": "2267697818",
+          "name": "Yilei Zhao",
+          "aff": null
+        },
+        {
+          "id": "2403193787",
+          "name": "Bo An",
+          "aff": null
+        },
+        {
+          "id": "2286539402",
+          "name": "Shuo Sun",
+          "aff": null
+        }
+      ]
+    },
+    "2605.27685": {
+      "title": "Decoupled Intelligence: A Multi-Agent LLM Framework for Controllable Traffic Scenario Generation in SUMO",
+      "authors": [
+        "Shuyang Li",
+        "Ruimin Ke"
+      ],
+      "abs": "https://arxiv.org/abs/2605.27685",
+      "categories": [
+        "cs.MA",
+        "cs.HC"
+      ]
+    },
+    "2605.29744": {
+      "title": "Why Specialist Models Still Matter: A Heterogeneous Multi-Agent Paradigm for Medical Artificial Intelligence",
+      "authors": [
+        "Yanan Wang",
+        "Shuaicong Hu",
+        "Jian Liu",
+        "Guohui Zhou",
+        "Aiguo Wang",
+        "Cuiwei Yang"
+      ],
+      "abs": "https://arxiv.org/abs/2605.29744",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ]
+    },
+    "2605.28634": {
+      "title": "PrimitiveVLA: Learning Reusable Motion Primitives for Efficient and Generalizable Robotic Manipulation",
+      "authors": [
+        "Yutai Li",
+        "Shaohui Peng",
+        "Jiaming Guo",
+        "Di Huang",
+        "Zihao Zhang",
+        "Yuxuan Guo",
+        "Yunkai Gao",
+        "Siming Lan",
+        "Ling Li",
+        "Xing Hu",
+        "Yunji Chen"
+      ],
+      "abs": "https://arxiv.org/abs/2605.28634",
+      "categories": [
+        "cs.RO"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "primary_affiliation": "Institute of Computing Technology",
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Yutai Li",
+          "aff": null
+        },
+        {
+          "id": "2072713784",
+          "name": "Shaohui Peng",
+          "aff": "Institute of Computing Technology, Chinese Academy of Sciences"
+        },
+        {
+          "id": null,
+          "name": "Jiaming Guo",
+          "aff": null
+        },
+        {
+          "id": "2110180755",
+          "name": "Di Huang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zihao Zhang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yuxuan Guo",
+          "aff": null
+        },
+        {
+          "id": "2117957883",
+          "name": "Yunkai Gao",
+          "aff": null
+        },
+        {
+          "id": "2219976844",
+          "name": "Siming Lan",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Ling Li",
+          "aff": null
+        },
+        {
+          "id": "2109635961",
+          "name": "Xingui Hu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yunji Chen",
+          "aff": null
+        }
+      ]
+    },
+    "2605.29135": {
+      "title": "Rotary GPU: Exploring Local Execution Paths for Large Mixture-of-Experts Models Under Limited GPU Memory",
+      "authors": [
+        "Myeong Jun Jo"
+      ],
+      "abs": "https://arxiv.org/abs/2605.29135",
+      "categories": [
+        "cs.PF",
+        "cs.AR",
+        "cs.DC"
+      ]
+    },
+    "2605.29562": {
+      "title": "VLA-Pro: Cross-Task Procedural Memory Transfer for Vision-Language-Action Models",
+      "authors": [
+        "Shengyu Si",
+        "Yuanzhuo Lu",
+        "Ruimeng Yang",
+        "Ziyi Ye",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang"
+      ],
+      "abs": "https://arxiv.org/abs/2605.29562",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ]
+    },
+    "2605.28850": {
+      "title": "Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents",
+      "authors": [
+        "Weicheng Xue"
+      ],
+      "abs": "https://arxiv.org/abs/2605.28850",
+      "categories": [
+        "cs.LG",
+        "q-fin.CP"
+      ]
+    },
+    "2605.29074": {
+      "title": "Embodied3DBench: Benchmarking Low-Level Embodied Spatial Intelligence of Vision Language Models",
+      "authors": [
+        "Jiyao Zhang",
+        "Mingxu Zhang",
+        "Yitong Peng",
+        "Haoxuan Liu",
+        "Chenshuo Wang",
+        "Yuxing Long",
+        "Haoyang Huang",
+        "Dongjiang Li",
+        "Nan Duan",
+        "Hui Shen",
+        "Hao Dong"
+      ],
+      "abs": "https://arxiv.org/abs/2605.29074",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ]
+    },
+    "2605.28424": {
+      "title": "Skill0.5: Joint Skill Internalization and Utilization for Out-of-Distribution Generalization in Agentic Reinforcement Learning",
+      "authors": [
+        "Jiapeng Zhu",
+        "Jianxiang Yu",
+        "Yibo Zhao",
+        "Chengcheng Han",
+        "Qi Gu",
+        "Xunliang Cai",
+        "Xiang Li",
+        "Weining Qian"
+      ],
+      "abs": "https://arxiv.org/abs/2605.28424",
+      "categories": [
+        "cs.CL"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "primary_affiliation": "East China Normal University",
+      "s2_authors": [
+        {
+          "id": "2274978444",
+          "name": "Jiapeng Zhu",
+          "aff": "East China Normal University"
+        },
+        {
+          "id": "2198507600",
+          "name": "Jianxiang Yu",
+          "aff": "East China Normal University"
+        },
+        {
+          "id": "2336830468",
+          "name": "Yibo Zhao",
+          "aff": "East China Normal University"
+        },
+        {
+          "id": "2385488750",
+          "name": "Chengcheng Han",
+          "aff": null
+        },
+        {
+          "id": "2164011342",
+          "name": "Qingdong Gu",
+          "aff": null
+        },
+        {
+          "id": "2350441548",
+          "name": "Xunliang Cai",
+          "aff": null
+        },
+        {
+          "id": "2337489660",
+          "name": "Xiang Li",
+          "aff": null
+        },
+        {
+          "id": "2284863502",
+          "name": "Weining Qian",
+          "aff": null
+        }
+      ]
+    },
+    "2605.29307": {
+      "title": "GrepSeek: Training Search Agents for Direct Corpus Interaction",
+      "authors": [
+        "Alireza Salemi",
+        "Chang Zeng",
+        "Atharva Nijasure",
+        "Jui-Hui Chung",
+        "Razieh Rahimi",
+        "Fernando Diaz",
+        "Hamed Zamani"
+      ],
+      "abs": "https://arxiv.org/abs/2605.29307",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG"
+      ]
+    },
+    "2605.27593": {
+      "title": "Voluntary Collusion with Secret Tools in Competing LLM Agents",
+      "authors": [
+        "Xijie Zeng",
+        "Frank Rudzicz"
+      ],
+      "abs": "https://arxiv.org/abs/2605.27593",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2335083579",
+          "name": "Xijie Zeng",
+          "aff": null
+        },
+        {
+          "id": "2258233516",
+          "name": "Frank Rudzicz",
+          "aff": null
+        }
+      ]
+    },
+    "2605.30282": {
+      "title": "Gaze2Act: Gaze-Conditioned Vision-Language-Action Policies for Interactive Robot Manipulation",
+      "authors": [
+        "Kuangji Zuo",
+        "Gen Li",
+        "Bofan Lyu",
+        "Yanshuo Lu",
+        "Boyu Ma",
+        "Shijia Han",
+        "Xinyu Zhou",
+        "Xichen Yuan",
+        "Chuhao Zhou",
+        "Jiaqi Bai",
+        "Geng Li",
+        "Jianfei Yang"
+      ],
+      "abs": "https://arxiv.org/abs/2605.30282",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2605.30190": {
+      "title": "Mean-Field Diffuser: Scaling Offline MARL to Thousands of Agents",
+      "authors": [
+        "Wenhao Li",
+        "Xiangfeng Wang",
+        "Bo Jin"
+      ],
+      "abs": "https://arxiv.org/abs/2605.30190",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2605.27934": {
+      "title": "GeneralThinker: Domain-General Reasoning through Likelihood-Guided Answer-Conditioned Optimization",
+      "authors": [
+        "Shengmin Piao",
+        "Sanghyun Park"
+      ],
+      "abs": "https://arxiv.org/abs/2605.27934",
+      "categories": [
+        "cs.CL"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "primary_affiliation": "Yonsei University",
+      "s2_authors": [
+        {
+          "id": "115085922",
+          "name": "Shengmin Piao",
+          "aff": "Yonsei University"
+        },
+        {
+          "id": "2336013562",
+          "name": "Sanghyun Park",
+          "aff": null
+        }
+      ]
+    },
+    "2605.28008": {
+      "title": "Zipping the Thought: When and How Compressed Reasoning Data Works in LLM Post-Training",
+      "authors": [
+        "Kohsei Matsutani",
+        "Gouki Minegishi",
+        "Takeshi Kojima",
+        "Yusuke Iwasawa",
+        "Yutaka Matsuo"
+      ],
+      "abs": "https://arxiv.org/abs/2605.28008",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2365008397",
+          "name": "Kohsei Matsutani",
+          "aff": null
+        },
+        {
+          "id": "2200541567",
+          "name": "Gouki Minegishi",
+          "aff": null
+        },
+        {
+          "id": "2081836120",
+          "name": "Takeshi Kojima",
+          "aff": null
+        },
+        {
+          "id": "1715282",
+          "name": "Yusuke Iwasawa",
+          "aff": null
+        },
+        {
+          "id": "2241471533",
+          "name": "Yutaka Matsuo",
+          "aff": null
+        }
+      ]
+    },
+    "2605.30036": {
+      "title": "Teaching Values to Machines: Simulating Human-Like Behavior in LLMs",
+      "authors": [
+        "Asaf Yehudai",
+        "Naama Rozen",
+        "Ariel Gera"
+      ],
+      "abs": "https://arxiv.org/abs/2605.30036",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ]
+    }
+  }
+}
