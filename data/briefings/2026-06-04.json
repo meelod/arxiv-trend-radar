@@ -1,0 +1,985 @@
+{
+  "date": "2026-06-04",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Today showcases multiple innovative frameworks and benchmarks aimed at advancing AI capabilities in multi-agent systems and reinforcement learning applications.",
+  "executive_overview": "A strong emphasis on multi-agent cooperation and AI-driven decision-making marks today’s papers. Notable research includes the introduction of new benchmarks for evaluating LLM capabilities in multi-agent settings and innovative structures for neural models, particularly in reinforcement learning contexts. Papers also focus on practical deployment strategies and architectural optimizations for AI models in real-world applications, with a notable intersection of robotics and AI software engineering.",
+  "themes": [
+    {
+      "name": "Multi-Agent Systems and Coordination",
+      "summary": "Today's collection includes several papers focused on multi-agent systems, particularly the coordination and collaboration among agents to solve complex tasks. The works emphasize frameworks that allow agents to learn through interaction protocols (e.g., Ahoy) and benchmarks that assess collaborative abilities (e.g., CollabBench). The representation of agents’ beliefs and their interactions through innovative metrics highlights the growing importance of dialogue and collaboration in AI systems (e.g., Dynamic Multi-Agent Pickup and Delivery). Papers like \"Agentic GraphRAG Framework\" propose methods for optimizing the communication and efficiency of agentic interactions.",
+      "paper_ids": [
+        "2606.05567",
+        "2606.06399",
+        "2606.02894",
+        "2606.04072"
+      ]
+    },
+    {
+      "name": "Robotics and Motion Planning",
+      "summary": "A substantial focus is placed on robotics, particularly in humanoid motion and manipulation. Frameworks like GRAIL and DexFuture propose new methodologies for improving robot interactions and task execution by leveraging 3D assets and incorporating visual feedback. Additionally, novel algorithms for efficiently solving complex planning problems through hierarchical methods and learning techniques are presented, exemplifying advancements in robotic autonomy. The proposed mechanisms tackle challenges faced in dynamic environments, showcasing potential applications in real-world situations.",
+      "paper_ids": [
+        "2606.05160",
+        "2606.04847",
+        "2606.06388",
+        "2606.04534",
+        "2606.05922"
+      ]
+    },
+    {
+      "name": "AI Inference Optimization",
+      "summary": "Several papers tackled the challenges of optimizing the performance of AI models, especially regarding inference efficiency. Works like ReCache and LazyAttention propose novel caching and attention mechanisms to reduce computational overhead in retrieval-augmented generation scenarios. Other research highlights the efficacy of mixed-precision strategies and hardware-specific adaptations to enhance deployment efficiency, which resonates with the user’s interest in AI inference infrastructure and hardware-architecture mismatches.",
+      "paper_ids": [
+        "2606.02031",
+        "2606.06344",
+        "2606.06267",
+        "2606.04534",
+        "2606.04050"
+      ]
+    },
+    {
+      "name": "Benchmarking and Evaluation Frameworks",
+      "summary": "A range of new benchmarks and evaluation frameworks are unveiled, capturing various aspects of AI and machine learning performance. Papers such as AdaPlanBench and VAMPS outline comprehensive methodologies to evaluate the adaptive planning capabilities of LLM agents and their effectiveness in problem-solving tasks, while Dual-Training frameworks detail methods for enhancing AI robustness against adversarial conditions. These benchmarks contribute significantly to understanding the practical deployment of AI in real-world scenarios, including specifics on method robustness and comparative performance metrics.",
+      "paper_ids": [
+        "2606.05728",
+        "2606.04046",
+        "2606.06100",
+        "2606.04009"
+      ]
+    },
+    {
+      "name": "Security and Ethical AI",
+      "summary": "Emerging concerns around AI security, particularly regarding LLMs and their deployment in sensitive applications, drive today's discussions. Papers like Zero-Copy Semantic Contagion and the introduction of frameworks like Safety-AGI focus on potential vulnerabilities in LLM-generated outputs and the ethical implications of AI's role in autonomous systems. This theme covers necessary governance structures, evaluating how AI might exploit loopholes in societal norms or regulations, emphasizing the pressing need for alignments in human oversight and ethical compliance in AI implementations.",
+      "paper_ids": [
+        "2606.06460",
+        "2606.05232",
+        "2606.06094",
+        "2606.04503",
+        "2606.05557"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2606.05793",
+      "title": "CollabBench: Benchmarking and Unleashing Collaborative Ability of LLMs with Diverse Players via Proactive Engagement",
+      "plain_english": "This paper introduces a benchmark for evaluating how collaborative agents using large language models (LLMs) perform in cooperative situations, highlighting their abilities to work together effectively in diverse scenarios.",
+      "why_it_matters": "This research is relevant as it directly addresses the collective intelligence and collaboration aspect of multi-agent systems, aligning with the user’s interest in understanding how AI systems can work together innovatively.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2606.05468",
+      "title": "FlowPRO: Reward-Free Reinforced Fine-Tuning of Flow-Matching VLAs via Proximalized Preference Optimization",
+      "plain_english": "FlowPRO is a framework that enhances flow-matching Vision-Language-Action (VLA) models to improve their effectiveness without relying on reward feedback, allowing for more adaptable robot learning in dynamic environments.",
+      "why_it_matters": "This aligns with the user's interest in efficient learning processes and methods that improve robotics, particularly in practical applications like humanoid manipulation where reliable task performance is vital.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2602.16705",
+      "title": "HERO: Learning Humanoid End-Effector Control for Visual Whole-Body Open-Vocabulary Object Grasping",
+      "plain_english": "This paper presents a system that enhances robot grasping capabilities by allowing humanoids to understand and interact with a variety of objects based on visual and contextual cues without being confined to specific pre-learned tasks.",
+      "why_it_matters": "This work touches on robotic manipulation and enhances the learning paradigms vital to the user's focus on robotics policy learning and manipulation tasks.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2606.04773",
+      "title": "NextMotionQA: Benchmarking and Judging Human Motion Understanding with Vision-Language Models",
+      "plain_english": "NextMotionQA is a comprehensive benchmark aimed at assessing the capabilities of vision-language models in understanding human motion through various real-world scenarios.",
+      "why_it_matters": "The focus on motion understanding is pertinent to the user’s focus areas in robotics and multi-agent interactions, significant in humanoid manipulation models and real-time task execution.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2606.06178",
+      "title": "Learning to Route LLMs from Implicit Cost-Performance Preferences via Meta-Learning",
+      "plain_english": "The paper presents a framework that optimizes large language model routing based on user preferences for cost and performance, learning to adapt dynamically to diverse requirements.",
+      "why_it_matters": "This directly connects to the user’s interest in AI inference infrastructure, particularly in optimizing performance and resource allocation tailored to user needs.",
+      "relevance_score": 9
+    }
+  ],
+  "worth_noting": [
+    {
+      "arxiv_id": "2606.06399",
+      "one_liner": "A benchmark framework designed to evaluate AI collaboration capabilities across various agent types and tasks."
+    },
+    {
+      "arxiv_id": "2606.05728",
+      "one_liner": "A new framework combining visual and internal reasoning to improve response generation in complex environments."
+    },
+    {
+      "arxiv_id": "2606.04072",
+      "one_liner": "Introduces a systematic approach for optimizing multi-agent task planning dynamically."
+    },
+    {
+      "arxiv_id": "2605.14054",
+      "one_liner": "Examines the implications of RL training on AI models in various real-world contexts."
+    },
+    {
+      "arxiv_id": "2606.06267",
+      "one_liner": "Explores a new testing method to identify biases in large language models during reasoning tasks."
+    },
+    {
+      "arxiv_id": "2606.04806",
+      "one_liner": "Presents a new approach to analyze and enhance the robustness of AI tools in healthcare applications."
+    },
+    {
+      "arxiv_id": "2606.06094",
+      "one_liner": "Explores a significant approach to enhance reliability and coherence in AI-generated content."
+    }
+  ],
+  "paper_index": {
+    "2606.04072": {
+      "title": "CADET: A Modular Platform for Evaluating Distributed Cooperative Autonomy in Connected Autonomous Vehicles",
+      "authors": [
+        "Pragya Sharma",
+        "Brian Wang",
+        "Mani Srivastava"
+      ],
+      "abs": "https://arxiv.org/abs/2606.04072",
+      "categories": [
+        "cs.RO",
+        "cs.DC",
+        "cs.LG",
+        "cs.SY",
+        "eess.SY"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2276751308",
+          "name": "Pragya Sharma",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Brian Wang",
+          "aff": null
+        },
+        {
+          "id": "2279547643",
+          "name": "Mani Srivastava",
+          "aff": null
+        }
+      ]
+    },
+    "2606.02894": {
+      "title": "Tiny Collaborative Inference for Occlusion-Robust Object Detection",
+      "authors": [
+        "Chieh-Tung Cheng",
+        "Mustafa Aslanov",
+        "Eiman Kanjo"
+      ],
+      "abs": "https://arxiv.org/abs/2606.02894",
+      "categories": [
+        "cs.CV"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2248408385",
+          "name": "C. Cheng",
+          "aff": null
+        },
+        {
+          "id": "2412712524",
+          "name": "M. Aslanov",
+          "aff": null
+        },
+        {
+          "id": "2316718000",
+          "name": "Eiman Kanjo",
+          "aff": null
+        }
+      ]
+    },
+    "2606.05160": {
+      "title": "GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors",
+      "authors": [
+        "Tianyi Xie",
+        "Haotian Zhang",
+        "Jinhyung Park",
+        "Zi Wang",
+        "Bowen Wen",
+        "Jiefeng Li",
+        "Xueting Li",
+        "Qingwei Ben",
+        "Haoyang Weng",
+        "Yufei Ye",
+        "David Minor",
+        "Tingwu Wang",
+        "Chenfanfu Jiang",
+        "Sanja Fidler",
+        "Jan Kautz",
+        "Linxi Fan",
+        "Yuke Zhu",
+        "Zhengyi Luo",
+        "Umar Iqbal",
+        "Ye Yuan"
+      ],
+      "abs": "https://arxiv.org/abs/2606.05160",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2606.05557": {
+      "title": "AURA: Intent-Directed Probing for Implicit-Need Surfacing in Situated LLM Agents",
+      "authors": [
+        "Yang Li",
+        "Jiaxiang Liu",
+        "Jiang Cai",
+        "Mingkun Xu"
+      ],
+      "abs": "https://arxiv.org/abs/2606.05557",
+      "categories": [
+        "cs.CL"
+      ]
+    },
+    "2606.04050": {
+      "title": "LiftQuant: Continuous Bit-Width LLM via Dimensional Lifting and Projection",
+      "authors": [
+        "Liulu He",
+        "XuanAng Liu",
+        "Juntao Liu",
+        "Taolue Feng",
+        "Ting Lu",
+        "Chunsheng Gan",
+        "Zhiyv Peng",
+        "Yuan Du",
+        "Huanrui Yang",
+        "Yijiang Liu",
+        "Li Du"
+      ],
+      "abs": "https://arxiv.org/abs/2606.04050",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Liulu He",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "XuanAng Liu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Juntao Liu",
+          "aff": null
+        },
+        {
+          "id": "2341708201",
+          "name": "Tao Feng",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Ting Lu",
+          "aff": null
+        },
+        {
+          "id": "1879022737",
+          "name": "Chunsheng Gan",
+          "aff": null
+        },
+        {
+          "id": "2440315982",
+          "name": "Zhiyv Peng",
+          "aff": null
+        },
+        {
+          "id": "2273382618",
+          "name": "Yuan Du",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Huanrui Yang",
+          "aff": null
+        },
+        {
+          "id": "2290136282",
+          "name": "Yijiang Liu",
+          "aff": null
+        },
+        {
+          "id": "2318277060",
+          "name": "Li Du",
+          "aff": null
+        }
+      ]
+    },
+    "2606.05793": {
+      "title": "CollabBench: Benchmarking and Unleashing Collaborative Ability of LLMs with Diverse Players via Proactive Engagement",
+      "authors": [
+        "Hong Qian",
+        "Yuanhao Liu",
+        "Zihan Zhou",
+        "Zongbao Zhang",
+        "Hanjie Ge",
+        "Haotian Shi",
+        "Liang Dou",
+        "Xiangfeng Wang",
+        "Jingwen Yang",
+        "Aimin Zhou"
+      ],
+      "abs": "https://arxiv.org/abs/2606.05793",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY",
+        "cs.LG"
+      ]
+    },
+    "2605.14054": {
+      "title": "Bad Seeing or Bad Thinking? Rewarding Perception for Multimodal Reasoning",
+      "authors": [
+        "Haozhe Wang",
+        "Qixin Xu",
+        "Changpeng Wang",
+        "Taofeng Xue",
+        "Chong Peng",
+        "Wenhu Chen",
+        "Fangzhen Lin"
+      ],
+      "abs": "https://arxiv.org/abs/2605.14054",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Haozhe Wang",
+          "aff": null
+        },
+        {
+          "id": "2379172525",
+          "name": "Qixin Xu",
+          "aff": null
+        },
+        {
+          "id": "2395633162",
+          "name": "Changpeng Wang",
+          "aff": null
+        },
+        {
+          "id": "2325587937",
+          "name": "Taofeng Xue",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Chong Peng",
+          "aff": null
+        },
+        {
+          "id": "2355335933",
+          "name": "Wenhu Chen",
+          "aff": null
+        },
+        {
+          "id": "2343741779",
+          "name": "Fangzhen Lin",
+          "aff": null
+        }
+      ]
+    },
+    "2606.05922": {
+      "title": "Retrospective Harness Optimization: Improving LLM Agents via Self-Preference over Trajectory Rollouts",
+      "authors": [
+        "Wenbo Pan",
+        "Shujie Liu",
+        "Chin-Yew Lin",
+        "Jingying Zeng",
+        "Xianfeng Tang",
+        "Xiangyang Zhou",
+        "Yan Lu",
+        "Xiaohua Jia"
+      ],
+      "abs": "https://arxiv.org/abs/2606.05922",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ]
+    },
+    "2606.06460": {
+      "title": "Will the Agent Recuse Itself? Measuring LLM-Agent Compliance with In-Band Access-Deny Signals",
+      "authors": [
+        "Thamilvendhan Munirathinam"
+      ],
+      "abs": "https://arxiv.org/abs/2606.06460",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ]
+    },
+    "2606.02031": {
+      "title": "OpenWebRL: Demystifying Online Multi-turn Reinforcement Learning for Visual Web Agents",
+      "authors": [
+        "Rui Yang",
+        "Qianhui Wu",
+        "Yuxi Chen",
+        "Hao Bai",
+        "Wenlin Yao",
+        "Hao Cheng",
+        "Baolin Peng",
+        "Huan Zhang",
+        "Tong Zhang",
+        "Jianfeng Gao"
+      ],
+      "abs": "https://arxiv.org/abs/2606.02031",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "primary_affiliation": "Microsoft Research",
+      "s2_authors": [
+        {
+          "id": "145094495",
+          "name": "Rui Yang",
+          "aff": null
+        },
+        {
+          "id": "2108728536",
+          "name": "Qianhui Wu",
+          "aff": "Microsoft Research"
+        },
+        {
+          "id": "2302691178",
+          "name": "Yuxiao Chen",
+          "aff": null
+        },
+        {
+          "id": "2345753784",
+          "name": "Hao Bai",
+          "aff": null
+        },
+        {
+          "id": "2363427861",
+          "name": "Wenlin Yao",
+          "aff": null
+        },
+        {
+          "id": "2280195943",
+          "name": "Hao Cheng",
+          "aff": null
+        },
+        {
+          "id": "2257158371",
+          "name": "Baolin Peng",
+          "aff": null
+        },
+        {
+          "id": "2346046247",
+          "name": "Huan Zhang",
+          "aff": null
+        },
+        {
+          "id": "2362614855",
+          "name": "Tong Zhang",
+          "aff": null
+        },
+        {
+          "id": "2256752511",
+          "name": "Jianfeng Gao",
+          "aff": null
+        }
+      ]
+    },
+    "2606.06399": {
+      "title": "CollabSim: A CSCW-Grounded Methodology for Investigating Collaborative Competence of LLM Agents through Controlled Multi-Agent Experiments",
+      "authors": [
+        "Jiaju Chen",
+        "Bo Sun",
+        "Yuxuan Lu",
+        "Yun Wang",
+        "Dakuo Wang",
+        "Bingsheng Yao"
+      ],
+      "abs": "https://arxiv.org/abs/2606.06399",
+      "categories": [
+        "cs.CL"
+      ]
+    },
+    "2606.04503": {
+      "title": "Smart Picks in the Dark: Towards Efficient RLVR for Reasoning via Tracing Metacognitive Pivots",
+      "authors": [
+        "Guangcheng Zhu",
+        "Shenzhi Yang",
+        "Haobo Wang",
+        "Xing Zheng",
+        "Yingfan MA",
+        "Xuening Feng",
+        "Zhongqi Chen",
+        "Bowen Song",
+        "Weiqiang Wang",
+        "Gang Chen"
+      ],
+      "abs": "https://arxiv.org/abs/2606.04503",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2329155026",
+          "name": "Guangcheng Zhu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Shenzhi Yang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Haobo Wang",
+          "aff": null
+        },
+        {
+          "id": "2398829409",
+          "name": "Xing Zheng",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yingfan MA",
+          "aff": null
+        },
+        {
+          "id": "2348876891",
+          "name": "Xue Feng",
+          "aff": null
+        },
+        {
+          "id": "2363838371",
+          "name": "Zhongqi Chen",
+          "aff": null
+        },
+        {
+          "id": "2364365702",
+          "name": "Bowen Song",
+          "aff": null
+        },
+        {
+          "id": "2363674582",
+          "name": "Weiqiang Wang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Gang Chen",
+          "aff": null
+        }
+      ]
+    },
+    "2606.04773": {
+      "title": "NextMotionQA: Benchmarking and Judging Human Motion Understanding with Vision-Language Models",
+      "authors": [
+        "Yong Cao",
+        "Chuqiao Li",
+        "Xianghui Xie",
+        "Gerard Pons-Moll",
+        "Andreas Geiger"
+      ],
+      "abs": "https://arxiv.org/abs/2606.04773",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ]
+    },
+    "2606.06344": {
+      "title": "Equivariant Neural Belief Propagation",
+      "authors": [
+        "Zehua Cheng",
+        "Wei Dai",
+        "Jiahao Sun"
+      ],
+      "abs": "https://arxiv.org/abs/2606.06344",
+      "categories": [
+        "cs.LG",
+        "cs.SC"
+      ]
+    },
+    "2606.04534": {
+      "title": "MAD: Mapping-Aware World Models for Agile Quadrotor Flight",
+      "authors": [
+        "Xinhong Zhang",
+        "Runqing Wang",
+        "Yunfan Ren",
+        "Ding Yu",
+        "Boyu Zhou",
+        "Jian Sun",
+        "Fang Deng",
+        "Jie Chen",
+        "Gang Wang"
+      ],
+      "abs": "https://arxiv.org/abs/2606.04534",
+      "categories": [
+        "cs.RO"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Xinhong Zhang",
+          "aff": null
+        },
+        {
+          "id": "2345407885",
+          "name": "Runqing Wang",
+          "aff": null
+        },
+        {
+          "id": "1490775405",
+          "name": "Yunfan Ren",
+          "aff": null
+        },
+        {
+          "id": "2440359335",
+          "name": "Ding Yu",
+          "aff": null
+        },
+        {
+          "id": "2340938923",
+          "name": "Boyu Zhou",
+          "aff": null
+        },
+        {
+          "id": "2152148509",
+          "name": "Jian Sun",
+          "aff": null
+        },
+        {
+          "id": "2266469703",
+          "name": "Fang Deng",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jie Chen",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Gang Wang",
+          "aff": null
+        }
+      ]
+    },
+    "2602.16705": {
+      "title": "HERO: Learning Humanoid End-Effector Control for Visual Whole-Body Open-Vocabulary Object Grasping",
+      "authors": [
+        "Runpei Dong",
+        "Ziyan Li",
+        "Arjun Gupta",
+        "Xialin He",
+        "Saurabh Gupta"
+      ],
+      "abs": "https://arxiv.org/abs/2602.16705",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "citation_count": 2,
+      "influential_count": 0,
+      "primary_affiliation": "University of Illinois",
+      "s2_authors": [
+        {
+          "id": "2056965063",
+          "name": "Runpei Dong",
+          "aff": "University of Illinois, Urbana-Champaign"
+        },
+        {
+          "id": "2118275100",
+          "name": "Z. Li",
+          "aff": null
+        },
+        {
+          "id": "2399102612",
+          "name": "Xialin He",
+          "aff": null
+        },
+        {
+          "id": "2266438739",
+          "name": "Saurabh Gupta",
+          "aff": null
+        }
+      ]
+    },
+    "2606.06388": {
+      "title": "Humans' ALMANAC: A Human Collaboration Dataset of Action-Level Mental Model Annotations for Agent Collaboration",
+      "authors": [
+        "Jiaju Chen",
+        "Yuxuan Lu",
+        "Jiayi Su",
+        "Chaoran Chen",
+        "Songlin Xiao",
+        "Zheng Zhang",
+        "Yun Wang",
+        "Yunyao Li",
+        "Jian Zhao",
+        "Tongshuang Wu",
+        "Toby Jia-Jun Li",
+        "Dakuo Wang",
+        "Bingsheng Yao"
+      ],
+      "abs": "https://arxiv.org/abs/2606.06388",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ]
+    },
+    "2606.05567": {
+      "title": "ZERO-APT: A Closed-Loop Adversarial Framework for LLM-Driven Automated Penetration Testing under Intelligent Defense",
+      "authors": [
+        "Anlan Zheng",
+        "Tiantian Zhu"
+      ],
+      "abs": "https://arxiv.org/abs/2606.05567",
+      "categories": [
+        "cs.CR",
+        "cs.MA"
+      ]
+    },
+    "2606.05728": {
+      "title": "DiG-Plan: Mitigating Early Commitment for Tool-Graph Planning via Diffusion Guidance",
+      "authors": [
+        "Yansi Li",
+        "Zhuosheng Zhang"
+      ],
+      "abs": "https://arxiv.org/abs/2606.05728",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ]
+    },
+    "2606.05468": {
+      "title": "FlowPRO: Reward-Free Reinforced Fine-Tuning of Flow-Matching VLAs via Proximalized Preference Optimization",
+      "authors": [
+        "Yihao Wu",
+        "He Zhang",
+        "Junbo Tan",
+        "Xueqian Wang",
+        "Zhengyou Zhang"
+      ],
+      "abs": "https://arxiv.org/abs/2606.05468",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2606.04847": {
+      "title": "MusaCoder: Native GPU Kernel Generation with Full-Stack Training on Moore Threads GPU",
+      "authors": [
+        "Kun Cheng",
+        "Songshuo Lu",
+        "Sicong Liao",
+        "Tankun Li",
+        "Yafei Zhang",
+        "Dong Yang",
+        "Qiheng Lv",
+        "Hua Wang",
+        "Zhi Chen",
+        "Yaohua Tang"
+      ],
+      "abs": "https://arxiv.org/abs/2606.04847",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.LG"
+      ]
+    },
+    "2606.06100": {
+      "title": "HyperVis: Continuous Latent Visual Relational Graphs on the Lorentz Hyperboloid for Compositional Reasoning",
+      "authors": [
+        "Moshiur Farazi",
+        "Sameera Ramasinghe",
+        "Mahbub Ahmed Turza",
+        "Shafin Rahman"
+      ],
+      "abs": "https://arxiv.org/abs/2606.06100",
+      "categories": [
+        "cs.CV"
+      ]
+    },
+    "2606.04046": {
+      "title": "Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation",
+      "authors": [
+        "Boyuan Xiao",
+        "Bohong Chen",
+        "Yumeng Li",
+        "Ji Feng",
+        "Yao-Xiang Ding",
+        "Kun Zhou"
+      ],
+      "abs": "https://arxiv.org/abs/2606.04046",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2318324429",
+          "name": "Bo Xiao",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Bohong Chen",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yumeng Li",
+          "aff": null
+        },
+        {
+          "id": "2391653561",
+          "name": "J. Feng",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yao-Xiang Ding",
+          "aff": null
+        },
+        {
+          "id": "2261746101",
+          "name": "Kun Zhou",
+          "aff": null
+        }
+      ]
+    },
+    "2606.05232": {
+      "title": "Differentiable Efficient Operator Search",
+      "authors": [
+        "Xiaohuan Pei",
+        "Jiyuan Zhang",
+        "Yuanfan Guo",
+        "Weiguo Feng",
+        "Tao Huang",
+        "Cho-Jui Hsieh",
+        "Chang Xu"
+      ],
+      "abs": "https://arxiv.org/abs/2606.05232",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ]
+    },
+    "2606.06267": {
+      "title": "Many Circuits, One Mechanism: Input Variation and Evaluation Granularity in Circuit Discovery",
+      "authors": [
+        "Alireza Bayat Makou",
+        "Jingcheng Niu",
+        "Subhabrata Dutta",
+        "Iryna Gurevych"
+      ],
+      "abs": "https://arxiv.org/abs/2606.06267",
+      "categories": [
+        "cs.CL"
+      ]
+    },
+    "2606.06094": {
+      "title": "Integrating Mechanistic and Data-Driven Models for Neurological Disorders through Differentiable Programming",
+      "authors": [
+        "Shah Pallav Dhanendrakumar",
+        "Saikat Pal",
+        "Sitikantha Roy"
+      ],
+      "abs": "https://arxiv.org/abs/2606.06094",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "math.DS",
+        "physics.med-ph"
+      ]
+    },
+    "2606.06178": {
+      "title": "Learning to Route LLMs from Implicit Cost-Performance Preferences via Meta-Learning",
+      "authors": [
+        "Jiahao Zeng",
+        "Ming Tang",
+        "Ningning Ding"
+      ],
+      "abs": "https://arxiv.org/abs/2606.06178",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ]
+    },
+    "2606.04009": {
+      "title": "Counterfactual Explanations for Deep Two-Sample Testing",
+      "authors": [
+        "Wei-Cheng Lai",
+        "Marco Simnacher",
+        "Christoph Lippert"
+      ],
+      "abs": "https://arxiv.org/abs/2606.04009",
+      "categories": [
+        "stat.ML",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2260753459",
+          "name": "Wei-Cheng Lai",
+          "aff": null
+        },
+        {
+          "id": "2330191516",
+          "name": "Marco Simnacher",
+          "aff": null
+        },
+        {
+          "id": "2261493650",
+          "name": "Christoph Lippert",
+          "aff": null
+        }
+      ]
+    },
+    "2606.04806": {
+      "title": "NoRA: Evaluating Grounded Reasonableness in Visual First-person Normative Action Reasoning",
+      "authors": [
+        "Sichao Li",
+        "Sai Ma",
+        "Daniel Kilov",
+        "Secil Yanik Guyot",
+        "Zhuang Li",
+        "Seth Lazar"
+      ],
+      "abs": "https://arxiv.org/abs/2606.04806",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ]
+    }
+  }
+}
