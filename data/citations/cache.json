@@ -121582,6 +121582,19 @@
 "found": true,
 "influential_count": 0
 },
+"2606.12349": {
+"authors": [
+{
+"aff": null,
+"id": "2441892624",
+"name": "Paria Rezayan"
+}
+],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": true,
+"influential_count": 0
+},
 "2606.12372": {
 "authors": [
 {
@@ -122399,6 +122412,118 @@
 "citation_count": 0,
 "fetched": "2026-06-13",
 "found": true,
+"influential_count": 0
+},
+"2606.13682": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.13968": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14006": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14066": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14123": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14146": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14179": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14202": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14216": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14238": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14292": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14354": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14356": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14475": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14517": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
+"influential_count": 0
+},
+"2606.14674": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-15",
+"found": false,
 "influential_count": 0
 }
 }
