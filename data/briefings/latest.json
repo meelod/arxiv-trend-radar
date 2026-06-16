@@ -1,128 +1,144 @@
 {
-  "date": "2026-06-14",
+  "date": "2026-06-15",
   "paper_count": 400,
   "model": "gpt-4o-mini",
   "language": "English",
-  "headline": "Notable focus on AI inference optimization and safety in today's papers.",
-  "executive_overview": "Today's papers exhibit a strong emphasis on optimizing AI inference systems, particularly for large language models (LLMs) and robotics. A significant number introduce innovative methodologies for improving the efficiency of distributed AI workloads, with discussions surrounding memory management and model selection strategies. Additionally, several works tackle the implications of utilizing AI in safety-critical applications, especially in autonomous systems and medical settings.",
+  "headline": "Concentration of AI Infrastructure and Multi-Agent Systems Papers Dominates Today's Submissions.",
+  "executive_overview": "Today's batch of arXiv papers showcases significant advancements in AI inference infrastructure, alongside developments in multi-agent systems and robotics policy learning. A noticeable trend is the innovation in hardware adaptations for efficient AI model execution, particularly focused on low-power environments. Alongside these, several papers tackle the challenges and methodologies for optimizing complex multi-agent interactions, indicating a vibrant research landscape in these areas.",
   "themes": [
     {
-      "name": "Optimizing AI Inference Systems",
-      "summary": "A number of papers address the challenges and approaches in enhancing AI inference efficiency, particularly in distributed settings. Notable works include 'STREAM: Multi-Tier LLM Inference Middleware with Dual-Channel HPC Token Streaming' [2606.13968] and 'Plaiground: SLO-Driven Runtime Model Selection for Compound AI Systems' [2606.14356], both focusing on improving the management and execution of workloads in AI contexts. Papers like 'CacheRL: Multi-Turn Tool-Calling Agents via Cached Rollouts and Hybrid Reward' [2606.14179] contribute methods that reduce computational load while maintaining performance, showcasing emerging trends in adaptive inference methods.",
+      "name": "AI Inference Infrastructure",
+      "summary": "A notable cluster of papers today emphasizes improvements in AI inference infrastructure. For instance, papers like [2606.16190] and [2606.16148] discuss methods for optimizing model performance on edge devices and systems-on-chip (SoC) architectures, particularly tailoring designs for low-latency and efficient execution. Additionally, [2606.13578] presents advances in LLM inference simulation, underscoring the need for architectural completeness for efficient AI serving, while [2606.16143] introduces a customized RISC-V SoC targeting probabilistic models, showcasing the ongoing efforts to enhance inference capabilities in resource-constrained environments.",
       "paper_ids": [
-        "2606.13968",
-        "2606.14356",
-        "2606.14179"
+        "2606.16190",
+        "2606.16148",
+        "2606.13578",
+        "2606.16143"
       ]
     },
     {
-      "name": "AI and Safety in Robotics",
-      "summary": "Several papers reflect increasing awareness of safety in AI-driven robotics applications. For instance, 'ReactSim-Bench: Benchmarking Reactive Behavior World Model Simulation in Autonomous Driving' [2606.14006] and 'When and How Severely: Scenario-Specific Safety Envelopes for Driving VLAs' [2606.14202] explore frameworks that ensure operational safety in autonomous driving scenarios, fundamentally important for real-world applications. These works underline the necessity of ensuring robustness in AI systems while handling complex interactions in unpredictable environments.",
+      "name": "Multi-Agent Systems and Tool-Using Agents",
+      "summary": "Papers in this theme delve into the complexities of multi-agent systems and the evolution of tool-using agents. For instance, [2606.16534] discusses agentic AI-generated code on supercomputers, expanding the capabilities of LLMs in collaborative environments. Similarly, [2606.14179] and [2606.16533] tackle challenges in deploying multi-agent systems efficiently, focusing on concurrency control and tool-calling. Meanwhile, works such as [2606.16545] explore framework designs for ensuring reliable communication and collaboration among agents, suggesting a robust exploration of synergy in multi-agent interactions.",
       "paper_ids": [
-        "2606.14006",
-        "2606.14202"
-      ]
-    },
-    {
-      "name": "Enhancements for Multi-Agent Systems",
-      "summary": "There is a notable focus on improving the performance of multi-agent systems, particularly in how they interact and learn from dynamic environments. Papers like 'CacheRL: Multi-Turn Tool-Calling Agents via Cached Rollouts and Hybrid Reward' [2606.14179] and 'FastContext: Training Efficient Repository Explorer for Coding Agents' [2606.14066] illustrate novel approaches to scaling the efficiency and adaptability of agents through memory aids and caching techniques, fostering more effective autonomous interactions.",
-      "paper_ids": [
+        "2606.16534",
         "2606.14179",
-        "2606.14066"
+        "2606.16533",
+        "2606.16545"
       ]
     },
     {
-      "name": "Efficient Learning and Data Management",
-      "summary": "Today's literature includes contributions toward enhancing learning paradigms and data management techniques relevant to AI and machine learning. Papers such as 'Micro-Swarm Locomotion Optimization in Dynamic Flow using Multi-Objective Multi-Agent Reinforcement Learning' [2606.14517] emphasize the complexities of coordinating multiple agents in dynamic environments, while 'PLRTune: Importance Pre-Sampling and LLM-Guided Reinforcement Learning for Automatic Database Tuning' [2606.14216] highlights automated approaches to optimize database interactions, illustrating broader efforts to streamline operations across AI workflows.",
+      "name": "Robotics Policy Learning",
+      "summary": "The area of robotics policy learning presents significant advancements aimed at improving robotic manipulation and action execution. Papers like [2606.16817] and [2606.15057] propose novel frameworks for enabling robots to learn from complex environments and refine their actions through interactive simulations. Additional works, such as [2610.12560] and [2601.08010], highlight methods to enhance robot performance through vision-language-action models and memory-augmented architectures that facilitate consistent decision-making under varied situational contexts.",
       "paper_ids": [
-        "2606.14517",
-        "2606.14216"
+        "2606.16817",
+        "2606.15057",
+        "2601.08010"
+      ]
+    },
+    {
+      "name": "Key-Value Cache Management",
+      "summary": "A noteworthy focus on improving cache management techniques for AI models is evident today. Papers like [2606.06302] and [2606.15024] provide insights into optimizing KV cache usage and reclaiming memory efficiently, which is crucial for large language models operating in memory-constrained settings. Other works such as [2606.16711] propose methodologies for enhancing cache performance through innovative scheduling and dynamic adaptation, highlighting the ongoing challenge of managing memory requirements during peak load conditions.",
+      "paper_ids": [
+        "2606.06302",
+        "2606.15024"
+      ]
+    },
+    {
+      "name": "Quantitative Trading and Financial AI",
+      "summary": "Several papers reflect ongoing research efforts at the intersection of AI and quantitative trading. Particularly compelling is [2606.16059], which surveys the Mojo programming language poised to alleviate the burdens of implementing quant strategies across environments, aligning well with the user's interests in the efficiency and effectiveness of market microstructure and algorithmic execution. Other papers embrace quantitative methods to uncover patterns in trading behaviors, emphasizing the synergy between AI and finance.",
+      "paper_ids": [
+        "2606.16059"
       ]
     }
   ],
   "top_picks": [
     {
-      "arxiv_id": "2606.13968",
-      "title": "STREAM: Multi-Tier LLM Inference Middleware with Dual-Channel HPC Token Streaming",
-      "plain_english": "The authors created a middleware system that combines large language model processing with high-performance computing to enhance efficiency in token streaming for various applications.",
-      "why_it_matters": "This aligns directly with your interest in AI inference infrastructure, specifically improving the performance and management capabilities of LLM systems.",
+      "arxiv_id": "2606.16190",
+      "title": "Embedded Arena: Iterative Optimization via Hardware Feedback",
+      "plain_english": "This paper develops a framework where an AI agent optimizes machine learning models for edge devices by incorporating feedback from actual hardware, rather than relying on manual adjustments.",
+      "why_it_matters": "This directly aligns with your interest in AI inference infrastructure, particularly in low-latency serving and hardware adaptations for model deployment.",
       "relevance_score": 10
     },
     {
       "arxiv_id": "2606.14179",
       "title": "CacheRL:Multi-Turn Tool-Calling Agents via Cached Rollouts and Hybrid Reward",
-      "plain_english": "This paper introduces a method for training small language model agents that approach the performance of larger models while consuming significantly less compute power by utilizing cached environments for learning.",
-      "why_it_matters": "This contributes to your focus on efficient AI inference and low-latency serving, providing techniques that can help improve both resource usage and performance in multi-agent systems.",
-      "relevance_score": 10
-    },
-    {
-      "arxiv_id": "2606.14356",
-      "title": "PLAIground: SLO-Driven Runtime Model Selection for Compound AI Systems in the Edge-Cloud-Space Continuum",
-      "plain_english": "The authors developed a system that dynamically chooses different AI models to maintain service level objectives for various tasks during runtime.",
-      "why_it_matters": "This ties in with your research on optimizing AI infrastructure and addresses the specific concerns of low-latency operations in complex environments, a key interest of yours.",
+      "plain_english": "The authors introduce a method for training smaller agent models capable of effectively using tools over multiple steps, significantly reducing compute requirements while achieving competitive accuracy.",
+      "why_it_matters": "This research highlights advancements in multi-agent systems that are relevant to your focus on tool-using LLM agents, specifically regarding efficiency improvements.",
       "relevance_score": 9
     },
     {
-      "arxiv_id": "2606.14123",
-      "title": "Recovering Stranded Discrimination in Knowledge Tracing: Per-Item Bias Correction via Empirical-Bayes Shrinkage",
-      "plain_english": "The paper proposes a method for improving educational AI systems by correcting biases in learning models, ensuring better predictive accuracy.",
-      "why_it_matters": "It's relevant to your interest in algorithmic execution and the biases that can affect decision-making and performance in AI systems.",
+      "arxiv_id": "2606.15579",
+      "title": "Your Agent Has a Genome: Sequence-Level Behavioral Analysis and Runtime Governance of LLM-Powered Autonomous Agents",
+      "plain_english": "This paper introduces a framework to analyze the behavior of LLM agents in real-time, encoding their actions and allowing for detailed evaluation of problem-solving patterns.",
+      "why_it_matters": "Understanding agent behavior at this level is crucial for improving multi-agent systems, which is one of your core research interests.",
       "relevance_score": 8
     },
     {
-      "arxiv_id": "2606.12349",
-      "title": "Traceable Virtual Sea Trials in the Marine Robotics Unity Simulator for Manoeuvring Assessment of Unmanned Surface Vehicles",
-      "plain_english": "The authors present a framework for conducting virtual sea trials using a simulator to assess the maneuvering capabilities of unmanned surface vehicles.",
-      "why_it_matters": "This research touches on robotics policy learning and assessment frameworks, relevant to your focus on humanoid manipulation and policy learning models.",
+      "arxiv_id": "2606.13968",
+      "title": "STREAM: Multi-Tier LLM Inference Middleware with Dual-Channel HPC Token Streaming",
+      "plain_english": "This paper presents a middleware system designed to enhance the performance of LLM inference across heterogeneous hardware by streamlining token handling processes during execution.",
+      "why_it_matters": "The focus on optimizing LLM inference systems is directly relevant to your interest in AI inference infrastructure and low-latency serving technologies.",
       "relevance_score": 8
     },
     {
-      "arxiv_id": "2606.14238",
-      "title": "When and How Severely: Scenario-Specific Safety Envelopes for Driving VLAs",
-      "plain_english": "This research analyzes the safety performance of Vision-Language-Action models in driving scenarios, providing critical assessments of when failures might occur.",
-      "why_it_matters": "Directly relevant to your concern about safety in robotics and LLM applications, as it discusses frameworks for ensuring safe operation in autonomous driving tasks.",
-      "relevance_score": 8
-    },
-    {
-      "arxiv_id": "2606.14674",
-      "title": "AgentSpec: Understanding Embodied Agent Scaffolds Through Controlled Composition",
-      "plain_english": "This paper introduces a structured framework to evaluate and compare the components of multimodal agent systems, enhancing the understanding of their interactions.",
-      "why_it_matters": "This ties into your interest in multi-agent systems and tool-using LLM agents by promoting deeper comprehension of their architectural frameworks.",
-      "relevance_score": 7
-    },
-    {
-      "arxiv_id": "2606.13682",
-      "title": "A Deep Reinforcement Learning (DRL)-Based Transformer Method for Solving the Open Shop Scheduling Problem",
-      "plain_english": "The authors propose a transformer-based method using deep reinforcement learning to solve complex scheduling problems in industrial settings.",
-      "why_it_matters": "This aligns with your interest in algorithmic solutions in quant trading and market microstructure, as it addresses operational efficiencies that could be pivotal in algorithmic execution contexts.",
-      "relevance_score": 7
-    },
-    {
-      "arxiv_id": "2606.14292",
-      "title": "A Robust Point Cloud Analysis Framework Inspired By Primary Visual Cortex",
-      "plain_english": "This work presents a new architecture for analyzing 3D point clouds in a more biologically inspired way, improving robustness in applications such as robotics.",
-      "why_it_matters": "It's relevant due to your interest in robotics and AI systems that require accurate environmental interactions, emphasizing the need for robustness.",
-      "relevance_score": 7
-    },
-    {
-      "arxiv_id": "2606.14146",
-      "title": "A Programmer's Guide to Cascaded Adaptive Combiners: Online Learning by Biologically Accurate Models of Multilayer Neuron Networks",
-      "plain_english": "The authors provide a guide to a new model intended to capture biological aspects in neural network learning, which improves effectiveness in real applications.",
-      "why_it_matters": "This paper echoes your interest in hardware-architecture mismatches, indicating how biology-inspired improvements could influence next-gen inference systems.",
-      "relevance_score": 6
+      "arxiv_id": "2606.14923",
+      "title": "Trust Between AI Agents: Measuring Formation, Breakage, and Recovery, with Implications for Governing Multi-Agent Systems",
+      "plain_english": "The research explores how trust develops and breaks between AI agents and proposes methods to measure and restore trust dynamically in multi-agent systems.",
+      "why_it_matters": "This paper delves into multi-agent systems, addressing the critical aspect of trust that underpins successful agentic interactions, aligning well with your research interests.",
+      "relevance_score": 9
     }
   ],
   "worth_noting": [
     {
-      "arxiv_id": "2606.14475",
-      "one_liner": "Explores a novel tactile imaging methodology using large-scale data to enhance robotic sensory responses."
+      "arxiv_id": "2606.16148",
+      "one_liner": "Discusses a new multicore SoC design for probabilistic models aimed at enhancing inference efficiency."
     },
     {
-      "arxiv_id": "2606.14354",
-      "one_liner": "Evaluates the interpretability of AI in clinical reasoning through an empirical study."
+      "arxiv_id": "2606.14127",
+      "one_liner": "Examines a new multi-stage RAG protocol for optimizing remote queries with LLMs."
+    },
+    {
+      "arxiv_id": "2606.15822",
+      "one_liner": "Presents a novel approach for low-latency video processing in multicam setups using VLA."
     }
   ],
   "paper_index": {
+    "2606.16190": {
+      "title": "Embedded Arena: Iterative Optimization via Hardware Feedback",
+      "authors": [
+        "Zhihan Zhang",
+        "Alexander Le Metzger",
+        "Jiuyang Lyu",
+        "Chun-Cheng Chang",
+        "Jiayi Shao",
+        "Yujia Liu",
+        "Emmanuel Azuh Mensah",
+        "Edward Wang",
+        "Kurtis Heimerl",
+        "Gregory D. Abowd",
+        "Shwetak Patel",
+        "Natasha Jaques",
+        "Vikram Iyer"
+      ],
+      "abs": "https://arxiv.org/abs/2606.16190",
+      "categories": [
+        "cs.AR",
+        "cs.AI"
+      ]
+    },
+    "2606.16143": {
+      "title": "AIA: A Customized Multi-core RISC-V SoC for Discrete Sampling Workloads in 16 nm",
+      "authors": [
+        "Shirui Zhao",
+        "Nimish Shah",
+        "Wannes Meert",
+        "Marian Verhelst"
+      ],
+      "abs": "https://arxiv.org/abs/2606.16143",
+      "categories": [
+        "cs.AR"
+      ]
+    },
     "2606.13968": {
       "title": "STREAM: Multi-Tier LLM Inference Middleware with Dual-Channel HPC Token Streaming",
       "authors": [
@@ -137,18 +153,155 @@
         "cs.AI"
       ]
     },
-    "2606.14356": {
-      "title": "PLAIground: SLO-Driven Runtime Model Selection for Compound AI Systems in the Edge-Cloud-Space Continuum",
+    "2606.16534": {
+      "title": "Generated, Parallel, Scalable? A Study of Agentic AI-Generated Julia Code on Supercomputers",
       "authors": [
-        "Milos Gravara",
-        "Cynthia Marcelino",
-        "Andrija Stanisic",
-        "Stefan Nastic"
+        "Linus Bantel",
+        "Anna-Lena Roth",
+        "Jonas Posner",
+        "Dirk PflÃ¼ger"
       ],
-      "abs": "https://arxiv.org/abs/2606.14356",
+      "abs": "https://arxiv.org/abs/2606.16534",
       "categories": [
-        "cs.DC",
-        "cs.AI"
+        "cs.DC"
+      ]
+    },
+    "2606.16148": {
+      "title": "AIA: A 16nm Multicore SoC for Approximate Inference Acceleration Exploiting Non-normalized Knuth-Yao Sampling and Inter-Core Register Sharing",
+      "authors": [
+        "Shirui Zhao",
+        "Nimish Shah",
+        "Wannes Meert",
+        "Marian Verhelst"
+      ],
+      "abs": "https://arxiv.org/abs/2606.16148",
+      "categories": [
+        "cs.AR"
+      ]
+    },
+    "2606.13578": {
+      "title": "LabVLA: Grounding Vision-Language-Action Models in Scientific Laboratories",
+      "authors": [
+        "Baochang Ren",
+        "Xinjie Liu",
+        "Xi Chen",
+        "Yanshuo Liu",
+        "Chenxi Li",
+        "Daqi Gao",
+        "Zeqin Su",
+        "Jintao Xing",
+        "Zirui Xue",
+        "Rui Li",
+        "Xiangyu Zhao",
+        "Shuofei Qiao",
+        "Minting Pan",
+        "Wangmeng Zuo",
+        "Lei Bai",
+        "Dongzhan Zhou",
+        "Ningyu Zhang",
+        "Huajun Chen"
+      ],
+      "abs": "https://arxiv.org/abs/2606.13578",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.MM",
+        "cs.RO"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "aff": null,
+          "id": "2353958467",
+          "name": "Baochang Ren"
+        },
+        {
+          "aff": null,
+          "id": "2284126155",
+          "name": "Xinjie Liu"
+        },
+        {
+          "aff": null,
+          "id": "2384643239",
+          "name": "Xi Chen"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Yanshuo Liu"
+        },
+        {
+          "aff": null,
+          "id": "2362521405",
+          "name": "Chenxi Li"
+        },
+        {
+          "aff": null,
+          "id": "2397169751",
+          "name": "Daqiang Gao"
+        },
+        {
+          "aff": null,
+          "id": "2442096395",
+          "name": "Zeqin Su"
+        },
+        {
+          "aff": null,
+          "id": "2357088038",
+          "name": "Jintao Xing"
+        },
+        {
+          "aff": null,
+          "id": "2442094074",
+          "name": "Zirui Xue"
+        },
+        {
+          "aff": null,
+          "id": "2366504943",
+          "name": "Rui Li"
+        },
+        {
+          "aff": null,
+          "id": "2442111801",
+          "name": "Xiangyu Zhao"
+        },
+        {
+          "aff": null,
+          "id": "2190751119",
+          "name": "Shuofei Qiao"
+        },
+        {
+          "aff": null,
+          "id": "2027156855",
+          "name": "Minting Pan"
+        },
+        {
+          "aff": null,
+          "id": "2363810664",
+          "name": "Wangmeng Zuo"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Lei Bai"
+        },
+        {
+          "aff": null,
+          "id": "2359612649",
+          "name": "Dongzhan Zhou"
+        },
+        {
+          "aff": null,
+          "id": "2382942499",
+          "name": "Ningyu Zhang"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Huajun Chen"
+        }
       ]
     },
     "2606.14179": {
@@ -166,213 +319,319 @@
         "cs.CL"
       ]
     },
-    "2606.14066": {
-      "title": "FastContext: Training Efficient Repository Explorer for Coding Agents",
+    "2606.16059": {
+      "title": "Mojo: A Promising Tool for Scalable Financial AI Efficiency",
       "authors": [
-        "Shaoqiu Zhang",
-        "Maoquan Wang",
-        "Yuling Shi",
-        "Yuhang Wang",
-        "Xiaodong Gu",
-        "Yongqiang Yao",
-        "Rao Fu",
-        "Shengyu Fu"
+        "Henry Han"
       ],
-      "abs": "https://arxiv.org/abs/2606.14066",
-      "categories": [
-        "cs.SE"
-      ]
-    },
-    "2606.14674": {
-      "title": "AgentSpec: Understanding Embodied Agent Scaffolds Through Controlled Composition",
-      "authors": [
-        "Jixuan Chen",
-        "Jianzhi Shen",
-        "Haoqiang Kang",
-        "Zhi Hong",
-        "Qingyi Jiang",
-        "Soham Bose",
-        "Yiming Zhang",
-        "Leon Leng",
-        "Amit Vyas",
-        "Lingjun Mao",
-        "Siru Ouyang",
-        "Kun Zhou",
-        "Lianhui Qin"
-      ],
-      "abs": "https://arxiv.org/abs/2606.14674",
-      "categories": [
-        "cs.CL"
-      ]
-    },
-    "2606.14202": {
-      "title": "MeEvo: Metacognitive Evolution Combined with Natural Evolution for Automatic Heuristic Design",
-      "authors": [
-        "Zishang Qiu",
-        "Xinan Chen",
-        "Rong Qu",
-        "Ruibin Bai"
-      ],
-      "abs": "https://arxiv.org/abs/2606.14202",
-      "categories": [
-        "cs.NE",
-        "cs.AI"
-      ]
-    },
-    "2606.14517": {
-      "title": "From Shield to Target: Denial-of-Service Attacks on LLM-Based Agent Guardrails",
-      "authors": [
-        "Yuguang Zhou",
-        "Xunguang Wang",
-        "Pingchuan Ma",
-        "Zhantong Xue",
-        "Zhaoyu Wang",
-        "Shuai Wang"
-      ],
-      "abs": "https://arxiv.org/abs/2606.14517",
-      "categories": [
-        "cs.CR",
-        "cs.AI"
-      ]
-    },
-    "2606.13682": {
-      "title": "A Deep Reinforcement Learning (DRL)-Based Transformer Method for Solving the Open Shop Scheduling Problem",
-      "authors": [
-        "Faezeh Ardali",
-        "Mwembezi A. Nyelele",
-        "Gerald M. Knapp"
-      ],
-      "abs": "https://arxiv.org/abs/2606.13682",
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ]
-    },
-    "2606.14475": {
-      "title": "Value-order Decomposition for Generalist Anomaly Detection",
-      "authors": [
-        "Miaoyun Zhao",
-        "Jing Chen",
-        "Miaoni Zhao",
-        "Qiang Zhang"
-      ],
-      "abs": "https://arxiv.org/abs/2606.14475",
-      "categories": [
-        "cs.CV"
-      ]
-    },
-    "2606.14292": {
-      "title": "A Robust Point Cloud Analysis Framework Inspired By Primary Visual Cortex",
-      "authors": [
-        "Jisheng Dang",
-        "Dengyue Pan",
-        "Delin Deng",
-        "Yifan Zhang",
-        "Bimei Wang",
-        "Hong Peng",
-        "Bin Hu",
-        "Qi Tian",
-        "Tat-Seng Chua"
-      ],
-      "abs": "https://arxiv.org/abs/2606.14292",
-      "categories": [
-        "cs.CV"
-      ]
-    },
-    "2606.14238": {
-      "title": "When and How Severely: Scenario-Specific Safety Envelopes for Driving VLAs",
-      "authors": [
-        "Abhinaw Priyadershi",
-        "Jelena Frtunikj"
-      ],
-      "abs": "https://arxiv.org/abs/2606.14238",
-      "categories": [
-        "cs.RO",
-        "cs.AI"
-      ]
-    },
-    "2606.14006": {
-      "title": "HARBOR: Heading Analysis and Reconstruction from Behavioral Observation and Radar",
-      "authors": [
-        "Joao P. A. Dantas",
-        "Paulo F. Silva Filho",
-        "Jelton A. Cunha",
-        "Gabriel Dietzsch"
-      ],
-      "abs": "https://arxiv.org/abs/2606.14006",
-      "categories": [
-        "cs.CV",
-        "cs.ET"
-      ]
-    },
-    "2606.14123": {
-      "title": "Recovering Stranded Discrimination in Knowledge Tracing: Per-Item Bias Correction via Empirical-Bayes Shrinkage",
-      "authors": [
-        "Xiaoran Yan",
-        "Cheng Tang",
-        "Atsushi Shimada"
-      ],
-      "abs": "https://arxiv.org/abs/2606.14123",
+      "abs": "https://arxiv.org/abs/2606.16059",
       "categories": [
         "cs.LG",
         "cs.AI"
       ]
     },
-    "2606.14354": {
-      "title": "MUFFLe: Efficient Model Update Compression via Generalized Deduplication for Federated Learning",
+    "2606.15579": {
+      "title": "Your Agent Has a Genome: Sequence-Level Behavioral Analysis and Runtime Governance of LLM-Powered Autonomous Agents",
       "authors": [
-        "Xiaobo Zhao",
-        "Daniel E. Lucani"
+        "Sidi Deng"
       ],
-      "abs": "https://arxiv.org/abs/2606.14354",
+      "abs": "https://arxiv.org/abs/2606.15579",
       "categories": [
-        "cs.LG"
+        "cs.AI",
+        "cs.LG",
+        "cs.MA",
+        "cs.SE"
       ]
     },
-    "2606.14216": {
-      "title": "Short-Horizon Position Accuracy of Single-Track Models: Implications for Motion Planning of Autonomous Vehicles",
+    "2606.15024": {
+      "title": "Resilient Consensus in Agentic AI",
       "authors": [
-        "Aron J. Aertssen",
-        "Lars A. T. H. van Alen",
-        "Igo J. M. Besselink",
-        "Rudolf G. M. Huisman",
-        "RenÃ© M. J. G. van de Molengraft"
+        "Sribalaji C. Anand",
+        "George J. Pappas"
       ],
-      "abs": "https://arxiv.org/abs/2606.14216",
+      "abs": "https://arxiv.org/abs/2606.15024",
       "categories": [
-        "cs.RO",
+        "cs.MA",
+        "cs.AI",
         "cs.SY",
         "eess.SY"
       ]
     },
-    "2606.14146": {
-      "title": "A Programmer's Guide to Cascaded Adaptive Combiners: Online Learning by Biologically Accurate Models of Multilayer Neuron Networks",
+    "2606.06302": {
+      "title": "Tangram: Unlocking Non-Uniform KV Cache Compression for Efficient Multi-turn LLM Serving",
       "authors": [
-        "Martin Nilsson",
-        "Denis Kleyko"
+        "Hyungmin Kim",
+        "Minsoo Kim",
+        "Hongseok Kim",
+        "Jungwook Choi"
       ],
-      "abs": "https://arxiv.org/abs/2606.14146",
+      "abs": "https://arxiv.org/abs/2606.06302",
       "categories": [
-        "cs.NE"
+        "cs.LG",
+        "cs.SE"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "primary_affiliation": "Apple",
+      "s2_authors": [
+        {
+          "id": "2169746212",
+          "name": "Hyung-Se Kim",
+          "aff": null
+        },
+        {
+          "id": "2141320070",
+          "name": "Minsoo Kim",
+          "aff": "Apple"
+        },
+        {
+          "id": "2110137965",
+          "name": "Hongseok Kim",
+          "aff": null
+        },
+        {
+          "id": "2287392129",
+          "name": "Jungwook Choi",
+          "aff": null
+        }
       ]
     },
-    "2606.12349": {
-      "title": "Traceable Virtual Sea Trials in the Marine Robotics Unity Simulator for Manoeuvring Assessment of Unmanned Surface Vehicles",
+    "2606.16533": {
+      "title": "Kairos: A Native World Model Stack for Physical AI",
       "authors": [
-        "Paria Rezayan"
+        "Kairos Team",
+        "Fei Wang",
+        "Shan You",
+        "Qiming Zhang",
+        "Tao Huang",
+        "Zuoyi Fu",
+        "Zhisheng Zheng",
+        "Yunlong Xi",
+        "Feng Lv",
+        "Xiaoming Wu",
+        "Zeyu Liu",
+        "Cong Wan",
+        "Pu Li",
+        "Ruiqing Yang",
+        "Xiaoou Li",
+        "Wei Wang",
+        "Kangkang Zhu",
+        "Yuwei Zhang",
+        "Shi Fu",
+        "Xiaoning Wu",
+        "Xuzeng Fan",
+        "Dacheng Tao",
+        "Xiaogang Wang"
       ],
-      "abs": "https://arxiv.org/abs/2606.12349",
+      "abs": "https://arxiv.org/abs/2606.16533",
       "categories": [
-        "cs.RO",
-        "cs.SY",
-        "eess.SY"
+        "cs.AI",
+        "cs.CV"
+      ]
+    },
+    "2606.16545": {
+      "title": "Can LLM Coding Agents Reason About Time Series?",
+      "authors": [
+        "Filip RechtorÃ­k",
+        "OndÅej DuÅ¡ek",
+        "ZdenÄk Kasner"
+      ],
+      "abs": "https://arxiv.org/abs/2606.16545",
+      "categories": [
+        "cs.CL"
+      ]
+    },
+    "2606.16817": {
+      "title": "Understanding the Behaviors of Environment-aware Information Retrieval",
+      "authors": [
+        "Ruifeng Yuan",
+        "Chaohao Yuan",
+        "David Dai",
+        "Yu Rong",
+        "Hong Cheng",
+        "Hou Pong Chan",
+        "Chenghao Xiao"
+      ],
+      "abs": "https://arxiv.org/abs/2606.16817",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ]
+    },
+    "2606.15822": {
+      "title": "TrustedARI: Towards Trust-Native Agentic Routing Infrastructure for Agentic AI",
+      "authors": [
+        "Qi Li",
+        "Zhenhua Zou",
+        "Shuo Li",
+        "Mingwei Xu",
+        "Zhuotao Liu"
+      ],
+      "abs": "https://arxiv.org/abs/2606.15822",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ]
+    },
+    "2601.08010": {
+      "title": "CASHEW: Stabilizing Multimodal Reasoning via Iterative Trajectory Aggregation",
+      "authors": [
+        "Chaoyu Li",
+        "Deeparghya Dutta Barua",
+        "Fei Tao",
+        "Pooyan Fazli"
+      ],
+      "abs": "https://arxiv.org/abs/2601.08010",
+      "categories": [
+        "cs.CV"
       ],
       "citation_count": 0,
       "influential_count": 0,
       "s2_authors": [
         {
-          "id": "2441892624",
-          "name": "Paria Rezayan",
+          "id": "1391213463",
+          "name": "Chaoyu Li",
+          "aff": null
+        },
+        {
+          "id": "2315984180",
+          "name": "Deeparghya Dutta Barua",
+          "aff": null
+        },
+        {
+          "id": "2404320824",
+          "name": "Fei Tao",
+          "aff": null
+        },
+        {
+          "id": "1710568",
+          "name": "Pooyan Fazli",
+          "aff": null
+        }
+      ]
+    },
+    "2606.14923": {
+      "title": "Trust Between AI Agents: Measuring Formation, Breakage, and Recovery, with Implications for Governing Multi-Agent Systems",
+      "authors": [
+        "Yujiao Chen"
+      ],
+      "abs": "https://arxiv.org/abs/2606.14923",
+      "categories": [
+        "cs.AI",
+        "cs.CY",
+        "cs.MA"
+      ]
+    },
+    "2606.15057": {
+      "title": "AutoDojo: Adaptive Attacks Expose Superficial Defenses and User-Underspecification Limits in LLM Agents",
+      "authors": [
+        "Xinhang Ma",
+        "Taoran Li",
+        "Chaowei Xiao",
+        "Zhiyuan Yu",
+        "Ning Zhang",
+        "Yevgeniy Vorobeychik"
+      ],
+      "abs": "https://arxiv.org/abs/2606.15057",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ]
+    },
+    "2606.14127": {
+      "title": "CoRe: A Continuously Reward-Finetuned LLM Query Rewriter for Multi-Stage Context-Aware Relevance in Web-Scale Video Search",
+      "authors": [
+        "Yilin Wen",
+        "Rong Yang",
+        "Xiaojia Chang",
+        "Hong Sun",
+        "Gefu Tang",
+        "Chunhui Liu",
+        "Jeffrey Chen",
+        "Zeyu Ma",
+        "Lisong Qiu",
+        "Xiaochuan Fan",
+        "Congjia Yu",
+        "Quan Zhou",
+        "Yuheng Chen",
+        "Zian Wang"
+      ],
+      "abs": "https://arxiv.org/abs/2606.14127",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2366004472",
+          "name": "Yilin Wen",
+          "aff": null
+        },
+        {
+          "id": "2442570870",
+          "name": "Rong Yang",
+          "aff": null
+        },
+        {
+          "id": "2353854723",
+          "name": "Xiao-Wen Chang",
+          "aff": null
+        },
+        {
+          "id": "2387115075",
+          "name": "Hongxi Sun",
+          "aff": null
+        },
+        {
+          "id": "2442332971",
+          "name": "Gefu Tang",
+          "aff": null
+        },
+        {
+          "id": "2432270570",
+          "name": "Chunhui Liu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jeffrey Chen",
+          "aff": null
+        },
+        {
+          "id": "2284953050",
+          "name": "Zeyu Ma",
+          "aff": null
+        },
+        {
+          "id": "84499297",
+          "name": "Lisong Qiu",
+          "aff": null
+        },
+        {
+          "id": "49537566",
+          "name": "Xiaochuan Fan",
+          "aff": null
+        },
+        {
+          "id": "2355557485",
+          "name": "Cong Yu",
+          "aff": null
+        },
+        {
+          "id": "2346445296",
+          "name": "Quan Zhou",
+          "aff": null
+        },
+        {
+          "id": "2380652355",
+          "name": "Yuheng Chen",
+          "aff": null
+        },
+        {
+          "id": "2193451400",
+          "name": "Zian Wang",
           "aff": null
         }
       ]
