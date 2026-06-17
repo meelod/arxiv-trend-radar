@@ -1,0 +1,804 @@
+{
+  "date": "2026-06-16",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Today's papers highlight significant advancements in AI inference infrastructure and multi-agent systems, emphasizing the efficiency and scalability of new models and technologies.",
+  "executive_overview": "The latest submissions reflect a strong focus on enhancing AI inference infrastructure through efficient caching, memory management, and architectural innovations. There's notable work on multi-agent systems, particularly in optimizing tool usage and coordination among LLM agents. Additionally, advancements in robotics and visual-language-action models indicate ongoing research to improve interaction and decision-making capabilities in complex environments.",
+  "themes": [
+    {
+      "name": "AI Inference Infrastructure Optimization",
+      "summary": "A series of papers address the challenges in optimizing inference for large language models (LLMs) and other AI systems. Notable work includes 'CentroidKV' [2606.16112], which introduces KV cache clustering to manage context for long-context LLMs, and 'CacheWise' [2606.16824], which presents a management layer to improve reuse of cached data in coding agents. Furthermore, 'MARS' [2604.26963] explores adaptive co-scheduling for heterogeneous agentic systems, making resource allocation more efficient. These innovations collectively aim to enhance performance while reducing latency and resource consumption in AI deployments.",
+      "paper_ids": [
+        "2606.16824",
+        "2604.26963"
+      ]
+    },
+    {
+      "name": "Multi-Agent Systems and Tool Usage",
+      "summary": "Multiple papers emphasize the evolving landscape of multi-agent systems, particularly the integration of tool usage within LLMs. For instance, 'Atlas' [2606.16143] proposes a framework for orchestrating diverse models and tools for complex reasoning, while 'PDAGENT-BENCH' [2606.17253] introduces a benchmarking system for evaluating LLM agents in physical design workflows. 'HyDRA' [2606.17106] focuses on routing efficiency among heterogeneous LLM pools, showcasing the importance of adaptive decision-making in multi-agent environments. Such advancements highlight the need for continued innovation in the coordination of AI agents.",
+      "paper_ids": [
+        "2606.16143",
+        "2606.17253"
+      ]
+    },
+    {
+      "name": "Robotics and Vision-Language Action Models",
+      "summary": "Recent developments in robotics and VLA models are documented in several papers, including 'LingBot-VLA' [2606.18121], which demonstrates a foundation model for comprehensive robotic manipulation. 'Thoughtful visual engagement' is further highlighted in 'ThinkingVLA' [2606.17937], which integrates spatial reasoning into VLA architectures. Papers like 'MoJo' [2606.17058] leverage these models for low-latency, high-frequency control in real-time scenarios. This trend indicates a shift towards more versatile robotic systems capable of operating in complex environments.",
+      "paper_ids": [
+        "2606.18121",
+        "2606.17937",
+        "2606.17058"
+      ]
+    },
+    {
+      "name": "Advancements in Causal Reasoning and Memory",
+      "summary": "Research spotlighting the integration of causal reasoning and memory systems within AI agents is prominent today. Papers like 'CausalDrive' [2606.16370] focus on dynamic decision-making in autonomous systems, while 'Memory Boosting' methodologies, such as in 'DICE' [2606.17539], illustrate strategies for improving agent memory across tasks. Furthermore, 'ContextRL' [2606.17030] and 'Learning to Refine Hidden States' [2606.17628] present innovative approaches to enriching agentic reasoning through enhanced memory architectures and causal structures. These advancements are crucial for building more robust intelligent systems.",
+      "paper_ids": [
+        "2606.17539",
+        "2606.17030"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2606.17104",
+      "title": "Prefill/Decode-Aware Evaluation of LLM Inference on Emerging AI Accelerators",
+      "plain_english": "This paper evaluates how large language models perform on different types of AI accelerators compared to traditional GPUs, focusing on factors like latency and computational characteristics during model inference.",
+      "why_it_matters": "This directly relates to your interest in AI inference infrastructure and low-latency serving, as it provides insights into how emerging hardware can impact LLM performance.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2606.16190",
+      "title": "Embedded Arena: Iterative Optimization via Hardware Feedback",
+      "plain_english": "The authors present a framework where LLMs autonomously optimize models for embedded devices using hardware feedback, addressing challenges like memory and power constraints.",
+      "why_it_matters": "This aligns well with your interests in AI inference infrastructure, especially in optimizing models for specialized silicon and energy efficiency in deployment.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2606.17253",
+      "title": "PDAGENT-BENCH: Characterizing, Grounding, and Architecting LLM Agents for VLSI Physical Design",
+      "plain_english": "This work introduces a benchmarking suite for evaluating LLM agents used in integrated circuit design, focusing on multi-stage optimization processes.",
+      "why_it_matters": "This paper is important for understanding evaluation metrics in multi-agent systems, particularly in contexts that intersect with your interest in hardware-architecture mismatches.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2606.17058",
+      "title": "Evaluating LLM Coding Agents on SZ-Family Lossy Compression Across Architectures",
+      "plain_english": "This paper assesses how LLM coding agents perform in the context of lossy compression tasks on different hardware, focusing on efficiency and execution.",
+      "why_it_matters": "Your interest in low-latency serving and algorithmic execution directly relates to the performance metrics discussed in this paper.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.17106",
+      "title": "HyDRA: Hybrid Dynamic Routing Architecture for Heterogeneous LLM Pools",
+      "plain_english": "HyDRA is a framework designed to route LLM queries among a pool of models based on their capabilities, optimizing performance per request.",
+      "why_it_matters": "This addresses the challenge of efficient multi-agent systems, a key focus area for your research, particularly with regard to tool-using LLM agents.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2606.17524",
+      "title": "Learning to Refine Hidden States for Reliable LLM Reasoning",
+      "plain_english": "This work proposes a framework where LLMs iteratively update their hidden states to improve reasoning before producing outputs, enhancing stability.",
+      "why_it_matters": "The emphasis on improving LLM reasoning through internal refinements speaks to your interest in developing robust AI systems and enhancing prediction accuracy.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2601.03872",
+      "title": "Atlas: Orchestrating Heterogeneous Models and Tools for Multi-Domain Complex Reasoning",
+      "plain_english": "The paper presents a system for dynamically combining various AI models and tools for complex reasoning tasks, optimizing for performance across domains.",
+      "why_it_matters": "This aligns with your focus on multi-agent systems and tool-using LLM agents, highlighting advancements in model orchestration.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2601.03872",
+      "title": "Atlas: Orchestrating Heterogeneous Models and Tools for Multi-Domain Complex Reasoning",
+      "plain_english": "The integration of language models with various tools is expanded by a new dual-path framework for automatic selection of the optimal model-tool combination for complex reasoning.",
+      "why_it_matters": "This paper's insights into efficient coordination and optimization will benefit your projects on tool-using LLM agents.",
+      "relevance_score": 7
+    }
+  ],
+  "worth_noting": [
+    {
+      "arxiv_id": "2606.15390",
+      "one_liner": "Introduces a language-conditioned video world model for embodied intelligence in robotics."
+    }
+  ],
+  "paper_index": {
+    "2606.16190": {
+      "title": "Embedded Arena: Iterative Optimization via Hardware Feedback",
+      "authors": [
+        "Zhihan Zhang",
+        "Alexander Le Metzger",
+        "Jiuyang Lyu",
+        "Chun-Cheng Chang",
+        "Jiayi Shao",
+        "Yujia Liu",
+        "Emmanuel Azuh Mensah",
+        "Edward Wang",
+        "Kurtis Heimerl",
+        "Gregory D. Abowd",
+        "Shwetak Patel",
+        "Natasha Jaques",
+        "Vikram Iyer"
+      ],
+      "abs": "https://arxiv.org/abs/2606.16190",
+      "categories": [
+        "cs.AR",
+        "cs.AI"
+      ]
+    },
+    "2606.17104": {
+      "title": "Prefill/Decode-Aware Evaluation of LLM Inference on Emerging AI Accelerators",
+      "authors": [
+        "Shun Usami",
+        "Venkatram Vishwanath",
+        "E. Wes Bethel"
+      ],
+      "abs": "https://arxiv.org/abs/2606.17104",
+      "categories": [
+        "cs.AR",
+        "cs.AI",
+        "cs.DC"
+      ]
+    },
+    "2606.16143": {
+      "title": "AIA: A Customized Multi-core RISC-V SoC for Discrete Sampling Workloads in 16 nm",
+      "authors": [
+        "Shirui Zhao",
+        "Nimish Shah",
+        "Wannes Meert",
+        "Marian Verhelst"
+      ],
+      "abs": "https://arxiv.org/abs/2606.16143",
+      "categories": [
+        "cs.AR"
+      ]
+    },
+    "2601.03872": {
+      "title": "Atlas: Orchestrating Heterogeneous Models and Tools for Multi-Domain Complex Reasoning",
+      "authors": [
+        "Jinyang Wu",
+        "Guocheng Zhai",
+        "Ruihan Jin",
+        "Jiahao Yuan",
+        "Yuhao Shen",
+        "Shuai Zhang",
+        "Zhengqi Wen",
+        "Jianhua Tao"
+      ],
+      "abs": "https://arxiv.org/abs/2601.03872",
+      "categories": [
+        "cs.CL"
+      ],
+      "citation_count": 9,
+      "influential_count": 1,
+      "s2_authors": [
+        {
+          "id": "2403133423",
+          "name": "Jinyang Wu",
+          "aff": null
+        },
+        {
+          "id": "2403067860",
+          "name": "Guocheng Zhai",
+          "aff": null
+        },
+        {
+          "id": "2300370837",
+          "name": "Ruihan Jin",
+          "aff": null
+        },
+        {
+          "id": "2365259239",
+          "name": "Jiahao Yuan",
+          "aff": null
+        },
+        {
+          "id": "2403422346",
+          "name": "Yuhao Shen",
+          "aff": null
+        },
+        {
+          "id": "2298428469",
+          "name": "Shuai Zhang",
+          "aff": null
+        },
+        {
+          "id": "1718662",
+          "name": "Zhengqi Wen",
+          "aff": null
+        },
+        {
+          "id": "2239200441",
+          "name": "Jianhua Tao",
+          "aff": null
+        }
+      ]
+    },
+    "2606.17058": {
+      "title": "Evaluating LLM Coding Agents on SZ-Family Lossy Compression Across Architectures",
+      "authors": [
+        "Changqing Li",
+        "Shouwei Gao",
+        "Kai Zhao",
+        "Sheng Di",
+        "Wenqian Dong"
+      ],
+      "abs": "https://arxiv.org/abs/2606.17058",
+      "categories": [
+        "cs.DC"
+      ]
+    },
+    "2606.17253": {
+      "title": "PDAGENT-BENCH: Characterizing, Grounding, and Architecting LLM Agents for VLSI Physical Design",
+      "authors": [
+        "Qiufeng Li",
+        "Rongqian Chen",
+        "Quan Cheng",
+        "Chengxuan Wang",
+        "Sizhe Tang",
+        "Wuxi Li",
+        "Duo Ding",
+        "Chia-Tung Ho",
+        "Haoxing Ren",
+        "David Z. Pan",
+        "Tian Lan",
+        "Weidong Cao"
+      ],
+      "abs": "https://arxiv.org/abs/2606.17253",
+      "categories": [
+        "cs.AR"
+      ]
+    },
+    "2604.26963": {
+      "title": "MARS: Efficient, Adaptive Co-Scheduling for Heterogeneous Agentic Systems",
+      "authors": [
+        "Yifei Wang",
+        "Hancheng Ye",
+        "Yechen Xu",
+        "Cong Guo",
+        "Chiyue Wei",
+        "Qinsi Wang",
+        "Dongting Li",
+        "Tingjun Chen",
+        "Hai \"Helen\" Li",
+        "Danyang Zhuo",
+        "Yiran Chen"
+      ],
+      "abs": "https://arxiv.org/abs/2604.26963",
+      "categories": [
+        "cs.OS",
+        "cs.DC",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2300250179",
+          "name": "Yifei Wang",
+          "aff": null
+        },
+        {
+          "id": "2327836024",
+          "name": "Hancheng Ye",
+          "aff": null
+        },
+        {
+          "id": "2110205561",
+          "name": "Yechen Xu",
+          "aff": null
+        },
+        {
+          "id": "2344801563",
+          "name": "Cong Guo",
+          "aff": null
+        },
+        {
+          "id": "2325857605",
+          "name": "Chiyue Wei",
+          "aff": null
+        },
+        {
+          "id": "2327503028",
+          "name": "Qinsi Wang",
+          "aff": null
+        },
+        {
+          "id": "2323335196",
+          "name": "Dongting Li",
+          "aff": null
+        },
+        {
+          "id": "2304470531",
+          "name": "Tingjun Chen",
+          "aff": null
+        },
+        {
+          "id": "2286344221",
+          "name": "Hai Helen",
+          "aff": null
+        },
+        {
+          "id": "2357302901",
+          "name": "Li",
+          "aff": null
+        },
+        {
+          "id": "2374475612",
+          "name": "Danyang Zhuo",
+          "aff": null
+        },
+        {
+          "id": "2344040473",
+          "name": "Yiran Chen",
+          "aff": null
+        }
+      ]
+    },
+    "2606.18121": {
+      "title": "On the Reliability of Networks of AI Agents: Density Evolution, Stopping Sets, and Architecture Optimization",
+      "authors": [
+        "Ehsan Aghazadeh",
+        "Hossein Pishro-Nik"
+      ],
+      "abs": "https://arxiv.org/abs/2606.18121",
+      "categories": [
+        "cs.MA",
+        "cs.IT",
+        "math.IT"
+      ]
+    },
+    "2605.17106": {
+      "title": "HyDRA: Hybrid Dynamic Routing Architecture for Heterogeneous LLM Pools",
+      "authors": [
+        "Aashna Garg",
+        "Siddharth Singha Roy",
+        "Jinu Jang",
+        "Federico Brancasi",
+        "Shengyu Fu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.17106",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "46352504",
+          "name": "Aashna Garg",
+          "aff": null
+        },
+        {
+          "id": "2301913255",
+          "name": "Siddhartha Roy",
+          "aff": null
+        },
+        {
+          "id": "116612224",
+          "name": "Jinu Jang",
+          "aff": null
+        },
+        {
+          "id": "2438630206",
+          "name": "Federico Brancasi",
+          "aff": null
+        },
+        {
+          "id": "2072784644",
+          "name": "Shengyu Fu",
+          "aff": null
+        }
+      ]
+    },
+    "2606.17937": {
+      "title": "ThinkingVLA: Interleaved Vision and Language Reasoning for Robotic Manipulation",
+      "authors": [
+        "Tianyi Lu",
+        "Hui Zhang",
+        "Zijie Diao",
+        "Junke Wang",
+        "Shengqi Xu",
+        "Xingyao Lin",
+        "Guojin Zhong",
+        "Ziyi Ye",
+        "Peng Wang",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang"
+      ],
+      "abs": "https://arxiv.org/abs/2606.17937",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2606.16824": {
+      "title": "CacheWise: Understanding Workloads and Optimizing KVCache Management for Efficiently Serving LLM Coding Agents",
+      "authors": [
+        "Shubham Tiwari",
+        "Tapan Chugh",
+        "Nash Rickert",
+        "Simon Peter",
+        "Ratul Mahajan",
+        "Haiying Shen"
+      ],
+      "abs": "https://arxiv.org/abs/2606.16824",
+      "categories": [
+        "cs.DC",
+        "cs.OS"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2259944508",
+          "name": "Shubham Tiwari",
+          "aff": null
+        },
+        {
+          "id": "2122946534",
+          "name": "Tapan Chugh",
+          "aff": null
+        },
+        {
+          "id": "2442803860",
+          "name": "Nash Rickert",
+          "aff": null
+        },
+        {
+          "id": "2287307058",
+          "name": "Simon Peter",
+          "aff": null
+        },
+        {
+          "id": "2257031542",
+          "name": "Ratul Mahajan",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Haiying Shen",
+          "aff": null
+        }
+      ]
+    },
+    "2606.15390": {
+      "title": "Not All Skills Help: Measuring and Repairing Agent Knowledge",
+      "authors": [
+        "Yixuan Wang",
+        "Yiyang Zhou",
+        "Yiming Liang",
+        "Congyu Zhang",
+        "Fuxiao Liu",
+        "Jiawei Zhou",
+        "Huaxiu Yao"
+      ],
+      "abs": "https://arxiv.org/abs/2606.15390",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Yixuan Wang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yiyang Zhou",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yiming Liang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Congyu Zhang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Fuxiao Liu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jiawei Zhou",
+          "aff": null
+        },
+        {
+          "id": "2378212884",
+          "name": "Huaxiu Yao",
+          "aff": null
+        }
+      ]
+    },
+    "2606.17539": {
+      "title": "Reinforcing Dual-Path Reasoning in Spatial Vision Language Models",
+      "authors": [
+        "Yatai Ji",
+        "An-Chieh Cheng",
+        "Yang Fu",
+        "Yukang Chen",
+        "Han Zhang",
+        "Zhaojing Yang",
+        "Wei Huang",
+        "Ka Chun Cheung",
+        "Song Han",
+        "Vidya Nariyambut Murali",
+        "Pavlo Molchanov",
+        "Jan Kautz",
+        "Simon See",
+        "Hongxu Yin",
+        "Ping Luo",
+        "Sifei Liu"
+      ],
+      "abs": "https://arxiv.org/abs/2606.17539",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ]
+    },
+    "2606.17030": {
+      "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
+      "authors": [
+        "Jie Zhang",
+        "Xiaoyue Chen",
+        "Anzhe Chen",
+        "Deqing Li",
+        "Gengze Zhou",
+        "Hale Yin",
+        "Haoqi Yuan",
+        "Haoyang Li",
+        "Jiahao Li",
+        "Jiazhao Zhang",
+        "Jingren Zhou",
+        "Kaiyuan Gao",
+        "Kun Yan",
+        "Lihan Jiang",
+        "Ningyuan Tang",
+        "Pei Lin",
+        "Qihang Peng",
+        "Shengming Yin",
+        "Tianhe Wu",
+        "Tianyi Yan",
+        "Xiao Xu",
+        "Yan Shu",
+        "Yanran Zhang",
+        "Ye Wang",
+        "Yi Wang",
+        "Yilei Chen",
+        "Yixian Xu",
+        "Yiyang Huang",
+        "Yuxiang Chen",
+        "Zekai Zhang",
+        "Zhendong Wang",
+        "Zixing Lei",
+        "Zhixuan Liang",
+        "Zihao Liu",
+        "Zikai Zhou",
+        "Chenxu Lv",
+        "Xiong-Hui Chen",
+        "Chenfei Wu"
+      ],
+      "abs": "https://arxiv.org/abs/2606.17030",
+      "categories": [
+        "cs.CV"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Jie Zhang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Xiaoyue Chen",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Anzhe Chen",
+          "aff": null
+        },
+        {
+          "id": "2281748031",
+          "name": "Chen Lv",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Deqing Li",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Gengze Zhou",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Hang Yin",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Haoqi Yuan",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Haoyang Li",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jiahao Li",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jiazhao Zhang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jingren Zhou",
+          "aff": null
+        },
+        {
+          "id": "2374487641",
+          "name": "Kaiyuan Gao",
+          "aff": null
+        },
+        {
+          "id": "2374487773",
+          "name": "Kun Yan",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Lihan Jiang",
+          "aff": null
+        },
+        {
+          "id": "2282973874",
+          "name": "Ningyuan Tang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Pei Lin",
+          "aff": null
+        },
+        {
+          "id": "2347360691",
+          "name": "Qihang Peng",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Shengming Yin",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Tianhe Wu",
+          "aff": null
+        },
+        {
+          "id": "2331322100",
+          "name": "Tianyi Yan",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Xiao Xu",
+          "aff": null
+        },
+        {
+          "id": "2304954618",
+          "name": "Yan Shu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yanran Zhang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Ye Wang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yi Wang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yilei Chen",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yixian Xu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yiyang Huang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yuxiang Chen",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zekai Zhang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zhendong Wang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zhixing Lei",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zhixuan Liang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zihao Liu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zikai Zhou",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Xiong-Hui Chen",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Chenfei Wu",
+          "aff": null
+        }
+      ]
+    },
+    "2606.17524": {
+      "title": "Learning to Refine Hidden States for Reliable LLM Reasoning",
+      "authors": [
+        "Chia-Hsuan Hsu",
+        "Jui-Ming Yao"
+      ],
+      "abs": "https://arxiv.org/abs/2606.17524",
+      "categories": [
+        "cs.LG"
+      ]
+    }
+  }
+}
