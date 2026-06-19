@@ -26455,6 +26455,29 @@
 "found": true,
 "influential_count": 0
 },
+"2512.11173": {
+"authors": [
+{
+"aff": null,
+"id": "2002762",
+"name": "Tzu-Hsien Lee"
+},
+{
+"aff": null,
+"id": "2363224797",
+"name": "Fidan Mahmudova"
+},
+{
+"aff": null,
+"id": "2760273",
+"name": "K. Desingh"
+}
+],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": true,
+"influential_count": 0
+},
 "2512.11192": {
 "citation_count": 0,
 "fetched": "2026-05-02",
@@ -117394,6 +117417,34 @@
 "found": false,
 "influential_count": 0
 },
+"2605.25929": {
+"authors": [
+{
+"aff": null,
+"id": "67338758",
+"name": "Franka Bause"
+},
+{
+"aff": null,
+"id": "2347209678",
+"name": "Jonas Niederle"
+},
+{
+"aff": null,
+"id": "89583148",
+"name": "Martin Pawelczyk"
+},
+{
+"aff": null,
+"id": "8813467",
+"name": "Rebekka Burkholz"
+}
+],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": true,
+"influential_count": 0
+},
 "2605.26114": {
 "authors": [],
 "citation_count": 0,
@@ -123250,6 +123301,13 @@
 "found": false,
 "influential_count": 0
 },
+"2606.18112": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
 "2606.18121": {
 "authors": [],
 "citation_count": 0,
@@ -123271,10 +123329,38 @@
 "found": false,
 "influential_count": 0
 },
+"2606.18467": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.18469": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
 "2606.18502": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-18",
+"found": false,
+"influential_count": 0
+},
+"2606.18503": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.18537": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
 "found": false,
 "influential_count": 0
 },
@@ -123292,6 +123378,13 @@
 "found": false,
 "influential_count": 0
 },
+"2606.18650": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
 "2606.18688": {
 "authors": [],
 "citation_count": 0,
@@ -123306,10 +123399,31 @@
 "found": false,
 "influential_count": 0
 },
+"2606.18828": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.18841": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
 "2606.18947": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-18",
+"found": false,
+"influential_count": 0
+},
+"2606.18960": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
 "found": false,
 "influential_count": 0
 },
@@ -123324,6 +123438,69 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-18",
+"found": false,
+"influential_count": 0
+},
+"2606.19419": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.19526": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.19535": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.19752": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.19808": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.19985": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.20417": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.20467": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.20474": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-19",
 "found": false,
 "influential_count": 0
 }
