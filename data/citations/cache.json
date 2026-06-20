@@ -121231,6 +121231,24 @@
 "found": false,
 "influential_count": 0
 },
+"2606.05833": {
+"authors": [
+{
+"aff": null,
+"id": "2358979726",
+"name": "Haibo Wang"
+},
+{
+"aff": null,
+"id": "2312675491",
+"name": "Lifu Huang"
+}
+],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": true,
+"influential_count": 0
+},
 "2606.05922": {
 "authors": [],
 "citation_count": 0,
@@ -123441,6 +123459,13 @@
 "found": false,
 "influential_count": 0
 },
+"2606.19356": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
 "2606.19419": {
 "authors": [],
 "citation_count": 0,
@@ -123462,10 +123487,38 @@
 "found": false,
 "influential_count": 0
 },
+"2606.19584": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
+"2606.19746": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
 "2606.19752": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.19782": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
+"2606.19803": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
 "found": false,
 "influential_count": 0
 },
@@ -123476,6 +123529,27 @@
 "found": false,
 "influential_count": 0
 },
+"2606.19869": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
+"2606.19898": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
+"2606.19911": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
 "2606.19985": {
 "authors": [],
 "citation_count": 0,
@@ -123483,10 +123557,45 @@
 "found": false,
 "influential_count": 0
 },
+"2606.20041": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
+"2606.20092": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
+"2606.20098": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
+"2606.20272": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
 "2606.20417": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.20458": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
 "found": false,
 "influential_count": 0
 },
@@ -123501,6 +123610,20 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-19",
+"found": false,
+"influential_count": 0
+},
+"2606.20510": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
+"found": false,
+"influential_count": 0
+},
+"2606.20537": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-20",
 "found": false,
 "influential_count": 0
 }
