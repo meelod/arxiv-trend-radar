@@ -1,150 +1,237 @@
 {
-  "date": "2026-06-19",
+  "date": "2026-06-22",
   "paper_count": 400,
   "model": "gpt-4o-mini",
   "language": "English",
-  "headline": "Today's papers show significant advancements in multi-agent systems and low-latency serving for AI applications.",
-  "executive_overview": "A notable concentration of research today centers around multi-agent systems, with multiple papers exploring novel frameworks for agent coordination, memory, and error handling. Additionally, several papers address optimizing AI inference infrastructure, focusing on resource-efficient methodologies and effective retrieval strategies. A promising trend involves the intersection of robotics and policy learning, specifically regarding humanoid manipulation and action modeling in complex environments.",
+  "headline": "Today's papers show significant advancements in AI inference infrastructure and multi-agent systems, highlighting solutions for efficient scheduling and resource management.",
+  "executive_overview": "A notable concentration of research in AI inference infrastructure, particularly solutions for enhancing scheduling and KV management for multi-turn agents, emerges today. Papers explore new architectures and methodologies that directly address challenges such as end-to-end latency reduction, efficiency of resource allocation, and effective task management. Additionally, there's a strong representation of works on multi-agent frameworks that tackle coordination and decision-making in complex environments, underscoring the growing integration of AI systems in practical applications.",
   "themes": [
     {
-      "name": "Multi-Agent Systems",
-      "summary": "Multiple papers delve into the dynamics of multi-agent systems, emphasizing error mitigation and memory handling. The Argent Signaling Protocol (2606.19356) proposes a new standard for evaluating AI responses, improving supervision over agent behavior. Similarly, the AgentFinVQA (2606.19782) explores auditing in financial chart questioning, balancing performance with compliance. Further, the Multi-Agent Transactive Memory (2606.19911) enhances knowledge sharing across divergent agents, optimizing retrieval of agent-generated artifacts to improve task performance.",
-      "paper_ids": [
-        "2606.19356",
-        "2606.19911",
-        "2606.19782"
-      ]
-    },
-    {
       "name": "AI Inference Infrastructure",
-      "summary": "Optimal AI serving strategies take center stage with multiple contributions addressing low-latency operations. UltraQuant (2606.20474) proposes a novel 4-bit KV caching mechanism, significantly improving context-heavy agent performance while maintaining throughput and quality. Execution-State Capsules (2606.20537) introduce checkpointing methods for decentralized serving systems, underscoring the need for responsiveness. Furthermore, other papers explore efficient caching solutions tailored for large model inference (2606.20099) and practical implementations of key-value optimization (2606.19746).",
+      "summary": "Today's papers reveal innovative solutions focused on enhancing the performance of AI inference systems, particularly for multi-agent and tool-using models. \"SwarmX\" ([2606.21401]) introduces agentic scheduling tailored for low-latency environments, while \"SAGA\" ([2605.00528]) proposes a workflow-atomic approach to AI agent inference that significantly reduces latency by optimizing how chained model calls are scheduled. \"AGENTSERVESIM\" ([2606.09613]) extends this by simulating the effects of various scheduling and KV-cache management strategies on agent performance, offering a scalable way to optimize deployments in real scenarios. This trend highlights a critical shift toward more refined and application-specific infrastructure design.",
       "paper_ids": [
-        "2606.20474",
-        "2606.20537",
-        "2606.19746"
+        "2606.21401",
+        "2606.09613",
+        "2605.00528"
       ]
     },
     {
-      "name": "Robotics and Manipulation Policies",
-      "summary": "Robotics policy learning continues to evolve with a focus on improving manipulation tasks. Studies such as Efficiently Linking Real Scenes (2606.20272) highlight the synergy of data generation techniques, while the EventVLA (2606.20092) framework emphasizes memory enhancement for long-horizon tasks. Notably, the Playful Agentic Robot Learning (2606.19419) paper introduces a novel paradigm of self-directed learning through exploration, marking a potential shift in how robots learn motor skills and adaptability in varied environments.",
+      "name": "Multi-Agent Systems and Coordination",
+      "summary": "A series of papers present significant advancements in frameworks for multi-agent systems, specifically targeting efficient communication and decision-making. \"HoloAgent-0\" ([2606.23565]) proposes a unified framework combining spatial memory to enhance embodied agents' performance in complex interactions. Additionally, \"FleetAgent\" ([2606.21222]) demonstrates a cloud-hosted assistant for coordinating autonomous fleets using compact vectorized messages, offering a novel approach to managing distributed systems. Meanwhile, \"AgentDSE\" ([2606.21836]) introduces an innovative design space exploration methodology to improve the efficiency of multi-agent interactions. These contributions underscore the continuous evolution in creating intelligent, collaborative systems capable of adapting to dynamic environments.",
       "paper_ids": [
-        "2606.20272",
-        "2606.20092",
-        "2606.19419"
+        "2606.23565",
+        "2606.21222",
+        "2606.21836"
       ]
     },
     {
-      "name": "Vector Databases and Retrieval Improvements",
-      "summary": "Significant progress in retrieval mechanisms for vector databases is evident in works like Query-aware Routing (2606.19898) and Policy-aware Vector Search (2606.19803), both exploring strategies for improved access control and efficiency in retrieval tasks. These studies emphasize the ongoing need for robust solutions amid rising data activity and complexity in cloud environments. Furthermore, the Secure Coding Drift study (2606.20098) highlights the importance of maintaining security while optimizing data management workflows in AI contexts.",
+      "name": "Robotic Manipulation and Learning",
+      "summary": "Research today dives deep into enhancing robotic manipulation capabilities through advanced learning methodologies. Several papers focus on architectures that streamline decision-making under uncertainty. For instance, \"KEMO\" ([2606.23589]) presents a memory framework for long-horizon manipulation tasks, while \"ZeroDex\" ([2606.19340]) showcases a zero-shot framework that leverages language guidance for manipulation. Moreover, \"MemoryVAM\" ([2606.20679]) explores integrating episodic memory into video-world-model policies to better manage the dynamics of long-horizon tasks, highlighting a trend towards memory-aware architectures. This focus on authenticity and adaptability in robotic systems speaks to their growing relevance in real-world applications.",
       "paper_ids": [
-        "2606.19898",
-        "2606.19803",
-        "2606.20098"
+        "2606.23589",
+        "2606.19340",
+        "2606.20679"
+      ]
+    },
+    {
+      "name": "Quantitative Trading and Financial Optimization",
+      "summary": "Papers today present robust methodologies for advancing algorithmic trading applications through innovative architectural improvements. \"Asymmetry PRISM\" ([2606.23678]) introduces a CPU/GPU portfolio optimization engine aimed at deadline-bounded institutional rebalancing, while \"Point-in-Time Financial RAG\" ([2606.23041]) proposes an enhanced retrieval-augmented generation system tailored for financial tasks. These works are critical as they provide new tools for navigating the complexities of market microstructure, indicating a trend towards more sophisticated computational methods in financial contexts.",
+      "paper_ids": [
+        "2606.23678",
+        "2606.23041"
       ]
     }
   ],
   "top_picks": [
     {
-      "arxiv_id": "2606.05833",
-      "title": "Learning Geometric Representations from Videos for Spatial Intelligent Multimodal Large Language Models",
-      "plain_english": "This paper presents a framework that teaches multimodal language models to understand geometric information from 2D video sequences, enhancing their spatial awareness without requiring 3D data.",
-      "why_it_matters": "This aligns with your interest in robotics and AI systems that accurately perceive and interact with 3D environments, which is critical for future intelligent robotics applications.",
+      "arxiv_id": "2606.21401",
+      "title": "SwarmX: Agentic Scheduling for Low-Latency Agentic Systems",
+      "plain_english": "Presents a new system called SwarmX that uses AI techniques to efficiently schedule tasks in systems where multiple AI agents work simultaneously, aiming for low-latency performance. It predicts how different tasks and resources interact to make better scheduling decisions.",
+      "why_it_matters": "Directly addresses the user's interest in AI inference infrastructure, particularly focusing on low-latency serving, a key concern for deploying multi-agent systems effectively.",
       "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2606.09613",
+      "title": "AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving",
+      "plain_english": "Introduces a simulator that allows researchers to test and optimize how multi-turn AI agents manage tasks and resources without needing expensive hardware setups, enabling scalable research.",
+      "why_it_matters": "Enhances the user's understanding of how hardware impacts multi-agent decision-making, facilitating insights into inference infrastructure for complex AI systems.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2605.00528",
+      "title": "SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters",
+      "plain_english": "Proposes a new scheduling approach for AI agents that takes the entire workflow into account rather than treating each model call separately, significantly reducing overall latency.",
+      "why_it_matters": "Provides insights into optimizing AI workloads, crucial for developing efficient inference architectures, aligning with user interests in AI inference infrastructure.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2606.21784",
+      "title": "KineticSim: A Lightweight, High-Performance Execution Engine for Real-Time Market Simulators",
+      "plain_english": "Develops a new engine for simulating financial markets that overcomes limitations in traditional models, enabling real-time processing of market data through efficient computational methods.",
+      "why_it_matters": "Relevant to the user's quantitative trading interests by offering new approaches to swift and accurate market prediction tools, invaluable for algorithmic trading strategies.",
+      "relevance_score": 8
     },
     {
       "arxiv_id": "2606.20474",
       "title": "UltraQuant: 4-bit KV Caching for Context-Heavy Agents",
-      "plain_english": "The paper introduces a technique for compressing key-value cache data to just 4 bits, which helps AI agents handle context-heavy tasks while maintaining performance and throughput.",
-      "why_it_matters": "This is directly relevant to your focus on AI inference infrastructure, particularly in improving efficiency and latency in context-heavy applications.",
-      "relevance_score": 10
-    },
-    {
-      "arxiv_id": "2606.19356",
-      "title": "Trustworthy Multi-Agent Systems: Mitigating Semantic Drift with the Argent Signaling Protocol",
-      "plain_english": "This research presents a protocol that adds context to AI-generated responses, improving oversight and reliability in multi-agent systems by tracking the quality and grounding of their outputs.",
-      "why_it_matters": "It directly addresses challenges in deploying multi-agent systems and aligns with your interest in ensuring safety and oversight in AI interactions.",
-      "relevance_score": 9
-    },
-    {
-      "arxiv_id": "2606.20092",
-      "title": "EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies",
-      "plain_english": "EventVLA enhances robotic manipulation capabilities by using a new memory system that focuses on critical visual cues over an extended period.",
-      "why_it_matters": "This aligns with your focus on robotics policy learning and enhances your understanding of memory systems in AI applications.",
-      "relevance_score": 9
-    },
-    {
-      "arxiv_id": "2606.19584",
-      "title": "Language-Instructed Vision Embeddings for Controllable and Generalizable Perception",
-      "plain_english": "This work proposes a method for adapting vision models based on language inputs to dynamically generate representations tailored to specific tasks and contexts.",
-      "why_it_matters": "It speaks to your interest in enhancing the operational capabilities of AI in dynamic environments, particularly in robotics and interaction scenarios.",
+      "plain_english": "Investigates a method to compress key-value caches for AI agents, making them more efficient when processing multiple interactions, especially in scenarios with large dialogues.",
+      "why_it_matters": "This paper directly relates to the efficiency of AI systems, touching on the critical aspect of KV-cache management that affects performance, important for the user's focus on low-latency AI infrastructures.",
       "relevance_score": 8
-    },
-    {
-      "arxiv_id": "2606.20272",
-      "title": "Efficiently Linking Real Scenes with Synthetic Data Generation for AI-based Cognitive Robotics and Computer Vision Applications",
-      "plain_english": "This paper discusses efficient methods for generating training data that links real and synthetic environments, enhancing the performance of AI models in various applications.",
-      "why_it_matters": "It connects to your interest in bridging gaps between cognitive robotics and practical AI applications, vital for improving robot training processes.",
-      "relevance_score": 8
-    },
-    {
-      "arxiv_id": "2606.20510",
-      "title": "Efficient and Sound Probabilistic Verification for AI Agents",
-      "plain_english": "This paper introduces a probabilistic approach to verify AI agents operating in dynamic environments, enhancing their security and reliability during operations.",
-      "why_it_matters": "Directly addresses your interests around safety in AI systems, providing insights into verifying agent behavior in real-world applications.",
-      "relevance_score": 8
-    },
-    {
-      "arxiv_id": "2606.19911",
-      "title": "Multi-Agent Transactive Memory",
-      "plain_english": "This research explores a system where multiple agents share knowledge, enhancing their performance by retrieving and reusing past strategies across different tasks.",
-      "why_it_matters": "It aligns with your research on multi-agent systems and could inform your work on distributed AI capabilities.",
-      "relevance_score": 8
-    },
-    {
-      "arxiv_id": "2606.20458",
-      "title": "Slow Brain, Fast Planner: Latency-Resilient VLM-Augmented Urban Navigation",
-      "plain_english": "This paper addresses the challenges of navigating complex urban environments by enhancing the planning capabilities of AI models with real-time inputs.",
-      "why_it_matters": "This could be particularly relevant to your robotics interests, especially in improving operational guidelines for mobile robots.",
-      "relevance_score": 7
-    },
-    {
-      "arxiv_id": "2606.19803",
-      "title": "Policy-aware Vector Search: A Vision for Fine Grained Access Control in Vector Databases",
-      "plain_english": "The study examines how to manage access in vector databases more effectively by using detailed policies associated with user requests.",
-      "why_it_matters": "This ties into your focus on vector databases and access control, essential for refining security in AI deployment scenarios.",
-      "relevance_score": 7
     }
   ],
   "worth_noting": [
     {
-      "arxiv_id": "2606.20041",
-      "one_liner": "Examines the role of AI economists in decision-making frameworks for economic analysis using large language models."
+      "arxiv_id": "2606.23565",
+      "one_liner": "Introduces a unified framework for embodied agents that enhances interactions across various environments."
     },
     {
-      "arxiv_id": "2606.19584",
-      "one_liner": "Explores the use of a novel method to gauge reasoning capabilities of large language models in law-related contexts."
+      "arxiv_id": "2606.20631",
+      "one_liner": "Details a method for harnessing agent skills in LLMs, providing insight into skill management."
     },
     {
-      "arxiv_id": "2606.19869",
-      "one_liner": "Studies the intersection of language models and AI ethics, reviewing their implications for language-based biases."
+      "arxiv_id": "2606.22686",
+      "one_liner": "Investigates coding agents’ failure modes and offers new frameworks for mitigating risks in programming tasks."
+    },
+    {
+      "arxiv_id": "2606.23419",
+      "one_liner": "Explores the use of causal methods in large-scale agent-based modeling for improving AI decision processes."
     }
   ],
   "paper_index": {
-    "2606.20272": {
-      "title": "Efficiently Linking Real Scenes with Synthetic Data Generation for AI-based Cognitive Robotics and Computer Vision Applications",
+    "2606.21401": {
+      "title": "SwarmX: Agentic Scheduling for Low-Latency Agentic Systems",
       "authors": [
-        "Paul Koch",
-        "Vivek Chavan",
-        "AndrÃ© Sers",
-        "Adem Karakurt",
-        "Paul Hofmann",
-        "Mohamad Zaher Ziadeh",
-        "JÃ¶rg KrÃ¼ger"
+        "Yeqi Huang",
+        "Yanwei Ye",
+        "Guomin Chen",
+        "Wenhao Su",
+        "Bin Gong",
+        "Jialian Li",
+        "Zhan Lu",
+        "Yangshen Deng",
+        "Xuan Sun",
+        "Le Xu",
+        "Luo Mai"
       ],
-      "abs": "https://arxiv.org/abs/2606.20272",
+      "abs": "https://arxiv.org/abs/2606.21401",
+      "categories": [
+        "cs.DC",
+        "cs.AI"
+      ]
+    },
+    "2606.09613": {
+      "title": "AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving",
+      "authors": [
+        "Rakibul Hasan Rajib",
+        "Mengxin Zheng",
+        "Qian Lou"
+      ],
+      "abs": "https://arxiv.org/abs/2606.09613",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2335861058",
+          "name": "Rakibul Hasan Rajib",
+          "aff": null
+        },
+        {
+          "id": "2204787408",
+          "name": "Meng Zheng",
+          "aff": null
+        },
+        {
+          "id": "2259960912",
+          "name": "Qian Lou",
+          "aff": null
+        }
+      ]
+    },
+    "2605.00528": {
+      "title": "SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters",
+      "authors": [
+        "Dongxin Guo",
+        "Jikun Wu",
+        "Siu Ming Yiu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.00528",
+      "categories": [
+        "cs.DC",
+        "cs.AI",
+        "cs.LG",
+        "cs.OS"
+      ],
+      "citation_count": 1,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2257424896",
+          "name": "Dongxing Guo",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jikun Wu",
+          "aff": null
+        },
+        {
+          "id": "2241093595",
+          "name": "S. Yiu",
+          "aff": null
+        }
+      ]
+    },
+    "2606.21784": {
+      "title": "KineticSim: A Lightweight, High-Performance Execution Engine for Real-Time Market Simulators",
+      "authors": [
+        "Shakya Jayakody",
+        "Prarthinie Jayakody"
+      ],
+      "abs": "https://arxiv.org/abs/2606.21784",
+      "categories": [
+        "cs.DC",
+        "cs.PF",
+        "q-fin.TR"
+      ]
+    },
+    "2606.23565": {
+      "title": "HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory",
+      "authors": [
+        "Xiaolin Zhou",
+        "Liu Liu",
+        "Tingyang Xiao",
+        "Wei Feng",
+        "Fa Fu",
+        "Xinrui Meng",
+        "Xinjie Wang",
+        "Jialiang Han",
+        "Boyang Yu",
+        "Yun Du",
+        "Wei Sui",
+        "Zhizhong Su"
+      ],
+      "abs": "https://arxiv.org/abs/2606.23565",
       "categories": [
         "cs.RO",
         "cs.CV"
+      ]
+    },
+    "2606.23678": {
+      "title": "AIR: Adaptive Interleaved Reasoning with Code in MLLMs",
+      "authors": [
+        "Cong Han",
+        "Xiaohan Lan",
+        "Haibo Qiu",
+        "Yujie Zhong"
+      ],
+      "abs": "https://arxiv.org/abs/2606.23678",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
       ]
     },
     "2606.20474": {
@@ -165,259 +252,145 @@
         "cs.PF"
       ]
     },
-    "2606.19356": {
-      "title": "Trustworthy Multi-Agent Systems: Mitigating Semantic Drift with the Argent Signaling Protocol",
+    "2606.21836": {
+      "title": "AgentDSE: Reasoning-Augmented Architectural Design Space Exploration",
       "authors": [
-        "Anantha Sharma"
+        "Chenyu Wang",
+        "Jiahe Caroline Shi",
+        "David Kong",
+        "Duane S. Boning",
+        "Zishen Wan",
+        "Yilun Du",
+        "Vijay Janapa Reddi"
       ],
-      "abs": "https://arxiv.org/abs/2606.19356",
+      "abs": "https://arxiv.org/abs/2606.21836",
       "categories": [
-        "cs.CL",
+        "cs.AR",
         "cs.AI"
       ]
     },
-    "2606.20092": {
-      "title": "EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies",
+    "2606.21222": {
+      "title": "FleetAgent: Teleoperation Assistant for Autonomous Fleets via Vectorized V2N Messages",
       "authors": [
-        "Ganlin Yang",
-        "Zhangzheng Tu",
-        "Yuqiang Yang",
-        "Sitong Mao",
-        "Junyi Dong",
-        "Tianxing Chen",
-        "Jiaqi Peng",
-        "Jing Xiong",
-        "Jiafei Cao",
-        "Jifeng Dai",
-        "Wengang Zhou",
-        "Yao Mu",
-        "Tai Wang"
+        "Juntong Peng",
+        "Qi Chen",
+        "Deyuan Qu",
+        "Takayuki Shimizu",
+        "Yaobin Chen",
+        "Ziran Wang"
       ],
-      "abs": "https://arxiv.org/abs/2606.20092",
-      "categories": [
-        "cs.CV"
-      ]
-    },
-    "2606.19911": {
-      "title": "Multi-Agent Transactive Memory",
-      "authors": [
-        "To Eun Kim",
-        "Xuhong He",
-        "Dishank Jain",
-        "Ambuj Agrawal",
-        "Negar Arabzadeh",
-        "Fernando Diaz"
-      ],
-      "abs": "https://arxiv.org/abs/2606.19911",
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.IR"
-      ]
-    },
-    "2606.20510": {
-      "title": "Efficient and Sound Probabilistic Verification for AI Agents",
-      "authors": [
-        "Alaia Solko-Breslin",
-        "Pramod Kaushik Mudrakarta",
-        "Mihai Christodorescu",
-        "Somesh Jha",
-        "Krishnamurthy Dj Dvijotham"
-      ],
-      "abs": "https://arxiv.org/abs/2606.20510",
-      "categories": [
-        "cs.CR",
-        "cs.AI"
-      ]
-    },
-    "2606.20537": {
-      "title": "Execution-State Capsules: Graph-Bound Execution-State Checkpoint and Restore for Low-Latency, Small-Batch, On-Device Physical-AI Serving",
-      "authors": [
-        "Liang Su"
-      ],
-      "abs": "https://arxiv.org/abs/2606.20537",
-      "categories": [
-        "cs.LG",
-        "cs.DC"
-      ]
-    },
-    "2606.19746": {
-      "title": "SAC: Disaggregated KV Cache System for Sparse Attention LLMs with CXL",
-      "authors": [
-        "Ruiyang Ma",
-        "Teng Ma",
-        "Junru Li",
-        "Hantian Zha",
-        "Xuchun Shang",
-        "Qingda Hu",
-        "Zheng Liu",
-        "Xinjun Yang",
-        "Tao Ma",
-        "Guojie Luo"
-      ],
-      "abs": "https://arxiv.org/abs/2606.19746",
-      "categories": [
-        "cs.DC"
-      ]
-    },
-    "2606.19782": {
-      "title": "AgentFinVQA: A Deployable Multi-Agent Pipeline for Auditable Financial Chart QA",
-      "authors": [
-        "Aravind Narayanan",
-        "Shaina Raza"
-      ],
-      "abs": "https://arxiv.org/abs/2606.19782",
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ]
-    },
-    "2606.20041": {
-      "title": "AI Economist Agent: An Agentic Framework for Model-Grounded Economic Analysis with RAG, Knowledge Graphs, and Large Language Models",
-      "authors": [
-        "Masahiro Kato"
-      ],
-      "abs": "https://arxiv.org/abs/2606.20041",
-      "categories": [
-        "econ.GN",
-        "cs.AI",
-        "cs.LG",
-        "q-fin.EC",
-        "q-fin.GN"
-      ]
-    },
-    "2606.19419": {
-      "title": "Playful Agentic Robot Learning",
-      "authors": [
-        "Junyi Zhang",
-        "Jiaxin Ge",
-        "Hanjun Yoo",
-        "Letian Fu",
-        "Zihan Yang",
-        "Yaowei Liu",
-        "Raj Saravanan",
-        "Shaofeng Yin",
-        "Justin Yu",
-        "Dantong Niu",
-        "Zirui Wang",
-        "Roei Herzig",
-        "Ken Goldberg",
-        "Yutong Bai",
-        "David M. Chan",
-        "Ion Stoica",
-        "Angjoo Kanazawa",
-        "Jiahui Lei",
-        "Haiwen Feng",
-        "Trevor Darrell"
-      ],
-      "abs": "https://arxiv.org/abs/2606.19419",
+      "abs": "https://arxiv.org/abs/2606.21222",
       "categories": [
         "cs.RO",
         "cs.AI"
       ]
     },
-    "2606.19803": {
-      "title": "Policy-aware Vector Search: A Vision for Fine Grained Access Control in Vector Databases",
+    "2606.20631": {
+      "title": "Harnessing Agent Skills: Architectural Patterns and a Reference Architecture for Skill-Mediated LLM Agents",
       "authors": [
-        "Lakshmi Sahithi Yalamarthi",
-        "Primal Pappachan"
+        "Boming Xia",
+        "Liming Zhu",
+        "Zhenchang Xing",
+        "Qinghua Lu",
+        "Dino Sejdinovic",
+        "Xiwei Xu"
       ],
-      "abs": "https://arxiv.org/abs/2606.19803",
+      "abs": "https://arxiv.org/abs/2606.20631",
       "categories": [
-        "cs.DB",
         "cs.AI",
         "cs.LG"
       ]
     },
-    "2606.20458": {
-      "title": "Slow Brain, Fast Planner: Latency-Resilient VLM-Augmented Urban Navigation",
+    "2606.23589": {
+      "title": "KEMO: Event-Driven Keyframe Memory for Long-Horizon Robot Manipulation with VLA Policies",
       "authors": [
-        "Zhenghao \"Mark'' Peng",
-        "Honglin He",
-        "Quanyi Li",
-        "Yukai Ma",
-        "Bolei Zhou"
+        "Yihan Zeng",
+        "Minghao Ye",
+        "Yiyuan Chen",
+        "Yide Shentu",
+        "Philipp Wu",
+        "Zike Yan",
+        "Zhongyu Li"
       ],
-      "abs": "https://arxiv.org/abs/2606.20458",
+      "abs": "https://arxiv.org/abs/2606.23589",
       "categories": [
         "cs.RO"
       ]
     },
-    "2606.19898": {
-      "title": "Query-aware Routing for Filtered Approximate Nearest Neighbors Search",
+    "2606.19340": {
+      "title": "ZeroDex: Zero-Shot Long-Horizon Dexterous Manipulation via Multi-View 3D-Grounded VLM Reasoning",
       "authors": [
-        "Qianqian Xiong",
-        "Mengxuan Zhang"
+        "Jisoo Kim",
+        "Sangwon Baik",
+        "Taeksoo Kim",
+        "Sungjoo Kim",
+        "Junyoung Lee",
+        "Mingi Choi",
+        "Hanbyul Joo"
       ],
-      "abs": "https://arxiv.org/abs/2606.19898",
+      "abs": "https://arxiv.org/abs/2606.19340",
       "categories": [
-        "cs.DB",
-        "cs.IR"
+        "cs.RO"
       ]
     },
-    "2606.19869": {
-      "title": "EVM Workloads in the Wild: Evidence for Multi-Dimensional Gas Metering, State Growth, Delayed Execution, and Parallelism",
+    "2606.20679": {
+      "title": "MemoryVAM: Integrating Memory into Video Action Model for Robot Manipulation",
       "authors": [
-        "Lioba Heimbach",
-        "Kushal Babel",
-        "Jason Milionis"
+        "Yuxin Jiang",
+        "Chang Yu",
+        "Yunuo Chen",
+        "Xiang Feng",
+        "Yin Yang",
+        "Nishank Gite",
+        "Chenfanfu Jiang"
       ],
-      "abs": "https://arxiv.org/abs/2606.19869",
+      "abs": "https://arxiv.org/abs/2606.20679",
       "categories": [
-        "cs.DC"
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
       ]
     },
-    "2606.05833": {
-      "title": "Learning Geometric Representations from Videos for Spatial Intelligent Multimodal Large Language Models",
+    "2606.23419": {
+      "title": "GRINQH: Graded Input-based Quantization Hierarchy for Efficient LLM Generation",
       "authors": [
-        "Haibo Wang",
-        "Lifu Huang"
+        "Jette OberlÃ¤nder",
+        "Jan Finkbeiner",
+        "Catherine M. SchÃ¶fmann",
+        "Emre Neftci"
       ],
-      "abs": "https://arxiv.org/abs/2606.05833",
+      "abs": "https://arxiv.org/abs/2606.23419",
       "categories": [
-        "cs.CV",
+        "cs.LG",
         "cs.AI"
-      ],
-      "citation_count": 0,
-      "influential_count": 0,
-      "s2_authors": [
-        {
-          "id": "2358979726",
-          "name": "Haibo Wang",
-          "aff": null
-        },
-        {
-          "id": "2312675491",
-          "name": "Lifu Huang",
-          "aff": null
-        }
       ]
     },
-    "2606.20098": {
-      "title": "Site-Specific MIMO Channel Generation via Diffusion and Flow Matching: Fidelity, Efficiency, and Downstream Utility",
+    "2606.22686": {
+      "title": "The Geometry of Refusal: Linear Instability in Safety-Aligned LLMs",
       "authors": [
-        "Sina Beyraghi",
-        "Masoud Sadeghian",
-        "Firdous Bin Ismail",
-        "Angel Lozano",
-        "Paul Almasan",
-        "Giovanni Geraci"
+        "Shivam Ratnakar",
+        "Kartikeya Vats"
       ],
-      "abs": "https://arxiv.org/abs/2606.20098",
+      "abs": "https://arxiv.org/abs/2606.22686",
       "categories": [
-        "cs.IT",
-        "eess.SP",
-        "math.IT"
+        "cs.CR",
+        "cs.AI",
+        "cs.LG"
       ]
     },
-    "2606.19584": {
-      "title": "Language-Instructed Vision Embeddings for Controllable and Generalizable Perception",
+    "2606.23041": {
+      "title": "SPAR: Semantic-Pixel Self-Alignment and Adaptive Routing for Unified Multimodal Models",
       "authors": [
-        "Chengzhi Mao",
-        "Xudong Lin",
-        "Wen-Sheng Chu"
+        "Hongxiang Li",
+        "Hongxu Chen",
+        "Chenyang Zhu",
+        "Xiaoshuang Huang",
+        "Jiayin Cai",
+        "Xiaolong Jiang",
+        "Yao Hu",
+        "Long Chen"
       ],
-      "abs": "https://arxiv.org/abs/2606.19584",
+      "abs": "https://arxiv.org/abs/2606.23041",
       "categories": [
         "cs.CV"
       ]
