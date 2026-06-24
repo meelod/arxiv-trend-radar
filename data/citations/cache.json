@@ -2663,6 +2663,79 @@
 "found": true,
 "influential_count": 1
 },
+"2407.18957": {
+"authors": [
+{
+"aff": null,
+"id": "2279759627",
+"name": "Chong Zhang"
+},
+{
+"aff": null,
+"id": "2313689114",
+"name": "Xinyi Liu"
+},
+{
+"aff": null,
+"id": "2267333980",
+"name": "Mingyu Jin"
+},
+{
+"aff": null,
+"id": "2374225442",
+"name": "Zhongmou Zhang"
+},
+{
+"aff": null,
+"id": "2261065167",
+"name": "Lingyao Li"
+},
+{
+"aff": null,
+"id": "2337668410",
+"name": "Zheng Wang"
+},
+{
+"aff": null,
+"id": "2007245028",
+"name": "Wenyue Hua"
+},
+{
+"aff": null,
+"id": "2267332168",
+"name": "Dong Shu"
+},
+{
+"aff": null,
+"id": "2279758147",
+"name": "Suiyuan Zhu"
+},
+{
+"aff": null,
+"id": "2149112399",
+"name": "Xiaobo Jin"
+},
+{
+"aff": null,
+"id": "2313680591",
+"name": "Sujian Li"
+},
+{
+"aff": null,
+"id": "2237804196",
+"name": "Mengnan Du"
+},
+{
+"aff": null,
+"id": "2239061409",
+"name": "Yongfeng Zhang"
+}
+],
+"citation_count": 33,
+"fetched": "2026-06-24",
+"found": true,
+"influential_count": 3
+},
 "2407.19001": {
 "citation_count": 21,
 "fetched": "2026-05-02",
@@ -122926,10 +122999,41 @@
 "influential_count": 0
 },
 "2606.15057": {
-"authors": [],
+"authors": [
+{
+"aff": null,
+"id": "2348618899",
+"name": "Xinhang Ma"
+},
+{
+"aff": null,
+"id": "2401115855",
+"name": "Taoran Li"
+},
+{
+"aff": null,
+"id": "2407402414",
+"name": "Chaowei Xiao"
+},
+{
+"aff": "Washington University in St. Louis",
+"id": "2118174028",
+"name": "Zhiyuan Yu"
+},
+{
+"aff": null,
+"id": "2273594553",
+"name": "Ning Zhang"
+},
+{
+"aff": null,
+"id": "1699600",
+"name": "Yevgeniy Vorobeychik"
+}
+],
 "citation_count": 0,
-"fetched": "2026-06-16",
-"found": false,
+"fetched": "2026-06-24",
+"found": true,
 "influential_count": 0
 },
 "2606.15390": {
@@ -123624,6 +123728,13 @@
 "found": false,
 "influential_count": 0
 },
+"2606.20246": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
 "2606.20272": {
 "authors": [],
 "citation_count": 0,
@@ -123680,6 +123791,20 @@
 "found": false,
 "influential_count": 0
 },
+"2606.20636": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
+"2606.20642": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
 "2606.20679": {
 "authors": [],
 "citation_count": 0,
@@ -123694,10 +123819,24 @@
 "found": false,
 "influential_count": 0
 },
+"2606.21238": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
 "2606.21401": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-23",
+"found": false,
+"influential_count": 0
+},
+"2606.21712": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
 "found": false,
 "influential_count": 0
 },
@@ -123715,10 +123854,38 @@
 "found": false,
 "influential_count": 0
 },
+"2606.21959": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
+"2606.22013": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
+"2606.22557": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
 "2606.22686": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-23",
+"found": false,
+"influential_count": 0
+},
+"2606.22977": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
 "found": false,
 "influential_count": 0
 },
@@ -123754,6 +123921,41 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-23",
+"found": false,
+"influential_count": 0
+},
+"2606.23938": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
+"2606.24049": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
+"2606.24075": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
+"2606.24814": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
+"found": false,
+"influential_count": 0
+},
+"2606.24884": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-06-24",
 "found": false,
 "influential_count": 0
 }

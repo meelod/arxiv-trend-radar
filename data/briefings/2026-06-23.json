@@ -1,0 +1,656 @@
+{
+  "date": "2026-06-23",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Notable papers today focus on efficient AI inference infrastructure and multi-agent systems.",
+  "executive_overview": "Today's papers showcase significant advancements in AI inference infrastructure and multi-agent systems, particularly in low-latency applications and intelligent resource allocation. A thematic cluster emerges around facilitating interactions in multi-agent environments, along with optimizing performance in inference systems for language models on specialized hardware. The contributions address both theoretical frameworks and practical implementations, suggesting an increased focus on efficient and adaptive architectures.",
+  "themes": [
+    {
+      "name": "Efficient AI Inference Infrastructure",
+      "summary": "Several papers tackle the challenge of optimizing inference for AI models, especially concerning latency and hardware utilization. For instance, 'VoltanaLLM' proposes a method to reduce energy costs in large language model serving by controlling operational characteristics. Meanwhile, 'UltraQuant' explores KV Caching for context-heavy applications, achieving significant performance improvements. The focus on architectural efficiency indicates a need for innovations that enhance serving capabilities across diverse applications.",
+      "paper_ids": [
+        "2605.00528",
+        "2606.21712",
+        "2606.20474",
+        "2606.24884",
+        "2606.20246"
+      ]
+    },
+    {
+      "name": "Multi-Agent Systems and Collaboration",
+      "summary": "A notable concentration of papers discusses the design and implementation of multi-agent systems, particularly in complex, dynamic environments. 'SwarmX' introduces an agentic scheduling system that significantly optimizes interaction latencies across various tasks. 'Dementia-Agents' presents a framework for managing and interpreting heterogeneous clinical data through cooperative multi-agent dynamics. Furthermore, 'FleetAgent' explores how teleoperation can be enhanced through AI agents using compressed vector representations, emphasizing the importance of coordinated efforts in agent-based applications.",
+      "paper_ids": [
+        "2606.21401",
+        "2606.21222",
+        "2606.22013"
+      ]
+    },
+    {
+      "name": "Robotics and Policy Learning",
+      "summary": "Several papers contribute to the evolving landscape of robotics through innovative learning strategies and frameworks. 'HoloAgent-0' proposes a unified embodied agent framework aimed at improving humanoid manipulation by leveraging spatial memory, while 'HiL-ResRL' focuses on fine-tuning for real-world deployments. 'DASIP' enhances robot control through dynamic test-time adaptation, promoting efficient resource use for various task complexities. These contributions highlight ongoing advancements in end-to-end models for robotics, indicating a growing trend towards practical applications in real-world scenarios.",
+      "paper_ids": [
+        "2606.23565",
+        "2606.21836",
+        "2606.22557",
+        "2606.21959"
+      ]
+    },
+    {
+      "name": "Algorithmic Trading and Market Dynamics",
+      "summary": "Papers in this category underline the integration of AI with financial markets, addressing algorithmic trading and behavior modeling. 'When AI Meets Finance' details a system using LLM agents to simulate trading behaviors across various scenarios, while 'Asymmetry PRISM' reveals a portfolio optimization engine tailored for institutional trading. Such insights not only advance financial automation but also raise questions about the implications of AI-enhanced market dynamics and risk management strategies.",
+      "paper_ids": [
+        "2407.18957",
+        "2606.23938"
+      ]
+    },
+    {
+      "name": "Data Infrastructure and Scaling Challenges",
+      "summary": "A key theme reflected in the day's submissions is the gap between theoretical advancements in LLMs and their practical implementations, particularly in low-resource settings. Papers like 'Recency/Frequency Adaptive KV Caching' and 'Kamera' put forth innovative approaches to manage data retrieval and cache efficiency, while 'BatchGen' addresses the challenges in batch processing on a large scale. The insights shared raise essential conversations around effective deployment methodologies for cutting-edge AI frameworks.",
+      "paper_ids": [
+        "2606.21238"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2606.21712",
+      "title": "BatchGen: An Architecture for Scalable and Efficient Batch Inference",
+      "plain_english": "Presents a new architecture specifically for batch inference in AI computations that handles varying loads effectively and maintains high GPU utilization.",
+      "why_it_matters": "This paper aligns with your interest in enhancing AI inference infrastructure, particularly relevant for scaling up model serving capabilities.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2606.20474",
+      "title": "UltraQuant: 4-bit KV Caching for Context-Heavy Agents",
+      "plain_english": "Explores a method for compressing the key-value cache utilized by conversation-heavy agents, improving performance across multiple rounds of interactions.",
+      "why_it_matters": "Directly addresses your focus on improving KV-cache management, critical for low-latency applications in AI serving.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2606.21222",
+      "title": "FleetAgent: Teleoperation Assistant for Autonomous Fleets via Vectorized V2N Messages",
+      "plain_english": "Introduces a multimodal assistant designed to enhance communication between autonomous vehicles, improving operational efficiency during rare failures.",
+      "why_it_matters": "This paper is relevant to your studies in multi-agent systems and the role of communication in robotics.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2606.23565",
+      "title": "HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory",
+      "plain_english": "Develops a framework that allows humanoid robots to utilize spatial memory for better manipulation tasks in both digital and physical environments.",
+      "why_it_matters": "This aligns with your research interests in robotics, specifically humanoid manipulation and end-to-end models.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2606.15057",
+      "title": "AutoDojo: Adaptive Black-Box Attacks Reveal the Limits of IPI Defenses and Task-Specification Effects in LLM Agents",
+      "plain_english": "Proposes a framework for evaluating the defenses of LLM agents against prompt injection attacks, highlighting weaknesses and proposing corrective measures.",
+      "why_it_matters": "Important for understanding the security of AI agents which intersects with ensuring reliability in AI inference systems you focus on.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2606.20636",
+      "title": "SkillHarness: Harnessing Safe Skills for Computer-Use Agents",
+      "plain_english": "Details a system for teaching coding agents how to learn and evolve their skills while operating under dynamic user environments.",
+      "why_it_matters": "Relevant to your interest in multi-agent systems and ensuring reliable operational procedures in AI applications.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2606.24075",
+      "title": "End-to-End Radar and Communication Modulation Recognition with Neuromorphic Computing",
+      "plain_english": "Introduces a novel neural architecture designed for efficient communication and radar signal processing in embedded systems.",
+      "why_it_matters": "Connects to your interest in specialized silicon and low-latency processing within AI infrastructure.",
+      "relevance_score": 6
+    },
+    {
+      "arxiv_id": "2606.24814",
+      "title": "Vision-Language Model Reasoning for Contextual Semantic Mapping in Intralogistics",
+      "plain_english": "Presents a framework that integrates visual and language processing for enhancing semantic mapping in logistics robots.",
+      "why_it_matters": "Relevant for exploring applications of robotics within structured environments, touching on both AI and operational efficiency in logistics.",
+      "relevance_score": 6
+    },
+    {
+      "arxiv_id": "2606.24049",
+      "title": "SPACE: Enabling Learning from Cross-Robot Data Toward Generalist Policies",
+      "plain_english": "Proposes a method for learning policies that can adapt across different robot devices, improving their operational efficiency across varied contexts.",
+      "why_it_matters": "Important for your research on robotics policy learning and effective adaptation in multi-agent systems.",
+      "relevance_score": 6
+    },
+    {
+      "arxiv_id": "2606.20642",
+      "title": "Hypothesis-Disciplined Multi-Agent Automated Formalization of Asymptotic Statistical Theory",
+      "plain_english": "Describes a framework for formalizing complex statistical theories automatically using multiple agents.",
+      "why_it_matters": "Provides tools and frameworks that could influence the automated processes you may encounter in your work.",
+      "relevance_score": 5
+    }
+  ],
+  "worth_noting": [
+    {
+      "arxiv_id": "2407.18957",
+      "one_liner": "Explores a framework for financial trading using LLMs."
+    },
+    {
+      "arxiv_id": "2606.22977",
+      "one_liner": "Presents techniques for optimizing models used in medical interaction tasks."
+    }
+  ],
+  "paper_index": {
+    "2606.21401": {
+      "title": "SwarmX: Agentic Scheduling for Low-Latency Agentic Systems",
+      "authors": [
+        "Yeqi Huang",
+        "Yanwei Ye",
+        "Guomin Chen",
+        "Wenhao Su",
+        "Bin Gong",
+        "Jialian Li",
+        "Zhan Lu",
+        "Yangshen Deng",
+        "Xuan Sun",
+        "Le Xu",
+        "Luo Mai"
+      ],
+      "abs": "https://arxiv.org/abs/2606.21401",
+      "categories": [
+        "cs.DC",
+        "cs.AI"
+      ]
+    },
+    "2605.00528": {
+      "title": "SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters",
+      "authors": [
+        "Dongxin Guo",
+        "Jikun Wu",
+        "Siu Ming Yiu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.00528",
+      "categories": [
+        "cs.DC",
+        "cs.AI",
+        "cs.LG",
+        "cs.OS"
+      ],
+      "citation_count": 1,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "aff": null,
+          "id": "2257424896",
+          "name": "Dongxing Guo"
+        },
+        {
+          "aff": null,
+          "id": null,
+          "name": "Jikun Wu"
+        },
+        {
+          "aff": null,
+          "id": "2241093595",
+          "name": "S. Yiu"
+        }
+      ]
+    },
+    "2606.23565": {
+      "title": "HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory",
+      "authors": [
+        "Xiaolin Zhou",
+        "Liu Liu",
+        "Tingyang Xiao",
+        "Wei Feng",
+        "Fa Fu",
+        "Xinrui Meng",
+        "Xinjie Wang",
+        "Jialiang Han",
+        "Boyang Yu",
+        "Yun Du",
+        "Wei Sui",
+        "Zhizhong Su"
+      ],
+      "abs": "https://arxiv.org/abs/2606.23565",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ]
+    },
+    "2407.18957": {
+      "title": "When AI Meets Finance (StockAgent): Large Language Model-based Stock Trading in Simulated Real-world Environments",
+      "authors": [
+        "Chong Zhang",
+        "Xinyi Liu",
+        "Zhongmou Zhang",
+        "Mingyu Jin",
+        "Lingyao Li",
+        "Zhenting Wang",
+        "Wenyue Hua",
+        "Dong Shu",
+        "Suiyuan Zhu",
+        "Xiaobo Jin",
+        "Sujian Li",
+        "Mengnan Du",
+        "Yongfeng Zhang"
+      ],
+      "abs": "https://arxiv.org/abs/2407.18957",
+      "categories": [
+        "q-fin.TR",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "citation_count": 33,
+      "influential_count": 3,
+      "s2_authors": [
+        {
+          "id": "2279759627",
+          "name": "Chong Zhang",
+          "aff": null
+        },
+        {
+          "id": "2313689114",
+          "name": "Xinyi Liu",
+          "aff": null
+        },
+        {
+          "id": "2267333980",
+          "name": "Mingyu Jin",
+          "aff": null
+        },
+        {
+          "id": "2374225442",
+          "name": "Zhongmou Zhang",
+          "aff": null
+        },
+        {
+          "id": "2261065167",
+          "name": "Lingyao Li",
+          "aff": null
+        },
+        {
+          "id": "2337668410",
+          "name": "Zheng Wang",
+          "aff": null
+        },
+        {
+          "id": "2007245028",
+          "name": "Wenyue Hua",
+          "aff": null
+        },
+        {
+          "id": "2267332168",
+          "name": "Dong Shu",
+          "aff": null
+        },
+        {
+          "id": "2279758147",
+          "name": "Suiyuan Zhu",
+          "aff": null
+        },
+        {
+          "id": "2149112399",
+          "name": "Xiaobo Jin",
+          "aff": null
+        },
+        {
+          "id": "2313680591",
+          "name": "Sujian Li",
+          "aff": null
+        },
+        {
+          "id": "2237804196",
+          "name": "Mengnan Du",
+          "aff": null
+        },
+        {
+          "id": "2239061409",
+          "name": "Yongfeng Zhang",
+          "aff": null
+        }
+      ]
+    },
+    "2606.20246": {
+      "title": "Finetuning Vision-Language-Action Models Requires Fewer Layers Than You Think",
+      "authors": [
+        "Gia-Binh Nguyen",
+        "Trong-Bao Ho",
+        "Thien-Loc Ha",
+        "Khoa Vo",
+        "Philip Lund MÃ¸ller",
+        "Quang T. Nguyen",
+        "Long Dinh",
+        "Tung M. Luu",
+        "Tuan Dam",
+        "Vu Duong",
+        "Trung Le",
+        "Nghi D. Q. Bui",
+        "Minh Vu",
+        "Tran Nguyen Le",
+        "An Thai Le",
+        "Ngan Le",
+        "Daniel Sonntag",
+        "James Zou",
+        "Jan Peters",
+        "Duy M. H. Nguyen",
+        "Ngo Anh Vien"
+      ],
+      "abs": "https://arxiv.org/abs/2606.20246",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ]
+    },
+    "2606.20474": {
+      "title": "UltraQuant: 4-bit KV Caching for Context-Heavy Agents",
+      "authors": [
+        "Inesh Chakrabarti",
+        "David Limpus",
+        "Aditi Ghai Rana",
+        "Bowen Bao",
+        "Spandan Tiwari",
+        "Thiago Crepaldi",
+        "Ashish Sirasao"
+      ],
+      "abs": "https://arxiv.org/abs/2606.20474",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.PF"
+      ]
+    },
+    "2606.21836": {
+      "title": "AgentDSE: Reasoning-Augmented Architectural Design Space Exploration",
+      "authors": [
+        "Chenyu Wang",
+        "Jiahe Caroline Shi",
+        "David Kong",
+        "Duane S. Boning",
+        "Zishen Wan",
+        "Yilun Du",
+        "Vijay Janapa Reddi"
+      ],
+      "abs": "https://arxiv.org/abs/2606.21836",
+      "categories": [
+        "cs.AR",
+        "cs.AI"
+      ]
+    },
+    "2606.21222": {
+      "title": "FleetAgent: Teleoperation Assistant for Autonomous Fleets via Vectorized V2N Messages",
+      "authors": [
+        "Juntong Peng",
+        "Qi Chen",
+        "Deyuan Qu",
+        "Takayuki Shimizu",
+        "Yaobin Chen",
+        "Ziran Wang"
+      ],
+      "abs": "https://arxiv.org/abs/2606.21222",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ]
+    },
+    "2606.21712": {
+      "title": "BatchGen: An Architecture for Scalable and Efficient Batch Inference",
+      "authors": [
+        "Tairan Xu",
+        "Leyang Xue",
+        "Zhan Lu",
+        "Jinfu Deng",
+        "Hongyang Xiao",
+        "Yinsicheng Jiang",
+        "Congjie He",
+        "Matej Sandor",
+        "Le Xu",
+        "Luo Mai"
+      ],
+      "abs": "https://arxiv.org/abs/2606.21712",
+      "categories": [
+        "cs.DC",
+        "cs.LG"
+      ]
+    },
+    "2606.23938": {
+      "title": "Neuro-Symbolic Drive: Rule-Grounded Faithful Reasoning for Driving VLAs",
+      "authors": [
+        "Xiangbo Gao",
+        "Xiukun Huang",
+        "Boyu Lu",
+        "Junge Zhang",
+        "Mengjie Mao",
+        "Jiachen Li",
+        "Wei Xiong",
+        "Zhengzhong Tu"
+      ],
+      "abs": "https://arxiv.org/abs/2606.23938",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ]
+    },
+    "2606.21238": {
+      "title": "Recency/Frequency Adaptive KV Caching for Large Language Model Serving",
+      "authors": [
+        "Yang Shen",
+        "Meghana Madhyastha",
+        "Robert Underwood",
+        "Bogdan Nicolae",
+        "Randal Burns"
+      ],
+      "abs": "https://arxiv.org/abs/2606.21238",
+      "categories": [
+        "cs.DC",
+        "cs.AI",
+        "cs.LG"
+      ]
+    },
+    "2606.24049": {
+      "title": "SPACE: Enabling Learning from Cross-Robot Data Toward Generalist Policies",
+      "authors": [
+        "Haeone Lee",
+        "Byeongguk Jeon",
+        "Suchae Jeong",
+        "Jian Kim",
+        "Kimin Lee"
+      ],
+      "abs": "https://arxiv.org/abs/2606.24049",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2606.21959": {
+      "title": "OpenBioRQ: Unsolved Biomedical Research Questions for Agents",
+      "authors": [
+        "Minbyul Jeong"
+      ],
+      "abs": "https://arxiv.org/abs/2606.21959",
+      "categories": [
+        "cs.CL"
+      ]
+    },
+    "2606.22013": {
+      "title": "Load Testing for Machine Learning Model Serving Systems at Scale",
+      "authors": [
+        "Amr S. Abdelfattah",
+        "Nakul Tirumalai",
+        "Indu Mohanan",
+        "Xiao Li",
+        "Pengchao Wang",
+        "Dinakar Dhurjati",
+        "Eric Sung"
+      ],
+      "abs": "https://arxiv.org/abs/2606.22013",
+      "categories": [
+        "cs.LG",
+        "cs.PF"
+      ]
+    },
+    "2606.24884": {
+      "title": "InSight: Self-Guided Skill Acquisition via Steerable VLAs",
+      "authors": [
+        "Maggie Wang",
+        "Lars Osterberg",
+        "Stephen Tian",
+        "Ola Shorinwa",
+        "Jiajun Wu",
+        "Mac Schwager"
+      ],
+      "abs": "https://arxiv.org/abs/2606.24884",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ]
+    },
+    "2606.22557": {
+      "title": "MacAgentBench: Benchmarking AI Agents on Real-World macOS Desktop",
+      "authors": [
+        "Yikun Fu",
+        "Bowen Fu",
+        "Zhenyu Wu",
+        "Shuang Cheng",
+        "Xiaowei Sun",
+        "Bowen Yang",
+        "Zehao Li",
+        "Yibo Zhao",
+        "Zichen Ding",
+        "Zhoumianze Liu",
+        "Shijie Wang",
+        "Biqing Qi",
+        "Bowen Zhou"
+      ],
+      "abs": "https://arxiv.org/abs/2606.22557",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.HC"
+      ]
+    },
+    "2606.24814": {
+      "title": "Vision-Language Model Reasoning for Contextual Semantic Mapping in Intralogistics",
+      "authors": [
+        "Marvin RÃ¼dt",
+        "Hao Pang",
+        "Constantin Enke",
+        "ZÃ¤zilia Seibold",
+        "Kai Furmans"
+      ],
+      "abs": "https://arxiv.org/abs/2606.24814",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2606.22977": {
+      "title": "StatABench: Dataset and Framework for Evaluating Statistical Analysis Capabilities of LLMs",
+      "authors": [
+        "Youxin Zhu",
+        "Yixuan Ding",
+        "Peng Lai",
+        "Longyue Wang",
+        "Bingyi Jing",
+        "Guanhua Chen"
+      ],
+      "abs": "https://arxiv.org/abs/2606.22977",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ]
+    },
+    "2606.15057": {
+      "title": "AutoDojo: Adaptive Black-Box Attacks Reveal the Limits of IPI Defenses and Task-Specification Effects in LLM Agents",
+      "authors": [
+        "Xinhang Ma",
+        "Taoran Li",
+        "Chaowei Xiao",
+        "Zhiyuan Yu",
+        "Ning Zhang",
+        "Yevgeniy Vorobeychik"
+      ],
+      "abs": "https://arxiv.org/abs/2606.15057",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "primary_affiliation": "Washington University in St. Louis",
+      "s2_authors": [
+        {
+          "id": "2348618899",
+          "name": "Xinhang Ma",
+          "aff": null
+        },
+        {
+          "id": "2401115855",
+          "name": "Taoran Li",
+          "aff": null
+        },
+        {
+          "id": "2407402414",
+          "name": "Chaowei Xiao",
+          "aff": null
+        },
+        {
+          "id": "2118174028",
+          "name": "Zhiyuan Yu",
+          "aff": "Washington University in St. Louis"
+        },
+        {
+          "id": "2273594553",
+          "name": "Ning Zhang",
+          "aff": null
+        },
+        {
+          "id": "1699600",
+          "name": "Yevgeniy Vorobeychik",
+          "aff": null
+        }
+      ]
+    },
+    "2606.20642": {
+      "title": "Hypothesis-Disciplined Multi-Agent Automated Formalization of Asymptotic Statistical Theory",
+      "authors": [
+        "Tingzhou Wei",
+        "Zeyu Zheng",
+        "Ethan X. Fang",
+        "Junwei Lu"
+      ],
+      "abs": "https://arxiv.org/abs/2606.20642",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.LO",
+        "math.ST",
+        "stat.TH"
+      ]
+    },
+    "2606.24075": {
+      "title": "End-to-End Radar and Communication Modulation Recognition with Neuromorphic Computing",
+      "authors": [
+        "Xiaohu Li",
+        "Chongxiao Qu",
+        "Caiyong Lin",
+        "Chenxiao Dou",
+        "Wei Hua"
+      ],
+      "abs": "https://arxiv.org/abs/2606.24075",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ]
+    },
+    "2606.20636": {
+      "title": "SkillHarness: Harnessing Safe Skills for Computer-Use Agents",
+      "authors": [
+        "Yurun Chen",
+        "Biao Yi",
+        "Keting Yin",
+        "Shengyu Zhang"
+      ],
+      "abs": "https://arxiv.org/abs/2606.20636",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CR",
+        "cs.LG"
+      ]
+    }
+  }
+}
