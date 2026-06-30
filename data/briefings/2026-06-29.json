@@ -1,0 +1,782 @@
+{
+  "date": "2026-06-29",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Today's papers highlight advancements in agentic AI, focusing on tools, efficiency, and infrastructure for large-scale applications.",
+  "executive_overview": "A notable concentration of papers in agentic AI frameworks emerges, emphasizing efficient interaction between language models and various tools to tackle complex tasks in robotics, finance, and optimization. Several works address improvements in resource allocation for LLMs, while others explore novel agentic behaviors in multi-agent systems and recommender systems. Noteworthy advancements in hardware utilization also surface, particularly in optimizing KV cache management.",
+  "themes": [
+    {
+      "name": "Agentic AI and Multi-Agent Systems",
+      "summary": "Today's batch presents significant advancements in agentic AI, particularly in the context of multi-agent systems and their capacity to autonomously perform complex tasks. Papers like [2606.29774] explore the dynamic capabilities of LLM agents in varied contexts, allowing them to tackle different functionalities like navigation and manipulation under varying conditions. Additionally, [2606.27397] and [2606.30602] discuss new frameworks for integrating structure into the decision-making processes of agents, enhancing their adaptability and effectiveness in collaborative settings.",
+      "paper_ids": [
+        "2606.30015",
+        "2606.28116",
+        "2606.28109"
+      ]
+    },
+    {
+      "name": "Optimization and Resource Management",
+      "summary": "A clear trend towards optimizing resources and improving efficiency is visible across multiple papers. For instance, [2606.27811] delves into adjusting parameters for LLMs in resource-constrained environments, while [2606.22075] discusses efficient task allocation and prioritization strategies for handling computational loads effectively. These studies highlight the importance of adapting models and processes to fit operational constraints without compromising performance.",
+      "paper_ids": [
+        "2606.29652",
+        "2606.29570"
+      ]
+    },
+    {
+      "name": "Vision-Language-Action Models",
+      "summary": "Several contributions focus on refining Vision-Language-Action (VLA) models for improved performance in robotic manipulation tasks. Papers like [2606.30481] present innovative approaches to unifying world and action modeling, allowing agents to leverage visual inputs effectively while adapting to dynamic environments. Additionally, [2606.27660] and [2606.29075] study the integration of reasoning into VLA frameworks, further pushing boundaries in complex manipulation tasks.",
+      "paper_ids": [
+        "2606.29008",
+        "2606.29457",
+        "2606.27892",
+        "2606.16620"
+      ]
+    },
+    {
+      "name": "AI and Hardware Integration",
+      "summary": "New insights into the integration of AI with hardware systems emerge, addressing critical issues in resource efficiency and performance optimization. Works such as [2606.30554] and [2606.28204] investigate strategies for combining computational resources across various architectures while ensuring reliable performance in applications ranging from robotic interactions to dynamic simulations. This hardware-software synergy underscores the potential for more robust deployed systems.",
+      "paper_ids": [
+        "2605.09708",
+        "2606.20014"
+      ]
+    },
+    {
+      "name": "Ethics and Security in AI Systems",
+      "summary": "The ethical implications of LLM deployment and the potential for misuse are examined in papers like [2606.2603], highlighting the need for robust safety frameworks as AI systems become more autonomous. This theme resonates through several works, which advocate for structured safety protocols and reliable accountability measures in the design and operation of LLM-based systems, particularly in high-stakes environments.",
+      "paper_ids": [
+        "2509.20635"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2606.30151",
+      "title": "AERIS: Aerial-Edge Role-Driven Intelligence at Runtime via Orchestrated Language-Model Swarm",
+      "plain_english": "This paper introduces AERIS, a system that utilizes small language models and perception modules to enhance the autonomy of aerial platforms by dynamically assigning roles based on resource availability.",
+      "why_it_matters": "Relevant to the user's interest in multi-agent systems and robotics policy learning, highlighting a framework that optimally deploys language models at the edge for real-time operations.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2606.29809",
+      "title": "How Far Can You Get Without a GPU? A Systematic Benchmark of Lightweight Hallucination Detection Across Question Answering, Dialogue, and Summarisation",
+      "plain_english": "This study benchmarks different hallucination detection methods for LLMs that do not rely on heavy computational power, assessing how effective they are in various contexts.",
+      "why_it_matters": "Addresses the user's interest in algorithmic execution and optimization, particularly around deploying efficient LLMs without high-end resources.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2602.10238",
+      "title": "Learning to Evict from Key-Value Cache",
+      "plain_english": "The paper presents a framework that models the eviction of tokens from the KV cache as a reinforcement learning problem, optimizing memory usage during LLM inference.",
+      "why_it_matters": "Directly aligns with the user's focus on KV-cache management and low-latency serving in AI inference infrastructure.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2606.27663",
+      "title": "Direct Action-Head Injection of A Grounded 3D Point Unlocks Spatial and Task Generalization",
+      "plain_english": "This work proposes a method for grounding vision-language-action models to improve their performance and generalization across tasks and spatial configurations.",
+      "why_it_matters": "This aligns with the user's robotics policy learning interests, particularly in relation to complex manipulation tasks.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2602.14872",
+      "title": "On the Emergence of Implicit Curriculum in RLVR Learning Dynamics",
+      "plain_english": "This paper investigates how reinforcement learning with verifiable rewards can lead to the emergence of effective learning dynamics that improve the reasoning capabilities of language models.",
+      "why_it_matters": "The investigation into reinforcement learning dynamics is highly relevant to the user's interest in policy learning and optimization in RL contexts.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2606.26800",
+      "title": "SSI-Policy: Learning Structured Scene Interfaces for Vision-Language Robotic Manipulation",
+      "plain_english": "The authors develop a policy framework that enhances thinking and acting in robotic manipulations by incorporating structured scene understanding.",
+      "why_it_matters": "This fits the user's focus area in humanoid manipulation and robotics, emphasizing the importance of structured reasoning in VLA approaches.",
+      "relevance_score": 8
+    }
+  ],
+  "worth_noting": [
+    {
+      "arxiv_id": "2606.28049",
+      "one_liner": "Presents a survey on AI-enhanced software engineering in clinical settings."
+    }
+  ],
+  "paper_index": {
+    "2606.30151": {
+      "title": "AERIS: Aerial-Edge Role-Driven Intelligence at Runtime via Orchestrated Language-Model Swarm",
+      "authors": [
+        "Jiabin Lou",
+        "Haopeng Wang",
+        "Xinyu Liu",
+        "Yu Zhang",
+        "Rongye Shi",
+        "Wenjun Wu"
+      ],
+      "abs": "https://arxiv.org/abs/2606.30151",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2602.10238": {
+      "title": "Learning to Evict from Key-Value Cache",
+      "authors": [
+        "Luca Moschella",
+        "Laura Manduchi",
+        "Ozan Sener"
+      ],
+      "abs": "https://arxiv.org/abs/2602.10238",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "citation_count": 2,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2410030413",
+          "name": "Luca Moschella",
+          "aff": null
+        },
+        {
+          "id": "11180167",
+          "name": "Laura Manduchi",
+          "aff": null
+        },
+        {
+          "id": "3114252",
+          "name": "Ozan Sener",
+          "aff": null
+        }
+      ]
+    },
+    "2606.20014": {
+      "title": "Hierarchical Control in Multi-Agent Games: LLM-based Planning and RL Execution",
+      "authors": [
+        "Jannik HÃ¶sch",
+        "Alessandro Sestini",
+        "Florian Fuchs",
+        "Amir Baghi",
+        "Joakim Bergdahl",
+        "Konrad Tollmar",
+        "Jean-Philippe Barrette-LaPierre",
+        "Linus GisslÃ©n"
+      ],
+      "abs": "https://arxiv.org/abs/2606.20014",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2444836744",
+          "name": "Jannik Hosch",
+          "aff": null
+        },
+        {
+          "id": "1392640592",
+          "name": "Alessandro Sestini",
+          "aff": null
+        },
+        {
+          "id": "2371072387",
+          "name": "Florian Fuchs",
+          "aff": null
+        },
+        {
+          "id": "2350754326",
+          "name": "Amir Baghi",
+          "aff": null
+        },
+        {
+          "id": "38922104",
+          "name": "Joakim Bergdahl",
+          "aff": null
+        },
+        {
+          "id": "2244619683",
+          "name": "Konrad Tollmar",
+          "aff": null
+        },
+        {
+          "id": "2387867557",
+          "name": "Jean-Philippe Barrette-LaPierre",
+          "aff": null
+        },
+        {
+          "id": "2350754595",
+          "name": "Linus Gisslén",
+          "aff": null
+        }
+      ]
+    },
+    "2606.26800": {
+      "title": "SSI-Policy: Learning Structured Scene Interfaces for Vision-Language Robotic Manipulation",
+      "authors": [
+        "Kaijun Wang",
+        "Zikai Ouyang",
+        "Xuping Wu",
+        "Jinyi Hong",
+        "Wei Pan",
+        "Haibo Lu",
+        "Jia Pan",
+        "Wei Zhang",
+        "Linfang Zheng"
+      ],
+      "abs": "https://arxiv.org/abs/2606.26800",
+      "categories": [
+        "cs.RO"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2349376023",
+          "name": "Kaijun Wang",
+          "aff": null
+        },
+        {
+          "id": "2131049217",
+          "name": "Zikai Ouyang",
+          "aff": null
+        },
+        {
+          "id": "2344016816",
+          "name": "Xuping Wu",
+          "aff": null
+        },
+        {
+          "id": "2190674209",
+          "name": "Jin-Seok Hong",
+          "aff": null
+        },
+        {
+          "id": "2377994256",
+          "name": "Wei Pan",
+          "aff": null
+        },
+        {
+          "id": "2115607652",
+          "name": "Haibo Lu",
+          "aff": null
+        },
+        {
+          "id": "2274201540",
+          "name": "Jia Pan",
+          "aff": null
+        },
+        {
+          "id": "2274892274",
+          "name": "Wei Zhang",
+          "aff": null
+        },
+        {
+          "id": "1845796458",
+          "name": "Linfang Zheng",
+          "aff": null
+        }
+      ]
+    },
+    "2606.28049": {
+      "title": "AirGroundBench: Probing Spatial Intelligence in Multimodal Large Models under Heterogeneous Multi-View Embodied Collaboration",
+      "authors": [
+        "Haotian Li",
+        "Yida Wang",
+        "Leyuan Wang",
+        "Jinshan Lai",
+        "Keyang Wang",
+        "Zonghao Guo",
+        "Qiang Ma",
+        "Liuyu Xiang",
+        "Jianwei Hu",
+        "Zhaofeng He"
+      ],
+      "abs": "https://arxiv.org/abs/2606.28049",
+      "categories": [
+        "cs.CV"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Haotian Li",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yida Wang",
+          "aff": null
+        },
+        {
+          "id": "2395222534",
+          "name": "Leyuan Wang",
+          "aff": null
+        },
+        {
+          "id": "2158143408",
+          "name": "Jinshan Lai",
+          "aff": null
+        },
+        {
+          "id": "2445335851",
+          "name": "Keyang Wang",
+          "aff": null
+        },
+        {
+          "id": "2386868346",
+          "name": "Zonghao Guo",
+          "aff": null
+        },
+        {
+          "id": "2331770018",
+          "name": "Qiang Ma",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Liuyu Xiang",
+          "aff": null
+        },
+        {
+          "id": "2292286192",
+          "name": "Jianwei Hu",
+          "aff": null
+        },
+        {
+          "id": "2303276150",
+          "name": "Zhaofeng He",
+          "aff": null
+        }
+      ]
+    },
+    "2606.28116": {
+      "title": "Mechanism-Driven Monitors for Preemptive Detection of LLM Training Instability",
+      "authors": [
+        "Ruixuan Huang",
+        "Yipei Wang",
+        "Wenyi Fang",
+        "Hantao Huang",
+        "Yifan Huang",
+        "Ansheng You",
+        "Zhenxing Zhang",
+        "Shuai Wang",
+        "Fan Wu",
+        "Yang Zheng"
+      ],
+      "abs": "https://arxiv.org/abs/2606.28116",
+      "categories": [
+        "cs.CL"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2347002162",
+          "name": "Ruixuan Huang",
+          "aff": null
+        },
+        {
+          "id": "2290862041",
+          "name": "Yipei Wang",
+          "aff": null
+        },
+        {
+          "id": "2264992299",
+          "name": "Wenyi Fang",
+          "aff": null
+        },
+        {
+          "id": "2370943160",
+          "name": "Hantao Huang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yifan Huang",
+          "aff": null
+        },
+        {
+          "id": "2372388516",
+          "name": "Ansheng You",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zhenxing Zhang",
+          "aff": null
+        },
+        {
+          "id": "2397381977",
+          "name": "Shuai Wang",
+          "aff": null
+        },
+        {
+          "id": "2379009484",
+          "name": "Fan Wu",
+          "aff": null
+        },
+        {
+          "id": "2265244264",
+          "name": "Yang Zheng",
+          "aff": null
+        }
+      ]
+    },
+    "2605.09708": {
+      "title": "Metal-Sci: A Scientific Compute Benchmark for Evolutionary LLM Kernel Search on Apple Silicon",
+      "authors": [
+        "VÃ­ctor Gallego"
+      ],
+      "abs": "https://arxiv.org/abs/2605.09708",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.DC"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "115105860",
+          "name": "Víctor Gallego",
+          "aff": null
+        }
+      ]
+    },
+    "2606.29809": {
+      "title": "How Far Can You Get Without a GPU? A Systematic Benchmark of Lightweight Hallucination Detection Across Question Answering, Dialogue, and Summarisation",
+      "authors": [
+        "Kriti Faujdar",
+        "Smit Kadvani"
+      ],
+      "abs": "https://arxiv.org/abs/2606.29809",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ]
+    },
+    "2606.29008": {
+      "title": "Macro--Micro Decision-Making in 6G Networks: An Agent-Based Framework for the Resource-Fungibility Landscape Resource-Fungibility Landscape",
+      "authors": [
+        "Sayanti Ghosh",
+        "Indrakshi Dey",
+        "Nicola Marchetti"
+      ],
+      "abs": "https://arxiv.org/abs/2606.29008",
+      "categories": [
+        "eess.SP"
+      ]
+    },
+    "2606.27663": {
+      "title": "Direct Action-Head Injection of A Grounded 3D Point Unlocks Spatial and Task Generalization",
+      "authors": [
+        "Shiang-Feng Tsai",
+        "Jin-Cheng Jhang",
+        "Yen-Ling Tai",
+        "Jia-Hong Lai",
+        "Shih-Yun Wong",
+        "KangTung-Hsu",
+        "Yi-Ting Chen"
+      ],
+      "abs": "https://arxiv.org/abs/2606.27663",
+      "categories": [
+        "cs.RO"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2371072820",
+          "name": "Shiang-Feng Tsai",
+          "aff": null
+        },
+        {
+          "id": "2296712503",
+          "name": "Jin-Cheng Jhang",
+          "aff": null
+        },
+        {
+          "id": "2284774794",
+          "name": "Yen-Ling Tai",
+          "aff": null
+        },
+        {
+          "id": "2445085979",
+          "name": "Jia-Hong Lai",
+          "aff": null
+        },
+        {
+          "id": "2445232447",
+          "name": "Shih-Yun Wong",
+          "aff": null
+        },
+        {
+          "id": "2445219996",
+          "name": "KangTung-Hsu",
+          "aff": null
+        },
+        {
+          "id": "2350835780",
+          "name": "Yiting Chen",
+          "aff": null
+        }
+      ]
+    },
+    "2606.30015": {
+      "title": "Parametric Skills",
+      "authors": [
+        "Xuan Zhao",
+        "Haonan He",
+        "Qingyu Yang",
+        "Minglei Li",
+        "Jingqi Ye",
+        "Zelin Tan",
+        "Bo Wan",
+        "Peng Ye"
+      ],
+      "abs": "https://arxiv.org/abs/2606.30015",
+      "categories": [
+        "cs.CL"
+      ]
+    },
+    "2606.29570": {
+      "title": "Hierarchical Policy Learning via Spectral Decomposition",
+      "authors": [
+        "Shuxin Cao",
+        "Liquan Wang",
+        "Walker Byrnes",
+        "Yiye Chen",
+        "Yilun Du",
+        "Animesh Garg"
+      ],
+      "abs": "https://arxiv.org/abs/2606.29570",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2606.29652": {
+      "title": "As We May Search",
+      "authors": [
+        "Saber Zerhoudi",
+        "Adam Roegiest",
+        "Jelena Mitrovic",
+        "Michael Granitzer"
+      ],
+      "abs": "https://arxiv.org/abs/2606.29652",
+      "categories": [
+        "cs.IR"
+      ]
+    },
+    "2606.29457": {
+      "title": "How Much Due Diligence Before You Bid? Learning in Intractable Takeover Auctions",
+      "authors": [
+        "Zain Naboulsi"
+      ],
+      "abs": "https://arxiv.org/abs/2606.29457",
+      "categories": [
+        "cs.AI",
+        "cs.GT",
+        "cs.LG"
+      ]
+    },
+    "2606.16620": {
+      "title": "Entropy-Gated Latent Recursion",
+      "authors": [
+        "Soham Bhattacharjee",
+        "Dushyant Singh Chauhan",
+        "Salem Lahlou",
+        "Martin Takac",
+        "Nils Lukas"
+      ],
+      "abs": "https://arxiv.org/abs/2606.16620",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2331624389",
+          "name": "Soham Bhattacharjee",
+          "aff": null
+        },
+        {
+          "id": "145036777",
+          "name": "Dushyant Singh Chauhan",
+          "aff": null
+        },
+        {
+          "id": "51474466",
+          "name": "S. Lahlou",
+          "aff": null
+        },
+        {
+          "id": "2293464604",
+          "name": "M. Takác",
+          "aff": null
+        },
+        {
+          "id": "79993101",
+          "name": "Nils Lukas",
+          "aff": null
+        }
+      ]
+    },
+    "2509.20635": {
+      "title": "Learning Terrain-Specialized Policies for Adaptive Locomotion in Challenging Environments",
+      "authors": [
+        "Matheus P. Angarola",
+        "Francisco Affonso",
+        "Marcelo Becker"
+      ],
+      "abs": "https://arxiv.org/abs/2509.20635",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "citation_count": 1,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2381986246",
+          "name": "Matheus P. Angarola",
+          "aff": null
+        },
+        {
+          "id": "2379667444",
+          "name": "Francisco Affonso",
+          "aff": null
+        },
+        {
+          "id": "2381728300",
+          "name": "Marcelo Becker",
+          "aff": null
+        }
+      ]
+    },
+    "2606.28109": {
+      "title": "MMAO: A Metabolic Multi-Agent Optimizer with Endogenous Resource Allocation for Continuous and Discrete Optimization",
+      "authors": [
+        "Jinliang Xu",
+        "Liping Ma"
+      ],
+      "abs": "https://arxiv.org/abs/2606.28109",
+      "categories": [
+        "cs.NE",
+        "cs.MA"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2323899358",
+          "name": "Jinliang Xu",
+          "aff": null
+        },
+        {
+          "id": "2445229655",
+          "name": "Liping Ma",
+          "aff": null
+        }
+      ]
+    },
+    "2602.14872": {
+      "title": "On the Emergence of Implicit Curriculum in RLVR Learning Dynamics",
+      "authors": [
+        "Yu Huang",
+        "Zixin Wen",
+        "Yuejie Chi",
+        "Yuting Wei",
+        "Aarti Singh",
+        "Yingbin Liang",
+        "Yuxin Chen"
+      ],
+      "abs": "https://arxiv.org/abs/2602.14872",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "math.OC",
+        "stat.ML"
+      ],
+      "citation_count": 4,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2366038065",
+          "name": "Yu Huang",
+          "aff": null
+        },
+        {
+          "id": "2290066782",
+          "name": "Zixin Wen",
+          "aff": null
+        },
+        {
+          "id": "2290017848",
+          "name": "Yuejie Chi",
+          "aff": null
+        },
+        {
+          "id": "2315287509",
+          "name": "Yuting Wei",
+          "aff": null
+        },
+        {
+          "id": "2304465834",
+          "name": "Aarti Singh",
+          "aff": null
+        },
+        {
+          "id": "2257135632",
+          "name": "Yingbin Liang",
+          "aff": null
+        },
+        {
+          "id": "2264420174",
+          "name": "Yuxin Chen",
+          "aff": null
+        }
+      ]
+    },
+    "2606.27892": {
+      "title": "Co-Optimization of Analog Kolmogorov-Arnold Networks for Low-Power Function Approximation in Flexible Electronics",
+      "authors": [
+        "Paula Carolina Lozano Duarte",
+        "Georgios Zervakis",
+        "Mehdi Tahoori",
+        "Sani Nassif"
+      ],
+      "abs": "https://arxiv.org/abs/2606.27892",
+      "categories": [
+        "cs.AR",
+        "cs.ET",
+        "cs.NE"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2269472184",
+          "name": "P. Duarte",
+          "aff": null
+        },
+        {
+          "id": "50481255",
+          "name": "Georgios Zervakis",
+          "aff": null
+        },
+        {
+          "id": "2326225591",
+          "name": "Mehdi B. Tahoori",
+          "aff": null
+        },
+        {
+          "id": "2293510583",
+          "name": "Sani R. Nassif",
+          "aff": null
+        }
+      ]
+    }
+  }
+}
