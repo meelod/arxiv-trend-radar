@@ -116081,6 +116081,34 @@
 "found": false,
 "influential_count": 0
 },
+"2605.09076": {
+"authors": [
+{
+"aff": null,
+"id": "2322458517",
+"name": "Haejoon Lee"
+},
+{
+"aff": null,
+"id": "2262214609",
+"name": "Vincent Yun"
+},
+{
+"aff": null,
+"id": "2762989",
+"name": "Dimitra Panagou"
+},
+{
+"aff": null,
+"id": "2373354279",
+"name": "Sai Praneeth Karimireddy"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-01",
+"found": true,
+"influential_count": 0
+},
 "2605.09115": {
 "authors": [],
 "citation_count": 0,
@@ -124499,11 +124527,171 @@
 "found": true,
 "influential_count": 0
 },
+"2606.28385": {
+"authors": [
+{
+"aff": null,
+"id": "2151595384",
+"name": "M. Nguyễn"
+},
+{
+"aff": null,
+"id": "2187159401",
+"name": "N. Diep"
+},
+{
+"aff": null,
+"id": "2380985970",
+"name": "Hung Khang Nguyen"
+},
+{
+"aff": null,
+"id": "2277494391",
+"name": "M. Lê"
+},
+{
+"aff": null,
+"id": "2360371404",
+"name": "Doan Thien"
+},
+{
+"aff": null,
+"id": "2313308109",
+"name": "Hoang H. Tran"
+},
+{
+"aff": null,
+"id": "2293720055",
+"name": "Dung D. Le"
+},
+{
+"aff": null,
+"id": "2036745584",
+"name": "Vu N. Duong"
+},
+{
+"aff": null,
+"id": "2267332831",
+"name": "Daniel Sonntag"
+},
+{
+"aff": null,
+"id": "2282564821",
+"name": "A. T. Le"
+},
+{
+"aff": null,
+"id": "2374196339",
+"name": "D. M. H. Nguyen"
+},
+{
+"aff": null,
+"id": "26619871",
+"name": "V. Ngo"
+},
+{
+"aff": null,
+"id": "2445696655",
+"name": "Tran Van Nhiem"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-01",
+"found": true,
+"influential_count": 0
+},
+"2606.28409": {
+"authors": [
+{
+"aff": null,
+"id": null,
+"name": "Zhe Zhao"
+},
+{
+"aff": null,
+"id": "2237234225",
+"name": "H. Lang"
+},
+{
+"aff": null,
+"id": "2292898814",
+"name": "Zhihan Xiao"
+},
+{
+"aff": null,
+"id": "2445028028",
+"name": "Luke Ztz Hu"
+},
+{
+"aff": null,
+"id": "2445702476",
+"name": "John Imoleayo Adebisi"
+},
+{
+"aff": null,
+"id": "2257707203",
+"name": "Songping Mai"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-01",
+"found": true,
+"influential_count": 0
+},
+"2606.28841": {
+"authors": [
+{
+"aff": null,
+"id": "51082514",
+"name": "Santhanakrishnan Srinivasan"
+},
+{
+"aff": null,
+"id": "9746393",
+"name": "M. Patawar"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-01",
+"found": true,
+"influential_count": 0
+},
+"2606.28876": {
+"authors": [
+{
+"aff": null,
+"id": "2243937605",
+"name": "Junyi Zou"
+},
+{
+"aff": null,
+"id": "2445701977",
+"name": "Avrova Donz"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-01",
+"found": true,
+"influential_count": 0
+},
 "2606.29008": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-30",
 "found": false,
+"influential_count": 0
+},
+"2606.29178": {
+"authors": [
+{
+"aff": null,
+"id": "143780146",
+"name": "P. Reddy"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-01",
+"found": true,
 "influential_count": 0
 },
 "2606.29457": {
@@ -124545,6 +124733,13 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-06-30",
+"found": false,
+"influential_count": 0
+},
+"2606.31144": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-01",
 "found": false,
 "influential_count": 0
 }

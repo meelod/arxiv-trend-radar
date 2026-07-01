@@ -1,0 +1,360 @@
+{
+  "date": "2026-06-30",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Strong focus on AI inference systems and robotics policies dominates today's papers.",
+  "executive_overview": "The papers today reveal a significant concentration on AI inference infrastructure, with a notable emphasis on optimizing long-context Large Language Model (LLM) performance through improved memory management and scheduling techniques. Several contributions target enhanced capabilities in multi-agent systems and robotics, specifically addressing challenges in robotic manipulation and navigation. This highlights an increasing trend towards integrating advanced AI models with practical applications in dynamic environments, underscoring the importance of efficiency and resource management.",
+  "themes": [
+    {
+      "name": "AI Inference Optimization",
+      "summary": "A cluster of papers focuses on enhancing inference efficiency for large language models and AI agents. For instance, [2606.29729] discusses a Memory-Managed Long-Context Attention design to reduce memory bottlenecks. Meanwhile, [2606.29735] introduces RaBitQCache, a framework that employs randomized quantization to optimize attention weight estimation, indicating that significant improvements in inference speed and memory retention can be achieved at scale. Additional studies like [2606.28841] and [2606.31144] pursue similar objectives in diverse applications, from agentic systems to real-time simulations.",
+      "paper_ids": [
+        "2606.28841",
+        "2606.31144"
+      ]
+    },
+    {
+      "name": "Robotics and Manipulation",
+      "summary": "Several papers advance methodologies for robotic manipulation and autonomous navigation. [2606.28409] introduces evidence-driven agents in C-to-HLS conversion for efficient robotic operations, while [2606.29178] explores Interactive Robotic Action Synthesis using multimodal AI. Additionally, works like [2606.25902] and [2606.26078] propose frameworks that leverage detailed sensory input for enhanced robot interaction in cluttered environments, addressing both precision and generalizability from simulation to real-world tasks.",
+      "paper_ids": [
+        "2606.28409",
+        "2606.29178"
+      ]
+    },
+    {
+      "name": "Multi-Agent Systems",
+      "summary": "Today's submissions also spotlight innovations in multi-agent frameworks. Papers such as [2606.28790] and [2606.28755] propose new strategies for managing interactions and intelligent decision-making in collaborative systems. The development of tools like [2606.29009] highlights approaches to enhancing the decision-making processes in multi-agent systems through improved communication and task refocusing, emphasizing the need for adaptive methods that can reliably handle uncertain environments.",
+      "paper_ids": []
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2606.28876",
+      "title": "Memory-Managed Long-Context Attention: A Preliminary Study of Editable Request-Local Memory",
+      "plain_english": "This paper discusses a new framework for managing memory in long-context language models, which helps reduce the computational burden while maintaining efficient use of historical information during inference.",
+      "why_it_matters": "This directly aligns with your interest in low-latency serving for AI models, particularly as it addresses the critical issue of memory bottlenecks in large models, a key concern for optimizing AI inference infrastructure.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2606.28385",
+      "title": "RoboGaze: Evaluating Robot World Models via Structured Vision-Language Analysis",
+      "plain_english": "The paper introduces a framework for assessing the performance of robot models that learn to navigate and manipulate their environments based on visual inputs and language commands.",
+      "why_it_matters": "This is relevant as it combines robotics with AI, focusing on manipulation tasks, which is a core aspect of your interest in robotics policy learning and humanoid manipulation.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2605.09076",
+      "title": "Robust Multi-Agent LLMs under Byzantine Faults",
+      "plain_english": "This study presents strategies for ensuring the reliability of multi-agent systems when faced with unreliable or adversarial agents damaging overall performance.",
+      "why_it_matters": "The mechanisms discussed can improve the robustness of multi-agent applications, which is crucial for your focus on multi-agent systems and tool-using LLM agents.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2606.30151",
+      "title": "AERIS: Aerial-Edge Role-Driven Intelligence at Runtime via Orchestrated Language-Model Swarm",
+      "plain_english": "AERIS organizes language models into roles that adapt dynamically to resource changes for aerial robotic systems, enhancing autonomy in resource-constrained environments.",
+      "why_it_matters": "Your focus on robotics policy aligns well with this study, as it emphasizes autonomous operation and dynamic adjustment for aerial platforms.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2606.31144",
+      "title": "A Modular Vision-Language-Action Robotics Framework for Indoor Environments",
+      "plain_english": "This paper details a new system designed to enable autonomous robots to execute tasks based on natural language commands, utilizing modular components for efficient functioning.",
+      "why_it_matters": "It directly pertains to your interest in robotics manipulation and AI applications, focusing on combining language and vision for effective robot task execution.",
+      "relevance_score": 8
+    }
+  ],
+  "worth_noting": [
+    {
+      "arxiv_id": "2606.29178",
+      "one_liner": "This paper explores how autonomous agents can learn from long-horizon tasks in dynamic environments."
+    }
+  ],
+  "paper_index": {
+    "2606.30151": {
+      "title": "AERIS: Aerial-Edge Role-Driven Intelligence at Runtime via Orchestrated Language-Model Swarm",
+      "authors": [
+        "Jiabin Lou",
+        "Haopeng Wang",
+        "Xinyu Liu",
+        "Yu Zhang",
+        "Rongye Shi",
+        "Wenjun Wu"
+      ],
+      "abs": "https://arxiv.org/abs/2606.30151",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2606.31144": {
+      "title": "A Modular Vision-Language-Action Robotics Framework for Indoor Environments",
+      "authors": [
+        "Anindya Jana",
+        "Snehasis Banerjee",
+        "Arup Sadhu",
+        "Ranjan Dasgupta"
+      ],
+      "abs": "https://arxiv.org/abs/2606.31144",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ]
+    },
+    "2606.28409": {
+      "title": "Evidence-Driven LLM Agent for C-to-Synthesizable-C Conversion and Verification",
+      "authors": [
+        "Zhe Zhao",
+        "Hongbing Lang",
+        "Zhihan Xiao",
+        "Luke Ztz Hu",
+        "John Imoleayo Adebisi",
+        "Songping Mai"
+      ],
+      "abs": "https://arxiv.org/abs/2606.28409",
+      "categories": [
+        "cs.AR",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Zhe Zhao",
+          "aff": null
+        },
+        {
+          "id": "2237234225",
+          "name": "H. Lang",
+          "aff": null
+        },
+        {
+          "id": "2292898814",
+          "name": "Zhihan Xiao",
+          "aff": null
+        },
+        {
+          "id": "2445028028",
+          "name": "Luke Ztz Hu",
+          "aff": null
+        },
+        {
+          "id": "2445702476",
+          "name": "John Imoleayo Adebisi",
+          "aff": null
+        },
+        {
+          "id": "2257707203",
+          "name": "Songping Mai",
+          "aff": null
+        }
+      ]
+    },
+    "2606.28841": {
+      "title": "LAMP: Lean-based Agentic framework with MCP and Proof Repair",
+      "authors": [
+        "Santhana Srinivasan R",
+        "Maithilee Patawar"
+      ],
+      "abs": "https://arxiv.org/abs/2606.28841",
+      "categories": [
+        "cs.LO",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "51082514",
+          "name": "Santhanakrishnan Srinivasan",
+          "aff": null
+        },
+        {
+          "id": "9746393",
+          "name": "M. Patawar",
+          "aff": null
+        }
+      ]
+    },
+    "2606.29178": {
+      "title": "Selective Memory Retention for Long-Horizon LLM Agents",
+      "authors": [
+        "Pranath Reddy"
+      ],
+      "abs": "https://arxiv.org/abs/2606.29178",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "143780146",
+          "name": "P. Reddy",
+          "aff": null
+        }
+      ]
+    },
+    "2606.28385": {
+      "title": "RoboGaze: Evaluating Robot World Models via Structured Vision-Language Analysis",
+      "authors": [
+        "Minh-Loi Nguyen",
+        "Nghiem Tuong Diep",
+        "Hung Khang Nguyen",
+        "Minh Le",
+        "Doanh Le Thien",
+        "Hoang H. Tran",
+        "Dung D. Le",
+        "Vu N. Duong",
+        "Daniel Sonntag",
+        "An Thai Le",
+        "Duy Minh Ho Nguyen",
+        "Vien Anh Ngo",
+        "Tran Van Nhiem"
+      ],
+      "abs": "https://arxiv.org/abs/2606.28385",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2151595384",
+          "name": "M. Nguyễn",
+          "aff": null
+        },
+        {
+          "id": "2187159401",
+          "name": "N. Diep",
+          "aff": null
+        },
+        {
+          "id": "2380985970",
+          "name": "Hung Khang Nguyen",
+          "aff": null
+        },
+        {
+          "id": "2277494391",
+          "name": "M. Lê",
+          "aff": null
+        },
+        {
+          "id": "2360371404",
+          "name": "Doan Thien",
+          "aff": null
+        },
+        {
+          "id": "2313308109",
+          "name": "Hoang H. Tran",
+          "aff": null
+        },
+        {
+          "id": "2293720055",
+          "name": "Dung D. Le",
+          "aff": null
+        },
+        {
+          "id": "2036745584",
+          "name": "Vu N. Duong",
+          "aff": null
+        },
+        {
+          "id": "2267332831",
+          "name": "Daniel Sonntag",
+          "aff": null
+        },
+        {
+          "id": "2282564821",
+          "name": "A. T. Le",
+          "aff": null
+        },
+        {
+          "id": "2374196339",
+          "name": "D. M. H. Nguyen",
+          "aff": null
+        },
+        {
+          "id": "26619871",
+          "name": "V. Ngo",
+          "aff": null
+        },
+        {
+          "id": "2445696655",
+          "name": "Tran Van Nhiem",
+          "aff": null
+        }
+      ]
+    },
+    "2605.09076": {
+      "title": "Robust Multi-Agent LLMs under Byzantine Faults",
+      "authors": [
+        "Haejoon Lee",
+        "Vincent-Daniel Yun",
+        "Dimitra Panagou",
+        "Sai Praneeth Karimireddy"
+      ],
+      "abs": "https://arxiv.org/abs/2605.09076",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2322458517",
+          "name": "Haejoon Lee",
+          "aff": null
+        },
+        {
+          "id": "2262214609",
+          "name": "Vincent Yun",
+          "aff": null
+        },
+        {
+          "id": "2762989",
+          "name": "Dimitra Panagou",
+          "aff": null
+        },
+        {
+          "id": "2373354279",
+          "name": "Sai Praneeth Karimireddy",
+          "aff": null
+        }
+      ]
+    },
+    "2606.28876": {
+      "title": "Memory-Managed Long-Context Attention: A Preliminary Study of Editable Request-Local Memory",
+      "authors": [
+        "Junyi Zou",
+        "Avrova Donz"
+      ],
+      "abs": "https://arxiv.org/abs/2606.28876",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2243937605",
+          "name": "Junyi Zou",
+          "aff": null
+        },
+        {
+          "id": "2445701977",
+          "name": "Avrova Donz",
+          "aff": null
+        }
+      ]
+    }
+  }
+}
