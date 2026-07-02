@@ -1,119 +1,566 @@
 {
-  "date": "2026-06-30",
+  "date": "2026-07-01",
   "paper_count": 400,
   "model": "gpt-4o-mini",
   "language": "English",
-  "headline": "Strong focus on AI inference systems and robotics policies dominates today's papers.",
-  "executive_overview": "The papers today reveal a significant concentration on AI inference infrastructure, with a notable emphasis on optimizing long-context Large Language Model (LLM) performance through improved memory management and scheduling techniques. Several contributions target enhanced capabilities in multi-agent systems and robotics, specifically addressing challenges in robotic manipulation and navigation. This highlights an increasing trend towards integrating advanced AI models with practical applications in dynamic environments, underscoring the importance of efficiency and resource management.",
+  "headline": "Notable advancements in AI infrastructures for multi-agent systems and inference optimization are highlighted in today’s submissions.",
+  "executive_overview": "Today's papers underscore significant innovations in AI inference systems, particularly focused on multi-agent frameworks and optimization techniques for efficient resource utilization. There is a heavy emphasis on leveraging large language models (LLMs) in practical applications, especially in robotics and agent-based systems. Additionally, several works explore design infrastructures aimed at optimizing performance and ensuring compliance within classified domains and environments.",
   "themes": [
     {
-      "name": "AI Inference Optimization",
-      "summary": "A cluster of papers focuses on enhancing inference efficiency for large language models and AI agents. For instance, [2606.29729] discusses a Memory-Managed Long-Context Attention design to reduce memory bottlenecks. Meanwhile, [2606.29735] introduces RaBitQCache, a framework that employs randomized quantization to optimize attention weight estimation, indicating that significant improvements in inference speed and memory retention can be achieved at scale. Additional studies like [2606.28841] and [2606.31144] pursue similar objectives in diverse applications, from agentic systems to real-time simulations.",
+      "name": "AI Inference Infrastructure",
+      "summary": "A strong focus on optimizing inference efficiency is evident in various submissions. For instance, papers like [2607.01166] explore optimal routing techniques that integrate both computational costs and network dynamics. [2606.31093] presents Omni-Flow, which enhances workflow orchestration for multimodal systems, while [2606.31179] introduces a framework for fine-tuning using low-rank adaptations that reduce overhead. Others like [2606.29708] outline design practices across diverse hardware configurations to streamline inference performance in heterogeneous settings.",
       "paper_ids": [
-        "2606.28841",
-        "2606.31144"
+        "2602.13692",
+        "2606.29708",
+        "2606.31093",
+        "2606.31179"
       ]
     },
     {
-      "name": "Robotics and Manipulation",
-      "summary": "Several papers advance methodologies for robotic manipulation and autonomous navigation. [2606.28409] introduces evidence-driven agents in C-to-HLS conversion for efficient robotic operations, while [2606.29178] explores Interactive Robotic Action Synthesis using multimodal AI. Additionally, works like [2606.25902] and [2606.26078] propose frameworks that leverage detailed sensory input for enhanced robot interaction in cluttered environments, addressing both precision and generalizability from simulation to real-world tasks.",
+      "name": "Multi-Agent Systems and Collaboration",
+      "summary": "There is a notable trend toward self-evolving agent-based frameworks aimed at enhancing collaborative tasks. Papers like [2606.30911] and [2606.005151] investigate the optimization of multi-agent systems through strategic skill accumulation and hierarchical agent communication. Similarly, [2606.13133] consolidates various agent skills into a coherent workflow, enriching the collaborative capabilities of LLMs for problem-solving. The theme reflects ongoing efforts to blend human-like adaptability with automated systems.",
       "paper_ids": [
-        "2606.28409",
-        "2606.29178"
+        "2606.30911"
       ]
     },
     {
-      "name": "Multi-Agent Systems",
-      "summary": "Today's submissions also spotlight innovations in multi-agent frameworks. Papers such as [2606.28790] and [2606.28755] propose new strategies for managing interactions and intelligent decision-making in collaborative systems. The development of tools like [2606.29009] highlights approaches to enhancing the decision-making processes in multi-agent systems through improved communication and task refocusing, emphasizing the need for adaptive methods that can reliably handle uncertain environments.",
-      "paper_ids": []
+      "name": "Robotics and Task Execution",
+      "summary": "Several innovations address the challenges of robotic manipulation and task execution through AI. For example, [2606.31178] introduces a pipeline for automatic adjustment of manipulation speeds based on contextual task stages. Papers like [2606.31072] refine object classification techniques for enhanced retrieval, while others such as [2607.01212] focus on improving humanoid learning through enhanced memory representations and task structuring. These explorations serve to integrate advanced decision-making processes into robotic frameworks, expanding both their capabilities and efficiency.",
+      "paper_ids": [
+        "2607.01212",
+        "2606.31178"
+      ]
+    },
+    {
+      "name": "Data Management and Structure",
+      "summary": "The ability to manage and leverage data effectively features prominently in today’s content. Papers like [2606.31166] and [2606.30405] propose frameworks aimed at streamlining memory utilization and improving information retrieval processes through hierarchical management of skills and workflows. Meanwhile, [2606.30553] discusses the necessity for in-depth benchmarking of skill libraries, emphasizing that effective data structuring is pivotal to advancing the functionality of AI-driven environments.",
+      "paper_ids": [
+        "2606.31071"
+      ]
     }
   ],
   "top_picks": [
     {
-      "arxiv_id": "2606.28876",
-      "title": "Memory-Managed Long-Context Attention: A Preliminary Study of Editable Request-Local Memory",
-      "plain_english": "This paper discusses a new framework for managing memory in long-context language models, which helps reduce the computational burden while maintaining efficient use of historical information during inference.",
-      "why_it_matters": "This directly aligns with your interest in low-latency serving for AI models, particularly as it addresses the critical issue of memory bottlenecks in large models, a key concern for optimizing AI inference infrastructure.",
+      "arxiv_id": "2606.29708",
+      "title": "Demystifying the Design Space and Best Practices for Heterogeneous LLM Inference and Serving",
+      "plain_english": "The paper outlines best practices for managing heterogeneous LLM inference by defining a design space categorized by factors like accelerator choice and workload characteristics, optimizing performance based on mixed numerical formats.",
+      "why_it_matters": "This paper aligns directly with your interest in AI inference infrastructure, particularly in enhancing serving efficiency across diverse hardware environments, which is critical for optimizing large-scale AI deployments.",
       "relevance_score": 9
     },
     {
-      "arxiv_id": "2606.28385",
-      "title": "RoboGaze: Evaluating Robot World Models via Structured Vision-Language Analysis",
-      "plain_english": "The paper introduces a framework for assessing the performance of robot models that learn to navigate and manipulate their environments based on visual inputs and language commands.",
-      "why_it_matters": "This is relevant as it combines robotics with AI, focusing on manipulation tasks, which is a core aspect of your interest in robotics policy learning and humanoid manipulation.",
+      "arxiv_id": "2606.31093",
+      "title": "Omni-Flow: A Unified Workflow Orchestration and Distributed KV Cache Sharing Framework for Multimodal Inference",
+      "plain_english": "Omni-Flow addresses the challenges of orchestrating multimodal workflows while efficiently sharing KV caches across processes, aimed at improving computational resource management during LLM inference.",
+      "why_it_matters": "This work directly pertains to your focus on AI inference infrastructure, particularly in orchestrating multimodal LLMs, and offers insights into shared resource management, which is essential for low-latency retrieval efforts.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2606.30911",
+      "title": "Why Solve It Twice? Hierarchical Accumulation of Skills for Transfer-Efficient ML Engineering",
+      "plain_english": "This paper presents a framework that organizes prior knowledge into a structured hierarchy, allowing coding agents to efficiently leverage learned skills across different tasks, reducing redundant recomputation.",
+      "why_it_matters": "This is highly relevant to your interests in multi-agent systems and tool-using LLM agents, showcasing the need for effective knowledge management to enhance the efficiency and adaptability of AI agents during complex tasks.",
       "relevance_score": 8
     },
     {
-      "arxiv_id": "2605.09076",
-      "title": "Robust Multi-Agent LLMs under Byzantine Faults",
-      "plain_english": "This study presents strategies for ensuring the reliability of multi-agent systems when faced with unreliable or adversarial agents damaging overall performance.",
-      "why_it_matters": "The mechanisms discussed can improve the robustness of multi-agent applications, which is crucial for your focus on multi-agent systems and tool-using LLM agents.",
+      "arxiv_id": "2606.31723",
+      "title": "UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models",
+      "plain_english": "The study proposes a framework that integrates tactile sensing with vision-language-action models to enhance robotics manipulation by improving how these systems learn from contact information.",
+      "why_it_matters": "Your focus on robotics policy learning, especially in terms of humanoid manipulation through integrated sensory understanding, aligns well with this paper's innovations in tactile understanding for improved task execution.",
       "relevance_score": 8
     },
     {
-      "arxiv_id": "2606.30151",
-      "title": "AERIS: Aerial-Edge Role-Driven Intelligence at Runtime via Orchestrated Language-Model Swarm",
-      "plain_english": "AERIS organizes language models into roles that adapt dynamically to resource changes for aerial robotic systems, enhancing autonomy in resource-constrained environments.",
-      "why_it_matters": "Your focus on robotics policy aligns well with this study, as it emphasizes autonomous operation and dynamic adjustment for aerial platforms.",
-      "relevance_score": 8
-    },
-    {
-      "arxiv_id": "2606.31144",
-      "title": "A Modular Vision-Language-Action Robotics Framework for Indoor Environments",
-      "plain_english": "This paper details a new system designed to enable autonomous robots to execute tasks based on natural language commands, utilizing modular components for efficient functioning.",
-      "why_it_matters": "It directly pertains to your interest in robotics manipulation and AI applications, focusing on combining language and vision for effective robot task execution.",
-      "relevance_score": 8
+      "arxiv_id": "2606.01825",
+      "title": "ROGLE: Robust Global-Local Alignment with Automated Region Supervision for Text-Based Person Search",
+      "plain_english": "This research develops a framework to enhance text-based person search through robust global-local image alignment, improving retrieval accuracy by addressing inherent biases in learning representations.",
+      "why_it_matters": "The focus on structured visual and textual information processing is relevant to your interests in enhancing retrieval at scale and leveraging multimodal inputs for improved outcomes.",
+      "relevance_score": 7
     }
   ],
   "worth_noting": [
     {
-      "arxiv_id": "2606.29178",
-      "one_liner": "This paper explores how autonomous agents can learn from long-horizon tasks in dynamic environments."
+      "arxiv_id": "2607.00939",
+      "one_liner": "Explores the implications of self-evolving agents in multi-agent frameworks."
+    },
+    {
+      "arxiv_id": "2606.31536",
+      "one_liner": "Presents a vision-guided framework for robotic endovascular navigation."
+    },
+    {
+      "arxiv_id": "2606.30704",
+      "one_liner": "Discusses a method for enhancing retrieval-based evidence synthesis."
+    },
+    {
+      "arxiv_id": "2607.00190",
+      "one_liner": "Evaluates the interaction between decision states and policy integrity in AI agents."
     }
   ],
   "paper_index": {
-    "2606.30151": {
-      "title": "AERIS: Aerial-Edge Role-Driven Intelligence at Runtime via Orchestrated Language-Model Swarm",
+    "2602.13692": {
+      "title": "ThunderAgent: A Simple, Fast and Program-Aware Agentic Inference System",
       "authors": [
-        "Jiabin Lou",
-        "Haopeng Wang",
-        "Xinyu Liu",
-        "Yu Zhang",
-        "Rongye Shi",
-        "Wenjun Wu"
+        "Hao Kang",
+        "Ziyang Li",
+        "Weili Xu",
+        "Xinyu Yang",
+        "Yinfang Chen",
+        "Junxiong Wang",
+        "Beidi Chen",
+        "Tushar Krishna",
+        "Chenfeng Xu",
+        "Simran Arora"
       ],
-      "abs": "https://arxiv.org/abs/2606.30151",
+      "abs": "https://arxiv.org/abs/2602.13692",
       "categories": [
-        "cs.RO"
+        "cs.OS",
+        "cs.MA"
+      ],
+      "citation_count": 10,
+      "influential_count": 1,
+      "s2_authors": [
+        {
+          "id": "2290585178",
+          "name": "Hao Kang",
+          "aff": null
+        },
+        {
+          "id": "2307866711",
+          "name": "Ziyang Li",
+          "aff": null
+        },
+        {
+          "id": "2284120415",
+          "name": "Xinyu Yang",
+          "aff": null
+        },
+        {
+          "id": "2265180304",
+          "name": "Weili Xu",
+          "aff": null
+        },
+        {
+          "id": "2109326352",
+          "name": "Yinfang Chen",
+          "aff": null
+        },
+        {
+          "id": "2390557302",
+          "name": "Junxiong Wang",
+          "aff": null
+        },
+        {
+          "id": "2306132734",
+          "name": "Beidi Chen",
+          "aff": null
+        },
+        {
+          "id": "2330416578",
+          "name": "Tushar Krishna",
+          "aff": null
+        },
+        {
+          "id": "2393149652",
+          "name": "Chenfeng Xu",
+          "aff": null
+        },
+        {
+          "id": "2259924225",
+          "name": "Simran Arora",
+          "aff": null
+        }
       ]
     },
-    "2606.31144": {
-      "title": "A Modular Vision-Language-Action Robotics Framework for Indoor Environments",
+    "2606.29708": {
+      "title": "Demystifying the Design Space and Best Practices for Heterogeneous LLM Inference and Serving",
       "authors": [
-        "Anindya Jana",
-        "Snehasis Banerjee",
-        "Arup Sadhu",
-        "Ranjan Dasgupta"
+        "Zhixin Wang",
+        "Zhengbo Wang",
+        "Fangcheng Fu",
+        "Yinhui Lu",
+        "Jinlong Hou",
+        "Yijie Chen",
+        "Xiaowei Shen",
+        "He Liu",
+        "Xiangbin Li",
+        "Jun Chen",
+        "Ruya Gu",
+        "Dian Wang",
+        "Zhou Tan",
+        "Yuan Cheng",
+        "Hongzhou Zhang",
+        "Xiangjun Huang",
+        "Ping Zhang",
+        "Xiaohe Hu"
       ],
-      "abs": "https://arxiv.org/abs/2606.31144",
+      "abs": "https://arxiv.org/abs/2606.29708",
       "categories": [
-        "cs.RO",
-        "cs.AI"
+        "cs.DC"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2445721988",
+          "name": "Zhixin Wang",
+          "aff": null
+        },
+        {
+          "id": "2445722676",
+          "name": "Zhengbo Wang",
+          "aff": null
+        },
+        {
+          "id": "2365267735",
+          "name": "Fangcheng Fu",
+          "aff": null
+        },
+        {
+          "id": "2445724634",
+          "name": "Yinhui Lu",
+          "aff": null
+        },
+        {
+          "id": "2374194706",
+          "name": "Jinlong Hou",
+          "aff": null
+        },
+        {
+          "id": "2445716564",
+          "name": "Yijie Chen",
+          "aff": null
+        },
+        {
+          "id": "2445715713",
+          "name": "Xiaowei Shen",
+          "aff": null
+        },
+        {
+          "id": "2344772356",
+          "name": "He Liu",
+          "aff": null
+        },
+        {
+          "id": "2389314010",
+          "name": "Xiangbin Li",
+          "aff": null
+        },
+        {
+          "id": "2209229603",
+          "name": "Jun Chen",
+          "aff": null
+        },
+        {
+          "id": "2383170809",
+          "name": "Ruya Gu",
+          "aff": null
+        },
+        {
+          "id": "2445716243",
+          "name": "Dian Wang",
+          "aff": null
+        },
+        {
+          "id": "2445713062",
+          "name": "Zhou Tan",
+          "aff": null
+        },
+        {
+          "id": "2378846285",
+          "name": "Yuan Cheng",
+          "aff": null
+        },
+        {
+          "id": "2445706676",
+          "name": "Hongzhou Zhang",
+          "aff": null
+        },
+        {
+          "id": "2316014988",
+          "name": "Xiangjun Huang",
+          "aff": null
+        },
+        {
+          "id": "2331676361",
+          "name": "Ping Zhang",
+          "aff": null
+        },
+        {
+          "id": "2344034011",
+          "name": "Xiaohe Hu",
+          "aff": null
+        }
       ]
     },
-    "2606.28409": {
-      "title": "Evidence-Driven LLM Agent for C-to-Synthesizable-C Conversion and Verification",
+    "2606.31093": {
+      "title": "Omni-Flow: A Unified Workflow Orchestration and Distributed KV Cache Sharing Framework for Multimodal Inference",
       "authors": [
-        "Zhe Zhao",
-        "Hongbing Lang",
-        "Zhihan Xiao",
-        "Luke Ztz Hu",
-        "John Imoleayo Adebisi",
-        "Songping Mai"
+        "Bin Xiao",
+        "Jingfu Dong",
+        "Changran Wang",
+        "Yitian Chen",
+        "Xiaoyu Zhao",
+        "Yuqi Peng",
+        "Jianping Lin",
+        "Yuchen Xie"
       ],
-      "abs": "https://arxiv.org/abs/2606.28409",
+      "abs": "https://arxiv.org/abs/2606.31093",
       "categories": [
-        "cs.AR",
+        "cs.DC"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2264098855",
+          "name": "Bin Xiao",
+          "aff": null
+        },
+        {
+          "id": "2406981251",
+          "name": "Jingfu Dong",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Changran Wang",
+          "aff": null
+        },
+        {
+          "id": "2445892203",
+          "name": "Yitian Chen",
+          "aff": null
+        },
+        {
+          "id": "2352195567",
+          "name": "Xiaoyu Zhao",
+          "aff": null
+        },
+        {
+          "id": "2445903824",
+          "name": "Yuqi Peng",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jianping Lin",
+          "aff": null
+        },
+        {
+          "id": "2236015688",
+          "name": "Yuchen Xie",
+          "aff": null
+        }
+      ]
+    },
+    "2606.30911": {
+      "title": "Why Solve It Twice? Hierarchical Accumulation of Skills for Transfer-Efficient ML Engineering",
+      "authors": [
+        "Yongbin Kim",
+        "Yashar Talebirad",
+        "Osmar R. Zaiane"
+      ],
+      "abs": "https://arxiv.org/abs/2606.30911",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Yongbin Kim",
+          "aff": null
+        },
+        {
+          "id": "2445797635",
+          "name": "Yashar Talebirad",
+          "aff": null
+        },
+        {
+          "id": "2246256829",
+          "name": "Osmar Zaiane",
+          "aff": null
+        }
+      ]
+    },
+    "2606.31179": {
+      "title": "HealthAgentBench: A Unified Benchmark Suite of Realistic Agentic Healthcare Environments for Challenging Frontier AI Agents",
+      "authors": [
+        "Qianchu Liu",
+        "Sheng Zhang",
+        "Guanghui Qin",
+        "Jeya Maria Jose Valanarasu",
+        "Maximilian Rokuss",
+        "Mingyu Lu",
+        "Timothy Ossowski",
+        "Juan Manuel Zambrano Chaves",
+        "Cliff Wong",
+        "Peniel Argaw",
+        "Yashna Hasija",
+        "Mu Wei",
+        "Wen-wai Yim",
+        "Qin Liu",
+        "Zilin Jing",
+        "Jason Entenmann",
+        "Naoto Usuyama",
+        "Tristan Naumann",
+        "Hoifung Poon"
+      ],
+      "abs": "https://arxiv.org/abs/2606.31179",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2261457384",
+          "name": "Qianchu Liu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Sheng Zhang",
+          "aff": null
+        },
+        {
+          "id": "2394074209",
+          "name": "Guanghui Qin",
+          "aff": null
+        },
+        {
+          "id": "1986468743",
+          "name": "Jeya Maria Jose Valanarasu",
+          "aff": null
+        },
+        {
+          "id": "2214199332",
+          "name": "Maximilian Rokuss",
+          "aff": null
+        },
+        {
+          "id": "2445680336",
+          "name": "Ming Lu",
+          "aff": null
+        },
+        {
+          "id": "2166137162",
+          "name": "Timothy Ossowski",
+          "aff": null
+        },
+        {
+          "id": "2291065818",
+          "name": "Juan Manuel Zambrano Chaves",
+          "aff": null
+        },
+        {
+          "id": "2109566188",
+          "name": "Cliff Wong",
+          "aff": null
+        },
+        {
+          "id": "1676550372",
+          "name": "Peniel N. Argaw",
+          "aff": null
+        },
+        {
+          "id": "2445797185",
+          "name": "Yashna Hasija",
+          "aff": null
+        },
+        {
+          "id": "2379640795",
+          "name": "Mu Wei",
+          "aff": null
+        },
+        {
+          "id": "2379658455",
+          "name": "Wen-wai Yim",
+          "aff": null
+        },
+        {
+          "id": "2364083880",
+          "name": "Qin Liu",
+          "aff": null
+        },
+        {
+          "id": "2363007187",
+          "name": "Zilin Jing",
+          "aff": null
+        },
+        {
+          "id": "2373719521",
+          "name": "Jason Entenmann",
+          "aff": null
+        },
+        {
+          "id": "2637252",
+          "name": "N. Usuyama",
+          "aff": null
+        },
+        {
+          "id": "2264107059",
+          "name": "Tristan Naumann",
+          "aff": null
+        },
+        {
+          "id": "2277607019",
+          "name": "H. Poon",
+          "aff": null
+        }
+      ]
+    },
+    "2607.00939": {
+      "title": "Leveraging LLM-Based Agentic Systems to Generate Quantum Applications for Test Optimization",
+      "authors": [
+        "Ming Tao",
+        "Yuechen Li",
+        "Tao Yue",
+        "Man Zhang",
+        "Aitor Arrieta Marcos"
+      ],
+      "abs": "https://arxiv.org/abs/2607.00939",
+      "categories": [
+        "cs.SE",
+        "quant-ph"
+      ]
+    },
+    "2606.31536": {
+      "title": "Beyond the Expressivity-Trainability Paradox: A Dynamical Lie Algebra Perspective on Navigating Barren Plateaus in Quantum Machine Learning",
+      "authors": [
+        "Kung-Ming Lan",
+        "Edward Huang"
+      ],
+      "abs": "https://arxiv.org/abs/2606.31536",
+      "categories": [
+        "cs.LG",
+        "quant-ph"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2260380053",
+          "name": "Kung-Ming Lan",
+          "aff": null
+        }
+      ]
+    },
+    "2606.31178": {
+      "title": "AETDICE: Unified Framework and Offline Optimization for Nonlinear Multi-Objective RL",
+      "authors": [
+        "Woosung Kim",
+        "Youngjun Suh",
+        "Jinho Lee",
+        "Jongmin Lee",
+        "Byung-Jun Lee"
+      ],
+      "abs": "https://arxiv.org/abs/2606.31178",
+      "categories": [
+        "cs.LG",
         "cs.AI"
       ],
       "citation_count": 0,
@@ -121,45 +568,72 @@
       "s2_authors": [
         {
           "id": null,
-          "name": "Zhe Zhao",
+          "name": "Woosung Kim",
           "aff": null
         },
         {
-          "id": "2237234225",
-          "name": "H. Lang",
+          "id": "2445797512",
+          "name": "Youngjun Suh",
           "aff": null
         },
         {
-          "id": "2292898814",
-          "name": "Zhihan Xiao",
+          "id": null,
+          "name": "Jinho Lee",
           "aff": null
         },
         {
-          "id": "2445028028",
-          "name": "Luke Ztz Hu",
+          "id": null,
+          "name": "Jongmin Lee",
           "aff": null
         },
         {
-          "id": "2445702476",
-          "name": "John Imoleayo Adebisi",
-          "aff": null
-        },
-        {
-          "id": "2257707203",
-          "name": "Songping Mai",
+          "id": "2345012024",
+          "name": "Byung-Jun Lee",
           "aff": null
         }
       ]
     },
-    "2606.28841": {
-      "title": "LAMP: Lean-based Agentic framework with MCP and Proof Repair",
+    "2607.01212": {
+      "title": "FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model",
       "authors": [
-        "Santhana Srinivasan R",
-        "Maithilee Patawar"
+        "Chenyang Ma",
+        "Yue Yang",
+        "Radu Corcodel",
+        "Siddarth Jain",
+        "Andrew Wu",
+        "Chiori Hori",
+        "Diego Romeres"
       ],
-      "abs": "https://arxiv.org/abs/2606.28841",
+      "abs": "https://arxiv.org/abs/2607.01212",
       "categories": [
-        "cs.LO",
+        "cs.RO",
+        "cs.AI"
+      ]
+    },
+    "2607.00190": {
+      "title": "Play Like Champions: Counterfactual Feedback Generation in Latent Space",
+      "authors": [
+        "Andrzej BiaÅecki",
+        "Adam Mastalerz",
+        "Han Zhou"
+      ],
+      "abs": "https://arxiv.org/abs/2607.00190",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ]
+    },
+    "2606.30704": {
+      "title": "From Search to Synthesis: Training LLMs as Zero-Shot Workflow Generators",
+      "authors": [
+        "Gan Luo",
+        "Zihan Qin",
+        "Bin Dong",
+        "Wotao Yin"
+      ],
+      "abs": "https://arxiv.org/abs/2606.30704",
+      "categories": [
+        "cs.LG",
         "cs.AI",
         "cs.CL"
       ],
@@ -167,191 +641,161 @@
       "influential_count": 0,
       "s2_authors": [
         {
-          "id": "51082514",
-          "name": "Santhanakrishnan Srinivasan",
+          "id": "2445796039",
+          "name": "Gan Luo",
           "aff": null
         },
         {
-          "id": "9746393",
-          "name": "M. Patawar",
+          "id": "2292257563",
+          "name": "Zihan Qin",
+          "aff": null
+        },
+        {
+          "id": "2292267500",
+          "name": "Bin Dong",
+          "aff": null
+        },
+        {
+          "id": "2445796050",
+          "name": "Wotao Yin",
           "aff": null
         }
       ]
     },
-    "2606.29178": {
-      "title": "Selective Memory Retention for Long-Horizon LLM Agents",
+    "2606.31723": {
+      "title": "UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models",
       "authors": [
-        "Pranath Reddy"
+        "Xidong Zhang",
+        "Yichi Zhang",
+        "Jiaxin Shi",
+        "Fucai Zhu",
+        "Siyu Zhu",
+        "Michael Yu Wang",
+        "Xiaojun Wu",
+        "Weihao Yuan"
       ],
-      "abs": "https://arxiv.org/abs/2606.29178",
+      "abs": "https://arxiv.org/abs/2606.31723",
       "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.LG"
+        "cs.RO"
       ],
       "citation_count": 0,
       "influential_count": 0,
       "s2_authors": [
         {
-          "id": "143780146",
-          "name": "P. Reddy",
+          "id": "2373529061",
+          "name": "Xidong Zhang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yichi Zhang",
+          "aff": null
+        },
+        {
+          "id": "2292341907",
+          "name": "Jiaxin Shi",
+          "aff": null
+        },
+        {
+          "id": "30772053",
+          "name": "Fucai Zhu",
+          "aff": null
+        },
+        {
+          "id": "2374489685",
+          "name": "Siyu Zhu",
+          "aff": null
+        },
+        {
+          "id": "2248999920",
+          "name": "Michael Yu Wang",
+          "aff": null
+        },
+        {
+          "id": "2445885992",
+          "name": "Xiaojun Wu",
+          "aff": null
+        },
+        {
+          "id": "11349534",
+          "name": "Weihao Yuan",
           "aff": null
         }
       ]
     },
-    "2606.28385": {
-      "title": "RoboGaze: Evaluating Robot World Models via Structured Vision-Language Analysis",
+    "2606.31071": {
+      "title": "Hierarchical 3D Scene Graph Construction and Belief-based Planning for Semantic Navigation",
       "authors": [
-        "Minh-Loi Nguyen",
-        "Nghiem Tuong Diep",
-        "Hung Khang Nguyen",
-        "Minh Le",
-        "Doanh Le Thien",
-        "Hoang H. Tran",
-        "Dung D. Le",
-        "Vu N. Duong",
-        "Daniel Sonntag",
-        "An Thai Le",
-        "Duy Minh Ho Nguyen",
-        "Vien Anh Ngo",
-        "Tran Van Nhiem"
+        "Bing Wu",
+        "Zuyao Chen",
+        "Changwen Chen"
       ],
-      "abs": "https://arxiv.org/abs/2606.28385",
+      "abs": "https://arxiv.org/abs/2606.31071",
       "categories": [
-        "cs.RO",
-        "cs.AI"
+        "cs.CV",
+        "cs.RO"
       ],
       "citation_count": 0,
       "influential_count": 0,
       "s2_authors": [
         {
-          "id": "2151595384",
-          "name": "M. Nguyễn",
+          "id": "2445806549",
+          "name": "Bing Wu",
           "aff": null
         },
         {
-          "id": "2187159401",
-          "name": "N. Diep",
+          "id": "2267391106",
+          "name": "Zuyao Chen",
           "aff": null
         },
         {
-          "id": "2380985970",
-          "name": "Hung Khang Nguyen",
-          "aff": null
-        },
-        {
-          "id": "2277494391",
-          "name": "M. Lê",
-          "aff": null
-        },
-        {
-          "id": "2360371404",
-          "name": "Doan Thien",
-          "aff": null
-        },
-        {
-          "id": "2313308109",
-          "name": "Hoang H. Tran",
-          "aff": null
-        },
-        {
-          "id": "2293720055",
-          "name": "Dung D. Le",
-          "aff": null
-        },
-        {
-          "id": "2036745584",
-          "name": "Vu N. Duong",
-          "aff": null
-        },
-        {
-          "id": "2267332831",
-          "name": "Daniel Sonntag",
-          "aff": null
-        },
-        {
-          "id": "2282564821",
-          "name": "A. T. Le",
-          "aff": null
-        },
-        {
-          "id": "2374196339",
-          "name": "D. M. H. Nguyen",
-          "aff": null
-        },
-        {
-          "id": "26619871",
-          "name": "V. Ngo",
-          "aff": null
-        },
-        {
-          "id": "2445696655",
-          "name": "Tran Van Nhiem",
+          "id": null,
+          "name": "Changwen Chen",
           "aff": null
         }
       ]
     },
-    "2605.09076": {
-      "title": "Robust Multi-Agent LLMs under Byzantine Faults",
+    "2606.01825": {
+      "title": "ROGLE: Robust Global-Local Alignment with Automated Region Supervision for Text-Based Person Search",
       "authors": [
-        "Haejoon Lee",
-        "Vincent-Daniel Yun",
-        "Dimitra Panagou",
-        "Sai Praneeth Karimireddy"
+        "Chaodong Jia",
+        "Zequn Xie",
+        "Xibei Jia",
+        "Sihang Cai",
+        "Shulei Wang",
+        "Tao Jin"
       ],
-      "abs": "https://arxiv.org/abs/2605.09076",
+      "abs": "https://arxiv.org/abs/2606.01825",
       "categories": [
-        "cs.MA",
-        "cs.AI",
-        "cs.LG"
+        "cs.CV",
+        "cs.MM"
       ],
       "citation_count": 0,
       "influential_count": 0,
       "s2_authors": [
         {
-          "id": "2322458517",
-          "name": "Haejoon Lee",
+          "id": "2387131534",
+          "name": "Zequn Xie",
           "aff": null
         },
         {
-          "id": "2262214609",
-          "name": "Vincent Yun",
+          "id": "2240254298",
+          "name": "Xibei Jia",
           "aff": null
         },
         {
-          "id": "2762989",
-          "name": "Dimitra Panagou",
+          "id": "2328348412",
+          "name": "Sihang Cai",
           "aff": null
         },
         {
-          "id": "2373354279",
-          "name": "Sai Praneeth Karimireddy",
-          "aff": null
-        }
-      ]
-    },
-    "2606.28876": {
-      "title": "Memory-Managed Long-Context Attention: A Preliminary Study of Editable Request-Local Memory",
-      "authors": [
-        "Junyi Zou",
-        "Avrova Donz"
-      ],
-      "abs": "https://arxiv.org/abs/2606.28876",
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "citation_count": 0,
-      "influential_count": 0,
-      "s2_authors": [
-        {
-          "id": "2243937605",
-          "name": "Junyi Zou",
+          "id": "2348305136",
+          "name": "Shulei Wang",
           "aff": null
         },
         {
-          "id": "2445701977",
-          "name": "Avrova Donz",
+          "id": "2406045136",
+          "name": "Tao Jin",
           "aff": null
         }
       ]
