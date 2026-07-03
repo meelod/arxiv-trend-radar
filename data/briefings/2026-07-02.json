@@ -1,0 +1,835 @@
+{
+  "date": "2026-07-02",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Strong focus on advancements in AI inferencing and agentic systems in today's papers.",
+  "executive_overview": "Today's papers reflect a robust emphasis on AI inference efficiency, particularly in agentic systems and multimodal learning. Key advancements include memory management techniques for long-context inference, enhanced communication strategies for multi-agents, and novel architectures to boost real-time operation in robotics. A significant number of papers also delve into practical applications in robotics, market interactions, and framework designs for future-proof AI systems.",
+  "themes": [
+    {
+      "name": "AI Inference Optimization",
+      "summary": "Several papers address critical advancements aimed at optimizing inference operations in AI systems, particularly for large language models (LLMs). For instance, the work on Lynx proposes a progressive speculative quantization technique to accelerate key-value (KV) transfer during long-context inference (2607.01831), while ComplianceGate tackles compliance and cost efficiency in regulated environments by introducing a classifier-gated multi-tier LLM routing architecture (2606.31163). Additionally, PersistentKV focuses on memory scheduling for LLM serving, further enhancing efficiency by managing KV cache composition (2606.26666).",
+      "paper_ids": [
+        "2607.01831",
+        "2606.31163",
+        "2606.26666"
+      ]
+    },
+    {
+      "name": "Advancements in Multi-Agent Systems",
+      "summary": "The theme around multi-agent systems is well-represented, focusing on the complex interactions and operational dynamics of LLM agents. For example, the paper on Cache Merging introduces a novel approach to merging the caches of multiple agents to optimize performance (2607.01308). Meanwhile, other works explore strategic capabilities in AI labor markets, where agents compete and collaborate under various economic models (2512.04988). Approaches to managing cache for enhanced collaborative reasoning among agents further strengthen the field (2607.02255, 2607.02034).",
+      "paper_ids": [
+        "2607.01308",
+        "2512.04988",
+        "2607.02255",
+        "2607.02034"
+      ]
+    },
+    {
+      "name": "Robotics and Automation Innovations",
+      "summary": "A strong collection of papers showcases innovations in robotics, particularly focusing on compliance and manipulation tasks in dynamic environments. The CaP-X framework presents a systematic approach for studying coding agents in robot manipulation (2606.31163), while other papers examine the performance of vision-language-action models under various settings, effectively enhancing the capacity for general-purpose robotic intelligence (2603.28545, 2607.01299). Additionally, techniques aimed at improving decentralized robotic coordination systems further highlight ongoing advancements in handling complex robotic tasks (2607.00763).",
+      "paper_ids": [
+        "2606.31163",
+        "2603.28545",
+        "2607.01299",
+        "2607.00763"
+      ]
+    },
+    {
+      "name": "Efficient Data Management Strategies in AI",
+      "summary": "Several papers focus on innovations in data management for AI workflows, especially in querying and processing large datasets. For instance, the work introducing Query-Centric Optimization discusses methods to enhance AI workflows via approximate query processing techniques (2607.00254). Another paper delves into leveraging supervised fine-tuning combined with LLLM capabilities for improved performance in data-intensive domains (2607.01087), highlighting the value of effective data handling in AI systems across various applications.",
+      "paper_ids": [
+        "2607.00254",
+        "2607.01087"
+      ]
+    },
+    {
+      "name": "Hardware Efficiency and Resource Management",
+      "summary": "The papers today also showcase a strong trend towards enhancing hardware efficiency in AI deployments. Notably, work on reinforcement learning approaches for dynamic resource management in both edge and cloud environments demonstrates the balance necessary for effective service (2411.13121). Additionally, research on optimizing GPU resource allocation during inference tasks reflects ongoing efforts to improve operational efficiency in AI systems (2607.02294). Such innovations are vital in light of growing data demands and the need for robust, cost-effective AI solutions.",
+      "paper_ids": [
+        "2411.13121",
+        "2607.02294"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2606.31163",
+      "title": "ComplianceGate: Classifier-Gated Multi-Tier LLM Routing for Inference in Regulated Industries",
+      "plain_english": "This paper presents a routing system that categorizes language model queries based on compliance needs, creating pathways for efficient processing while adhering to regulatory requirements.",
+      "why_it_matters": "It aligns with the user's interest in low-latency serving and inference infrastructure, particularly within regulated industries which may necessitate stringent compliance methods.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2607.01831",
+      "title": "Lynx: Progressive Speculative Quantization for accelerating KV Transfer in Long-Context Inference",
+      "plain_english": "Lynx introduces a new method of quantizing key-value caches during inference, significantly speeding up the process of managing long context sequences in language models.",
+      "why_it_matters": "This paper directly relates to the user's focus on kv-cache management and optimizing inference tasks for AI applications, impacting overall latency in serving.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2606.26666",
+      "title": "PersistentKV: Page-Aware Decode Scheduling for Long-Context LLM Serving on Commodity GPUs",
+      "plain_english": "PersistentKV brings a new scheduling approach that intelligently manages how long-context decryption tasks are processed on GPUs to improve efficiency.",
+      "why_it_matters": "This work is critical for the user's research on low-latency serving and managing computational costs associated with AI inference, especially on GPU architectures.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2607.01308",
+      "title": "Cache Merging as a Convergent Replicated State for Multi-Agent Latent Reasoning",
+      "plain_english": "This research explores a new methodology for combining multiple agents' memory caches to enhance collaborative reasoning capabilities in multi-agent environments.",
+      "why_it_matters": "This aligns with the user's interest in multi-agent systems and tool-using LLM agents, particularly focusing on improving collaboration efficiencies.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2607.00768",
+      "title": "RACORN-1: Adaptive Recall-Preserving Speedup for Low-Selectivity Filtered Vector Search",
+      "plain_english": "The paper proposes an efficient method for enhancing vector searches by preserving important recall while optimizing speed.",
+      "why_it_matters": "This work relates to the user's interest in retrieval at scale, especially in context-hungry applications like AI agents and data management.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2607.02371",
+      "title": "VisionAId: An Offline-First Multimodal Android Assistant for People with Visual Impairment, Featuring Personalized Object Retrieval",
+      "plain_english": "VisionAId is an app designed to help visually impaired individuals find and identify personal belongings by using image recognition and retrieval technologies.",
+      "why_it_matters": "Although outside traditional interests, this reflects the application of AI agent technology in real-world scenarios, which is relevant for understanding broader implications of the user's research.",
+      "relevance_score": 6
+    },
+    {
+      "arxiv_id": "2607.02391",
+      "title": "WattGPU: Predicting Inference Power and Latency on Unseen GPUs and LLMs",
+      "plain_english": "WattGPU predicts how much power and latency different GPUs will require for inference tasks based on the specific LLM used.",
+      "why_it_matters": "This research is particularly valuable for users focused on hardware-architecture mismatches and understanding inference infrastructure for optimal performance on emerging platforms.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2607.01120",
+      "title": "Next-Generation Agentic Reinforcement Learning Systems Enable Self-Evolving Agents",
+      "plain_english": "This work describes the design of agents that can evolve by themselves over time, enhancing their capabilities without human intervention.",
+      "why_it_matters": "This aligns with the user’s interests in multi-agent systems and tool-using agents, showcasing advancements in self-evolving AI technology.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2607.00580",
+      "title": "Active Spatial Guidance: Eliminating Injected Positional Mechanisms in Vision Transformers",
+      "plain_english": "This paper proposes a new method for improving how vision transformers handle position information in images without pre-injected positional cues.",
+      "why_it_matters": "The findings could have relevance for robotics policy learning, impacting how spatial understanding operates in robotic systems.",
+      "relevance_score": 6
+    },
+    {
+      "arxiv_id": "2607.02472",
+      "title": "Learning Agile Intruder Interception using Differentiable Quadrotor Dynamics",
+      "plain_english": "The paper presents a method for training UAVs to intercept moving intruders using differentiable dynamics for better real-time performance.",
+      "why_it_matters": "This is relevant to robotics learning, specifically concerning real-time decision-making processes in dynamic environments, a point of interest for the user.",
+      "relevance_score": 6
+    }
+  ],
+  "worth_noting": [
+    {
+      "arxiv_id": "2607.01810",
+      "one_liner": "Introduces a framework for verifying LLM-generated recovery plans in cloud systems."
+    },
+    {
+      "arxiv_id": "2607.01949",
+      "one_liner": "Explores the safety of vision-language models in robotic systems."
+    }
+  ],
+  "paper_index": {
+    "2607.01120": {
+      "title": "Next-Generation Agentic Reinforcement Learning Systems Enable Self-Evolving Agents",
+      "authors": [
+        "Ran Yan",
+        "Wei Fu",
+        "Jiale Li",
+        "Shusheng Xu",
+        "Zhiyu Mei",
+        "Jiaxuan Gao",
+        "Jiarui Zhang",
+        "Wentai Zhang",
+        "Hao Dai",
+        "Xujie Shen",
+        "Chuyi He",
+        "Zhen Pu",
+        "Jun Mei",
+        "Zhiyao Lin",
+        "Haitao Wang",
+        "Zhiqiang Ding",
+        "Jiawei Zhang",
+        "Huaijie Wang",
+        "Ruida Xu",
+        "Honghua Dong",
+        "Youhe Jiang",
+        "Yi Wu",
+        "Tongkai Yang",
+        "Binhang Yuan"
+      ],
+      "abs": "https://arxiv.org/abs/2607.01120",
+      "categories": [
+        "cs.DC"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2267335333",
+          "name": "Ran Yan",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Wei Fu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jiale Li",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Shusheng Xu",
+          "aff": null
+        },
+        {
+          "id": "2123991452",
+          "name": "Zhiyu Mei",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jiaxuan Gao",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jiarui Zhang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Xujie Shen",
+          "aff": null
+        },
+        {
+          "id": "2374091616",
+          "name": "Hao Dai",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Chuyi He",
+          "aff": null
+        },
+        {
+          "id": "2100888694",
+          "name": "Zhengwu Pu",
+          "aff": null
+        },
+        {
+          "id": "2364679113",
+          "name": "Jun Mei",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zhiyao Lin",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Haitao Wang",
+          "aff": null
+        },
+        {
+          "id": "2446285595",
+          "name": "Zhiqiang Ding",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Huaijie Wang",
+          "aff": null
+        },
+        {
+          "id": "2446006461",
+          "name": "Ruida Xu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Youhe Jiang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yi Wu",
+          "aff": null
+        },
+        {
+          "id": "2364689724",
+          "name": "Tongkai Yang",
+          "aff": null
+        },
+        {
+          "id": "2269474477",
+          "name": "Binhang Yuan",
+          "aff": null
+        }
+      ]
+    },
+    "2512.04988": {
+      "title": "When AI Agents Compete for Jobs: Strategic Capabilities and Economic Dynamics of AI Labour Markets",
+      "authors": [
+        "Christopher Chiu",
+        "Simpson Zhang",
+        "Mihaela van der Schaar"
+      ],
+      "abs": "https://arxiv.org/abs/2512.04988",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2385864466",
+          "name": "Christopher Chiu",
+          "aff": null
+        },
+        {
+          "id": "2108335909",
+          "name": "Simpson Zhang",
+          "aff": null
+        },
+        {
+          "id": "1729969",
+          "name": "M. Schaar",
+          "aff": null
+        }
+      ]
+    },
+    "2607.01831": {
+      "title": "Lynx: Progressive Speculative Quantization for accelerating KV Transfer in Long-Context Inference",
+      "authors": [
+        "Wenchen Han",
+        "Gingfung Matthew Yeung",
+        "Marco Barletta",
+        "William Toner",
+        "Amory Hoste",
+        "Adam Barker"
+      ],
+      "abs": "https://arxiv.org/abs/2607.01831",
+      "categories": [
+        "cs.DC",
+        "cs.LG"
+      ]
+    },
+    "2606.31163": {
+      "title": "ComplianceGate: Classifier-Gated Multi-Tier LLM Routing for Inference in Regulated Industries",
+      "authors": [
+        "Abhishek Dey"
+      ],
+      "abs": "https://arxiv.org/abs/2606.31163",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2362089350",
+          "name": "Abhishek Dey",
+          "aff": null
+        }
+      ]
+    },
+    "2606.26666": {
+      "title": "PersistentKV: Page-Aware Decode Scheduling for Long-Context LLM Serving on Commodity GPUs",
+      "authors": [
+        "Muhammad Ahmed"
+      ],
+      "abs": "https://arxiv.org/abs/2606.26666",
+      "categories": [
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2439258612",
+          "name": "Muhammad Ahmed",
+          "aff": null
+        }
+      ]
+    },
+    "2607.00254": {
+      "title": "Query-Centric Optimization of AI Workflows via Approximate Query Processing and Proxy Models",
+      "authors": [
+        "Huayi Wang",
+        "Jun Xu",
+        "Gromit Yeuk-Yin Chan"
+      ],
+      "abs": "https://arxiv.org/abs/2607.00254",
+      "categories": [
+        "cs.DB"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Huayi Wang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jun Xu",
+          "aff": null
+        },
+        {
+          "id": "2362722116",
+          "name": "Gromit Yeuk-Yin Chan",
+          "aff": null
+        }
+      ]
+    },
+    "2603.28545": {
+      "title": "ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation",
+      "authors": [
+        "Yu Sun",
+        "Meng Cao",
+        "Yang Ping",
+        "Kaidong Zhang",
+        "Qingxuan Chen",
+        "Rongtao Xu",
+        "Liangwang Ruan",
+        "Xuecheng Chen",
+        "Dongxiu Liu",
+        "Yunxiao Yan",
+        "Zunnan Xu",
+        "Runze Xu",
+        "Charles Yang",
+        "Peilun Zhang",
+        "Xiaofan Li",
+        "Ruyi Gan",
+        "Liang Ma",
+        "Yuehao Yin",
+        "Jincheng Yu",
+        "Lufang Chen",
+        "Yuxin Liang",
+        "Peng Zhai",
+        "Hao Wang",
+        "Ivan Laptev",
+        "Ian Reid",
+        "Qian Wang",
+        "Xiaodan Liang"
+      ],
+      "abs": "https://arxiv.org/abs/2603.28545",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "citation_count": 3,
+      "influential_count": 0,
+      "primary_affiliation": "Tsinghua University",
+      "s2_authors": [
+        {
+          "id": "2358602314",
+          "name": "Yu Sun",
+          "aff": null
+        },
+        {
+          "id": "2365441500",
+          "name": "Meng Cao",
+          "aff": null
+        },
+        {
+          "id": "2266222261",
+          "name": "Ping Yang",
+          "aff": null
+        },
+        {
+          "id": "2289937096",
+          "name": "Rongtao Xu",
+          "aff": null
+        },
+        {
+          "id": "2376841953",
+          "name": "Yu-Yan Yan",
+          "aff": null
+        },
+        {
+          "id": "2296102309",
+          "name": "Runze Xu",
+          "aff": null
+        },
+        {
+          "id": "2334438473",
+          "name": "Liang Ma",
+          "aff": null
+        },
+        {
+          "id": "2380522450",
+          "name": "Roy Gan",
+          "aff": null
+        },
+        {
+          "id": "2380523993",
+          "name": "Andy Zhai",
+          "aff": null
+        },
+        {
+          "id": "2406359504",
+          "name": "Qing Chen",
+          "aff": null
+        },
+        {
+          "id": "2224549852",
+          "name": "Zunnan Xu",
+          "aff": "Tsinghua University"
+        },
+        {
+          "id": "2277425499",
+          "name": "Hao Wang",
+          "aff": null
+        },
+        {
+          "id": "2381125782",
+          "name": "Jincheng Yu",
+          "aff": null
+        },
+        {
+          "id": "2184584792",
+          "name": "L. Liang",
+          "aff": null
+        },
+        {
+          "id": "2370855417",
+          "name": "Qian Wang",
+          "aff": null
+        },
+        {
+          "id": "2378706619",
+          "name": "Ivan Laptev",
+          "aff": null
+        },
+        {
+          "id": "2322441508",
+          "name": "Ian D. Reid",
+          "aff": null
+        },
+        {
+          "id": "2331834948",
+          "name": "Xiaodan Liang",
+          "aff": null
+        }
+      ]
+    },
+    "2607.01308": {
+      "title": "Cache Merging as a Convergent Replicated State for Multi-Agent Latent Reasoning",
+      "authors": [
+        "Carlos Baquero",
+        "LuÃ­s Brito"
+      ],
+      "abs": "https://arxiv.org/abs/2607.01308",
+      "categories": [
+        "cs.MA"
+      ]
+    },
+    "2607.02255": {
+      "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
+      "authors": [
+        "Xiangchen Cheng",
+        "Yunwei Jiang",
+        "Jianwen Sun",
+        "Zizhen Li",
+        "Chuanhao Li",
+        "Xiangcheng Cao",
+        "Yihao Liu",
+        "Fanrui Zhang",
+        "Li Jin",
+        "Kaipeng Zhang"
+      ],
+      "abs": "https://arxiv.org/abs/2607.02255",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ]
+    },
+    "2607.01949": {
+      "title": "LiZAD: A Lightweight Zero-Shot Anomaly Detection Framework for Industrial Manufacturing",
+      "authors": [
+        "Uzair Khan",
+        "Luigi Capogrosso",
+        "Muhammad Aqeel",
+        "Francesco Setti",
+        "Michele Magno",
+        "Marco Cristani"
+      ],
+      "abs": "https://arxiv.org/abs/2607.01949",
+      "categories": [
+        "cs.CV"
+      ]
+    },
+    "2607.01299": {
+      "title": "HYPIC: Accelerating Hybrid-Attention LLM Serving with Position-Independent Caching",
+      "authors": [
+        "Yifei Liu",
+        "Juntong Wu",
+        "Yang Liu",
+        "Junhao Hu",
+        "Minghao Li",
+        "Xiaoxu Chen",
+        "Weihang Chen"
+      ],
+      "abs": "https://arxiv.org/abs/2607.01299",
+      "categories": [
+        "cs.DC"
+      ]
+    },
+    "2607.02294": {
+      "title": "Coding Agents Are Guessing: Measuring Action-Boundary Violations in Underspecified DevOps Instructions",
+      "authors": [
+        "Zimo Ji",
+        "Zekai Zhang",
+        "Congying Xu",
+        "Zongjie Li",
+        "Yudong Gao",
+        "Shuai Wang",
+        "Shing-Chi Cheung"
+      ],
+      "abs": "https://arxiv.org/abs/2607.02294",
+      "categories": [
+        "cs.SE"
+      ]
+    },
+    "2411.13121": {
+      "title": "ReinFog: A Deep Reinforcement Learning Empowered Framework for Resource Management in Edge and Cloud Computing Environments",
+      "authors": [
+        "Zhiyu Wang",
+        "Mohammad Goudarzi",
+        "Rajkumar Buyya"
+      ],
+      "abs": "https://arxiv.org/abs/2411.13121",
+      "categories": [
+        "cs.DC"
+      ],
+      "citation_count": 18,
+      "influential_count": 1,
+      "s2_authors": [
+        {
+          "id": "2240742440",
+          "name": "Zhiyu Wang",
+          "aff": null
+        },
+        {
+          "id": "145915989",
+          "name": "Mohammad Goudarzi",
+          "aff": null
+        },
+        {
+          "id": "1709598",
+          "name": "R. Buyya",
+          "aff": null
+        }
+      ]
+    },
+    "2607.01087": {
+      "title": "Cheap Code, Costly Judgment: A Case Study on Governable Agentic Software Engineering",
+      "authors": [
+        "James C. Davis",
+        "Paschal C. Amusuo",
+        "Tanmay Singla",
+        "Berk Ãakar",
+        "Kirsten A. Davis"
+      ],
+      "abs": "https://arxiv.org/abs/2607.01087",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "James C. Davis",
+          "aff": null
+        },
+        {
+          "id": "2176804459",
+          "name": "Paschal C. Amusuo",
+          "aff": null
+        },
+        {
+          "id": "2181728959",
+          "name": "Tanmay Singla",
+          "aff": null
+        },
+        {
+          "id": "2348098667",
+          "name": "Berk cCakar",
+          "aff": null
+        },
+        {
+          "id": "2287967497",
+          "name": "Kirsten A. Davis",
+          "aff": null
+        }
+      ]
+    },
+    "2607.01810": {
+      "title": "Decoupling Code Complexity from Newcomer Participation: A Causal Study of AI Coding Agent Adoption in OSS",
+      "authors": [
+        "Weiwei Xu",
+        "Xuanning Cui",
+        "Hengzhi Ye",
+        "Minghui Zhou"
+      ],
+      "abs": "https://arxiv.org/abs/2607.01810",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ]
+    },
+    "2607.00763": {
+      "title": "Forensic-Oriented Intrusion Detection Using Synthetic Network Traffic Data and Explainable Artificial Intelligence",
+      "authors": [
+        "Jose Luis Vela Alonso",
+        "Carmen Pellicer"
+      ],
+      "abs": "https://arxiv.org/abs/2607.00763",
+      "categories": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2072641960",
+          "name": "José Luis Fernández Alonso",
+          "aff": null
+        },
+        {
+          "id": "2446038127",
+          "name": "Carmen Pellicer",
+          "aff": null
+        }
+      ]
+    },
+    "2607.02034": {
+      "title": "ComplexMimic: Human-Scene Interaction Imitation in Complex 3D Environments",
+      "authors": [
+        "Lu Pan",
+        "Hongwei Zhao"
+      ],
+      "abs": "https://arxiv.org/abs/2607.02034",
+      "categories": [
+        "cs.CV"
+      ]
+    },
+    "2607.00768": {
+      "title": "RACORN-1: Adaptive Recall-Preserving Speedup for Low-Selectivity Filtered Vector Search",
+      "authors": [
+        "Yoonseok Kim",
+        "Gyusik Choe"
+      ],
+      "abs": "https://arxiv.org/abs/2607.00768",
+      "categories": [
+        "cs.DB",
+        "cs.IR"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Yoonseok Kim",
+          "aff": null
+        },
+        {
+          "id": "2446040611",
+          "name": "Gyusik Choe",
+          "aff": null
+        }
+      ]
+    },
+    "2607.02472": {
+      "title": "Learning Agile Intruder Interception using Differentiable Quadrotor Dynamics",
+      "authors": [
+        "Michael Anoruo",
+        "Xiaoyu Tian",
+        "Abhishek Rathod",
+        "Timothy Naudet",
+        "Thomas Canchola",
+        "Eric Sturzinger",
+        "Kshitij Goel",
+        "Wennie Tabib"
+      ],
+      "abs": "https://arxiv.org/abs/2607.02472",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2607.00580": {
+      "title": "Active Spatial Guidance: Eliminating Injected Positional Mechanisms in Vision Transformers",
+      "authors": [
+        "Cong Liu",
+        "Xiaofang Li",
+        "Simon X. Yang"
+      ],
+      "abs": "https://arxiv.org/abs/2607.00580",
+      "categories": [
+        "cs.CV"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Cong Liu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Xiaofang Li",
+          "aff": null
+        },
+        {
+          "id": "98726631",
+          "name": "Simon X. Yang",
+          "aff": null
+        }
+      ]
+    },
+    "2607.02391": {
+      "title": "WattGPU: Predicting Inference Power and Latency on Unseen GPUs and LLMs",
+      "authors": [
+        "Mauricio Fadel Argerich",
+        "Jonathan FÃ¼rst",
+        "Marta PatiÃ±o-MartÃ­nez"
+      ],
+      "abs": "https://arxiv.org/abs/2607.02391",
+      "categories": [
+        "cs.DC",
+        "cs.LG"
+      ]
+    },
+    "2607.02371": {
+      "title": "VisionAId: An Offline-First Multimodal Android Assistant for People with Visual Impairment, Featuring Personalized Object Retrieval",
+      "authors": [
+        "Cristian-Gabriel Florea",
+        "Stelian SpÃ®nu"
+      ],
+      "abs": "https://arxiv.org/abs/2607.02371",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ]
+    }
+  }
+}

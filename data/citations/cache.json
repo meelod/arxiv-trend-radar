@@ -3948,6 +3948,29 @@
 "found": true,
 "influential_count": 0
 },
+"2411.13121": {
+"authors": [
+{
+"aff": null,
+"id": "2240742440",
+"name": "Zhiyu Wang"
+},
+{
+"aff": null,
+"id": "145915989",
+"name": "Mohammad Goudarzi"
+},
+{
+"aff": null,
+"id": "1709598",
+"name": "R. Buyya"
+}
+],
+"citation_count": 18,
+"fetched": "2026-07-03",
+"found": true,
+"influential_count": 1
+},
 "2411.14072": {
 "citation_count": 2,
 "fetched": "2026-05-02",
@@ -25798,6 +25821,29 @@
 "2512.04844": {
 "citation_count": 1,
 "fetched": "2026-05-02",
+"found": true,
+"influential_count": 0
+},
+"2512.04988": {
+"authors": [
+{
+"aff": null,
+"id": "2385864466",
+"name": "Christopher Chiu"
+},
+{
+"aff": null,
+"id": "2108335909",
+"name": "Simpson Zhang"
+},
+{
+"aff": null,
+"id": "1729969",
+"name": "M. Schaar"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-03",
 "found": true,
 "influential_count": 0
 },
@@ -83457,6 +83503,104 @@
 "found": true,
 "influential_count": 0
 },
+"2603.28545": {
+"authors": [
+{
+"aff": null,
+"id": "2358602314",
+"name": "Yu Sun"
+},
+{
+"aff": null,
+"id": "2365441500",
+"name": "Meng Cao"
+},
+{
+"aff": null,
+"id": "2266222261",
+"name": "Ping Yang"
+},
+{
+"aff": null,
+"id": "2289937096",
+"name": "Rongtao Xu"
+},
+{
+"aff": null,
+"id": "2376841953",
+"name": "Yu-Yan Yan"
+},
+{
+"aff": null,
+"id": "2296102309",
+"name": "Runze Xu"
+},
+{
+"aff": null,
+"id": "2334438473",
+"name": "Liang Ma"
+},
+{
+"aff": null,
+"id": "2380522450",
+"name": "Roy Gan"
+},
+{
+"aff": null,
+"id": "2380523993",
+"name": "Andy Zhai"
+},
+{
+"aff": null,
+"id": "2406359504",
+"name": "Qing Chen"
+},
+{
+"aff": "Tsinghua University",
+"id": "2224549852",
+"name": "Zunnan Xu"
+},
+{
+"aff": null,
+"id": "2277425499",
+"name": "Hao Wang"
+},
+{
+"aff": null,
+"id": "2381125782",
+"name": "Jincheng Yu"
+},
+{
+"aff": null,
+"id": "2184584792",
+"name": "L. Liang"
+},
+{
+"aff": null,
+"id": "2370855417",
+"name": "Qian Wang"
+},
+{
+"aff": null,
+"id": "2378706619",
+"name": "Ivan Laptev"
+},
+{
+"aff": null,
+"id": "2322441508",
+"name": "Ian D. Reid"
+},
+{
+"aff": null,
+"id": "2331834948",
+"name": "Xiaodan Liang"
+}
+],
+"citation_count": 3,
+"fetched": "2026-07-03",
+"found": true,
+"influential_count": 0
+},
 "2603.28546": {
 "citation_count": 0,
 "fetched": "2026-05-02",
@@ -124354,6 +124498,19 @@
 "found": false,
 "influential_count": 0
 },
+"2606.26666": {
+"authors": [
+{
+"aff": null,
+"id": "2439258612",
+"name": "Muhammad Ahmed"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": true,
+"influential_count": 0
+},
 "2606.26800": {
 "authors": [
 {
@@ -125048,6 +125205,19 @@
 "found": false,
 "influential_count": 0
 },
+"2606.31163": {
+"authors": [
+{
+"aff": null,
+"id": "2362089350",
+"name": "Abhishek Dey"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": true,
+"influential_count": 0
+},
 "2606.31178": {
 "authors": [
 {
@@ -125252,6 +125422,88 @@
 "found": false,
 "influential_count": 0
 },
+"2607.00254": {
+"authors": [
+{
+"aff": null,
+"id": null,
+"name": "Huayi Wang"
+},
+{
+"aff": null,
+"id": null,
+"name": "Jun Xu"
+},
+{
+"aff": null,
+"id": "2362722116",
+"name": "Gromit Yeuk-Yin Chan"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": true,
+"influential_count": 0
+},
+"2607.00580": {
+"authors": [
+{
+"aff": null,
+"id": null,
+"name": "Cong Liu"
+},
+{
+"aff": null,
+"id": null,
+"name": "Xiaofang Li"
+},
+{
+"aff": null,
+"id": "98726631",
+"name": "Simon X. Yang"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": true,
+"influential_count": 0
+},
+"2607.00763": {
+"authors": [
+{
+"aff": null,
+"id": "2072641960",
+"name": "José Luis Fernández Alonso"
+},
+{
+"aff": null,
+"id": "2446038127",
+"name": "Carmen Pellicer"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": true,
+"influential_count": 0
+},
+"2607.00768": {
+"authors": [
+{
+"aff": null,
+"id": null,
+"name": "Yoonseok Kim"
+},
+{
+"aff": null,
+"id": "2446040611",
+"name": "Gyusik Choe"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": true,
+"influential_count": 0
+},
 "2607.00939": {
 "authors": [],
 "citation_count": 0,
@@ -125259,10 +125511,233 @@
 "found": false,
 "influential_count": 0
 },
+"2607.01087": {
+"authors": [
+{
+"aff": null,
+"id": null,
+"name": "James C. Davis"
+},
+{
+"aff": null,
+"id": "2176804459",
+"name": "Paschal C. Amusuo"
+},
+{
+"aff": null,
+"id": "2181728959",
+"name": "Tanmay Singla"
+},
+{
+"aff": null,
+"id": "2348098667",
+"name": "Berk cCakar"
+},
+{
+"aff": null,
+"id": "2287967497",
+"name": "Kirsten A. Davis"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": true,
+"influential_count": 0
+},
+"2607.01120": {
+"authors": [
+{
+"aff": null,
+"id": "2267335333",
+"name": "Ran Yan"
+},
+{
+"aff": null,
+"id": null,
+"name": "Wei Fu"
+},
+{
+"aff": null,
+"id": null,
+"name": "Jiale Li"
+},
+{
+"aff": null,
+"id": null,
+"name": "Shusheng Xu"
+},
+{
+"aff": null,
+"id": "2123991452",
+"name": "Zhiyu Mei"
+},
+{
+"aff": null,
+"id": null,
+"name": "Jiaxuan Gao"
+},
+{
+"aff": null,
+"id": null,
+"name": "Jiarui Zhang"
+},
+{
+"aff": null,
+"id": null,
+"name": "Xujie Shen"
+},
+{
+"aff": null,
+"id": "2374091616",
+"name": "Hao Dai"
+},
+{
+"aff": null,
+"id": null,
+"name": "Chuyi He"
+},
+{
+"aff": null,
+"id": "2100888694",
+"name": "Zhengwu Pu"
+},
+{
+"aff": null,
+"id": "2364679113",
+"name": "Jun Mei"
+},
+{
+"aff": null,
+"id": null,
+"name": "Zhiyao Lin"
+},
+{
+"aff": null,
+"id": null,
+"name": "Haitao Wang"
+},
+{
+"aff": null,
+"id": "2446285595",
+"name": "Zhiqiang Ding"
+},
+{
+"aff": null,
+"id": null,
+"name": "Huaijie Wang"
+},
+{
+"aff": null,
+"id": "2446006461",
+"name": "Ruida Xu"
+},
+{
+"aff": null,
+"id": null,
+"name": "Youhe Jiang"
+},
+{
+"aff": null,
+"id": null,
+"name": "Yi Wu"
+},
+{
+"aff": null,
+"id": "2364689724",
+"name": "Tongkai Yang"
+},
+{
+"aff": null,
+"id": "2269474477",
+"name": "Binhang Yuan"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": true,
+"influential_count": 0
+},
 "2607.01212": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-07-02",
+"found": false,
+"influential_count": 0
+},
+"2607.01299": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.01308": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.01810": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.01831": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.01949": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.02034": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.02255": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.02294": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.02371": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.02391": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.02472": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-03",
 "found": false,
 "influential_count": 0
 }
