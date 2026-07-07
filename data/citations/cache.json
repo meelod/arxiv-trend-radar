@@ -100588,8 +100588,25 @@
 "influential_count": 0
 },
 "2604.15657": {
+"authors": [
+{
+"aff": null,
+"id": "2423300799",
+"name": "Vihaan Patel"
+},
+{
+"aff": null,
+"id": "2295753612",
+"name": "Vidya A. Chhabria"
+},
+{
+"aff": null,
+"id": "2299330083",
+"name": "Aman Arora"
+}
+],
 "citation_count": 0,
-"fetched": "2026-05-02",
+"fetched": "2026-07-07",
 "found": true,
 "influential_count": 0
 },
@@ -116073,6 +116090,64 @@
 "found": true,
 "influential_count": 0
 },
+"2605.07306": {
+"authors": [
+{
+"aff": null,
+"id": "2364085760",
+"name": "Zhaohui Du"
+},
+{
+"aff": null,
+"id": "2241483629",
+"name": "Zhe Wang"
+},
+{
+"aff": null,
+"id": "2236978957",
+"name": "Hongmei Fei"
+},
+{
+"aff": null,
+"id": "2407794480",
+"name": "Xiwen Cao"
+},
+{
+"aff": null,
+"id": "2407742135",
+"name": "Ting Xiao"
+},
+{
+"aff": null,
+"id": "2318419521",
+"name": "Qi Wang"
+},
+{
+"aff": null,
+"id": "2342103525",
+"name": "Huan Jin"
+},
+{
+"aff": null,
+"id": "2261096786",
+"name": "Jiaming Gu"
+},
+{
+"aff": null,
+"id": "2311449124",
+"name": "Quan Lu"
+},
+{
+"aff": null,
+"id": "2116746462",
+"name": "Zhe Liu"
+}
+],
+"citation_count": 1,
+"fetched": "2026-07-07",
+"found": true,
+"influential_count": 0
+},
 "2605.08401": {
 "authors": [
 {
@@ -125738,6 +125813,185 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-07-03",
+"found": false,
+"influential_count": 0
+},
+"2607.02501": {
+"authors": [
+{
+"aff": null,
+"id": "2446939882",
+"name": "Ling Xu"
+},
+{
+"aff": null,
+"id": "1576547532",
+"name": "Chuyu Han"
+},
+{
+"aff": null,
+"id": "2261830997",
+"name": "Borui Li"
+},
+{
+"aff": null,
+"id": "2349380257",
+"name": "Hao Wu"
+},
+{
+"aff": null,
+"id": "2170664295",
+"name": "Shiqi Jiang"
+},
+{
+"aff": null,
+"id": "2326975040",
+"name": "Ting Cao"
+},
+{
+"aff": null,
+"id": "2446535533",
+"name": "Chuanyou Li"
+},
+{
+"aff": null,
+"id": "2439208308",
+"name": "Shenghui Zhong"
+},
+{
+"aff": null,
+"id": "2445399831",
+"name": "Shuai Wang"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": true,
+"influential_count": 0
+},
+"2607.02588": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.02600": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.02703": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.02731": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.03601": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.03614": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.03695": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.04043": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.04426": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.04534": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.04630": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.04686": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.04727": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.04958": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.05093": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.05146": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.05240": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
+"found": false,
+"influential_count": 0
+},
+"2607.05272": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-07",
 "found": false,
 "influential_count": 0
 }
