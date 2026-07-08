@@ -1,0 +1,1009 @@
+{
+  "date": "2026-07-07",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Notable concentration on advancements in AI agents for robotic manipulation and inference optimization.",
+  "executive_overview": "Today's papers predominantly focus on the intersection of AI agents with robotic applications and inference optimization techniques. There's a meaningful array of frameworks addressing the needs of multi-agent systems, especially in high-stakes tasks like autonomous driving and robotics. The exploration of efficiency in both serving systems and architectural enhancements for AI deployment also stands out, alongside discussions on adaptive learning mechanisms that ensure robustness and precision.",
+  "themes": [
+    {
+      "name": "AI Agents and Robotics",
+      "summary": "A significant number of papers delve into enhancements for robotic manipulation through AI agents, emphasizing the need for efficient learning and planning mechanisms. For instance, Cortex presents a bidirectional framework to improve long-horizon manipulation by integrating high-level planning with low-level execution (2607.05377). Similarly, MIND-V showcases a hierarchical cognitive model aimed at long-horizon tasks, fixing previous limitations in video world models (2607.06628). Another notable contribution is BioProVLA-Agent, focusing on vision-enhanced automation in biological settings, aiming for closed-loop capabilities in complex environments (2605.07306).",
+      "paper_ids": [
+        "2607.05377",
+        "2605.07306"
+      ]
+    },
+    {
+      "name": "Inference Optimization and Storage Solutions",
+      "summary": "Multiple papers focus on improvements in inference optimization, with particular attention to serving architectures and KV-cache management. IndexMem proposes an innovative approach to cache eviction in long-context LLM inference, which could enhance response time significantly (2605.25475). Similarly, PEEK introduces a scheduling framework that optimizes cache management for LLMs, thus promising to alleviate the performance constraints faced in high-demand scenarios (2607.02525). In another contribution, Fine-Grained Computation Offload explores efficient task distribution among heterogeneous hardware systems ensuring minimal latency (2607.02630).",
+      "paper_ids": [
+        "2605.25475",
+        "2607.02525",
+        "2607.02630"
+      ]
+    },
+    {
+      "name": "Multi-Agent and Collective Decision-Making",
+      "summary": "Papers also explore frameworks for multi-agent collaborative decision-making, which are imperative for complex systems like autonomous driving and IT operations. AOI introduces a context-aware multi-agent system for autonomous IT operations, enabling effective recovery strategies across multiple services (2512.13956). In the realm of social dilemmas, CoopEval benchmarks cooperation-sustaining mechanisms in multi-agent settings, highlighting the dynamics of decision-making under pressure (2604.15267). Moreover, Decision Protocols outlines how task distribution and cooperative interactions can influence performance in agent systems (2607.05474).",
+      "paper_ids": [
+        "2512.13956",
+        "2604.15267",
+        "2607.05474"
+      ]
+    },
+    {
+      "name": "Algorithm and Complexity Management in AI",
+      "summary": "Several submissions investigate the complexities inherent to deploying AI systems in real-world tasks, particularly focusing on managing the difficulty of tasks versus the capabilities of the models. For example, ResearchClawBench presents a framework to evaluate the end-to-end capabilities of AI coding agents in scientific workflows (2605.08098). Additionally, Beyond Correctness discusses the implications of architectural reasoning in code LLMs and how it impacts workflow efficiency (2607.06147). Lastly, Evaluating Generative Agents addresses the real-world challenges encountered in LLM deployments, including confounding factors in evaluations (2607.05630).",
+      "paper_ids": [
+        "2605.08098"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2607.05377",
+      "title": "Cortex: A Bidirectionally Aligned Embodied Agent Framework for Long-horizon Manipulation",
+      "plain_english": "Cortex introduces a framework that helps robots better manage complex manipulation tasks over time by aligning high-level plans with detailed execution steps.",
+      "why_it_matters": "This paper is highly relevant to your focus on robotics policy learning and humanoid manipulation, as it addresses the challenges of long-horizon tasks within robotic systems.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2605.25475",
+      "title": "IndexMem: Learned KV-Cache Eviction with Latent Memory for Long-Context LLM Inference",
+      "plain_english": "This paper proposes a learnable system that optimizes the management of memory used in large language models, enabling them to maintain performance while handling longer inputs.",
+      "why_it_matters": "With your interest in AI inference infrastructure, particularly KV-cache management, this work offers concrete solutions that can enhance performance in LLM applications.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2605.07306",
+      "title": "BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation",
+      "plain_english": "BioProVLA-Agent presents a robotic system designed for laboratories that enhances manipulation capabilities through visual inputs and follows structured protocols for task execution.",
+      "why_it_matters": "This aligns with your interest in robotics policy learning and end-to-end models, showcasing real-world applications that require intricate human-robot interactions.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2604.15267",
+      "title": "CoopEval: Benchmarking Cooperation-Sustaining Mechanisms and LLM Agents in Social Dilemmas",
+      "plain_english": "CoopEval evaluates how well different AI agents collaborate in social dilemma scenarios to achieve cooperative outcomes, crucial for understanding AI dynamics in multi-agent systems.",
+      "why_it_matters": "The exploration of decision-making within multi-agent systems aligns closely with your interests in collaboration and autonomous behaviors among agents.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2606.14948",
+      "title": "Beyond Correctness: Enhancing Architectural Reasoning in Code LLMs via Scalable Labeling with Agentic Judgment",
+      "plain_english": "This work proposes a method to improve AI-generated code by ensuring that it adheres to architectural principles through scalable evaluation methods.",
+      "why_it_matters": "Given your focus on where hardware-architecture mismatches occur, this paper discusses compliance challenges in generating effective code, which is directly relevant.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2607.02525",
+      "title": "PEEK: Predictive Queue-Informed KV Cache Management for LLM Serving",
+      "plain_english": "PEEK is a framework designed to optimize the management of cache memory used in large language models by intelligently predicting memory needs based on active workloads.",
+      "why_it_matters": "This directly relates to your interest in optimizing inference infrastructure and cache management, promising real gains for LLM performance.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2512.13956",
+      "title": "AOI: Context-Aware Multi-Agent Operations via Dynamic Scheduling and Hierarchical Memory Compression",
+      "plain_english": "AOI proposes a system for managing IT operations that uses multiple agents coordinating through dynamic scheduling and memory techniques.",
+      "why_it_matters": "This aligns with your interest in multi-agent systems, showcasing effective management strategies for complex operations.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2607.05456",
+      "title": "Prompt-to-Paper: Agentic AI System for Bioinformatics",
+      "plain_english": "Prompt-to-Paper is a framework that automates the manuscript generation process in scientific research, aiming to ensure quality through rigorous checks.",
+      "why_it_matters": "Though slightly tangential, automated research tools demonstrate the application of AI in complex workflows, aligning with your interest in multi-agent efficiency.",
+      "relevance_score": 6
+    },
+    {
+      "arxiv_id": "2607.04434",
+      "title": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+      "plain_english": "RoboDojo provides a new benchmark to evaluate how well robotic manipulation policies perform across both simulated and real environments.",
+      "why_it_matters": "This aligns with your interest in developing robust evaluation criteria for humanoid and manipulation robotics, crucial for advancing practical applications.",
+      "relevance_score": 7
+    },
+    {
+      "arxiv_id": "2607.02857",
+      "title": "MOSAIC: Knowledge-Guided CLI Command Composition Attack in LLM Coding Agents",
+      "plain_english": "MOSAIC examines how coding agents can be manipulated through command sequencing to perform unintended actions.",
+      "why_it_matters": "This touches on security in AI systems, relevant to your concern about architecture mismatches in real-world applications, particularly in complex environments.",
+      "relevance_score": 6
+    }
+  ],
+  "worth_noting": [],
+  "paper_index": {
+    "2607.05377": {
+      "title": "Cortex: A Bidirectionally Aligned Embodied Agent Framework for Long-horizon Manipulation",
+      "authors": [
+        "Jiaqi Peng",
+        "Xiqian Yu",
+        "Delin Feng",
+        "Yuqiang Yang",
+        "Wenzhe Cai",
+        "Jing Xiong",
+        "Ganlin Yang",
+        "Jinliang Zheng",
+        "Jiafei Cao",
+        "Xueyuan Wei",
+        "Jiangmiao Pang",
+        "Yuan Shen",
+        "Tai Wang"
+      ],
+      "abs": "https://arxiv.org/abs/2607.05377",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Jiaqi Peng",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Xiqian Yu",
+          "aff": null
+        },
+        {
+          "id": "2158512964",
+          "name": "Delin Feng",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yuqiang Yang",
+          "aff": null
+        },
+        {
+          "id": "2362197963",
+          "name": "Wenzhe Cai",
+          "aff": null
+        },
+        {
+          "id": "2349073272",
+          "name": "Jing Xiong",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Ganlin Yang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jinliang Zheng",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jiafei Cao",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Xueyuan Wei",
+          "aff": null
+        },
+        {
+          "id": "2377561990",
+          "name": "Jiangmiao Pang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yuan Shen",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Tai Wang",
+          "aff": null
+        }
+      ]
+    },
+    "2512.13956": {
+      "title": "AOI: Context-Aware Multi-Agent Operations via Dynamic Scheduling and Hierarchical Memory Compression",
+      "authors": [
+        "Zishan Bai",
+        "Hanxuan Chen",
+        "Jiayi Gu",
+        "Wenqian Weng",
+        "Enze Ge",
+        "Jiacheng Shi",
+        "Yichao Zhang",
+        "Zhimo Han",
+        "Riyang Bao",
+        "Xinyuan Song",
+        "Jacqueline Pang",
+        "Junfeng Hao"
+      ],
+      "abs": "https://arxiv.org/abs/2512.13956",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2399917685",
+          "name": "Zishan Bai",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Hanxuan Chen",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jiayi Gu",
+          "aff": null
+        },
+        {
+          "id": "2448004100",
+          "name": "Wenqian Weng",
+          "aff": null
+        },
+        {
+          "id": "2371072077",
+          "name": "Enze Ge",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jiacheng Shi",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yichao Zhang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zhimo Han",
+          "aff": null
+        },
+        {
+          "id": "2410030862",
+          "name": "Riyang Bao",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Xinyuan Song",
+          "aff": null
+        },
+        {
+          "id": "2448004355",
+          "name": "Jacqueline Pang",
+          "aff": null
+        },
+        {
+          "id": "2402601871",
+          "name": "Junfeng Hao",
+          "aff": null
+        }
+      ]
+    },
+    "2605.07306": {
+      "title": "BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation",
+      "authors": [
+        "Zhaohui Du",
+        "Zhe Wang",
+        "Dongzhan Zhou",
+        "Minting Pan",
+        "Hongmei Fei",
+        "Xiwen Cao",
+        "Ting Xiao",
+        "Qi Wang",
+        "Huanbo Jin",
+        "Jiaming Gu",
+        "Quan Lu",
+        "Zhe Liu"
+      ],
+      "abs": "https://arxiv.org/abs/2605.07306",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "citation_count": 1,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "aff": null,
+          "id": "2364085760",
+          "name": "Zhaohui Du"
+        },
+        {
+          "aff": null,
+          "id": "2241483629",
+          "name": "Zhe Wang"
+        },
+        {
+          "aff": null,
+          "id": "2236978957",
+          "name": "Hongmei Fei"
+        },
+        {
+          "aff": null,
+          "id": "2407794480",
+          "name": "Xiwen Cao"
+        },
+        {
+          "aff": null,
+          "id": "2407742135",
+          "name": "Ting Xiao"
+        },
+        {
+          "aff": null,
+          "id": "2318419521",
+          "name": "Qi Wang"
+        },
+        {
+          "aff": null,
+          "id": "2342103525",
+          "name": "Huan Jin"
+        },
+        {
+          "aff": null,
+          "id": "2261096786",
+          "name": "Jiaming Gu"
+        },
+        {
+          "aff": null,
+          "id": "2311449124",
+          "name": "Quan Lu"
+        },
+        {
+          "aff": null,
+          "id": "2116746462",
+          "name": "Zhe Liu"
+        }
+      ]
+    },
+    "2605.25475": {
+      "title": "IndexMem: Learned KV-Cache Eviction with Latent Memory for Long-Context LLM Inference",
+      "authors": [
+        "Xintong Yang",
+        "Hao Gu",
+        "Binxing Xu",
+        "Lujun Li",
+        "Bei Liu",
+        "Jiacheng Liu",
+        "Qiyuan Zhu",
+        "Yike Guo",
+        "Sirui Han"
+      ],
+      "abs": "https://arxiv.org/abs/2605.25475",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2240270479",
+          "name": "Xintong Yang",
+          "aff": null
+        },
+        {
+          "id": "2347571185",
+          "name": "Hao Gu",
+          "aff": null
+        },
+        {
+          "id": "2342624050",
+          "name": "Bin Xu",
+          "aff": null
+        },
+        {
+          "id": "2331723310",
+          "name": "Lujun Li",
+          "aff": null
+        },
+        {
+          "id": "2382941490",
+          "name": "Bei Liu",
+          "aff": null
+        },
+        {
+          "id": "2333897043",
+          "name": "Jiacheng Liu",
+          "aff": null
+        },
+        {
+          "id": "2367043896",
+          "name": "Qiyuan Zhu",
+          "aff": null
+        },
+        {
+          "id": "2350783019",
+          "name": "Yike Guo",
+          "aff": null
+        },
+        {
+          "id": "2366042833",
+          "name": "Sirui Han",
+          "aff": null
+        }
+      ]
+    },
+    "2607.02630": {
+      "title": "Fine-Grained Computation Offload for Off-the-Shelf Servers in Tens of Lines",
+      "authors": [
+        "Bojie Li"
+      ],
+      "abs": "https://arxiv.org/abs/2607.02630",
+      "categories": [
+        "cs.DC",
+        "cs.AI",
+        "cs.OS"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2383801318",
+          "name": "Bojie Li",
+          "aff": null
+        }
+      ]
+    },
+    "2606.14948": {
+      "title": "Beyond Correctness: Enhancing Architectural Reasoning in Code LLMs via Scalable Labeling with Agentic Judgment",
+      "authors": [
+        "Kirill Vasilevski",
+        "Ximing Dong",
+        "Benjamin Rombaut",
+        "Milad Soltany",
+        "Ruochen Deng",
+        "Jiahuei Lin",
+        "Arthur Leung",
+        "Dayi Lin",
+        "Boyuan Chen",
+        "Shaowei Wang",
+        "Ahmed E. Hassan"
+      ],
+      "abs": "https://arxiv.org/abs/2606.14948",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2329373766",
+          "name": "Kirill Vasilevski",
+          "aff": null
+        },
+        {
+          "id": "2299485036",
+          "name": "Ximing Dong",
+          "aff": null
+        },
+        {
+          "id": "2329372364",
+          "name": "Benjamin Rombaut",
+          "aff": null
+        },
+        {
+          "id": "2355133264",
+          "name": "Ruochen Deng",
+          "aff": null
+        },
+        {
+          "id": "2144909721",
+          "name": "Jiahuei Lin",
+          "aff": null
+        },
+        {
+          "id": "2330589476",
+          "name": "Arthur Leung",
+          "aff": null
+        },
+        {
+          "id": "2287945522",
+          "name": "Dayi Lin",
+          "aff": null
+        },
+        {
+          "id": "2286913162",
+          "name": "Boyuan Chen",
+          "aff": null
+        },
+        {
+          "id": "2360698469",
+          "name": "Shaowei Wang",
+          "aff": null
+        },
+        {
+          "id": "2291358891",
+          "name": "Ahmed E. Hassan",
+          "aff": null
+        }
+      ]
+    },
+    "2607.02525": {
+      "title": "PEEK: Predictive Queue-Informed KV Cache Management for LLM Serving",
+      "authors": [
+        "Bing Xie",
+        "Zhipeng Wang",
+        "Masahiro Tanaka",
+        "Zheng Zhen"
+      ],
+      "abs": "https://arxiv.org/abs/2607.02525",
+      "categories": [
+        "cs.DC",
+        "cs.AI"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2291509639",
+          "name": "Bing Xie",
+          "aff": null
+        },
+        {
+          "id": "2447993682",
+          "name": "Zhipeng Wang",
+          "aff": null
+        },
+        {
+          "id": "2352210592",
+          "name": "Masahiro Tanaka",
+          "aff": null
+        },
+        {
+          "id": "2447913196",
+          "name": "Zheng Zhen",
+          "aff": null
+        }
+      ]
+    },
+    "2607.05474": {
+      "title": "ShadowProbe: Language-Extensible Detection of Hidden Algorithmic Complexity Vulnerabilities",
+      "authors": [
+        "Yuanmin Xie",
+        "Xiangfan Wu",
+        "Wenhao Wu",
+        "Lingyun Ying",
+        "Puzhuo Liu",
+        "Haipeng Qu",
+        "Zhongyuan Chen",
+        "Min Zhou",
+        "Chengnian Sun"
+      ],
+      "abs": "https://arxiv.org/abs/2607.05474",
+      "categories": [
+        "cs.CR",
+        "cs.SE"
+      ]
+    },
+    "2607.04434": {
+      "title": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+      "authors": [
+        "Tianxing Chen",
+        "Yue Chen",
+        "Zixuan Li",
+        "Junyuan Tang",
+        "Kailun Su",
+        "Haoran Lu",
+        "Weijie Wan",
+        "Baijun Chen",
+        "Songling Liu",
+        "Haowen Yan",
+        "Honghao Su",
+        "Zhiyang Dou",
+        "Kaixuan Wang",
+        "Dandan Zhang",
+        "Yunze Liu",
+        "Yan Qin",
+        "Qiwei Liang",
+        "Qiwei Wu",
+        "Zijian Lin",
+        "Wenwei Lin",
+        "Yuran Wang",
+        "Minghua He",
+        "Tianshu Wu",
+        "Ruihai Wu",
+        "Jingquan Zhou",
+        "Kai-Chong Lei",
+        "Haibao Yu",
+        "Yuanfeng Ji",
+        "Weiyang Jin",
+        "Guanyu Lin",
+        "Xiaofan Li",
+        "Qi Xiong",
+        "Renjing Xu",
+        "Zhongyu Li",
+        "Wenhao Chai",
+        "Enze Xie",
+        "Ziwei Wang",
+        "Yao Mu",
+        "Hao Dong",
+        "Wojciech Matusik",
+        "Mingyu Ding",
+        "Wenbo Ding",
+        "Ping Luo",
+        "Masayoshi Tomizuka"
+      ],
+      "abs": "https://arxiv.org/abs/2607.04434",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.GR"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "primary_affiliation": "The University of Hong Kong",
+      "s2_authors": [
+        {
+          "id": null,
+          "name": "Tianxing Chen",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yue Chen",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zixuan Li",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Junyuan Tang",
+          "aff": null
+        },
+        {
+          "id": "2401265108",
+          "name": "Kailun Su",
+          "aff": null
+        },
+        {
+          "id": "2448009859",
+          "name": "Weijie Wan",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Baijun Chen",
+          "aff": null
+        },
+        {
+          "id": "2240663249",
+          "name": "Haoran Lu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Haowen Yan",
+          "aff": null
+        },
+        {
+          "id": "2390573737",
+          "name": "Honghao Su",
+          "aff": null
+        },
+        {
+          "id": "1382485620",
+          "name": "Zhiyang Dou",
+          "aff": "The University of Hong Kong"
+        },
+        {
+          "id": null,
+          "name": "Kaixuan Wang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Dandan Zhang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yunze Liu",
+          "aff": null
+        },
+        {
+          "id": "2327842977",
+          "name": "Yanjiao Qin",
+          "aff": null
+        },
+        {
+          "id": "2328336134",
+          "name": "Qiwei Liang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Qiwei Wu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Zijian Lin",
+          "aff": null
+        },
+        {
+          "id": "2275788244",
+          "name": "Wenwei Lin",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yuran Wang",
+          "aff": null
+        },
+        {
+          "id": "2400066414",
+          "name": "Minghua He",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Tianshu Wu",
+          "aff": null
+        },
+        {
+          "id": "2382450653",
+          "name": "Ruihai Wu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Jingquan Zhou",
+          "aff": null
+        },
+        {
+          "id": "2370056877",
+          "name": "Kaixun Lei",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Haibao Yu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yuanfeng Ji",
+          "aff": null
+        },
+        {
+          "id": "2386087486",
+          "name": "Weiyang Jin",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Guanyu Lin",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Xiaofan Li",
+          "aff": null
+        },
+        {
+          "id": "2330268195",
+          "name": "Qiankai Xiong",
+          "aff": null
+        },
+        {
+          "id": "2366665603",
+          "name": "Renjing Xu",
+          "aff": null
+        },
+        {
+          "id": "1491078398",
+          "name": "Zhongyu Li",
+          "aff": null
+        },
+        {
+          "id": "2324574706",
+          "name": "Wenhao Chai",
+          "aff": null
+        },
+        {
+          "id": "41020000",
+          "name": "Enze Xie",
+          "aff": null
+        },
+        {
+          "id": "2447872484",
+          "name": "Ziwei Wang",
+          "aff": null
+        },
+        {
+          "id": "2348606790",
+          "name": "Yao Mu",
+          "aff": null
+        },
+        {
+          "id": "2319595453",
+          "name": "Hao Dong",
+          "aff": null
+        },
+        {
+          "id": "2295306221",
+          "name": "Wojciech Matusik",
+          "aff": null
+        },
+        {
+          "id": "2284988821",
+          "name": "Mingyu Ding",
+          "aff": null
+        },
+        {
+          "id": "2371026978",
+          "name": "Wenbo Ding",
+          "aff": null
+        },
+        {
+          "id": "2257349788",
+          "name": "Ping Luo",
+          "aff": null
+        },
+        {
+          "id": "2293316662",
+          "name": "Masayoshi Tomizuka",
+          "aff": null
+        }
+      ]
+    },
+    "2604.15267": {
+      "title": "CoopEval: Benchmarking Cooperation-Sustaining Mechanisms and LLM Agents in Social Dilemmas",
+      "authors": [
+        "Emanuel Tewolde",
+        "Xiao Zhang",
+        "David Guzman Piedrahita",
+        "Vincent Conitzer",
+        "Zhijing Jin"
+      ],
+      "abs": "https://arxiv.org/abs/2604.15267",
+      "categories": [
+        "cs.GT",
+        "cs.AI",
+        "cs.CL",
+        "cs.CY",
+        "cs.MA"
+      ],
+      "citation_count": 10,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2136158664",
+          "name": "Emanuel Tewolde",
+          "aff": null
+        },
+        {
+          "id": "2404523686",
+          "name": "Xiao Zhang",
+          "aff": null
+        },
+        {
+          "id": "2315496524",
+          "name": "David Guzman Piedrahita",
+          "aff": null
+        },
+        {
+          "id": "2283921100",
+          "name": "Vincent Conitzer",
+          "aff": null
+        },
+        {
+          "id": "2327934515",
+          "name": "Zhijing Jin",
+          "aff": null
+        }
+      ]
+    },
+    "2605.08098": {
+      "title": "Reinforcement learning for inverse structural design and rapid laser cutting of kirigami prototypes",
+      "authors": [
+        "Milad Yazdani",
+        "Shahriar Shalileh",
+        "Dena Shahriari"
+      ],
+      "abs": "https://arxiv.org/abs/2605.08098",
+      "categories": [
+        "cs.LG"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "48733378",
+          "name": "M. Yazdani",
+          "aff": null
+        },
+        {
+          "id": "120769458",
+          "name": "Shahriar Shalileh",
+          "aff": null
+        },
+        {
+          "id": "3887337",
+          "name": "Dena Shahriari",
+          "aff": null
+        }
+      ]
+    },
+    "2607.02857": {
+      "title": "MOSAIC: Knowledge-Guided CLI Command Composition Attack in LLM Coding Agents",
+      "authors": [
+        "Jiangrong Wu",
+        "Huaijin Wang",
+        "Yihao Zhang",
+        "Yuhong Nan",
+        "Shuai Wang"
+      ],
+      "abs": "https://arxiv.org/abs/2607.02857",
+      "categories": [
+        "cs.CR",
+        "cs.SE"
+      ],
+      "citation_count": 0,
+      "influential_count": 0,
+      "s2_authors": [
+        {
+          "id": "2268173570",
+          "name": "Jiangrong Wu",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Huaijin Wang",
+          "aff": null
+        },
+        {
+          "id": null,
+          "name": "Yihao Zhang",
+          "aff": null
+        },
+        {
+          "id": "3217464",
+          "name": "Yuhong Nan",
+          "aff": null
+        },
+        {
+          "id": "2395800282",
+          "name": "Shuai Wang",
+          "aff": null
+        }
+      ]
+    },
+    "2607.05456": {
+      "title": "Prompt-to-Paper: Agentic AI System for Bioinformatics",
+      "authors": [
+        "Ramsha Kamran",
+        "Maheera Amjad",
+        "Zartasha Mustansar",
+        "Arsalan Shaukat",
+        "Salma Sherbaz",
+        "Muhammad U. S. Khan"
+      ],
+      "abs": "https://arxiv.org/abs/2607.05456",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "q-bio.QM"
+      ]
+    }
+  }
+}
