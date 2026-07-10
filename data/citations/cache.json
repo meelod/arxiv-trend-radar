@@ -13653,6 +13653,54 @@
 "found": true,
 "influential_count": 2
 },
+"2508.00554": {
+"authors": [
+{
+"aff": null,
+"id": "2375166934",
+"name": "Rui Sun"
+},
+{
+"aff": null,
+"id": "2374420773",
+"name": "Li Zhao"
+},
+{
+"aff": null,
+"id": "2374426020",
+"name": "Zuoyou Jiang"
+},
+{
+"aff": null,
+"id": "2340163316",
+"name": "Bo Yang"
+},
+{
+"aff": null,
+"id": "2334696654",
+"name": "Yu Bai"
+},
+{
+"aff": null,
+"id": "2318284096",
+"name": "Mengting Chen"
+},
+{
+"aff": null,
+"id": "2152911648",
+"name": "Jing Li"
+},
+{
+"aff": null,
+"id": "2375159534",
+"name": "Zuo Bai"
+}
+],
+"citation_count": 5,
+"fetched": "2026-07-10",
+"found": true,
+"influential_count": 0
+},
 "2508.00555": {
 "citation_count": 0,
 "fetched": "2026-05-02",
@@ -14657,6 +14705,59 @@
 "2508.12243": {
 "citation_count": 2,
 "fetched": "2026-05-02",
+"found": true,
+"influential_count": 0
+},
+"2508.12265": {
+"authors": [
+{
+"aff": null,
+"id": "2376233352",
+"name": "Xinda Jia"
+},
+{
+"aff": null,
+"id": "2213935174",
+"name": "Jinpeng Li"
+},
+{
+"aff": null,
+"id": "2137432660",
+"name": "Zezhong Wang"
+},
+{
+"aff": null,
+"id": "2386078053",
+"name": "Jingjin Li"
+},
+{
+"aff": null,
+"id": "2329903868",
+"name": "Xingshan Zeng"
+},
+{
+"aff": null,
+"id": "2282544603",
+"name": "Yasheng Wang"
+},
+{
+"aff": null,
+"id": "2240768092",
+"name": "Weinan Zhang"
+},
+{
+"aff": null,
+"id": "2237958078",
+"name": "Yong Yu"
+},
+{
+"aff": null,
+"id": "2281903918",
+"name": "Weiwen Liu"
+}
+],
+"citation_count": 2,
+"fetched": "2026-07-10",
 "found": true,
 "influential_count": 0
 },
@@ -21906,6 +22007,54 @@
 "found": true,
 "influential_count": 0
 },
+"2510.22052": {
+"authors": [
+{
+"aff": null,
+"id": "48415279",
+"name": "A. Chatterjee"
+},
+{
+"aff": null,
+"id": "152393000",
+"name": "N. Jha"
+},
+{
+"aff": null,
+"id": "2262090057",
+"name": "Jonathan D. Cohen"
+},
+{
+"aff": null,
+"id": "2253463157",
+"name": "Thomas L. Griffiths"
+},
+{
+"aff": null,
+"id": "2378737322",
+"name": "Hongjing Lu"
+},
+{
+"aff": null,
+"id": "92419662",
+"name": "D. Marculescu"
+},
+{
+"aff": null,
+"id": "2205208428",
+"name": "Ashiqur Rasul"
+},
+{
+"aff": "University of Minnesota Twin Cities",
+"id": "144062727",
+"name": "Keshab K. Parhi"
+}
+],
+"citation_count": 2,
+"fetched": "2026-07-10",
+"found": true,
+"influential_count": 0
+},
 "2510.22102": {
 "citation_count": 0,
 "fetched": "2026-05-02",
@@ -23277,6 +23426,24 @@
 "2511.06605": {
 "citation_count": 0,
 "fetched": "2026-05-02",
+"found": true,
+"influential_count": 0
+},
+"2511.06667": {
+"authors": [
+{
+"aff": null,
+"id": "2386616665",
+"name": "Andrew Choi"
+},
+{
+"aff": null,
+"id": "40600935",
+"name": "Dezhong Tong"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-10",
 "found": true,
 "influential_count": 0
 },
@@ -126584,6 +126751,54 @@
 "found": false,
 "influential_count": 0
 },
+"2607.05061": {
+"authors": [
+{
+"aff": null,
+"id": "2167029006",
+"name": "Lukas Hauzenberger"
+},
+{
+"aff": null,
+"id": "2316747859",
+"name": "N. Schmidinger"
+},
+{
+"aff": null,
+"id": "2403317922",
+"name": "A. Hartl"
+},
+{
+"aff": null,
+"id": "1689466093",
+"name": "David Stap"
+},
+{
+"aff": null,
+"id": "2093433306",
+"name": "Thomas Schmied"
+},
+{
+"aff": null,
+"id": "2364053917",
+"name": "Sebastian Bock"
+},
+{
+"aff": null,
+"id": "2363945541",
+"name": "Günter Klambauer"
+},
+{
+"aff": null,
+"id": "3308557",
+"name": "Sepp Hochreiter"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-10",
+"found": true,
+"influential_count": 0
+},
 "2607.05093": {
 "authors": [],
 "citation_count": 0,
@@ -127291,6 +127506,52 @@
 "found": true,
 "influential_count": 0
 },
+"2607.07026": {
+"authors": [
+{
+"aff": null,
+"id": "2267728871",
+"name": "Meihua Dang"
+},
+{
+"aff": null,
+"id": "2490652",
+"name": "Stefano Ermon"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-10",
+"found": true,
+"influential_count": 0
+},
+"2607.07049": {
+"authors": [
+{
+"aff": null,
+"id": "2176845623",
+"name": "Raghul Saravanan"
+},
+{
+"aff": null,
+"id": "46780842",
+"name": "Sudipta Paria"
+},
+{
+"aff": null,
+"id": "2448375430",
+"name": "D. SaiManojP"
+},
+{
+"aff": null,
+"id": "145787089",
+"name": "S. Bhunia"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-10",
+"found": true,
+"influential_count": 0
+},
 "2607.07050": {
 "authors": [
 {
@@ -127379,6 +127640,48 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-07-09",
+"found": false,
+"influential_count": 0
+},
+"2607.08010": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-10",
+"found": false,
+"influential_count": 0
+},
+"2607.08046": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-10",
+"found": false,
+"influential_count": 0
+},
+"2607.08057": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-10",
+"found": false,
+"influential_count": 0
+},
+"2607.08093": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-10",
+"found": false,
+"influential_count": 0
+},
+"2607.08448": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-10",
+"found": false,
+"influential_count": 0
+},
+"2607.08745": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-10",
 "found": false,
 "influential_count": 0
 }
