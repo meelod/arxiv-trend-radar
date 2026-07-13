@@ -25918,6 +25918,44 @@
 "found": true,
 "influential_count": 0
 },
+"2512.04013": {
+"authors": [
+{
+"aff": null,
+"id": "2361859715",
+"name": "Ying Wang"
+},
+{
+"aff": null,
+"id": "2111472219",
+"name": "Zhengxu Jin"
+},
+{
+"aff": null,
+"id": "2212046041",
+"name": "Jiexiong Xu"
+},
+{
+"aff": null,
+"id": "2222523346",
+"name": "Wenhai Lin"
+},
+{
+"aff": "Zhejiang University",
+"id": "2109360977",
+"name": "Yiquan Chen"
+},
+{
+"aff": null,
+"id": "2267872535",
+"name": "Wenzhi Chen"
+}
+],
+"citation_count": 4,
+"fetched": "2026-07-13",
+"found": true,
+"influential_count": 0
+},
 "2512.04048": {
 "citation_count": 3,
 "fetched": "2026-05-02",
@@ -32344,6 +32382,34 @@
 "2601.22308": {
 "citation_count": 0,
 "fetched": "2026-05-02",
+"found": true,
+"influential_count": 0
+},
+"2601.22313": {
+"authors": [
+{
+"aff": "University of Southern California",
+"id": "2214717438",
+"name": "Yavuz Faruk Bakman"
+},
+{
+"aff": null,
+"id": "2182422040",
+"name": "D. Yaldiz"
+},
+{
+"aff": null,
+"id": "121011351",
+"name": "S. Avestimehr"
+},
+{
+"aff": null,
+"id": "2373354279",
+"name": "Sai Praneeth Karimireddy"
+}
+],
+"citation_count": 1,
+"fetched": "2026-07-13",
 "found": true,
 "influential_count": 0
 },
@@ -53676,6 +53742,39 @@
 "2602.20577": {
 "citation_count": 0,
 "fetched": "2026-05-02",
+"found": true,
+"influential_count": 0
+},
+"2602.20578": {
+"authors": [
+{
+"aff": null,
+"id": "2343304944",
+"name": "Yiyang Lu"
+},
+{
+"aff": null,
+"id": "2339892900",
+"name": "Hareshkumar Jadav"
+},
+{
+"aff": null,
+"id": "80260423",
+"name": "M. Pedramfar"
+},
+{
+"aff": null,
+"id": "2339980180",
+"name": "Ranveer Singh"
+},
+{
+"aff": null,
+"id": "2265909541",
+"name": "Vaneet Aggarwal"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-13",
 "found": true,
 "influential_count": 0
 },
@@ -125236,6 +125335,29 @@
 "found": false,
 "influential_count": 0
 },
+"2606.24955": {
+"authors": [
+{
+"aff": null,
+"id": "13699860",
+"name": "Yujiang He"
+},
+{
+"aff": null,
+"id": "146756803",
+"name": "Frédéric Uhrweiller"
+},
+{
+"aff": null,
+"id": "2326306706",
+"name": "Bernhard Sick"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": true,
+"influential_count": 0
+},
 "2606.25057": {
 "authors": [],
 "citation_count": 0,
@@ -128228,6 +128350,104 @@
 "citation_count": 0,
 "fetched": "2026-07-11",
 "found": true,
+"influential_count": 0
+},
+"2607.08906": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.08973": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09060": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09172": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09175": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09211": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09230": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09338": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09402": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09493": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09576": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09600": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09603": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
+"influential_count": 0
+},
+"2607.09641": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-13",
+"found": false,
 "influential_count": 0
 }
 }
