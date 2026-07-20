@@ -12360,6 +12360,13 @@
 "found": true,
 "influential_count": 0
 },
+"2507.03223": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
 "2507.03262": {
 "citation_count": 5,
 "fetched": "2026-05-02",
@@ -72519,6 +72526,13 @@
 "found": true,
 "influential_count": 0
 },
+"2603.15963": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
 "2603.15965": {
 "citation_count": 0,
 "fetched": "2026-05-02",
@@ -129020,6 +129034,13 @@
 "found": false,
 "influential_count": 0
 },
+"2607.12659": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
 "2607.12839": {
 "authors": [],
 "citation_count": 0,
@@ -129122,6 +129143,13 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-07-16",
+"found": false,
+"influential_count": 0
+},
+"2607.13960": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
 "found": false,
 "influential_count": 0
 },
@@ -129290,6 +129318,69 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-07-18",
+"found": false,
+"influential_count": 0
+},
+"2607.15286": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
+"2607.15414": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
+"2607.15547": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
+"2607.15576": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
+"2607.15579": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
+"2607.15620": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
+"2607.15714": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
+"2607.15730": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
+"2607.16187": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-20",
 "found": false,
 "influential_count": 0
 }
