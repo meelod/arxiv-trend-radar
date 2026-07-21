@@ -1,0 +1,282 @@
+{
+  "date": "2026-07-20",
+  "paper_count": 400,
+  "model": "gpt-4o-mini",
+  "language": "English",
+  "headline": "Today's papers focus on advancing multi-agent systems, particularly in AI inference and robotics.",
+  "executive_overview": "A notable concentration of papers emerged today centered on multi-agent systems and their applications in various domains, including robotics, financial forecasting, and LLM inference optimization. There are significant discussions about the integration of AI technologies with hardware optimization for enhanced performance, especially in edge devices and decentralized environments. Additionally, there are evaluations focusing on the robustness and efficiency of AI systems within real-world contexts.",
+  "themes": [
+    {
+      "name": "Advancements in Multi-Agent Systems",
+      "summary": "Several papers explore the performance and optimization of multi-agent systems across various applications. For instance, 'PhyAgentOS: A Self-Evolving Operating System for Embodied Agents' presents a foundation for scheduling and execution in robotics, proposing a decoupled cognitive planning system. Meanwhile, 'MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning' introduces a post-training framework that refines compact models through a dynamic critic advantage. In 'NexForge: Scaling Agent Capabilities through Requirement-Driven Task Synthesis for LLMs', the synthesis of executable agent tasks addresses scaling issues in training data for agents. These works highlight the synergy between agent frameworks and reinforcement learning or long-horizon task planning.",
+      "paper_ids": [
+        "2607.16636",
+        "2607.17948",
+        "2607.14186"
+      ]
+    },
+    {
+      "name": "AI Inference Optimization",
+      "summary": "The challenge of optimizing AI inference, particularly regarding key-value (KV) cache management and long-context attention mechanisms, is prominent today. 'A JoLT for the KV Cache: Near-Lossless KV Cache Compression via Joint Tucker and JL-Residual Allocation for LLMs' discusses techniques that aim to mitigate memory costs while preserving performance. 'VarRate: Training-Free Variable-Rate KV Cache Compression for Long-Context LLMs' examines how different cache compression methods affect inference quality, emphasizing the need for effective strategies to manage memory during LLM operations. 'C$^2$KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference' proposes a novel approach to optimize KV cache utilization.",
+      "paper_ids": [
+        "2607.12550",
+        "2607.17710"
+      ]
+    },
+    {
+      "name": "Robotics and HCI",
+      "summary": "In the realm of robotics and human-computer interaction, there is significant work on integrating AI to facilitate task execution and improve user experiences. 'RynnBrain 1.1' introduces a humanoid model designed for diverse manipulation tasks, and the 'RAVEN: Low-Cost Solution for Dual-Arm Manipulation' presents an effective approach for improved force and speed control during robot tasks. Meanwhile, 'MIND-CAVs: Multi-Intelligence Negotiation and Decision System for CAVs based on Intent-Driven Autonomy' explores collaborative decision systems for autonomous vehicles, reflecting broader trends in robotic applications aligned with AI assistance.",
+      "paper_ids": []
+    },
+    {
+      "name": "Financial Tools and AI Trading",
+      "summary": "The financial sector sees promising advancements through AI, particularly in trading and risk assessment. 'AI Trading: Evaluating Large Language Models for Technical Market Analysis' provides comparative evaluations of LLMs' performance in algorithmic trading scenarios, while 'FinSAgent: Corpus-Aligned Multi-Agent RAG Framework for Evidence-Grounded SEC Filing Question Answering' addresses the intricacies of policy learning under dynamic market conditions, emphasizing the importance of accurate data interpretation. These papers highlight the integration of AI in enhancing financial decision-making processes.",
+      "paper_ids": [
+        "2607.15414",
+        "2607.16012",
+        "2607.17977"
+      ]
+    }
+  ],
+  "top_picks": [
+    {
+      "arxiv_id": "2607.15414",
+      "title": "AI Trading: Evaluating Large Language Models for Technical Market Analysis",
+      "plain_english": "This paper compares the performance of several large language models in conducting technical market analysis and generating trading signals based on stock market data.",
+      "why_it_matters": "This paper directly aligns with your interest in quant trading and algorithmic execution, providing insights into the effectiveness of LLMs in financial decision-making.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2607.16636",
+      "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+      "plain_english": "PhyAgentOS is an operating system designed for embodied agents that separates cognitive planning from physical execution, facilitating better autonomous operation in complex environments.",
+      "why_it_matters": "The focus on multi-agent systems and cognitive planning is highly relevant to your expertise in robotics policy learning and multi-agent systems.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2607.18006",
+      "title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
+      "plain_english": "This paper presents a framework for compact models that enhances reasoning through debate-aware training, improving their parameter efficiency during multi-agent interactions.",
+      "why_it_matters": "This paper addresses the intersection of multi-agent systems and AI inference, which is crucial to your interest in tool-using LLM agents and policy learning in robotics.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2607.12550",
+      "title": "A JoLT for the KV Cache: Near-Lossless KV Cache Compression via Joint Tucker and JL-Residual Allocation for LLMs",
+      "plain_english": "The research proposes a new method to compress key-value caches used in large language models, significantly reducing memory costs without losing accuracy in model performance.",
+      "why_it_matters": "Efficient cache management is critical in AI inference infrastructure, highlighting novel solutions that align with your research focus on silicon and computational efficiency.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2602.17086",
+      "title": "Dynamic Decision-Making under Model Misspecification: A Stochastic Stability Approach",
+      "plain_english": "This study explores the impact of incorrect model assumptions in reinforcement learning scenarios, providing insights into adapting decision-making processes under uncertainty.",
+      "why_it_matters": "Understanding decision-making under uncertainty is crucial for algorithmic execution in financial markets, framing your interest in quant trading within a theoretical context.",
+      "relevance_score": 8
+    }
+  ],
+  "worth_noting": [
+    {
+      "arxiv_id": "2607.16241",
+      "one_liner": "An exploration of dual-cognition benchmarks for UAVs focusing on spatio-temporal reasoning."
+    }
+  ],
+  "paper_index": {
+    "2607.16636": {
+      "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+      "authors": [
+        "Yang Liu",
+        "Weixing Chen",
+        "Xinshuai Song",
+        "Tao Pu",
+        "Siwen Mo",
+        "Yongjie Bai",
+        "Zihao Chen",
+        "Qianran Sun",
+        "Liruo Zhong",
+        "Ying Shen",
+        "Liang Lin"
+      ],
+      "abs": "https://arxiv.org/abs/2607.16636",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2607.14186": {
+      "title": "NexForge: Scaling Agent Capabilities through Requirement-Driven Task Synthesis for LLMs",
+      "authors": [
+        "Jiarong Zhao",
+        "Zhikai Lei",
+        "Zhiheng Xi",
+        "Rui Zheng",
+        "Hang Yan",
+        "Jie Zhou",
+        "Qin Chen",
+        "Liang He"
+      ],
+      "abs": "https://arxiv.org/abs/2607.14186",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.LG"
+      ]
+    },
+    "2607.17948": {
+      "title": "Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking",
+      "authors": [
+        "Stefano Blando",
+        "Emanuele Guerrazzi",
+        "Riccardo Porcedda",
+        "Giuseppe Squillace",
+        "Max Tschaikowski",
+        "Andrea Vandin"
+      ],
+      "abs": "https://arxiv.org/abs/2607.17948",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ]
+    },
+    "2607.18006": {
+      "title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
+      "authors": [
+        "Martino M. L. Pulici",
+        "Cuong Xuan Chu",
+        "Evgeny Kharlamov",
+        "Zifeng Ding",
+        "Volker Tresp",
+        "Yunpu Ma"
+      ],
+      "abs": "https://arxiv.org/abs/2607.18006",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ]
+    },
+    "2607.15414": {
+      "title": "AI Trading: Evaluating Large Language Models for Technical Market Analysis",
+      "authors": [
+        "Geofrey Ntale"
+      ],
+      "abs": "https://arxiv.org/abs/2607.15414",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-fin.CP"
+      ]
+    },
+    "2607.12550": {
+      "title": "A JoLT for the KV Cache: Near-Lossless KV Cache Compression via Joint Tucker and JL-Residual Allocation for LLMs",
+      "authors": [
+        "Rahul Krishnan",
+        "Volker Schulz"
+      ],
+      "abs": "https://arxiv.org/abs/2607.12550",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "math.OC"
+      ]
+    },
+    "2607.17710": {
+      "title": "Planning with Transformers: Chain of Computation and Structured Context Windows",
+      "authors": [
+        "Ehsan Futuhi",
+        "Nathan R. Sturtevant"
+      ],
+      "abs": "https://arxiv.org/abs/2607.17710",
+      "categories": [
+        "cs.LG"
+      ]
+    },
+    "2607.16241": {
+      "title": "KernelBench-Verified: Do LLM-Generated Kernels Actually Beat PyTorch?",
+      "authors": [
+        "Yunxiang Zhang",
+        "Ping Yu",
+        "Jianyu Wang",
+        "Max",
+        "Fan",
+        "Julian Reed",
+        "Azalia Mirhoseini",
+        "Will Su"
+      ],
+      "abs": "https://arxiv.org/abs/2607.16241",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ]
+    },
+    "2607.17977": {
+      "title": "RynnBrain 1.1: Towards More Capable and Generalizable Embodied Foundation Model",
+      "authors": [
+        "Kehan Li",
+        "Bohan Hou",
+        "Minghao Zhu",
+        "Tianyi Zhang",
+        "Zesen Cheng",
+        "Zhikai Wang",
+        "Sicong Leng",
+        "Xin Li",
+        "Xiao Lin",
+        "Biying Yao",
+        "Minghua Zeng",
+        "Jiangpin Liu",
+        "Ronghao Dang",
+        "Jiayan Guo",
+        "Siteng Huang",
+        "Haoyu Zhao",
+        "Heng Ping",
+        "Yaxi Zhao",
+        "Kexiang Wang",
+        "Tong Lu",
+        "Shengke Xue",
+        "Jiahao Tang",
+        "Yulei Wang",
+        "Zejing Wang",
+        "Jianwei Gao",
+        "Shijian Lu",
+        "Chengju Liu",
+        "Jianfei Yang",
+        "Mingxiu Chen",
+        "Deli Zhao"
+      ],
+      "abs": "https://arxiv.org/abs/2607.17977",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "2607.16012": {
+      "title": "DPNeXt: A Lightweight Multi-Scale Feature Fusion Framework for Efficient ViT-Based Multi-Task Dense Prediction",
+      "authors": [
+        "Jehun Kang",
+        "Jungha Wang",
+        "Youngjun Hwang",
+        "David Hyunchul Shim"
+      ],
+      "abs": "https://arxiv.org/abs/2607.16012",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ]
+    },
+    "2602.17086": {
+      "title": "Dynamic Decision-Making under Model Misspecification: A Stochastic Stability Approach",
+      "authors": [
+        "Xinyu Dai",
+        "Daniel Chen",
+        "Yian Qian"
+      ],
+      "abs": "https://arxiv.org/abs/2602.17086",
+      "categories": [
+        "econ.TH",
+        "cs.LG",
+        "math.ST",
+        "stat.TH"
+      ]
+    }
+  }
+}

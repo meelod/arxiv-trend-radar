@@ -1,212 +1,158 @@
 {
-  "date": "2026-07-19",
+  "date": "2026-07-20",
   "paper_count": 400,
   "model": "gpt-4o-mini",
   "language": "English",
-  "headline": "Significant advances in AI for robotics, particularly in multi-agent systems and low-latency inference frameworks, dominate today's arXiv submissions.",
-  "executive_overview": "Today's papers offer various innovations around AI inference, particularly in robotics and multi-agent systems. A notable concentration arises in frameworks and methodologies for efficient AI control, backend system optimization, and seamless human interaction capabilities. Emerging practices highlight unified architectures and operational models to bridge existing technology gaps, along with enhancements in performance evaluation metrics.",
+  "headline": "Today's papers focus on advancing multi-agent systems, particularly in AI inference and robotics.",
+  "executive_overview": "A notable concentration of papers emerged today centered on multi-agent systems and their applications in various domains, including robotics, financial forecasting, and LLM inference optimization. There are significant discussions about the integration of AI technologies with hardware optimization for enhanced performance, especially in edge devices and decentralized environments. Additionally, there are evaluations focusing on the robustness and efficiency of AI systems within real-world contexts.",
   "themes": [
     {
-      "name": "Hierarchical Memory Architectures",
-      "summary": "Several papers delve into the development of hierarchical memory systems to improve AI performance in complex environments. For instance, the Ensemble QSP framework outlined in [2607.07666] enhances continuity in multi-agent contexts, while the ABot-AgentOS in [2607.10350] provides a robust OS for managing memory and decision-making in robotic agents. These innovations aim to maintain operational efficiency over extended tasks, addressing challenges related to context limitations in AI-driven workflows.",
+      "name": "Advancements in Multi-Agent Systems",
+      "summary": "Several papers explore the performance and optimization of multi-agent systems across various applications. For instance, 'PhyAgentOS: A Self-Evolving Operating System for Embodied Agents' presents a foundation for scheduling and execution in robotics, proposing a decoupled cognitive planning system. Meanwhile, 'MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning' introduces a post-training framework that refines compact models through a dynamic critic advantage. In 'NexForge: Scaling Agent Capabilities through Requirement-Driven Task Synthesis for LLMs', the synthesis of executable agent tasks addresses scaling issues in training data for agents. These works highlight the synergy between agent frameworks and reinforcement learning or long-horizon task planning.",
       "paper_ids": [
-        "2607.07666",
-        "2607.10350"
+        "2607.16636",
+        "2607.17948",
+        "2607.14186"
       ]
     },
     {
-      "name": "Efficient Inference Frameworks",
-      "summary": "There's a notable focus on optimizing inference latency and enhancing processing capabilities for AI models, particularly in robotics and real-time applications. Papers like Jetson-PI [2607.12659] and AC-VLA [2607.15714] explore techniques for improving inference on hardware-constrained devices, while the framework presented in [2607.15576] introduces innovative strategies for managing KV caches in large models, enabling faster and more efficient responses in practical scenarios.",
+      "name": "AI Inference Optimization",
+      "summary": "The challenge of optimizing AI inference, particularly regarding key-value (KV) cache management and long-context attention mechanisms, is prominent today. 'A JoLT for the KV Cache: Near-Lossless KV Cache Compression via Joint Tucker and JL-Residual Allocation for LLMs' discusses techniques that aim to mitigate memory costs while preserving performance. 'VarRate: Training-Free Variable-Rate KV Cache Compression for Long-Context LLMs' examines how different cache compression methods affect inference quality, emphasizing the need for effective strategies to manage memory during LLM operations. 'C$^2$KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference' proposes a novel approach to optimize KV cache utilization.",
       "paper_ids": [
-        "2607.12659",
-        "2607.15576",
-        "2607.15714"
+        "2607.12550",
+        "2607.17710"
       ]
     },
     {
-      "name": "Multi-Agent Systems and human interaction",
-      "summary": "Papers today emphasize developing frameworks for enhanced interaction between multiple AI agents and humans. Works like SI-Agent [2507.03223] and PACE [2607.15579] investigate the adaptability of agent personas to user preferences and the effectiveness of memory in engaging interactions. These contributions seek to enable more natural and responsive multi-agent environments that align with human needs across varying contexts, particularly in complex scenarios like robotics and AI-driven customer service.",
-      "paper_ids": [
-        "2507.03223",
-        "2607.15579"
-      ]
+      "name": "Robotics and HCI",
+      "summary": "In the realm of robotics and human-computer interaction, there is significant work on integrating AI to facilitate task execution and improve user experiences. 'RynnBrain 1.1' introduces a humanoid model designed for diverse manipulation tasks, and the 'RAVEN: Low-Cost Solution for Dual-Arm Manipulation' presents an effective approach for improved force and speed control during robot tasks. Meanwhile, 'MIND-CAVs: Multi-Intelligence Negotiation and Decision System for CAVs based on Intent-Driven Autonomy' explores collaborative decision systems for autonomous vehicles, reflecting broader trends in robotic applications aligned with AI assistance.",
+      "paper_ids": []
     },
     {
-      "name": "AI and Robotics Policy Learning",
-      "summary": "Today’s papers present intriguing advances in policy learning for robotics, particularly focusing on end-to-end frameworks that allow adaptation to complex environments. Works such as GigaWorld-Policy [2607.13960] and AEGIS [2607.15620] address challenges in safely deploying RL in dynamic interactions, emphasizing efficient learning algorithms for real-time decision-making in humanoid robots. These frameworks propose methodologies that bridge theoretical research with practical application in diverse testing scenarios.",
-      "paper_ids": [
-        "2607.13960",
-        "2607.15620"
-      ]
-    },
-    {
-      "name": "Financial AI Innovations",
-      "summary": "Several papers have also focused on the intersection of AI and finance, particularly with large language models and trading strategies. Noteworthy contributions like AI Trading [2607.15414] evaluate various LLMs for market analysis tasks, while Risk-Based Auto-Deleveraging [2603.15963] proposes an optimization approach for risk management in cryptocurrency exchanges. These explorations highlight the evolving role of AI in enhancing decision-making processes within financial markets.",
+      "name": "Financial Tools and AI Trading",
+      "summary": "The financial sector sees promising advancements through AI, particularly in trading and risk assessment. 'AI Trading: Evaluating Large Language Models for Technical Market Analysis' provides comparative evaluations of LLMs' performance in algorithmic trading scenarios, while 'FinSAgent: Corpus-Aligned Multi-Agent RAG Framework for Evidence-Grounded SEC Filing Question Answering' addresses the intricacies of policy learning under dynamic market conditions, emphasizing the importance of accurate data interpretation. These papers highlight the integration of AI in enhancing financial decision-making processes.",
       "paper_ids": [
         "2607.15414",
-        "2603.15963"
+        "2607.16012",
+        "2607.17977"
       ]
     }
   ],
   "top_picks": [
     {
-      "arxiv_id": "2607.07666",
-      "title": "A hierarchical memory architecture overcomes context limits in long-horizon multi-agent computational modeling",
-      "plain_english": "This paper introduces a multi-agent framework that maintains a hierarchical memory system to support long-term context retention across various tasks, significantly improving autonomous operations in AI workflows.",
-      "why_it_matters": "This aligns with your interest in multi-agent systems and the need for efficient inference architecture, particularly regarding context manager improvements for AI applications in robotics and autonomous agents.",
-      "relevance_score": 10
-    },
-    {
-      "arxiv_id": "2607.10350",
-      "title": "ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory",
-      "plain_english": "The paper presents a framework for robotic agents that integrates perception, memory, and reasoning into a single operating system, facilitating improved decision-making and planning in dynamic environments.",
-      "why_it_matters": "This directly aligns with your focus on robotics and multi-agent systems, emphasizing an OS that improves agent capabilities through effective memory management, critical for your research on humanoid manipulation.",
-      "relevance_score": 10
-    },
-    {
-      "arxiv_id": "2607.13960",
-      "title": "GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch",
-      "plain_english": "This paper discusses a new approach to improve the efficiency of World Action Models (WAMs) used in robotic policy learning, enhancing real-time decision-making capabilities for humanoids.",
-      "why_it_matters": "It addresses your interests in robotics policy learning and the development of efficient models for complex tasks, providing insights that could enhance humanoid capabilities in dynamic environments.",
-      "relevance_score": 9
-    },
-    {
-      "arxiv_id": "2607.15576",
-      "title": "Efficient and Effective In-place Graph-based Vector Index Updates",
-      "plain_english": "The authors propose a method for efficiently handling vector updates within graph databases, which is crucial for maintaining high recall rates in rapidly changing datasets.",
-      "why_it_matters": "This paper intersects with your interest in vector databases and retrieval at scale, exploring solutions to manage dynamic data effectively, ensuring optimal performance even with frequent updates.",
-      "relevance_score": 9
-    },
-    {
       "arxiv_id": "2607.15414",
       "title": "AI Trading: Evaluating Large Language Models for Technical Market Analysis",
-      "plain_english": "This study systematically evaluates various LLMs for their effectiveness in conducting technical analysis of financial markets, comparing their capabilities across distinct tasks.",
-      "why_it_matters": "This is directly relevant to your quantitative trading interests, especially how AI can enhance market analysis and execution strategies, showcasing practical applications for LLMs in finance.",
+      "plain_english": "This paper compares the performance of several large language models in conducting technical market analysis and generating trading signals based on stock market data.",
+      "why_it_matters": "This paper directly aligns with your interest in quant trading and algorithmic execution, providing insights into the effectiveness of LLMs in financial decision-making.",
+      "relevance_score": 10
+    },
+    {
+      "arxiv_id": "2607.16636",
+      "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+      "plain_english": "PhyAgentOS is an operating system designed for embodied agents that separates cognitive planning from physical execution, facilitating better autonomous operation in complex environments.",
+      "why_it_matters": "The focus on multi-agent systems and cognitive planning is highly relevant to your expertise in robotics policy learning and multi-agent systems.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2607.18006",
+      "title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
+      "plain_english": "This paper presents a framework for compact models that enhances reasoning through debate-aware training, improving their parameter efficiency during multi-agent interactions.",
+      "why_it_matters": "This paper addresses the intersection of multi-agent systems and AI inference, which is crucial to your interest in tool-using LLM agents and policy learning in robotics.",
+      "relevance_score": 8
+    },
+    {
+      "arxiv_id": "2607.12550",
+      "title": "A JoLT for the KV Cache: Near-Lossless KV Cache Compression via Joint Tucker and JL-Residual Allocation for LLMs",
+      "plain_english": "The research proposes a new method to compress key-value caches used in large language models, significantly reducing memory costs without losing accuracy in model performance.",
+      "why_it_matters": "Efficient cache management is critical in AI inference infrastructure, highlighting novel solutions that align with your research focus on silicon and computational efficiency.",
+      "relevance_score": 9
+    },
+    {
+      "arxiv_id": "2602.17086",
+      "title": "Dynamic Decision-Making under Model Misspecification: A Stochastic Stability Approach",
+      "plain_english": "This study explores the impact of incorrect model assumptions in reinforcement learning scenarios, providing insights into adapting decision-making processes under uncertainty.",
+      "why_it_matters": "Understanding decision-making under uncertainty is crucial for algorithmic execution in financial markets, framing your interest in quant trading within a theoretical context.",
       "relevance_score": 8
     }
   ],
   "worth_noting": [
     {
-      "arxiv_id": "2607.16187",
-      "one_liner": "Explores energy-efficient scaling of multi-agent systems, focusing on dynamic environments."
-    },
-    {
-      "arxiv_id": "2607.13921",
-      "one_liner": "Investigates generative compilation approaches for automated code generation in software development."
-    },
-    {
-      "arxiv_id": "2607.15730",
-      "one_liner": "Introduces a new set of metrics for evaluating agent tool retrieval and task execution in multi-agent setups."
-    },
-    {
-      "arxiv_id": "2607.15286",
-      "one_liner": "Discusses advancements in training efficient 3D point-cloud segmentation for semantic applications."
-    },
-    {
-      "arxiv_id": "2607.15547",
-      "one_liner": "Presents a novel framework for adjusting weights in deep neural networks for fault tolerance."
+      "arxiv_id": "2607.16241",
+      "one_liner": "An exploration of dual-cognition benchmarks for UAVs focusing on spatio-temporal reasoning."
     }
   ],
   "paper_index": {
-    "2607.07666": {
-      "title": "A hierarchical memory architecture overcomes context limits in long-horizon multi-agent computational modeling",
+    "2607.16636": {
+      "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
       "authors": [
-        "Shivendra G. Tewari",
-        "Holly Kimko"
+        "Yang Liu",
+        "Weixing Chen",
+        "Xinshuai Song",
+        "Tao Pu",
+        "Siwen Mo",
+        "Yongjie Bai",
+        "Zihao Chen",
+        "Qianran Sun",
+        "Liruo Zhong",
+        "Ying Shen",
+        "Liang Lin"
       ],
-      "abs": "https://arxiv.org/abs/2607.07666",
+      "abs": "https://arxiv.org/abs/2607.16636",
       "categories": [
-        "q-bio.QM",
-        "cs.MA"
-      ],
-      "citation_count": 0,
-      "influential_count": 0,
-      "s2_authors": [
-        {
-          "aff": null,
-          "id": "47637339",
-          "name": "Shivendra G. Tewari"
-        },
-        {
-          "aff": null,
-          "id": "2262162559",
-          "name": "H. Kimko"
-        }
-      ]
-    },
-    "2607.10350": {
-      "title": "ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory",
-      "authors": [
-        "Jiayi Tian",
-        "Shiao Liu",
-        "Yuting Xu",
-        "Jia Lu",
-        "Zihao Guan",
-        "Honglin Han",
-        "Di Yang",
-        "Minqi Gu",
-        "Yifei Qian",
-        "Tianlin Zhang",
-        "Yanqing Zhu",
-        "Zeqian Ye",
-        "Menglin Yang",
-        "Fei Wang",
-        "Xu Hu",
-        "Xiuxian Li",
-        "Wei Zhang",
-        "Shihui Su",
-        "Yiyan Ji",
-        "Jingbo Wang",
-        "Ziteng Feng",
-        "Jiaheng Liu",
-        "Zhaoxiang Zhang",
-        "Xiaolong Wu",
-        "Zixiao Tang",
-        "Zhining Gu",
-        "Yang Cai",
-        "Linbo Zheng",
-        "Jingjing Ma",
-        "Mingyang Yin",
-        "Zedong Chu",
-        "Wenbin Tang",
-        "Mu Xu"
-      ],
-      "abs": "https://arxiv.org/abs/2607.10350",
-      "categories": [
-        "cs.AI",
         "cs.RO"
       ]
     },
-    "2607.12659": {
-      "title": "Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference",
+    "2607.14186": {
+      "title": "NexForge: Scaling Agent Capabilities through Requirement-Driven Task Synthesis for LLMs",
       "authors": [
-        "Zebin Yang",
-        "Qi Wang",
-        "Yunhe Wang",
-        "Xiurui Guo",
-        "Bo Yu",
-        "Shaoshan Liu",
-        "Jiafeng Xu",
-        "Hao Dong",
-        "Meng Li"
+        "Jiarong Zhao",
+        "Zhikai Lei",
+        "Zhiheng Xi",
+        "Rui Zheng",
+        "Hang Yan",
+        "Jie Zhou",
+        "Qin Chen",
+        "Liang He"
       ],
-      "abs": "https://arxiv.org/abs/2607.12659",
+      "abs": "https://arxiv.org/abs/2607.14186",
       "categories": [
-        "cs.RO",
-        "cs.AI"
+        "cs.SE",
+        "cs.AI",
+        "cs.LG"
       ]
     },
-    "2607.15576": {
-      "title": "Efficient and Effective In-place Graph-based Vector Index Updates",
+    "2607.17948": {
+      "title": "Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking",
       "authors": [
-        "Haotian Liu",
-        "Yujun He",
-        "Bo Tang"
+        "Stefano Blando",
+        "Emanuele Guerrazzi",
+        "Riccardo Porcedda",
+        "Giuseppe Squillace",
+        "Max Tschaikowski",
+        "Andrea Vandin"
       ],
-      "abs": "https://arxiv.org/abs/2607.15576",
+      "abs": "https://arxiv.org/abs/2607.17948",
       "categories": [
-        "cs.DB",
-        "cs.IR"
+        "cs.AI",
+        "cs.MA"
+      ]
+    },
+    "2607.18006": {
+      "title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
+      "authors": [
+        "Martino M. L. Pulici",
+        "Cuong Xuan Chu",
+        "Evgeny Kharlamov",
+        "Zifeng Ding",
+        "Volker Tresp",
+        "Yunpu Ma"
+      ],
+      "abs": "https://arxiv.org/abs/2607.18006",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
       ]
     },
     "2607.15414": {
@@ -221,209 +167,115 @@
         "q-fin.CP"
       ]
     },
-    "2607.15714": {
-      "title": "AC-VLA: Robust Out-of-Distribution Action Execution via Compositional Learning",
+    "2607.12550": {
+      "title": "A JoLT for the KV Cache: Near-Lossless KV Cache Compression via Joint Tucker and JL-Residual Allocation for LLMs",
       "authors": [
-        "Xiaojiang Peng",
-        "Kai Peng",
-        "Jie Lu",
-        "Zheng Lian",
-        "Zitong YU",
-        "Xiaobo Wang"
+        "Rahul Krishnan",
+        "Volker Schulz"
       ],
-      "abs": "https://arxiv.org/abs/2607.15714",
+      "abs": "https://arxiv.org/abs/2607.12550",
       "categories": [
-        "cs.RO"
+        "cs.LG",
+        "cs.CL",
+        "math.OC"
       ]
     },
-    "2507.03223": {
-      "title": "SI-Agent: An Agentic Framework for Feedback-Driven Generation and Tuning of Human-Readable System Instructions for Large Language Models",
+    "2607.17710": {
+      "title": "Planning with Transformers: Chain of Computation and Structured Context Windows",
       "authors": [
-        "Jeshwanth Challagundla",
-        "Mantek Singh",
-        "Siddharth Raina",
-        "Smarth Behl",
-        "FNU Harsh",
-        "Jasmin Jarsania"
+        "Ehsan Futuhi",
+        "Nathan R. Sturtevant"
       ],
-      "abs": "https://arxiv.org/abs/2507.03223",
+      "abs": "https://arxiv.org/abs/2607.17710",
       "categories": [
-        "cs.AI",
         "cs.LG"
       ]
     },
-    "2607.13960": {
-      "title": "GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch",
+    "2607.16241": {
+      "title": "KernelBench-Verified: Do LLM-Generated Kernels Actually Beat PyTorch?",
       "authors": [
-        "GigaWorld Team",
-        "Angen Ye",
-        "Angyuan Ma",
-        "Boyuan Wang",
-        "Chaojun Ni",
-        "Fangzheng Ye",
-        "Guan Huang",
-        "Guo Li",
-        "Guosheng Zhao",
-        "Haodong Yan",
-        "Hengtao Li",
-        "Jiwen Lu",
-        "Kai Wang",
-        "Mingming Yu",
-        "Qitang Hu",
-        "Qiuping Deng",
-        "Songling Liu",
-        "Xiaoyu Tian",
-        "Xiaofeng Wang",
-        "Xinyu Zhou",
-        "Xiuwei Xu",
-        "Xinze Chen",
-        "Yang Wang",
-        "Yejun Zeng",
-        "Yifan Chang",
-        "Yun Ye",
-        "Zhenyu Wu",
-        "Zhanqian Wu",
-        "Zheng Zhu"
+        "Yunxiang Zhang",
+        "Ping Yu",
+        "Jianyu Wang",
+        "Max",
+        "Fan",
+        "Julian Reed",
+        "Azalia Mirhoseini",
+        "Will Su"
       ],
-      "abs": "https://arxiv.org/abs/2607.13960",
+      "abs": "https://arxiv.org/abs/2607.16241",
       "categories": [
-        "cs.RO"
-      ]
-    },
-    "2607.15620": {
-      "title": "AEGIS: Assay-Aware Protocol Validation and Runtime Monitoring for Open-Source Liquid Handling Robots",
-      "authors": [
-        "Priyanka V. Setty",
-        "Arvind Ramanathan",
-        "Ian Foster",
-        "Rick Stevens"
-      ],
-      "abs": "https://arxiv.org/abs/2607.15620",
-      "categories": [
-        "cs.RO",
+        "cs.LG",
         "cs.AI"
       ]
     },
-    "2603.15963": {
-      "title": "Risk-Based Auto-Deleveraging",
+    "2607.17977": {
+      "title": "RynnBrain 1.1: Towards More Capable and Generalizable Embodied Foundation Model",
       "authors": [
-        "Steven Campbell",
-        "Natascha Hey",
-        "Ciamac C. Moallemi",
-        "Marcel Nutz"
+        "Kehan Li",
+        "Bohan Hou",
+        "Minghao Zhu",
+        "Tianyi Zhang",
+        "Zesen Cheng",
+        "Zhikai Wang",
+        "Sicong Leng",
+        "Xin Li",
+        "Xiao Lin",
+        "Biying Yao",
+        "Minghua Zeng",
+        "Jiangpin Liu",
+        "Ronghao Dang",
+        "Jiayan Guo",
+        "Siteng Huang",
+        "Haoyu Zhao",
+        "Heng Ping",
+        "Yaxi Zhao",
+        "Kexiang Wang",
+        "Tong Lu",
+        "Shengke Xue",
+        "Jiahao Tang",
+        "Yulei Wang",
+        "Zejing Wang",
+        "Jianwei Gao",
+        "Shijian Lu",
+        "Chengju Liu",
+        "Jianfei Yang",
+        "Mingxiu Chen",
+        "Deli Zhao"
       ],
-      "abs": "https://arxiv.org/abs/2603.15963",
-      "categories": [
-        "q-fin.RM",
-        "q-fin.MF",
-        "q-fin.TR"
-      ]
-    },
-    "2607.13921": {
-      "title": "Generative Compilation: On-the-Fly Compiler Feedback as AI Generates Code",
-      "authors": [
-        "Niels MÃ¼ndler-Sasahara",
-        "Hristo Venev",
-        "Dawn Song",
-        "Martin Vechev",
-        "Jingxuan He"
-      ],
-      "abs": "https://arxiv.org/abs/2607.13921",
-      "categories": [
-        "cs.PL",
-        "cs.AI",
-        "cs.LG"
-      ]
-    },
-    "2607.15286": {
-      "title": "Hidden in Thought: Transferable Chain-of-Thought Artifacts Induce Harmful Behavior",
-      "authors": [
-        "Ali khalil",
-        "Aly M. Kassem",
-        "Mohamed Abdelrazek",
-        "Santu Rana",
-        "Negar Rostamzadeh",
-        "Golnoosh Farnadi"
-      ],
-      "abs": "https://arxiv.org/abs/2607.15286",
-      "categories": [
-        "cs.CR",
-        "cs.CL",
-        "cs.LG"
-      ]
-    },
-    "2607.16187": {
-      "title": "Handroid: Bridging Dexterous Hand and Humanoid",
-      "authors": [
-        "Ruogu Li",
-        "Chenyang Ma",
-        "Sikai Li",
-        "Zhenyu Wei",
-        "Yunchao Yao",
-        "Haochen Shi",
-        "C. Karen Liu",
-        "Shuran Song",
-        "Mingyu Ding"
-      ],
-      "abs": "https://arxiv.org/abs/2607.16187",
+      "abs": "https://arxiv.org/abs/2607.17977",
       "categories": [
         "cs.RO"
       ]
     },
-    "2607.15579": {
-      "title": "PACE: Persona Adaptation through Conversational Elicitation in Human-Robot Interaction",
+    "2607.16012": {
+      "title": "DPNeXt: A Lightweight Multi-Scale Feature Fusion Framework for Efficient ViT-Based Multi-Task Dense Prediction",
       "authors": [
-        "Peizhen Li",
-        "Longbing Cao",
-        "Megani Rajendran",
-        "Timothy Liu",
-        "Aik Beng Ng",
-        "Simon See"
+        "Jehun Kang",
+        "Jungha Wang",
+        "Youngjun Hwang",
+        "David Hyunchul Shim"
       ],
-      "abs": "https://arxiv.org/abs/2607.15579",
+      "abs": "https://arxiv.org/abs/2607.16012",
       "categories": [
-        "cs.RO",
-        "cs.HC"
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
       ]
     },
-    "2607.15730": {
-      "title": "RECAP: Feedback-Driven Streaming Semantic User Profiles for Short-Video Recommendation",
+    "2602.17086": {
+      "title": "Dynamic Decision-Making under Model Misspecification: A Stochastic Stability Approach",
       "authors": [
-        "Ziyi Zhao",
-        "Xiaoyou Zhou",
-        "Xiao Lv",
-        "Yangyang Li",
-        "Chubo He",
-        "Zhao Liu",
-        "Jiayao Shen",
-        "Yuqi Liu",
-        "He Li",
-        "Chengyi Zhang",
-        "Jian Liang",
-        "Ming Li",
-        "Chongming Gao",
-        "Fuli Feng",
-        "Ruiming Tang",
-        "Han Li"
+        "Xinyu Dai",
+        "Daniel Chen",
+        "Yian Qian"
       ],
-      "abs": "https://arxiv.org/abs/2607.15730",
+      "abs": "https://arxiv.org/abs/2602.17086",
       "categories": [
-        "cs.IR"
-      ]
-    },
-    "2607.15547": {
-      "title": "Pinching Antenna-Assisted ISAC with Waveguide Mode Selection",
-      "authors": [
-        "Ruotong Zhao",
-        "Yijia Zhang",
-        "Shaokang Hu",
-        "Derrick Wing Kwan Ng"
-      ],
-      "abs": "https://arxiv.org/abs/2607.15547",
-      "categories": [
-        "eess.SP",
-        "cs.IT",
-        "math.IT"
+        "econ.TH",
+        "cs.LG",
+        "math.ST",
+        "stat.TH"
       ]
     }
   }

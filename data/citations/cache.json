@@ -50700,6 +50700,13 @@
 "found": true,
 "influential_count": 0
 },
+"2602.17086": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-21",
+"found": false,
+"influential_count": 0
+},
 "2602.17088": {
 "citation_count": 0,
 "fetched": "2026-05-02",
@@ -129230,6 +129237,13 @@
 "found": false,
 "influential_count": 0
 },
+"2607.14186": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-21",
+"found": false,
+"influential_count": 0
+},
 "2607.14338": {
 "authors": [],
 "citation_count": 0,
@@ -129377,10 +129391,59 @@
 "found": false,
 "influential_count": 0
 },
+"2607.16012": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-21",
+"found": false,
+"influential_count": 0
+},
 "2607.16187": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-07-20",
+"found": false,
+"influential_count": 0
+},
+"2607.16241": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-21",
+"found": false,
+"influential_count": 0
+},
+"2607.16636": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-21",
+"found": false,
+"influential_count": 0
+},
+"2607.17710": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-21",
+"found": false,
+"influential_count": 0
+},
+"2607.17948": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-21",
+"found": false,
+"influential_count": 0
+},
+"2607.17977": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-21",
+"found": false,
+"influential_count": 0
+},
+"2607.18006": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-21",
 "found": false,
 "influential_count": 0
 }
