@@ -28721,8 +28721,45 @@
 "influential_count": 0
 },
 "2601.01885": {
-"citation_count": 13,
-"fetched": "2026-05-02",
+"authors": [
+{
+"aff": null,
+"id": "2376527185",
+"name": "Yi Yu"
+},
+{
+"aff": null,
+"id": "41075660",
+"name": "Liuyi Yao"
+},
+{
+"aff": null,
+"id": "52133762",
+"name": "Yuexiang Xie"
+},
+{
+"aff": null,
+"id": "2057197478",
+"name": "Q. Tan"
+},
+{
+"aff": null,
+"id": "2266760911",
+"name": "Jiaqi Feng"
+},
+{
+"aff": null,
+"id": "2391727594",
+"name": "Yaliang Li"
+},
+{
+"aff": null,
+"id": "2282937091",
+"name": "Libing Wu"
+}
+],
+"citation_count": 42,
+"fetched": "2026-07-24",
 "found": true,
 "influential_count": 3
 },
@@ -129755,6 +129792,44 @@
 "found": false,
 "influential_count": 0
 },
+"2607.17528": {
+"authors": [
+{
+"aff": null,
+"id": "2394258199",
+"name": "Jinyuan Deng"
+},
+{
+"aff": null,
+"id": "2190914057",
+"name": "Zhengrui Chen"
+},
+{
+"aff": null,
+"id": "2451905923",
+"name": "Xufeng Wei"
+},
+{
+"aff": null,
+"id": "2451551059",
+"name": "Tianyu Xing"
+},
+{
+"aff": null,
+"id": "2146879584",
+"name": "Chenyi Wen"
+},
+{
+"aff": null,
+"id": "2302591978",
+"name": "Cheng Zhuo"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": true,
+"influential_count": 0
+},
 "2607.17540": {
 "authors": [],
 "citation_count": 0,
@@ -130113,6 +130188,129 @@
 "found": false,
 "influential_count": 0
 },
+"2607.19190": {
+"authors": [
+{
+"aff": null,
+"id": "2149510317",
+"name": "Guanxiong Chen"
+},
+{
+"aff": null,
+"id": "2451873384",
+"name": "Qianjun Xia"
+},
+{
+"aff": null,
+"id": "2269048911",
+"name": "Jiawei Peng"
+},
+{
+"aff": null,
+"id": "2294361958",
+"name": "Heng Zhang"
+},
+{
+"aff": null,
+"id": "2451869117",
+"name": "Bole Ma"
+},
+{
+"aff": null,
+"id": "2451956089",
+"name": "Justin Qian"
+},
+{
+"aff": null,
+"id": "2451885676",
+"name": "Ziyi Jiao"
+},
+{
+"aff": null,
+"id": "2232926592",
+"name": "Bingyang Zhou"
+},
+{
+"aff": null,
+"id": "2309199912",
+"name": "Luoxin Ye"
+},
+{
+"aff": null,
+"id": "2310649159",
+"name": "Kaifeng Zhang"
+},
+{
+"aff": null,
+"id": "2305352582",
+"name": "Kunyi Wang"
+},
+{
+"aff": null,
+"id": "2294361684",
+"name": "Weijia Zeng"
+},
+{
+"aff": null,
+"id": "2344397292",
+"name": "Yunuo Chen"
+},
+{
+"aff": null,
+"id": "49731662",
+"name": "Pengzhi Yang"
+},
+{
+"aff": null,
+"id": "2353345888",
+"name": "Ziqiu Zeng"
+},
+{
+"aff": null,
+"id": "2326880437",
+"name": "Huamin Wang"
+},
+{
+"aff": null,
+"id": "2448705802",
+"name": "Chao Liu"
+},
+{
+"aff": null,
+"id": "2411931872",
+"name": "Alan L. Yuille"
+},
+{
+"aff": null,
+"id": "2376206373",
+"name": "Fan Shi"
+},
+{
+"aff": null,
+"id": "2391887093",
+"name": "Changxi Zheng"
+},
+{
+"aff": null,
+"id": "2352183976",
+"name": "Yunzhu Li"
+},
+{
+"aff": null,
+"id": "2267866705",
+"name": "Chenfanfu Jiang"
+},
+{
+"aff": null,
+"id": "2294384470",
+"name": "P. Y. Chen"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": true,
+"influential_count": 0
+},
 "2607.19191": {
 "authors": [
 {
@@ -130326,6 +130524,57 @@
 "found": true,
 "influential_count": 0
 },
+"2607.19515": {
+"authors": [
+{
+"aff": null,
+"id": "2445692758",
+"name": "Shubham Baid"
+},
+{
+"aff": null,
+"id": "2445695839",
+"name": "Akash James"
+},
+{
+"aff": null,
+"id": "2445696077",
+"name": "Sahil Chachra"
+},
+{
+"aff": null,
+"id": "2445694111",
+"name": "Nishant Sinha"
+},
+{
+"aff": null,
+"id": "2096918548",
+"name": "K. Kislay"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": true,
+"influential_count": 0
+},
+"2607.19548": {
+"authors": [
+{
+"aff": null,
+"id": "2948199",
+"name": "Eyrun Eyjolfsdottir"
+},
+{
+"aff": null,
+"id": "2424812",
+"name": "K. Branson"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": true,
+"influential_count": 0
+},
 "2607.19591": {
 "authors": [],
 "citation_count": 0,
@@ -130340,11 +130589,57 @@
 "found": false,
 "influential_count": 0
 },
+"2607.19794": {
+"authors": [
+{
+"aff": null,
+"id": "2452243898",
+"name": "Isabel Xu Cynthia Xu Rachel Ren Cong Guo Jiacheng Ding"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": true,
+"influential_count": 0
+},
 "2607.20120": {
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-07-23",
 "found": false,
+"influential_count": 0
+},
+"2607.20121": {
+"authors": [
+{
+"aff": null,
+"id": null,
+"name": "Qiyuan Liu"
+},
+{
+"aff": null,
+"id": "2323782077",
+"name": "Tingfeng Hui"
+},
+{
+"aff": null,
+"id": "2277448471",
+"name": "Kun Zhan"
+},
+{
+"aff": null,
+"id": null,
+"name": "Kaike Zhang"
+},
+{
+"aff": null,
+"id": "2382931520",
+"name": "Ning Miao"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": true,
 "influential_count": 0
 },
 "2607.20225": {
@@ -130358,6 +130653,103 @@
 "authors": [],
 "citation_count": 0,
 "fetched": "2026-07-23",
+"found": false,
+"influential_count": 0
+},
+"2607.20284": {
+"authors": [
+{
+"aff": null,
+"id": null,
+"name": "Qiwei Ma"
+},
+{
+"aff": null,
+"id": "2239944099",
+"name": "Chunping Qiu"
+},
+{
+"aff": null,
+"id": "2374233987",
+"name": "Xinjun Cheng"
+},
+{
+"aff": null,
+"id": "2287102074",
+"name": "Xiaoyu Zhang"
+},
+{
+"aff": null,
+"id": "7817034",
+"name": "Puhong Duan"
+},
+{
+"aff": null,
+"id": "2239882376",
+"name": "Ke Yang"
+},
+{
+"aff": null,
+"id": "2457540",
+"name": "Xudong Kang"
+},
+{
+"aff": null,
+"id": "2380797199",
+"name": "Shutao Li"
+}
+],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": true,
+"influential_count": 0
+},
+"2607.20434": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": false,
+"influential_count": 0
+},
+"2607.20503": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": false,
+"influential_count": 0
+},
+"2607.20636": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": false,
+"influential_count": 0
+},
+"2607.20650": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": false,
+"influential_count": 0
+},
+"2607.20833": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": false,
+"influential_count": 0
+},
+"2607.21571": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-24",
+"found": false,
+"influential_count": 0
+},
+"2607.21588": {
+"authors": [],
+"citation_count": 0,
+"fetched": "2026-07-24",
 "found": false,
 "influential_count": 0
 }
